@@ -1,11 +1,12 @@
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from pathlib import Path
+import csv_conversion as csv
+import pandas as pd
 
 
 def smiles_to_gjf(
-    smiles,
-    filename,
+    smiles, cid, name,
     charge=0,
     multiplicity=1,
     mem="20GB",
@@ -44,10 +45,12 @@ def smiles_to_gjf(
     # -------------------------
     # 3. File information
     # -------------------------
-    filename = Path(filename)
+    output_dir = Path("molecules/gjf_files")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    filename = output_dir / f"{cid}-{name}.gjf"
 
     chk_name = filename.with_suffix(".chk").name
-
+    print(f"Writing Gaussian input file: {filename}")
     # -------------------------
     # 4. Write Gaussian file
     # -------------------------
@@ -239,9 +242,16 @@ rm -r $SCRATCH_FLDR/${{SLURM_JOB_ID}}
 
 
 def main():
-    smiles_to_gjf()
-    create_txt_file("methane", "./molecules/txt_files")
+    df = csv.csv_validator("/home/ayxiao227/dft_ml_project/molecules/csv_files/pubchem_molecules_1.csv", 1)
+    for _, row in df.iterrows():
+        smiles_to_gjf(
+            row["SMILES"],
+            row["Compound_CID"],
+            row["IUPAC_Name"]
+        )
+        create_txt_file(row["Compound_CID"], "molecules/txt_files")
+    # smiles_to_gjf()
+    # create_txt_file(, "./molecules/txt_files")
 
 if __name__ == "__main__":
-
-    create_txt_file("methane", "./molecules/txt_files")
+    main()
