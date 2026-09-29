@@ -2,6 +2,7 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 from pathlib import Path
 import csv_conversion as csv
+import formula_to_atoms as fta
 import pandas as pd
 
 
@@ -161,7 +162,7 @@ def smiles_to_gjf(
         # 7. Basis set
         # -------------------------
         f.write("\n")
-        atoms = csv.get_elements_from_smiles_regex(smiles)
+        atoms = fta.formula_to_atoms(smiles)
         for a in atoms:
             f.write(f"{a} ")
         f.write("0\n")
