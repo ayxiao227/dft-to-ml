@@ -1,34 +1,23 @@
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from pathlib import Path
-import csv_conversion as csv
-import formula_to_atoms as fta
-import pandas as pd
+from src.formula_to_atoms import get_elements_from_smiles as fta
 
+import re
 
-def csv_to_df(filename):
-    """
-    Convert a CSV file to a pandas DataFrame.
-
-    Parameters
-    ----------
-    filename : str or Path
-        Path to the CSV file.
-
-    Returns
-    -------
-    pd.DataFrame
-        DataFrame containing the data from the CSV file.
-    """
-    df = pd.read_csv(filename)
-    return df
-
+def safe_name(cid, name, ID, max_len=40):
+    s = str(name).lower()
+    s = re.sub(r"[^a-z0-9]+", "_", s)   # commas, brackets, spaces, slashes, parentheses -> _
+    s = s.strip("_")[:max_len].rstrip("_")
+    if ID is not None:
+        return f"{ID}_{s}"
+    else:
+        return f"{cid}_{s}"
 
 def smiles_to_gjf(
-    smiles, cid, name,
-    charge=0,
-    multiplicity=1,
-    mem="20GB",
+    smiles, safename,
+    charge, geo_correction,
+    mem="8GB",
     nproc=12,
     method="b3lyp",
     basis="6-31g**",
@@ -44,7 +33,8 @@ def smiles_to_gjf(
 
     # Add hydrogens
     mol = Chem.AddHs(mol)
-
+    # Calculate multiplicity (number of unpaired electrons + 1)
+    multiplicity = sum(a.GetNumRadicalElectrons() for a in mol.GetAtoms()) + 1
     # -------------------------
     # 2. Generate 3D geometry
     # -------------------------
@@ -66,7 +56,7 @@ def smiles_to_gjf(
     # -------------------------
     output_dir = Path("molecules/gjf_files")
     output_dir.mkdir(parents=True, exist_ok=True)
-    filename = output_dir / f"{cid}-{name}.gjf"
+    filename = output_dir / f"{safename}.gjf"
 
     chk_name = filename.with_suffix(".chk").name
     print(f"Writing Gaussian input file: {filename}")
@@ -83,10 +73,10 @@ def smiles_to_gjf(
         # Route section
         f.write(
             f"# opt=calcfc freq "
-            f"{method}/gen "
-            f"geom=connectivity "
-            f"empiricaldispersion={dispersion}\n"
-        )
+            f"{method}/gen ")
+        if geo_correction:
+            f.write(f"geom=connectivity ")
+        f.write(f"empiricaldispersion={dispersion}\n")
 
         # Title
         f.write("\n")
@@ -115,54 +105,54 @@ def smiles_to_gjf(
         # -------------------------
         # 6. Connectivity
         # -------------------------
-        f.write("\n")
+        if geo_correction:
+            f.write("\n")
+            for atom in mol.GetAtoms():
 
-        for atom in mol.GetAtoms():
+                atom_idx = atom.GetIdx() + 1
 
-            atom_idx = atom.GetIdx() + 1
+                connections = []
 
-            connections = []
+                for bond in atom.GetBonds():
 
-            for bond in atom.GetBonds():
+                    other_atom = bond.GetOtherAtom(atom)
+                    other_idx = other_atom.GetIdx() + 1
 
-                other_atom = bond.GetOtherAtom(atom)
-                other_idx = other_atom.GetIdx() + 1
+                    # Only list atoms with higher index
+                    # to avoid duplicating bonds
+                    if other_idx > atom_idx:
 
-                # Only list atoms with higher index
-                # to avoid duplicating bonds
-                if other_idx > atom_idx:
+                        bond_type = bond.GetBondType()
 
-                    bond_type = bond.GetBondType()
+                        if bond_type == Chem.BondType.SINGLE:
+                            order = 1.0
+                        elif bond_type == Chem.BondType.DOUBLE:
+                            order = 2.0
+                        elif bond_type == Chem.BondType.TRIPLE:
+                            order = 3.0
+                        elif bond_type == Chem.BondType.AROMATIC:
+                            order = 1.5
+                        else:
+                            order = 1.0
 
-                    if bond_type == Chem.BondType.SINGLE:
-                        order = 1.0
-                    elif bond_type == Chem.BondType.DOUBLE:
-                        order = 2.0
-                    elif bond_type == Chem.BondType.TRIPLE:
-                        order = 3.0
-                    elif bond_type == Chem.BondType.AROMATIC:
-                        order = 1.5
-                    else:
-                        order = 1.0
+                        connections.append(
+                            f"{other_idx} {order:.1f}"
+                        )
 
-                    connections.append(
-                        f"{other_idx} {order:.1f}"
+                if connections:
+                    f.write(
+                        f"{atom_idx} "
+                        + " ".join(connections)
+                        + "\n"
                     )
-
-            if connections:
-                f.write(
-                    f"{atom_idx} "
-                    + " ".join(connections)
-                    + "\n"
-                )
-            else:
-                f.write(f"{atom_idx}\n")
+                else:
+                    f.write(f"{atom_idx}\n")
 
         # -------------------------
         # 7. Basis set
         # -------------------------
         f.write("\n")
-        atoms = fta.formula_to_atoms(smiles)
+        atoms = fta(smiles)
         for a in atoms:
             f.write(f"{a} ")
         f.write("0\n")
@@ -174,7 +164,7 @@ def smiles_to_gjf(
 
 def create_txt_file(
     molecule_name,
-    output_dir,
+    output_dir, ID,
     account="nszym1",
     scratch_dir="/scratch/nszym_root/nszym1/xaustin",
     memory="10g",
@@ -218,7 +208,7 @@ def create_txt_file(
 
     # Create the Slurm script
     script = f"""#!/bin/bash
-#SBATCH --job-name={molecule_name}
+#SBATCH --job-name={ID}_{molecule_name}
 #SBATCH --mail-user=xaustin@umich.edu
 #SBATCH --nodes=1
 #SBATCH --mail-type=END
@@ -264,18 +254,19 @@ rm -r $SCRATCH_FLDR/${{SLURM_JOB_ID}}
     return output_file
 
 
-def main():
-    df = pd.read_csv("/home/ayxiao227/dft_ml_project/molecules/csv_files/pubchem_molecules_valid.csv")
-    print(df.head())
+def generate_slurm_scripts(df, correction, ID):
+    # df = pd.read_csv("/home/ayxiao227/dft_ml_project/molecules/csv_files/pubchem_molecules_valid.csv")
     for _, row in df.iterrows():
-         smiles_to_gjf(
-             row["ConnectivitySMILES"],
-             row["CID"],
-             row["IUPACName"]
-         )
+        print(f"Processing molecule:{row['MoleculeName']} (CID: {row['CID']})")
+        safe_molecule_name = safe_name(row["CID"], row["MoleculeName"], ID)
+        smiles_to_gjf(
+            row["ConnectivitySMILES"],
+            safe_molecule_name,
+            row["Charge"], correction
+            )
     #     create_txt_file(row["Compound_CID"], "molecules/txt_files")
     # smiles_to_gjf()
-    # create_txt_file(, "./molecules/txt_files")
+    # create_txt_file(safe_molecule_name, "./molecules/txt_files")
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
