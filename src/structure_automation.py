@@ -5,6 +5,24 @@ import csv_conversion as csv
 import pandas as pd
 
 
+def csv_to_df(filename):
+    """
+    Convert a CSV file to a pandas DataFrame.
+
+    Parameters
+    ----------
+    filename : str or Path
+        Path to the CSV file.
+
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame containing the data from the CSV file.
+    """
+    df = pd.read_csv(filename)
+    return df
+
+
 def smiles_to_gjf(
     smiles, cid, name,
     charge=0,
@@ -143,7 +161,11 @@ def smiles_to_gjf(
         # 7. Basis set
         # -------------------------
         f.write("\n")
-        f.write("C H O N " + "0\n")
+        atoms = csv.get_elements_from_smiles_regex(smiles)
+        for a in atoms:
+            f.write(f"{a} ")
+        f.write("0\n")
+        #f.write("C H O N " + "0\n") some molecules do not have all these atoms, so including them all will cause p
         f.write(f"{basis}\n")
         f.write("****\n")
         f.write("\n")
@@ -242,14 +264,15 @@ rm -r $SCRATCH_FLDR/${{SLURM_JOB_ID}}
 
 
 def main():
-    df = csv.csv_validator("/home/ayxiao227/dft_ml_project/molecules/csv_files/pubchem_molecules_1.csv", 1)
+    df = pd.read_csv("/home/ayxiao227/dft_ml_project/molecules/csv_files/pubchem_molecules_valid.csv")
+    print(df.head())
     for _, row in df.iterrows():
-        smiles_to_gjf(
-            row["SMILES"],
-            row["Compound_CID"],
-            row["IUPAC_Name"]
-        )
-        create_txt_file(row["Compound_CID"], "molecules/txt_files")
+         smiles_to_gjf(
+             row["ConnectivitySMILES"],
+             row["CID"],
+             row["IUPACName"]
+         )
+    #     create_txt_file(row["Compound_CID"], "molecules/txt_files")
     # smiles_to_gjf()
     # create_txt_file(, "./molecules/txt_files")
 
