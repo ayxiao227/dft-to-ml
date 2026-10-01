@@ -24,19 +24,19 @@ constraints = {
 
 properties = ["IUPACName", "MolecularFormula", "ConnectivitySMILES", "MolecularWeight", "Charge", "HeavyAtomCount"]
 
-def download_pubchem_data(molecules, iteration, validate):
+def download_pubchem_data(molecules, iteration, validate, classifier):
     data = []
     valid_data = []
     #get properties for each molecule
     for name in molecules:
         print("Molecule: ", name, end=" ")
-        result = pcp.get_properties(properties, name, "name")
+        result = pcp.get_properties(properties, name, classifier)
         try:
             print("Retrieved: ", result[0]["IUPACName"], result[0]["MolecularFormula"])
         except (IndexError, KeyError):
             print(f"Error: Could not retrieve properties for '{name}'.")
             continue
-        result[0]["MoleculeName"] = name  # Add the original molecule name to the result
+        result[0]["Name"] = name  # Add the original molecule name to the result
         # if result:
         data.append(result)
         if validate:
