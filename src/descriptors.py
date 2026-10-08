@@ -1,7 +1,6 @@
 import pandas as pd
 from rdkit import Chem
-from rdkit.Chem import Descriptors, Lipinski, rdMolDescriptors
-
+from rdkit.Chem import Descriptors, Lipinski, rdMolDescriptors, rdFingerprintGenerator
 
 from rdkit import Chem
 
@@ -34,10 +33,36 @@ def calculate_descriptors(smiles):
         "TripleBondCount": sum(b.GetBondType() == Chem.BondType.TRIPLE for b in mol.GetBonds()),
     }
 
+_PATTERNS = {
+    "n_carbonyl": "[CX3]=[OX1]",
+    "n_conj_carbonyl": "[OX1]=[CX3]-[#6,#7]=,#[#6,#7,#8]",  # C=O adjacent to another pi bond
+    "n_conj_diene": "[#6]=[#6]-[#6]=[#6]",
+    "n_ene_yne": "[#6]=[#6]-[#6]#[#6]",
+    "n_nitroso_noxide": "[#7]=[#8,#7]",
+}
+_PATTERNS = {k: Chem.MolFromSmarts(v) for k, v in _PATTERNS.items()}
+_gen = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=1024)
 
-df = pd.read_csv("data/log_data/data_1.csv")
+def extra_features(smi, include_fp=True):
+    m = Chem.MolFromSmiles(smi)
+    n_bonds = max(m.GetNumBonds(), 1)
+    n_conj = sum(b.GetIsConjugated() for b in m.GetBonds())
+    feats = {"n_conj_bonds": n_conj, "frac_conj_bonds": n_conj / n_bonds}
+    for name, patt in _PATTERNS.items():
+        feats[name] = len(m.GetSubstructMatches(patt))
+    if include_fp:
+        fp = _gen.GetFingerprintAsNumPy(m)
+        feats.update({f"morgan_{i}": int(v) for i, v in enumerate(fp)})
+    return feats
 
-desc_df = df["SMILES"].apply(calculate_descriptors).apply(pd.Series)
+def get_all_features(smi):
+    desc = calculate_descriptors(smi)
+    extra = extra_features(smi, include_fp=True)
+    return {**desc, **extra}
+
+df = pd.read_csv("data/log_data/data_3.csv")
+
+desc_df = df["SMILES"].apply(get_all_features).apply(pd.Series)
 df = pd.concat([df, desc_df], axis=1)
 
 print(df[["SMILES", "homo_ev", "lumo_ev", "gap_ev"]].head())
@@ -51,4 +76,4 @@ df = df.dropna(subset=["MolWt"])
 print(desc_df.head())
 print(len(df))
 
-df.to_csv("data/descriptors/test_1.csv")
+df.to_csv("data/descriptors/test_3_extra.csv", index=False)
