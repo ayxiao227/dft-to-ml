@@ -3,5 +3,7 @@ __pycache__/
 molecules/
 data/
 scripts/
+.gitignore
+.python-version
 *.pyc
 
