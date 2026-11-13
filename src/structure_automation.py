@@ -172,6 +172,7 @@ def smiles_to_gjf(
     multiplicity=None,
     diffuse=None,
     basis_task="general",
+    protocol_id=None,
 ):
     """Write a Gaussian opt/freq input; return True on success.
 
@@ -256,7 +257,7 @@ def smiles_to_gjf(
     route = f"# opt=calcfc freq {method}/{'genecp' if has_ecp else 'gen'} 5D 7F"
     if geo_correction:
         route += " geom=connectivity"
-    route += f" empiricaldispersion={dispersion}"
+    route += f" empiricaldispersion={dispersion} scf=tight int=ultrafine"
  
     lines = [
         f"%mem={mem}",
@@ -266,6 +267,7 @@ def smiles_to_gjf(
         "",
         f"ID {ID}: {smiles} (start geometry: {ff})",
         f"Basis: {selected_basis}; BSE version {basis_version}; task: {basis_task}",
+        f"Protocol: {protocol_id}",
         "",
         f"{charge} {multiplicity}",
     ]
@@ -292,64 +294,11 @@ def smiles_to_gjf(
     return True
 
 
-def create_txt_file(molecule_name, output_dir, ID, son=False, user="xaustin",
-                    dft_folder="dft_ml", account="nszym1",
-                    scratch_dir="/scratch/nszym_root/nszym1", memory="10G",
-                    time="02-00:00", cpus=12):
-    """Fail closed and retain scratch whenever execution or transfer fails."""
-    import shlex
-    for value in (molecule_name, ID, user, dft_folder, account):
-        safe_component(value)
-    if not re.fullmatch(r"[1-9][0-9]*[GMgm]", memory):
-        raise ValueError("SLURM memory must be a positive integer with G or M suffix")
-    if not re.fullmatch(r"[0-9:-]+", time) or not isinstance(cpus, int) or cpus < 1:
-        raise ValueError("Invalid runtime or CPU count")
-    if not Path(scratch_dir).is_absolute():
-        raise ValueError("scratch_dir must be absolute")
-    base = Path(f"/home/{user}/{dft_folder}")
-    source = base / "gjf_files" / ID / f"{molecule_name}.gjf"
-    destination = base / "log_files" / ID
-    quote = shlex.quote
-    script = f"""#!/bin/bash
-#SBATCH --job-name={molecule_name}
-#SBATCH --nodes=1
-#SBATCH --mem={memory}
-#SBATCH --time={time}
-#SBATCH --cpus-per-task={cpus}
-#SBATCH --account={account}
-set -euo pipefail
-scratch_root={quote(str(Path(scratch_dir) / user))}
-mkdir -p "$scratch_root"
-work=$(mktemp -d "$scratch_root/${{SLURM_JOB_ID:?}}.XXXXXX")
-trap 'echo "Job failed; retained scratch: $work" >&2' ERR
-cd "$work"
-cp -- {quote(str(source))} input.gjf
-module purge
-module load Chemistry
-module load gaussian/16-revC01-avx2
-g16 input.gjf
-# Gaussian can leave an error log even if a wrapper reports success.
-grep -q 'Normal termination of Gaussian' input.log
-if grep -q 'Error termination' input.log; then exit 1; fi
-formchk {quote(molecule_name + '.chk')} output.fchk
-mkdir -p {quote(str(destination))}
-# Each job gets its own output directory; reruns never overwrite prior results.
-result_dir={quote(str(destination))}/"${{SLURM_JOB_ID}}"
-mkdir "$result_dir"
-cp -- input.log "$result_dir/{molecule_name}.log"
-cp -- {quote(molecule_name + '.chk')} "$result_dir/{molecule_name}.chk"
-cp -- output.fchk "$result_dir/{molecule_name}.fchk"
-rm -rf -- "$work"
-"""
-    output = Path(output_dir)
-    output.mkdir(parents=True, exist_ok=True)
-    path = output / f"{molecule_name}.txt"
-    path.write_text(script)
-    return path
+from src.scheduler import create_txt_file
 
 
 def generate_slurm_scripts(df, correction=False, ID=None, son=False,
-                           user="xaustin", dft_folder="dft_ml", gjf_options=None):
+                           user="xaustin", dft_folder="dft_ml", gjf_options=None, resume=False):
     """Generate inputs, matching scheduler resources, and an identity manifest.
 
     All modes use gjf_files/<ID> and log_files/<ID> on the remote host.
@@ -358,16 +307,29 @@ def generate_slurm_scripts(df, correction=False, ID=None, son=False,
     ID = safe_component(ID or strftime("%H%M%S_%d%m%Y"))
     df = normalize_molecules(df)
     options = dict(gjf_options or {})
+    from src.gaussian_records import protocol, digest
+    from src.csv_conversion import passes_filters
+    options.setdefault("basis", "def2-TZVP")
+    options["protocol_id"] = protocol(options)
     cpus = options.setdefault("nproc", 12)
     mem = options.setdefault("mem", "8GB")
     if not isinstance(cpus, int) or cpus < 1 or not re.fullmatch(r"[1-9][0-9]*GB", mem):
         raise ValueError("Use positive integer nproc and memory in integer GB")
     gjf_dir = Path("molecules/gjf_files") / ID
     txt_dir = Path("scripts/txt_files") / ID
+    old = None
     if (gjf_dir / "manifest.csv").exists():
-        raise FileExistsError("Experiment already exists; choose a new ID")
+        if not resume:
+            raise FileExistsError("Experiment already exists; use resume with unchanged inputs")
+        old = pd.read_csv(gjf_dir / "manifest.csv").set_index('molecule_id')
+        if not old['options'].eq(json.dumps(options, sort_keys=True)).all():
+            raise ValueError('Resume configuration changed')
+        if set(old.index) - set(df.SMILES.map(molecule_key)):
+            raise ValueError('Resume cannot remove previously requested molecules')
     records, seen = [], set()
     for _, row in df.iterrows():
+        if not passes_filters(row['SMILES']):
+            raise ValueError('Only validated organic molecules accepted')
         key = molecule_key(row["SMILES"])
         if key in seen:
             raise ValueError(f"Duplicate molecular identity: {key}")
@@ -376,12 +338,27 @@ def generate_slurm_scripts(df, correction=False, ID=None, son=False,
         charge = row.get("Charge")
         if pd.isna(charge):
             charge = None
+        if old is not None and key in old.index and bool(old.loc[key, 'generated']):
+            previous = old.loc[key].to_dict()
+            if previous['options'] != json.dumps(options, sort_keys=True):
+                raise ValueError('Resume configuration changed')
+            if digest((gjf_dir / previous['input_path']).read_bytes()) != previous['input_sha256']:
+                raise ValueError('Existing input was modified')
+            if not (txt_dir / (name + '.txt')).exists():
+                create_txt_file(name, txt_dir, ID, son, user, dft_folder, cpus=cpus, memory=f'{int(mem[:-2]) + 2}G')
+            records.append({**previous, 'molecule_id':key})
+            continue
         ok = smiles_to_gjf(row["SMILES"], name, charge, correction, ID, gjf_dir, **options)
         records.append({**row.to_dict(), "file": name + ".log", "molecule_key": key,
-                        "generated": ok, "options": json.dumps(options, sort_keys=True)})
+                        "generated": ok, "options": json.dumps(options, sort_keys=True),
+                        "molecule_id":key, "run_id":ID + '_' + key, "input_smiles":row['SMILES'],
+                        "input_path":name + '.gjf', "protocol_id":options['protocol_id'],
+                        "input_sha256":digest((gjf_dir / (name + '.gjf')).read_bytes()) if ok else ''})
         # Save progress so failed records remain visible rather than disappearing.
         gjf_dir.mkdir(parents=True, exist_ok=True)
-        pd.DataFrame(records).to_csv(gjf_dir / "manifest.csv", index=False)
+        temporary = gjf_dir / 'manifest.csv.tmp'
+        pd.DataFrame(records).to_csv(temporary, index=False)
+        temporary.replace(gjf_dir / 'manifest.csv')
         if ok:
             create_txt_file(name, txt_dir, ID, son, user, dft_folder,
                             cpus=cpus, memory=f"{int(mem[:-2]) + 2}G")
@@ -390,11 +367,11 @@ def generate_slurm_scripts(df, correction=False, ID=None, son=False,
 
 def generate_slurm_scripts_from_csv(df, correction=False, ID=None, son=False,
                                     randomize=None, gjf_options=None,
-                                    user="xaustin", dft_folder="dft_ml", seed=42):
+                                    user="xaustin", dft_folder="dft_ml", seed=42, resume=False):
     df = normalize_molecules(df)
     if randomize not in (None, ""):
         count = int(randomize)
         if not 0 < count <= len(df):
             raise ValueError(f"Sample count must be between 1 and {len(df)}")
         df = df.sample(n=count, replace=False, random_state=seed)
-    return generate_slurm_scripts(df, correction, ID, son, user, dft_folder, gjf_options)
+    return generate_slurm_scripts(df, correction, ID, son, user, dft_folder, gjf_options, resume=resume)

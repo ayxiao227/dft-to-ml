@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 import pandas as pd
 from rdkit import Chem
+from src.gaussian_records import inspect_record
 from src.structure_automation import safe_name 
 
 HARTREE_TO_EV = 27.211386245988
@@ -89,6 +90,11 @@ def parse_log(folder_path, ID, processed_path, *, require_minimum=True, legacy_n
         raw["file"] = raw["Name"].map(lambda x: safe_name(None, x, ID) + ".log")
     if raw["file"].duplicated().any():
         raise ValueError("Ambiguous duplicate filenames in manifest")
+    required = {'molecule_id','run_id','input_path','input_sha256','protocol_id'}
+    if not required.issubset(raw.columns):
+        raise ValueError('Manifest lacks verified input/protocol metadata; migrate legacy records first')
+    if raw[['molecule_id','run_id']].duplicated().any():
+        raise ValueError('Duplicate molecule/run metadata')
     metadata = raw.set_index("file")
     rows, rejected, seen = [], [], set()
     logs = sorted(Path(folder_path).rglob("*.log"))
@@ -101,6 +107,11 @@ def parse_log(folder_path, ID, processed_path, *, require_minimum=True, legacy_n
             if path.name not in metadata.index:
                 raise ValueError("Log has no matching manifest record")
             validate_log(path, require_minimum)
+            details = inspect_record(path, metadata.loc[path.name], Path(processed_path).parent)
+            xyz_dir = Path(folder_path) / 'optimized_xyz'
+            xyz_dir.mkdir(exist_ok=True)
+            xyz_path = xyz_dir / (details['log_sha256'] + '.xyz')
+            xyz_path.write_text(details.pop('xyz'))
             blocks = parse_orbital_blocks(path)
             if not blocks:
                 raise ValueError("No orbital energies")
@@ -108,15 +119,27 @@ def parse_log(folder_path, ID, processed_path, *, require_minimum=True, legacy_n
             if energies["gap_ev"] < 0:
                 raise ValueError("Negative orbital gap requires review")
             rows.append({**metadata.loc[path.name].to_dict(), "file": path.name,
-                         "log_path": str(path), **energies})
-        except (ValueError, IndexError, KeyError) as exc:
-            rejected.append({"file": path.name, "reason": str(exc)})
+                         "log_path": str(path), **energies, **details,
+                         "xyz_path":str(xyz_path), "accepted":True, "rejection_reason":"",
+                         "optimization_converged":True,
+                         "minimum_frequency_cm1":min(float(v) for l in path.read_text().splitlines()
+                         if 'Frequencies --' in l for v in NUM.findall(l.split('--',1)[1]))})
+        except (ValueError, IndexError, KeyError, RuntimeError, OSError) as exc:
+            rejected.append({**(metadata.loc[path.name].to_dict() if path.name in metadata.index else {}),
+                             "file": path.name, "log_path":str(path), "accepted":False,
+                             "rejection_reason":str(exc), "reason": str(exc)})
     rejected.extend({"file": name, "reason": "Missing log"} for name in metadata.index if name not in seen)
     report = Path(folder_path) / "parse_rejections.csv"
-    pd.DataFrame(rejected, columns=["file", "reason"]).to_csv(report, index=False)
+    pd.DataFrame(rejected).to_csv(report, index=False)
     if not rows:
         raise ValueError(f"No valid labels; inspect {report}")
-    return pd.DataFrame(rows)
+    result = pd.DataFrame(rows)
+    result.to_csv(Path(folder_path) / 'accepted_candidates.csv', index=False)
+    if result.protocol_id.nunique() != 1:
+        raise ValueError('Mixed protocols: candidates saved for review, no training export produced')
+    if result.molecule_id.duplicated().any():
+        raise ValueError('Select exactly one accepted run per molecule')
+    return result
 
 
 if __name__ == "__main__":

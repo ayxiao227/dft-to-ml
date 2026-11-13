@@ -21,7 +21,13 @@ import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
 from sklearn.dummy import DummyRegressor
-from sklearn.linear_model import RidgeCV
+from sklearn.linear_model import Ridge
+from sklearn.model_selection import GridSearchCV
+
+def ridge_search(alphas):
+    return GridSearchCV(make_pipeline(StandardScaler(), Ridge()),
+        {"ridge__alpha": alphas}, cv=5, scoring="neg_mean_absolute_error", n_jobs=1)
+
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import (
@@ -178,9 +184,8 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
         ),
 
         # Linear baseline
-        "Ridge Regression": make_pipeline(
-            StandardScaler(),
-            RidgeCV(
+        "Ridge Regression": (
+            ridge_search(
                 alphas=[
                     0.001,
                     0.01,
@@ -266,9 +271,8 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     X_train_size = X_train[size_feature]
     X_test_size = X_test[size_feature]
 
-    size_model = make_pipeline(
-        StandardScaler(),
-        RidgeCV(
+    size_model = (
+        ridge_search(
             alphas=[
                 0.001,
                 0.01,
@@ -783,7 +787,7 @@ def cv_check(DATA_PATH, TARGET="gap_ev", *, n_splits=5, n_repeats=1,
     rows = []
     for set_name, features in sets.items():
         models = {
-            "Ridge Regression": make_pipeline(StandardScaler(), RidgeCV(alphas=[.01, .1, 1, 10, 100, 1000])),
+            "Ridge Regression": ridge_search(alphas=[.01, .1, 1, 10, 100, 1000]),
             "Gradient Boosting": HistGradientBoostingRegressor(max_iter=300, max_bins=64, max_leaf_nodes=15, random_state=42),
             "Random Forest": RandomForestRegressor(n_estimators=n_estimators,
                 max_depth=20, min_samples_leaf=2, max_features="sqrt",

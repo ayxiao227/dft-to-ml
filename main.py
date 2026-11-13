@@ -17,13 +17,14 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--cpus", type=int, default=12)
     parser.add_argument("--memory-gb", type=int, default=8)
+    parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
     df = (csv_validator(args.csv, output=args.id) if args.csv else
           download_pubchem_data(args.names, 0, validate=True, classifier="name"))
     if df.empty:
         parser.error("No valid molecules")
     result = generate_slurm_scripts_from_csv(df, ID=args.id, randomize=args.sample,
-        user=args.user, dft_folder=args.remote_folder, seed=args.seed,
+        user=args.user, dft_folder=args.remote_folder, seed=args.seed, resume=args.resume,
         gjf_options={"nproc": args.cpus, "mem": f"{args.memory_gb}GB"})
     print(f"Generated {result.generated.sum()} of {len(result)} inputs; inspect manifest.csv")
     if not result.generated.all():

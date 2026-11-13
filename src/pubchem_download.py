@@ -1,4 +1,4 @@
-import pubchempy as pcp
+from src.acquisition import fetch
 import pandas as pd
 import time
 from pathlib import Path
@@ -13,7 +13,7 @@ def download_pubchem_data(molecules, iteration, validate, classifier):
     records = []
     for query in molecules:
         # Fail visibly on network/API errors; do not silently claim a complete download.
-        results = pcp.get_properties(properties, query, classifier)
+        results = fetch(properties, query, classifier)
         for record in results or []:
             records.append({**record, "Name": str(query)})
         time.sleep(REQUEST_DELAY)

@@ -65,3 +65,21 @@ execution and actual SLURM scheduling require a separate pilot on the cluster.
 - [ ] Regenerate descriptors and evaluation artifacts from accepted, deduplicated labels.
 - [ ] Freeze an untouched final test set and add scaffold-based evaluation.
 - [ ] Add real Gaussian fixtures and CI; then implement resumability and cluster profiles.
+
+## Follow-up implementation
+
+Implemented on the same branch: organic geometry reconstruction with identity
+review, strict supplied-input protocol provenance and mixed-protocol rejection,
+molecule/run metadata, accepted-only optimized-SMILES descriptors, retained XYZ,
+label comparison CLI, bounded cached acquisition, hash-checked resumability,
+inner-fold ridge preprocessing, immutable grouped/random development/final splits,
+separate scheduler module and offline CI. Earlier recommendations above describe
+the original audit; this section supersedes their implementation status.
+
+Remaining external validation: historical DFT-ML logs/metadata, a live Great Lakes
+pilot, and scientific review of flagged geometries. Real ethoxyethanol log extraction
+was checked locally (organic identity recovered); private source logs were not
+copied into this repository. New strict protocol markers require new generated
+inputs or a separately reviewed legacy migration. A dedicated frozen-random-forest final scorer is implemented. Broad restart
+support, fully separated ML plotting/training, and a real-log fixture
+collection remain future work. No claim is made that legacy scores are valid.

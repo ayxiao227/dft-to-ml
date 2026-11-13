@@ -48,10 +48,11 @@ class PipelineTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             pd.DataFrame({'file':['good.log','bad.log','missing.log'],
-                          'ConnectivitySMILES':['C','CC','CCC']}).to_csv(root/'manifest.csv',index=False)
+                          'ConnectivitySMILES':['C','CC','CCC'], 'molecule_id':['a','b','c'], 'run_id':['a','b','c'], 'input_path':['x']*3, 'input_sha256':['x']*3, 'protocol_id':['p']*3}).to_csv(root/'manifest.csv',index=False)
             (root/'good.log').write_text(GOOD)
             (root/'bad.log').write_text(GOOD+'Error termination\n')
-            df=parse_log(root,'x',root/'manifest.csv')
+            with patch('src.dft_parser.inspect_record', return_value={'xyz':'1\nx\nH 0 0 0\n','log_sha256':'hash','optimized_smiles':'C','protocol_id':'p'}):
+                df=parse_log(root,'x',root/'manifest.csv')
             self.assertEqual(df.file.tolist(), ['good.log'])
             self.assertAlmostEqual(df.gap_ev.iloc[0],16.3268317476)
             self.assertEqual(len(pd.read_csv(root/'parse_rejections.csv')),2)
@@ -98,10 +99,16 @@ formchk() { touch output.fchk; }""")
             before=os.getcwd();os.chdir(tmp)
             try:
                 pd.DataFrame({'SMILES':['C'*n for n in range(1,31)],
-                              'gap_ev':[10/(n+1) for n in range(1,31)]}).to_csv('labels.csv',index=False)
+                              'gap_ev':[10/(n+1) for n in range(1,31)], 'optimized_smiles':['C'*n for n in range(1,31)], 'accepted':[True]*30, 'protocol_id':['test']*30}).to_csv('labels.csv',index=False)
                 build_descriptors('labels.csv','features.csv')
                 analysis('features.csv','smoke',n_estimators=2)
                 cv_check('features.csv',n_splits=2,n_estimators=2)
+                from src.splits import freeze
+                from src.final_evaluate import evaluate
+                freeze('features.csv','frozen')
+                evaluate('frozen/development.csv','frozen/final_test.csv','final',trees=2)
+                with self.assertRaises(ValueError):
+                    evaluate('frozen/development.csv','frozen/development.csv','overlap',trees=2)
                 runs=list(Path('results/runs').iterdir())
                 self.assertEqual(len(runs),2)
                 self.assertTrue(all((run/'metadata.json').exists() for run in runs))

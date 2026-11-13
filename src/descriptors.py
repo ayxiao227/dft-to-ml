@@ -66,6 +66,11 @@ def build_descriptors(input_path, output_path):
     from pathlib import Path
     from src.schema import normalize_molecules
     df = normalize_molecules(pd.read_csv(input_path))
+    if 'optimized_smiles' not in df or 'protocol_id' not in df or df.protocol_id.nunique() != 1 or df.protocol_id.isna().any():
+        raise ValueError('Descriptors require accepted optimized identities and one verified protocol')
+    if 'accepted' not in df or not df.accepted.eq(True).all():
+        raise ValueError('Unaccepted records cannot become descriptors')
+    df['SMILES'] = df['optimized_smiles']
     features = df["SMILES"].apply(get_all_features).apply(pd.Series)
     if features.empty or "MolWt" not in features or features["MolWt"].isna().any():
         raise ValueError("Invalid or empty molecular dataset")

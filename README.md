@@ -121,3 +121,66 @@ confirmation after model/feature selection.
 
 See [AUDIT.md](AUDIT.md) for priorities, limitations and the remaining improvement plan.
 Historical notebooks are exploratory records, not maintained workflow entry points.
+
+## Organic dataset integrity (updated contract)
+
+This pipeline accepts **neutral, closed-shell organic-dataset opt/freq jobs only**.
+SPE-only calculations are excluded, including normally terminated ones. Arbitrary
+linked jobs and restarts are rejected for manual review; Gaussian's automatic
+opt/freq continuation is recognized. Transition-metal reconstruction is out of scope.
+
+New manifests contain `molecule_id`, `run_id`, `input_smiles`, `input_path` (relative
+to the manifest), `input_sha256`, `protocol_id`, and generation options. Preserve
+these columns and the original GJF files. Results retain both input and optimized
+SMILES, log hashes, optimized XYZ paths, identity decisions and frequencies. CSV
+metadata joins must use `(molecule_id, run_id)` with `validate="one_to_one"`.
+Multiple log attempts with the same basename require selecting the intended run.
+
+The parser reconstructs organic connectivity/bond orders from the final coordinates.
+An unspecified input stereocenter may acquire a specific conformer assignment;
+explicit input stereochemistry must match. Identity changes are review failures,
+not silent relabeling. Descriptors use accepted `optimized_smiles`; XYZ files retain
+3D geometry for future descriptors. Current descriptors remain graph-based.
+
+A common explicit basis replaces molecule-dependent auto selection. Protocol IDs
+include the element-complete BSE basis data and scientific settings; acceptance
+checks input SHA-256, supplied basis primitives, executed route and protocol marker.
+Gaussian version and executed route enter the final protocol identity. Any mixed
+protocols stop the training export. This verifies supplied-input provenance, not an
+independent reconstruction of Gaussian's internal basis implementation. Missing
+provenance is rejected. Legacy logs may be inspected for geometry, but cannot be
+promoted to verified training labels by guessing settings or assigning an arbitrary
+protocol ID. The earlier legacy-name convenience does not waive this requirement.
+
+`accepted_candidates.csv` and `parse_rejections.csv` preserve audit results even
+when a mixed-protocol export is refused. Keep each experiment's logs in its own
+folder. No historical training dataset has been retroactively certified.
+
+### Resume, acquisition and fixed evaluation
+
+```bash
+uv run python main.py --csv molecules.csv --id batch01 --sample 100 --seed 42 --resume
+uv run python -m src.splits data/features.csv data/frozen_batch01
+uv run python -m src.ml_analysis data/frozen_batch01/development.csv --name development --cv
+uv run python -m src.audit_labels old_labels.csv rebuilt_labels.csv label_changes.csv
+```
+
+Resume requires the same settings, validates existing input hashes, and uses atomic
+manifest replacement. Use one writer per experiment. PubChem queries are cached in
+`data/pubchem_cache`; transient failures use bounded exponential retries and terminal
+failures enter `failures.jsonl`. Acquisitions stop visibly after exhausted retries.
+
+The split command never overwrites an existing split directory. By default it groups
+ring molecules by Murcko scaffold and acyclic molecules by generic whole-molecule
+topology; this is a documented heuristic, not a chemical-similarity guarantee.
+`--random` requests a random split instead. Develop only on `development.csv`; keep
+`final_test.csv` untouched. The analysis command still makes an internal holdout. For a frozen random-forest
+choice, run `uv run python -m src.final_evaluate data/frozen_batch01/development.csv
+data/frozen_batch01/final_test.csv results/final_batch01 --features conj --trees 200`
+on one line. It fits on all development rows, refuses molecule/protocol overlap
+errors and existing output directories, and reports the final scores. Do not use
+those scores to choose features or hyperparameters. A fresh split cannot undo prior
+inspection of the dataset. Ridge hyperparameter tuning now fits scaling inside each
+inner validation fold.
+
+Offline tests also run in GitHub Actions. CI does not execute Gaussian or SLURM.
