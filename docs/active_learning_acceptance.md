@@ -267,3 +267,13 @@ it is not embedded recursively into its own commit.
 - `tests/test_al_partitions.py`
 - `tests/test_al_reporting.py`
 - `tests/test_al_state.py`
+
+### Final scalar-contract review
+
+A final strictness check added explicit rejection of boolean multiplicities and
+null basis names, and normalized the RF `max_features` parameter to a fraction even
+when supplied as JSON integer `1`. Defaults and the bounded smoke settings are
+unchanged. The full suite was rerun: **46 tests passed in 20.163 seconds** with
+`uv run python -m unittest discover -s tests -v`. Both GitHub Actions runs for the
+initial implementation commit also passed. These checks add no research runs,
+data downloads or HPC execution.

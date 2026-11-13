@@ -40,6 +40,6 @@ class Contracts(unittest.TestCase):
         with self.assertRaises(ValueError): LabelRecord('x','s','c',1,float('inf'),'publisher_qm9','p')
 
     def test_generation_contract(self):
-        for opts in [{'multiplicity':3}, {'solvent':'water'}, {'basis':'auto'},
+        for opts in [{'multiplicity':True}, {'basis':None}, {'multiplicity':3}, {'solvent':'water'}, {'basis':'auto'},
                      {'method':'b3lyp sp'}, {'charge':1}, {'basis_task':'energy'}]:
             with self.subTest(opts=opts), self.assertRaises(ValueError): protocol(opts)

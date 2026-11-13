@@ -18,7 +18,7 @@ MODEL_VERSION='sklearn_fixed_v1'
 def forest(config, seed, acquisition=False):
     m=config['models']
     return RandomForestRegressor(n_estimators=m['trees'] if acquisition else m['downstream_trees'],
-        max_depth=m['max_depth'],min_samples_leaf=m['min_samples_leaf'],max_features=m['max_features'],
+        max_depth=m['max_depth'],min_samples_leaf=m['min_samples_leaf'],max_features=float(m['max_features']),
         bootstrap=False,random_state=seed,n_jobs=config['resources']['threads'])
 
 

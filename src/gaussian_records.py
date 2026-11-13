@@ -24,7 +24,8 @@ def validate_options(options):
                'multiplicity', 'seed', 'nproc', 'mem', 'protocol_id'}
     if set(options) - allowed:
         raise ValueError('Unsupported scientific/generation options')
-    if options.get('multiplicity', 1) not in (None, 1):
+    multiplicity=options.get('multiplicity',1)
+    if (multiplicity is not None and type(multiplicity) is not int) or multiplicity not in (None,1):
         raise ValueError('Organic dataset requires neutral singlets')
     if options.get('basis_task', 'general') not in ('general', 'geometry'):
         raise ValueError('Only opt/freq geometry tasks are supported')
@@ -44,7 +45,8 @@ def protocol(options):
     import basis_set_exchange as bse
     validate_options(options)
     basis = options.get('basis', 'def2-TZVP')
-    if basis == 'auto' or options.get('diffuse') is not None:
+    if not isinstance(basis,str) or not basis.strip():raise ValueError('Explicit common basis name required')
+    if basis.lower() == 'auto' or options.get('diffuse') is not None:
         raise ValueError('Dataset requires an explicit common basis; no per-molecule auto policy')
     settings = {k: options.get(k, default) for k, default in
                 [('method','b3lyp'), ('dispersion','gd3bj'), ('basis',basis)]}
