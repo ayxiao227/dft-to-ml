@@ -1,108 +1,48 @@
-import pandas as pd
-import regex as re
-import random
-import numpy as np
+"""Validate and sample molecules consistently across ingestion routes."""
 from pathlib import Path
-from src.formula_to_atoms import get_elements_from_smiles as fta
+import pandas as pd
 from rdkit import Chem
-
+from src.schema import normalize_molecules, canonical_smiles
 
 ALLOWED = {"C", "H", "O", "N", "S", "P", "F", "Cl"}
 MAX_HEAVY = 10
 
 
-def sample_valid_molecules(df, n_requested, seed=42, smiles_col="SMILES"):
-    rng = np.random.default_rng(seed)
-    order = rng.permutation(len(df))              # every row exactly once, random order
-
-    kept = []
-    for pos in order:
-        smi = df.iloc[pos][smiles_col]
-        if passes_filters(smi):                   # your filter function from before
-            kept.append(pos)
-            if len(kept) == n_requested:
-                break
-
-    if len(kept) < n_requested:
-        print(f"Warning: only {len(kept)} molecules passed the filters (requested {n_requested})")
-
-    return df.iloc[kept].copy()
 def passes_filters(smi):
-    # 1. Element check (your existing function)
-    elements = fta(smi)
-    if elements is None or not elements.issubset(ALLOWED):
+    if not isinstance(smi, str):
         return False
-
-    # 2. Structure checks
     m = Chem.MolFromSmiles(smi)
-    if m is None:
-        return False
-    if len(Chem.GetMolFrags(m)) != 1:                                # single molecule, no salts/mixtures
-        return False
-    if Chem.GetFormalCharge(m) != 0:                                 # neutral only
-        return False
-    if any(a.GetNumRadicalElectrons() > 0 for a in m.GetAtoms()):    # closed-shell only
-        return False
-    if any(a.GetIsotope() != 0 for a in m.GetAtoms()):               # no isotopically labeled variants
-        return False
-
-    # 3. Size check
-    n_heavy = m.GetNumHeavyAtoms()
-    return 0 < n_heavy <= MAX_HEAVY
-
-def csv_validator(filename, iteration, output, indexes = None):
-    """
-    filename = csv filename of ALL the molecules
-    iteration can be any number, will be appended at the end of the filename
-    output is the name of the output file
-    indexes is a list of row indices to select
-
-    if you want an iteration, make sure to add a _ at the end of output
-    if you don't want an iteration don't add a _ and set iteration to None
-    """
-    df = pd.read_csv(filename)
-    df.columns = df.columns.str.replace('_', '')        # note: renames all columns
-
-    new_df = df.iloc[indexes] if indexes else df
-
-    n_before = len(new_df)
-    valid_df = new_df[new_df["SMILES"].apply(passes_filters)]
-    print(f"Kept {len(valid_df)} of {n_before} molecules")
-
-    # Top up with random valid molecules only when a specific count was requested
-    if indexes:
-        shortfall = len(indexes) - len(valid_df)
-        if shortfall > 0:
-            pool = df.drop(index=new_df.index)           # exclude every row already tried
-            extra = sample_valid_molecules(pool, n_requested=shortfall, seed=43)
-            valid_df = pd.concat([valid_df, extra])
-
-    valid_df = valid_df.drop_duplicates(subset="SMILES")  # no repeats from the top-up
-    out_name = f"{output}{iteration}.csv" if iteration is not None else f"{output}.csv"
+    return bool(m is not None
+        and {a.GetSymbol() for a in m.GetAtoms()}.issubset(ALLOWED)
+        and len(Chem.GetMolFrags(m)) == 1
+        and Chem.GetFormalCharge(m) == 0
+        and not any(a.GetNumRadicalElectrons() or a.GetIsotope() for a in m.GetAtoms())
+        and 0 < m.GetNumHeavyAtoms() <= MAX_HEAVY)
 
 
-    print(valid_df.head())
-    #rename the column names of the valid_df to match the key names in the properties list
-    #from: Compound_CID,IUPAC_Name,SMILES,Heavy_Atom_Count,Molecular_Weight,Molecular_Formula,Charge,Name
-    #to: CID,MolecularFormula,MolecularWeight,ConnectivitySMILES,IUPACName,Charge,HeavyAtomCount
-    valid_df = valid_df.rename(columns={
-        "CompoundCID": "CID",
-        "Molecular_Formula": "MolecularFormula",
-        "SMILES": "ConnectivitySMILES",
-        "Molecular_Weight": "MolecularWeight",
-        "Charge": "Charge",
-        "Heavy_Atom_Count": "HeavyAtomCount",
-        "IUPAC_Name" : "IUPACName"
-    })
-    #CID,MolecularFormula,MolecularWeight,ConnectivitySMILES,IUPACName,Charge,HeavyAtomCount
-    valid_df.to_csv("/home/ayxiao227/dft_ml_project/molecules/csv_files/processed/" + out_name, index=False)
-    print(len(valid_df), "valid molecules saved to " + out_name)
-    return valid_df
+def validated_molecules(df):
+    df = normalize_molecules(df)
+    df = df.loc[df.SMILES.map(passes_filters)].copy()
+    df["SMILES"] = df.SMILES.map(canonical_smiles)
+    return df.drop_duplicates("SMILES").reset_index(drop=True)
 
-# if __name__ == "__main__":
-#     filename = input("Enter the path to the CSV file: ").strip()
-#     print(type(filename))
-#     iteration = 0
-#     output = input("Enter the output file name (without extension): ").strip()
-#     valid_df = csv_validator(filename, iteration, output)
-#     print("Valid molecules saved to " + output + str(iteration) + ".csv")
+
+def sample_valid_molecules(df, n_requested, seed=42, smiles_col="SMILES"):
+    df = validated_molecules(df.rename(columns={smiles_col: "SMILES"}))
+    if not isinstance(n_requested, int) or not 0 < n_requested <= len(df):
+        raise ValueError(f"Requested count must be between 1 and {len(df)}")
+    return df.sample(n=n_requested, random_state=seed).reset_index(drop=True)
+
+
+def csv_validator(filename, iteration=None, output="validated", indexes=None,
+                  output_dir="molecules/csv_files/processed"):
+    df = normalize_molecules(pd.read_csv(filename))
+    if indexes is not None:
+        df = df.iloc[list(indexes)]
+    valid = validated_molecules(df)
+    destination = Path(output_dir)
+    destination.mkdir(parents=True, exist_ok=True)
+    from src.schema import safe_component
+    name = safe_component(f"{output}{iteration if iteration is not None else ''}")
+    valid.to_csv(destination / f"{name}.csv", index=False)
+    return valid

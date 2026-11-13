@@ -12,6 +12,7 @@ for _key in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
 from threadpoolctl import threadpool_limits
 import gc
 import time
+from src.run_metadata import check_molecular_identity, create_run
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -54,8 +55,11 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     # 1. Output directories
     # --------------------------------------------------
 
-    PREDICTION_DIR = "data/model_predictions"
-    FIGURE_DIR = "results/figures"
+    run_dir = create_run(DATA_PATH, CSV_NAME, dict(feature_set=FEATURE_SET,
+        trees=n_estimators, jobs=n_jobs, permutation_repeats=permutation_repeats,
+        permutation_top_k=permutation_top_k, permutation_max_samples=permutation_max_samples))
+    PREDICTION_DIR = str(run_dir / "predictions")
+    FIGURE_DIR = str(run_dir / "figures")
 
     os.makedirs(PREDICTION_DIR, exist_ok=True)
     os.makedirs(FIGURE_DIR, exist_ok=True)
@@ -131,6 +135,7 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     if len(df) < 10:
         raise ValueError("At least 10 complete molecules are required")
 
+    check_molecular_identity(df)
     X = df[FEATURES]
     y = df[TARGET]
 
@@ -150,6 +155,10 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
         random_state=42
     )
 
+    split = df[["SMILES"]].copy()
+    split["partition"] = "train"
+    split.loc[X_test.index, "partition"] = "test"
+    split.to_csv(run_dir / "split.csv", index_label="source_row")
     print(f"Training molecules: {len(X_train)}")
     print(f"Testing molecules:  {len(X_test)}")
 
@@ -324,7 +333,7 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     )
 
     results_df.to_csv(
-        f"results/{CSV_NAME}_model_comparison.csv",
+        str(run_dir / "model_comparison.csv"),
         index=False
     )
 
@@ -357,7 +366,7 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
 
 
     # Include the normalized metric in the saved table as well.
-    results_df.to_csv(f"results/{CSV_NAME}_model_comparison.csv", index=False)
+    results_df.to_csv(str(run_dir / "model_comparison.csv"), index=False)
 
     # --------------------------------------------------
     # 10. Model comparison plot
@@ -676,7 +685,7 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     permutation_df = bounded_permutation_importance(
         rf, X_test, y_test, repeats=permutation_repeats,
         top_k=permutation_top_k, max_samples=permutation_max_samples)
-    permutation_df.to_csv(f"results/{CSV_NAME}_permutation_importance.csv", index=False)
+    permutation_df.to_csv(str(run_dir / "permutation_importance.csv"), index=False)
     if not permutation_df.empty:
         plt.figure(figsize=(8, 7))
         plt.barh(permutation_df["Feature"], permutation_df["Importance"],
@@ -756,11 +765,21 @@ def cv_check(DATA_PATH, TARGET="gap_ev", *, n_splits=5, n_repeats=1,
         if fp:
             sets["conj_fp"] = sets["conj"] + fp
     columns = list(dict.fromkeys(sum(sets.values(), []) + [TARGET]))
+    identities = pd.read_csv(DATA_PATH, usecols=["SMILES"])
+    check_molecular_identity(identities)
     df = pd.read_csv(DATA_PATH, usecols=columns, dtype="float32")
     df = df.replace([np.inf, -np.inf], np.nan).dropna()
     if len(df) < n_splits * 2:
         raise ValueError("Need at least two validation molecules per fold")
     cv = RepeatedKFold(n_splits=n_splits, n_repeats=n_repeats, random_state=42)
+    run_dir = create_run(DATA_PATH, "cv", dict(n_splits=n_splits,
+        n_repeats=n_repeats, trees=n_estimators, jobs=n_jobs, feature_sets=sets))
+    folds = list(cv.split(df))
+    membership = []
+    for fold, (_, validation) in enumerate(folds):
+        membership.extend({"fold": fold, "source_row": int(df.index[i]),
+                           "SMILES": identities.loc[df.index[i], "SMILES"]} for i in validation)
+    pd.DataFrame(membership).to_csv(run_dir / "validation_folds.csv", index=False)
     rows = []
     for set_name, features in sets.items():
         models = {
@@ -772,7 +791,7 @@ def cv_check(DATA_PATH, TARGET="gap_ev", *, n_splits=5, n_repeats=1,
         }
         for name, model in models.items():
             print(f"CV {set_name}: {name}", flush=True)
-            scores = cross_validate(model, df[features], df[TARGET], cv=cv,
+            scores = cross_validate(model, df[features], df[TARGET], cv=folds,
                 scoring={"MAE": "neg_mean_absolute_error", "R2": "r2"},
                 n_jobs=1, pre_dispatch=1, error_score="raise")
             rows.append({"FeatureSet": set_name, "Model": name,
@@ -783,7 +802,7 @@ def cv_check(DATA_PATH, TARGET="gap_ev", *, n_splits=5, n_repeats=1,
         gc.collect()
     result = pd.DataFrame(rows).sort_values(["Model", "FeatureSet"])
     os.makedirs("results", exist_ok=True)
-    result.to_csv("results/cv_check_summary.csv", index=False)
+    result.to_csv(run_dir / "cv_check_summary.csv", index=False)
     return result
 
 

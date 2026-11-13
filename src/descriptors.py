@@ -45,6 +45,8 @@ _gen = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=1024)
 
 def extra_features(smi, include_fp=True):
     m = Chem.MolFromSmiles(smi)
+    if m is None:
+        return {}
     n_bonds = max(m.GetNumBonds(), 1)
     n_conj = sum(b.GetIsConjugated() for b in m.GetBonds())
     feats = {"n_conj_bonds": n_conj, "frac_conj_bonds": n_conj / n_bonds}
@@ -60,20 +62,24 @@ def get_all_features(smi):
     extra = extra_features(smi, include_fp=True)
     return {**desc, **extra}
 
-df = pd.read_csv("data/log_data/data_3.csv")
+def build_descriptors(input_path, output_path):
+    from pathlib import Path
+    from src.schema import normalize_molecules
+    df = normalize_molecules(pd.read_csv(input_path))
+    features = df["SMILES"].apply(get_all_features).apply(pd.Series)
+    if features.empty or "MolWt" not in features or features["MolWt"].isna().any():
+        raise ValueError("Invalid or empty molecular dataset")
+    overlap = set(df.columns) & set(features.columns)
+    df = pd.concat([df.drop(columns=list(overlap)), features], axis=1)
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(output_path, index=False)
+    return df
 
-desc_df = df["SMILES"].apply(get_all_features).apply(pd.Series)
-df = pd.concat([df, desc_df], axis=1)
 
-print(df[["SMILES", "homo_ev", "lumo_ev", "gap_ev"]].head())
-print(desc_df.head())
-
-# Optional: drop rows where SMILES failed to parse
-n_bad = desc_df["MolWt"].isna().sum()
-print(f"{n_bad} invalid SMILES")
-df = df.dropna(subset=["MolWt"])
-
-print(desc_df.head())
-print(len(df))
-
-df.to_csv("data/descriptors/test_3_extra.csv", index=False)
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Build graph-based molecular descriptors")
+    parser.add_argument("input")
+    parser.add_argument("output")
+    args = parser.parse_args()
+    build_descriptors(args.input, args.output)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Extract HOMO/LUMO energies from a Gaussian .log file.
 
-Usage:  python parse_homo_lumo.py file.log
+Usage: python -m src.dft_parser LOGS MANIFEST OUTPUT
 """
 import re
 import sys
@@ -64,77 +64,70 @@ def homo_lumo(block):
     }
 
 
-def parse_log(folder_path, ID, processed_path):
-    # iteration = 0
-    # rows = []
-    # print(folder_path)
-    # folder = Path(folder_path)
-    # for log in sorted(folder.glob("*.log")):
-    #     iteration += 1
-    #     try:
-    #         blocks = parse_orbital_blocks(log)
-    #         if not blocks:
-    #             print(f"Skipping {log.name}: no orbital data")
-    #             continue
-    #         r = homo_lumo(blocks[-1])            # final geometry
-    #         rows.append({"file": log.name, **r})
-    #     except Exception as e:                   # one bad file won't stop the run
-    #         print(f"Failed on {log.name}: {e}")
-    # print(iteration)
-    # df = pd.DataFrame(rows)
-    # # df['SafeName'] = df['file'].apply(lambda x: x.replace(".log", ""))
-    # #match IUPACNames from the processed files after csv conversion and from the Pubchem download
-    # #this way can have the SMILES which is much easier to match than names
-    # raw_df = pd.read_csv(processed_path, usecols = ["IUPACName", "SMILES","Name"])
-    # raw_df["file"] = raw_df["IUPACName"].apply(
-    # lambda x: safe_name(None, x, ID) + ".log")
-    # # print(raw_df.head(5))
-    # print(df.head(5))
-    # print(raw_df.head(5))
-    
-    # df = pd.merge(df, raw_df, how = "inner", on = "file")
-    #     # 1. Merge based on the first column
-    # # merge_col1 = pd.merge(raw_df, df, left_on='IUPACName', right_on='IUPACName', how='inner')
+def validate_log(path, require_minimum=True):
+    """Conservative gate for a single opt/freq Gaussian calculation."""
+    text = Path(path).read_text(errors="replace")
+    if "Error termination" in text or not text.strip() or "Normal termination of Gaussian" not in text.strip().splitlines()[-1]:
+        raise ValueError("Calculation failed or lacks normal termination")
+    if "Optimization completed" not in text:
+        raise ValueError("Optimization completion not found")
+    if require_minimum:
+        frequencies = [float(v) for line in text.splitlines() if "Frequencies --" in line
+                       for v in NUM.findall(line.split("--", 1)[1])]
+        if not frequencies:
+            raise ValueError("No vibrational frequencies; minimum not verified")
+        if any(f < -10.0 for f in frequencies):
+            raise ValueError("Imaginary frequency below -10 cm^-1")
 
-    # # # 2. Merge based on the second column
-    # # merge_col2 = pd.merge(raw_df, df, left_on='Name', right_on='IUPACName', how='inner')
 
-    # # # 3. Combine both results and remove identical rows
-    # # final_df = pd.concat([merge_col1, merge_col2]).drop_duplicates()
-    # # print(final_df.head(5))
-    # # print(len(final_df))
-    # df.to_csv("data/log_data/" + ID + ".csv", index = False)
-
-    # return df
-    folder = Path(folder_path)
-    logs = sorted(folder.glob("*.log"))
-    rows, skipped = [], []
-
-    for log in logs:
+def parse_log(folder_path, ID, processed_path, *, require_minimum=True, legacy_names=False):
+    from src.schema import normalize_molecules
+    raw = normalize_molecules(pd.read_csv(processed_path))
+    if "file" not in raw:
+        if not legacy_names:
+            raise ValueError("Use generated manifest.csv, or explicitly enable legacy_names")
+        raw["file"] = raw["Name"].map(lambda x: safe_name(None, x, ID) + ".log")
+    if raw["file"].duplicated().any():
+        raise ValueError("Ambiguous duplicate filenames in manifest")
+    metadata = raw.set_index("file")
+    rows, rejected, seen = [], [], set()
+    logs = sorted(Path(folder_path).rglob("*.log"))
+    names = [p.name for p in logs]
+    if len(names) != len(set(names)):
+        raise ValueError("Multiple runs for one molecule; select an explicit run directory")
+    for path in logs:
+        seen.add(path.name)
         try:
-            blocks = parse_orbital_blocks(log)
+            if path.name not in metadata.index:
+                raise ValueError("Log has no matching manifest record")
+            validate_log(path, require_minimum)
+            blocks = parse_orbital_blocks(path)
             if not blocks:
-                skipped.append({"file": log.name, "reason": "no orbital data"})
-                continue
-            rows.append({"file": log.name, **homo_lumo(blocks[-1])})
-        except Exception as e:
-            skipped.append({"file": log.name, "reason": f"{type(e).__name__}: {e}"})
+                raise ValueError("No orbital energies")
+            energies = homo_lumo(blocks[-1])
+            if energies["gap_ev"] < 0:
+                raise ValueError("Negative orbital gap requires review")
+            rows.append({**metadata.loc[path.name].to_dict(), "file": path.name,
+                         "log_path": str(path), **energies})
+        except (ValueError, IndexError, KeyError) as exc:
+            rejected.append({"file": path.name, "reason": str(exc)})
+    rejected.extend({"file": name, "reason": "Missing log"} for name in metadata.index if name not in seen)
+    report = Path(folder_path) / "parse_rejections.csv"
+    pd.DataFrame(rejected, columns=["file", "reason"]).to_csv(report, index=False)
+    if not rows:
+        raise ValueError(f"No valid labels; inspect {report}")
+    return pd.DataFrame(rows)
 
-    df = pd.DataFrame(rows)
-    raw_df = pd.read_csv(processed_path, usecols=["IUPACName", "SMILES", "Name"])
-    raw_df["file"] = raw_df["Name"].apply(lambda x: safe_name(None, x, ID) + ".log")
-    raw_df = raw_df.drop_duplicates("file")          # the 1 duplicate key
-
-    df = pd.merge(df, raw_df, how="inner", on="file", validate="one_to_one")
-    print(len(df))   # expect ~670
-    still_unmatched = {l.name for l in logs} - set(raw_df["file"])
-    print(len(still_unmatched), sorted(still_unmatched))
-    
-    return df
-
-def main():
-    df = parse_log("data/log_files", "data_1", "molecules/csv_files/test_1.csv")
-    df.to_csv("data/log_data/data_1.csv")
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("logs")
+    parser.add_argument("manifest")
+    parser.add_argument("output")
+    parser.add_argument("--id", default="legacy")
+    parser.add_argument("--legacy-names", action="store_true")
+    args = parser.parse_args()
+    result = parse_log(args.logs, args.id, args.manifest, legacy_names=args.legacy_names)
+    Path(args.output).parent.mkdir(parents=True, exist_ok=True)
+    result.to_csv(args.output, index=False)
