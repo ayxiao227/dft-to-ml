@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "mode": "prospective",
+  "dataset": "gaussian",
+  "task": "dft_homo_lumo_gap",
+  "units": "eV",
+  "source": {
+    "path": "data/candidates.csv",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "exclusions_path": null,
+    "exclusions_sha256": null,
+    "exclusions_kind": "custom",
+    "official_exclusions_sha256": null
+  },
+  "representation": {
+    "radius": 2,
+    "bits": 2048,
+    "chirality": true,
+    "kind": "bit",
+    "version": "input_2d_v2"
+  },
+  "split": {
+    "mode": "group",
+    "final_fraction": 0.2,
+    "validation_fraction": 0.2,
+    "policy": "murcko_plus_generic_acyclic_v1"
+  },
+  "budgets": {
+    "initial": 200,
+    "batch": 100,
+    "max_labels": 1200,
+    "max_attempts": 1200,
+    "rounds": 10
+  },
+  "repeat_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "models": {
+    "members": 5,
+    "trees": 100,
+    "downstream_trees": 100,
+    "max_depth": 20,
+    "min_samples_leaf": 2,
+    "max_features": 1.0,
+    "ridge_alpha": 1.0
+  },
+  "acquisition": {
+    "strategies": [
+      "random",
+      "diversity",
+      "uncertainty",
+      "uncertainty_diversity"
+    ],
+    "shortlist_cap": 5000,
+    "candidate_cap": null,
+    "chunk_size": 4096
+  },
+  "resources": {
+    "threads": 1,
+    "memory_mb": 2048
+  },
+  "retry": {
+    "max_retries": 0
+  },
+  "target_mae_ev": null,
+  "protocol": {
+    "input_policy_id": "3011bdc1552fe95e74036c691177260fb3c38ac4fed408edcfe01455cc35cc6c",
+    "observed_protocol_id": "cc28037c36a7860d28e5bc52d5deb28259e152e2d37b7e023b34429730f62aef",
+    "expected_revision": "ES64L-G16RevC.01",
+    "options": {
+      "basis": "def2-TZVP",
+      "method": "b3lyp",
+      "dispersion": "gd3bj",
+      "multiplicity": 1,
+      "seed": 42,
+      "nproc": 1,
+      "mem": "2GB"
+    }
+  }
+}

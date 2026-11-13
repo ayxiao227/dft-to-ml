@@ -77,7 +77,8 @@ uv run python -m src.descriptors data/labels.csv data/features.csv
 The parser requires a final normal termination, completed optimization, orbital
 energies, and frequencies without values below -10 cm^-1. It writes
 `parse_rejections.csv` in the log directory, including missing and unmatched logs.
-It fails if no labels pass. This is a conservative **single opt/freq job** policy;
+The standalone parser fails if no labels pass; the prospective AL bridge records
+an all-rejected batch as a valid terminal event. This is a conservative **single opt/freq job** policy;
 monatomic species, other job types and linked/restarted calculations need explicit
 review. Small imaginary modes within the tolerance still merit scientific review.
 
@@ -85,10 +86,10 @@ For historical filenames only, use `--legacy-names --id OLD_ID` with the origina
 metadata. Duplicate filename mappings are errors. This option cannot recover
 molecules lost to historical name collisions. New filenames require manifests.
 
-Graph descriptors are calculated from SMILES, not optimized 3D coordinates. Neither
-the parser nor descriptors verify that the optimized geometry retained its original
-connectivity; this remains a scientific QA step. Do not mix calculation protocols
-without auditing the original logs/input files.
+Legacy graph descriptors use accepted optimized SMILES, not 3D coordinates. The
+parser reconstructs final organic connectivity and checks it against the input,
+including specified stereochemistry. AL uses a separately versioned **input-only**
+feature path; see [active learning](docs/active_learning.md). Do not mix protocols.
 
 ## Evaluate
 
@@ -209,8 +210,8 @@ uv run python -m src.final_evaluate data/qm9/frozen/development.csv data/qm9/fro
 
 Preparation also accepts an already downloaded archive and exclusion list. Output
 directories must be new. It reads archive members without extracting their paths,
-excludes the official 3,054 uncharacterized IDs and the 11 convergence exceptions
-listed in the original README, validates properties and graph/coordinate atom
+excludes IDs parsed from the supplied uncharacterized file and the 11 convergence exceptions
+listed in the original README (the legacy importer does not authenticate the supplied exclusion file), validates properties and graph/coordinate atom
 counts, and excludes repeated canonical structures. Every skipped record appears
 in `rejections.csv`. Consequently this is a filtered benchmark, not an exact
 reproduction of every published QM9 split or sample count.
@@ -290,3 +291,38 @@ uv run python main.py --csv data/gdb13/prepared/candidates.csv --id gdb13_pilot 
 
 Prepare modes require local source files for tmQM/GDB-13. They do not automatically
 download those large collections. The downloader subcommand remains QM9-specific.
+
+
+## Active learning (separate versioned workflow)
+
+See [implementation and reproduction guide](docs/active_learning.md) and
+[gate-by-gate acceptance evidence](docs/active_learning_acceptance.md).
+
+```bash
+# Offline bounded acceptance; choose a new output directory.
+uv run python -m src.active_learning.smoke --output data/al_smoke
+uv run python -m src.active_learning --help
+# Initialize only after replacing template paths/source hashes with verified files.
+uv run python -m src.active_learning init config.json data/experiment
+uv run python -m src.active_learning run data/experiment
+uv run python -m src.active_learning finalize data/experiment
+uv run python -m src.active_learning report data/experiment
+```
+
+The new package adds strict config/provenance, original-input QM9 adaptation, frozen
+four-way random/group partitions, isolated oracles, four paired acquisition strategies,
+shared persisted evaluators, transactional SQLite/resume, and a local prospective
+`select/prepare/ingest/retry` bridge. It never submits jobs or automatically downloads
+data. Prospective validation/final calculations use `__evaluation__` and are separate
+overhead. Reports reload saved predictions, not training code. The AL finalizer loads
+all frozen model checkpoints once; the legacy final evaluator above still refits RF.
+
+Input-policy and observed-protocol IDs are now separate explicit columns; legacy
+`protocol_id` exports remain compatible. v2 input features repair functional-center
+counts while legacy `n_nitroso_noxide` retains frozen historical semantics. Existing
+feature CSVs are not silently reinterpreted or certified. The common registry removes
+duplicated analysis lists, with numeric fingerprint ordering.
+
+The smoke experiment is software validation only. Real QM9 results, live Gaussian/
+SLURM execution, historical-label certification and measured DFT cost savings remain
+external checks. No superiority over random acquisition is assumed or claimed.

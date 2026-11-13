@@ -13,6 +13,7 @@ from threadpoolctl import threadpool_limits
 import gc
 import time
 from src.run_metadata import check_molecular_identity, create_run
+from src.feature_registry import BASE_FEATURES as BASE_FEATURES_GLOBAL, LEGACY_CONJ_FEATURES as CONJ_FEATURES_GLOBAL, fingerprint_columns
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -110,16 +111,9 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     # df = df.dropna(subset=FEATURES + [TARGET])
     TARGET = "gap_ev"
 
-    BASE_FEATURES = [
-        "MolWt", "HeavyAtomCount", "NumC", "NumN", "NumO", "RingCount",
-        "AromaticRingCount", "RotatableBondCount", "HBD", "HBA", "TPSA",
-        "FractionCSP3", "DoubleBondCount", "TripleBondCount",
-    ]
-    CONJ_FEATURES = [
-        "n_conj_bonds", "frac_conj_bonds", "n_carbonyl",
-        "n_conj_carbonyl", "n_conj_diene", "n_nitroso_noxide",
-    ]
-    FP_FEATURES = [c for c in df.columns if c.startswith("morgan_")]
+    BASE_FEATURES = BASE_FEATURES_GLOBAL
+    CONJ_FEATURES = CONJ_FEATURES_GLOBAL
+    FP_FEATURES = fingerprint_columns(df.columns)
 
     FEATURE_SETS = {
         "base": BASE_FEATURES,
@@ -717,17 +711,6 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
 
 
 
-BASE_FEATURES_GLOBAL = [
-    "MolWt", "HeavyAtomCount", "NumC", "NumN", "NumO", "RingCount",
-    "AromaticRingCount", "RotatableBondCount", "HBD", "HBA", "TPSA",
-    "FractionCSP3", "DoubleBondCount", "TripleBondCount",
-]
-CONJ_FEATURES_GLOBAL = [
-    "n_conj_bonds", "frac_conj_bonds", "n_carbonyl", "n_conj_carbonyl",
-    "n_conj_diene", "n_nitroso_noxide",
-]
-
-
 def bounded_permutation_importance(model, X, y, *, repeats, top_k, max_samples):
     columns = ["Feature", "Importance", "Std"]
     if not repeats:
@@ -763,7 +746,7 @@ def cv_check(DATA_PATH, TARGET="gap_ev", *, n_splits=5, n_repeats=1,
     if n_jobs < 1 or n_splits < 2 or n_repeats < 1 or n_estimators < 1:
         raise ValueError("Invalid CV/resource limits")
     header = pd.read_csv(DATA_PATH, nrows=0).columns
-    fp = [c for c in header if c.startswith("morgan_")]
+    fp = fingerprint_columns(header)
     sets = {"base": BASE_FEATURES_GLOBAL}
     if all(c in header for c in CONJ_FEATURES_GLOBAL):
         sets["conj"] = BASE_FEATURES_GLOBAL + CONJ_FEATURES_GLOBAL

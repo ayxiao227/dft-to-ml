@@ -13,6 +13,10 @@ def has_isolated_h(smiles):
 
 def calculate_descriptors(smiles):
     mol = Chem.MolFromSmiles(smiles)
+    return _base_from_mol(mol)
+
+
+def _base_from_mol(mol):
     if mol is None:
         return {}  # becomes NaN row after apply(pd.Series)
 
@@ -88,3 +92,47 @@ if __name__ == "__main__":
     parser.add_argument("output")
     args = parser.parse_args()
     build_descriptors(args.input, args.output)
+
+
+class FeatureError(ValueError):
+    """Input graph or descriptor failure; never a valid all-zero molecule."""
+
+
+def input_features(smiles):
+    """v2 input-only chemistry; parse once. Legacy extra_features stays v1."""
+    import math
+    from src.feature_registry import INPUT_FEATURES
+    mol = Chem.MolFromSmiles(smiles) if isinstance(smiles, str) else None
+    if mol is None or not mol.GetNumAtoms():
+        raise FeatureError('Invalid or empty input graph')
+    values = _base_from_mol(mol)
+    for element in ('S','P','F','Cl'):
+        values['Num'+element] = sum(a.GetSymbol() == element for a in mol.GetAtoms())
+    values['NumH'] = sum(a.GetAtomicNum() == 1 for a in Chem.AddHs(mol).GetAtoms())
+    values['n_conj_bonds'] = sum(b.GetIsConjugated() for b in mol.GetBonds())
+    values['frac_conj_bonds'] = values['n_conj_bonds'] / max(1, mol.GetNumBonds())
+    for name in ('n_carbonyl','n_conj_diene','n_ene_yne'):
+        values[name] = len(mol.GetSubstructMatches(_PATTERNS[name]))
+    nitroso, noxide, azo, conjugated = set(), set(), set(), set()
+    for atom in mol.GetAtoms():
+        if atom.GetAtomicNum() == 7:
+            oxygens = [a for a in atom.GetNeighbors() if a.GetAtomicNum() == 8]
+            if atom.GetFormalCharge() == 0 and len(oxygens) == 1 and mol.GetBondBetweenAtoms(atom.GetIdx(), oxygens[0].GetIdx()).GetBondType() == Chem.BondType.DOUBLE:
+                nitroso.add(atom.GetIdx())
+            if atom.GetFormalCharge() == 1 and any(a.GetFormalCharge() == -1 and mol.GetBondBetweenAtoms(atom.GetIdx(),a.GetIdx()).GetBondType() == Chem.BondType.SINGLE for a in oxygens):
+                if atom.GetIsAromatic() or sum(a.GetAtomicNum() != 8 for a in atom.GetNeighbors()) == 3:
+                    noxide.add(atom.GetIdx())
+        if atom.GetAtomicNum() == 6 and any(b.GetBondType() == Chem.BondType.DOUBLE and b.GetOtherAtom(atom).GetAtomicNum() == 8 for b in atom.GetBonds()):
+            for bond in atom.GetBonds():
+                neighbor = bond.GetOtherAtom(atom)
+                if bond.GetBondType() != Chem.BondType.SINGLE or neighbor.GetAtomicNum() != 6:
+                    continue
+                if neighbor.GetIsAromatic() or any(b.GetOtherAtom(neighbor).GetIdx() != atom.GetIdx() and b.GetBondType() in (Chem.BondType.DOUBLE,Chem.BondType.TRIPLE) and b.GetOtherAtom(neighbor).GetAtomicNum() in (6,7) for b in neighbor.GetBonds()):
+                    conjugated.add(atom.GetIdx())
+    for bond in mol.GetBonds():
+        if bond.GetBondType() == Chem.BondType.DOUBLE and all(a.GetAtomicNum() == 7 and a.GetFormalCharge() == 0 for a in (bond.GetBeginAtom(),bond.GetEndAtom())):
+            azo.add(bond.GetIdx())
+    values.update(n_nitroso=len(nitroso), n_amine_noxide=len(noxide), n_azo=len(azo), n_conj_carbonyl_v2=len(conjugated))
+    if not all(math.isfinite(values[n]) for n in INPUT_FEATURES):
+        raise FeatureError('Nonfinite input descriptors')
+    return {name: values[name] for name in INPUT_FEATURES}, mol

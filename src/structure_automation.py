@@ -326,6 +326,13 @@ def generate_slurm_scripts(df, correction=False, ID=None, son=False,
             raise ValueError('Resume configuration changed')
         if set(old.index) - set(df.SMILES.map(molecule_key)):
             raise ValueError('Resume cannot remove previously requested molecules')
+    # Keep the full prior manifest through interrupted appends.
+    from src.active_learning.artifacts import atomic_write
+    progress = {} if old is None else {k: {**v, 'molecule_id': k} for k, v in old.to_dict('index').items()}
+    if old is not None:
+        original = (gjf_dir / 'manifest.csv').read_bytes()
+        snapshot = gjf_dir / ('manifest.resume.' + digest(original) + '.csv')
+        if not snapshot.exists(): atomic_write(snapshot, original)
     records, seen = [], set()
     for _, row in df.iterrows():
         if not passes_filters(row['SMILES']):
@@ -348,17 +355,20 @@ def generate_slurm_scripts(df, correction=False, ID=None, son=False,
                 create_txt_file(name, txt_dir, ID, son, user, dft_folder, cpus=cpus, memory=f'{int(mem[:-2]) + 2}G')
             records.append({**previous, 'molecule_id':key})
             continue
+        if (gjf_dir / (name + '.gjf')).exists():
+            raise ValueError('Orphan input without verified manifest; review before retry')
         ok = smiles_to_gjf(row["SMILES"], name, charge, correction, ID, gjf_dir, **options)
         records.append({**row.to_dict(), "file": name + ".log", "molecule_key": key,
                         "generated": ok, "options": json.dumps(options, sort_keys=True),
-                        "molecule_id":key, "run_id":ID + '_' + key, "input_smiles":row['SMILES'],
+                        "upstream_molecule_id":row.get("molecule_id", ""),
+                        "source_record_id":row.get("source_record_id", row.get("molecule_id", key)),
+                        "molecule_id":key, "input_protocol_id":options["protocol_id"], "run_id":ID + '_' + key, "input_smiles":row['SMILES'],
                         "input_path":name + '.gjf', "protocol_id":options['protocol_id'],
                         "input_sha256":digest((gjf_dir / (name + '.gjf')).read_bytes()) if ok else ''})
         # Save progress so failed records remain visible rather than disappearing.
         gjf_dir.mkdir(parents=True, exist_ok=True)
-        temporary = gjf_dir / 'manifest.csv.tmp'
-        pd.DataFrame(records).to_csv(temporary, index=False)
-        temporary.replace(gjf_dir / 'manifest.csv')
+        progress[key] = records[-1]
+        atomic_write(gjf_dir / 'manifest.csv', pd.DataFrame(list(progress.values())).to_csv(index=False).encode())
         if ok:
             create_txt_file(name, txt_dir, ID, son, user, dft_folder,
                             cpus=cpus, memory=f"{int(mem[:-2]) + 2}G")
@@ -374,4 +384,6 @@ def generate_slurm_scripts_from_csv(df, correction=False, ID=None, son=False,
         if not 0 < count <= len(df):
             raise ValueError(f"Sample count must be between 1 and {len(df)}")
         df = df.sample(n=count, replace=False, random_state=seed)
-    return generate_slurm_scripts(df, correction, ID, son, user, dft_folder, gjf_options, resume=resume)
+    options = dict(gjf_options or {})
+    options.setdefault('seed', seed)
+    return generate_slurm_scripts(df, correction, ID, son, user, dft_folder, options, resume=resume)

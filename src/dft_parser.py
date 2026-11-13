@@ -4,6 +4,7 @@
 Usage: python -m src.dft_parser LOGS MANIFEST OUTPUT
 """
 import re
+import math
 import sys
 from pathlib import Path
 import pandas as pd
@@ -15,7 +16,15 @@ HARTREE_TO_EV = 27.211386245988
 
 # Gaussian prints fixed-width columns, so negative numbers can run together
 # (e.g. "-19.14435-19.14248"). This regex handles that.
-NUM = re.compile(r"-?\d+\.\d+")
+NUM = re.compile(r"[+-]?(?:(?:\d+(?:\.\d*)?|\.\d+)(?:[EeDd][+-]?\d+)?|nan|inf(?:inity)?)", re.I)
+
+
+def numbers(payload):
+    tokens=NUM.findall(payload)
+    if not tokens or NUM.sub('',payload).strip():raise ValueError('Malformed numeric fields')
+    values=[float(t.replace('D','e').replace('d','e')) for t in tokens]
+    if not all(math.isfinite(v) for v in values):raise ValueError('Nonfinite numeric fields')
+    return values
 
 
 def parse_orbital_blocks(path):
@@ -33,10 +42,11 @@ def parse_orbital_blocks(path):
         for line in f:
             m = re.match(r"\s*(Alpha|Beta)\s+(occ\.|virt\.)\s+eigenvalues --(.*)", line)
             if not m:
+                if re.search(r'\b(?:Alpha|Beta)\s+.*eigenvalues',line):raise ValueError('Malformed orbital channel header')
                 continue
             spin, kind, rest = m.groups()
             key = ("occ" if kind == "occ." else "virt") + ("_beta" if spin == "Beta" else "")
-            vals = [float(x) for x in NUM.findall(rest)]
+            vals = numbers(rest)
 
             # A new block starts when we see Alpha occ. after anything else
             # that isn't Alpha occ. (or at the very start).
@@ -44,18 +54,22 @@ def parse_orbital_blocks(path):
                 current = {"occ": [], "virt": [], "occ_beta": [], "virt_beta": []}
                 blocks.append(current)
             last_kind = f"{spin} {kind}"
+            if current is None:raise ValueError('Orbital block lacks occupied orbitals')
             current[key].extend(vals)
     return blocks
 
 
 def homo_lumo(block):
     """Compute HOMO, LUMO and gap (Hartree and eV) from a block."""
+    if not block['occ'] or not block['virt'] or bool(block['occ_beta']) != bool(block['virt_beta']):
+        raise ValueError('Incomplete orbital block/spin channel')
+    if not all(math.isfinite(v) for values in block.values() for v in values):raise ValueError('Nonfinite orbital block')
     if block["occ_beta"]:  # open-shell: HOMO is the higher of the two spins
         homo = max(block["occ"][-1], block["occ_beta"][-1])
         lumo = min(block["virt"][0], block["virt_beta"][0])
     else:
         homo, lumo = block["occ"][-1], block["virt"][0]
-    return {
+    result = {
         "homo_hartree": homo,
         "lumo_hartree": lumo,
         "gap_hartree": lumo - homo,
@@ -63,6 +77,8 @@ def homo_lumo(block):
         "lumo_ev": lumo * HARTREE_TO_EV,
         "gap_ev": (lumo - homo) * HARTREE_TO_EV,
     }
+    if not all(math.isfinite(v) for v in result.values()):raise ValueError('Nonfinite derived orbital fields')
+    return result
 
 
 def validate_log(path, require_minimum=True):
@@ -73,8 +89,8 @@ def validate_log(path, require_minimum=True):
     if "Optimization completed" not in text:
         raise ValueError("Optimization completion not found")
     if require_minimum:
-        frequencies = [float(v) for line in text.splitlines() if "Frequencies --" in line
-                       for v in NUM.findall(line.split("--", 1)[1])]
+        frequencies = [v for line in text.splitlines() if "Frequencies --" in line
+                       for v in numbers(line.split("--", 1)[1])]
         if not frequencies:
             raise ValueError("No vibrational frequencies; minimum not verified")
         if any(f < -10.0 for f in frequencies):
@@ -122,13 +138,13 @@ def parse_log(folder_path, ID, processed_path, *, require_minimum=True, legacy_n
                          "log_path": str(path), **energies, **details,
                          "xyz_path":str(xyz_path), "accepted":True, "rejection_reason":"",
                          "optimization_converged":True,
-                         "minimum_frequency_cm1":min(float(v) for l in path.read_text().splitlines()
-                         if 'Frequencies --' in l for v in NUM.findall(l.split('--',1)[1]))})
+                         "minimum_frequency_cm1":min(v for l in path.read_text().splitlines()
+                         if 'Frequencies --' in l for v in numbers(l.split('--',1)[1]))})
         except (ValueError, IndexError, KeyError, RuntimeError, OSError) as exc:
             rejected.append({**(metadata.loc[path.name].to_dict() if path.name in metadata.index else {}),
                              "file": path.name, "log_path":str(path), "accepted":False,
                              "rejection_reason":str(exc), "reason": str(exc)})
-    rejected.extend({"file": name, "reason": "Missing log"} for name in metadata.index if name not in seen)
+    rejected.extend({**metadata.loc[name].to_dict(), "file": name, "reason": "Missing log"} for name in metadata.index if name not in seen)
     report = Path(folder_path) / "parse_rejections.csv"
     pd.DataFrame(rejected).to_csv(report, index=False)
     if not rows:
