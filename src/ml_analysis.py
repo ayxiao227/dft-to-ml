@@ -124,6 +124,7 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     FEATURE_SETS = {
         "base": BASE_FEATURES,
         "conj": BASE_FEATURES + CONJ_FEATURES,
+        "metal": BASE_FEATURES + CONJ_FEATURES + ["MetalAtomicNumber", "FormalCharge"],
         "conj_fp": BASE_FEATURES + CONJ_FEATURES + FP_FEATURES,
     }
     if FEATURE_SET not in FEATURE_SETS:
@@ -768,8 +769,10 @@ def cv_check(DATA_PATH, TARGET="gap_ev", *, n_splits=5, n_repeats=1,
         sets["conj"] = BASE_FEATURES_GLOBAL + CONJ_FEATURES_GLOBAL
         if fp:
             sets["conj_fp"] = sets["conj"] + fp
+    if all(c in header for c in CONJ_FEATURES_GLOBAL + ["MetalAtomicNumber", "FormalCharge"]):
+        sets["metal"] = BASE_FEATURES_GLOBAL + CONJ_FEATURES_GLOBAL + ["MetalAtomicNumber", "FormalCharge"]
     columns = list(dict.fromkeys(sum(sets.values(), []) + [TARGET]))
-    identities = pd.read_csv(DATA_PATH, usecols=["SMILES"])
+    identities = pd.read_csv(DATA_PATH, usecols=[c for c in ["SMILES", "protocol_id"] if c in header])
     check_molecular_identity(identities)
     df = pd.read_csv(DATA_PATH, usecols=columns, dtype="float32")
     df = df.replace([np.inf, -np.inf], np.nan).dropna()
@@ -815,7 +818,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("data_path")
     parser.add_argument("--name", default="homo_lumo")
-    parser.add_argument("--feature-set", choices=["base", "conj", "conj_fp"], default="base")
+    parser.add_argument("--feature-set", choices=["base", "conj", "conj_fp", "metal"], default="base")
     parser.add_argument("--trees", type=int, default=200)
     parser.add_argument("--jobs", type=int, default=1)
     parser.add_argument("--permutation-repeats", type=int, default=0)

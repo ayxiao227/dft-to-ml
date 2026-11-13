@@ -22,7 +22,8 @@ def evaluate(development, final, output, features='conj', trees=200):
         raise ValueError('Development and final protocols differ')
     if set(train.SMILES.map(canonical_smiles)) & set(test.SMILES.map(canonical_smiles)):
         raise ValueError('Development/final molecular overlap')
-    columns=BASE_FEATURES_GLOBAL + (CONJ_FEATURES_GLOBAL if features=='conj' else [])
+    columns=BASE_FEATURES_GLOBAL + (CONJ_FEATURES_GLOBAL if features in {'conj','metal'} else [])
+    if features=='metal':columns += ['MetalAtomicNumber','FormalCharge']
     for df in (train,test):
         if not np.isfinite(df[columns+['gap_ev']].to_numpy(dtype=float)).all():
             raise ValueError('Incomplete/nonfinite data')
@@ -47,6 +48,6 @@ def evaluate(development, final, output, features='conj', trees=200):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('development');p.add_argument('final');p.add_argument('output')
-    p.add_argument('--features',choices=['base','conj'],default='conj')
+    p.add_argument('--features',choices=['base','conj','metal'],default='conj')
     p.add_argument('--trees',type=int,default=200)
     a=p.parse_args();evaluate(a.development,a.final,a.output,a.features,a.trees)

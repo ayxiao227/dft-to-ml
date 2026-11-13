@@ -11,6 +11,8 @@ from src.schema import canonical_smiles, safe_component
 
 
 def check_molecular_identity(df):
+    if 'protocol_id' in df and (df.protocol_id.isna().any() or df.protocol_id.nunique() != 1):
+        raise ValueError('Mixed or missing protocols cannot be evaluated together')
     if "SMILES" not in df:
         raise ValueError("Evaluation requires SMILES to audit molecular duplicates")
     keys = df.SMILES.map(canonical_smiles)

@@ -234,3 +234,59 @@ Sources: [original collection](https://figshare.com/collections/978904),
 [uncharacterized list](https://figshare.com/articles/dataset/1057644).
 Cite Ramakrishnan, Dral, Rupp & von Lilienfeld, *Quantum chemistry structures and
 properties of 134 kilo molecules*, Scientific Data 1, 140022 (2014).
+
+## Choose QM9, tmQM, or GDB-13
+
+Use the common entry point `python -m src.datasets`. Existing `src.qm9` commands
+remain available. Each import writes its own directory and source hashes; do not
+pool these datasets under a common protocol.
+
+```bash
+uv run python -m src.datasets qm9 download data/qm9/raw
+uv run python -m src.datasets qm9 prepare data/qm9/raw/dsgdb9nsd.xyz.tar.bz2 data/qm9/raw/uncharacterized.txt data/qm9/prepared_v2 --sample 5000
+
+# Obtain the publisher's 2024 tmQM/tmQM_y.csv, including its SMILES column.
+uv run python -m src.datasets tmqm data/tmqm/tmQM_y.csv data/tmqm/prepared --sample 5000 --units hartree
+uv run python -m src.splits data/tmqm/prepared/features.csv data/tmqm/frozen --random
+uv run python -m src.ml_analysis data/tmqm/frozen/development.csv --name tmqm --feature-set metal
+uv run python -m src.final_evaluate data/tmqm/frozen/development.csv data/tmqm/frozen/final_test.csv results/tmqm_final --features metal
+
+# Supply a plain .smi file or gzip-compressed .smi.gz, not a tar archive.
+uv run python -m src.datasets gdb13 data/gdb13/gdb13.rand1M.smi.gz data/gdb13/prepared --sample 5000
+```
+
+**tmQM:** The [2024 publisher CSV](https://github.com/uiocompcat/tmQM/tree/master/tmQM)
+contains TPSSh-D3BJ/def2-SVP single-point labels on GFN2-xTB geometries. This external
+benchmark is distinct from our organic Gaussian opt/freq calculations: selecting it
+does not relax their SPE prohibition. Use supplied metal-complex SMILES; no metal
+bond inference or organic-only filter is applied. Missing/unparseable graphs,
+duplicate canonical structures and invalid labels enter `rejections.csv`.
+
+`--units hartree` converts published orbital columns to eV; `--units ev` supports an
+explicitly preconverted copy. Units are never inferred from magnitude. This adapter
+targets the 2024 semicolon CSV schema; the 2020 CSV without SMILES is unsupported.
+The `metal` feature set adds metal atomic number and total formal charge to the
+usual graph/conjugation descriptors. This is an exploratory graph baseline; it does
+not resolve the limitations of bond/valence representations for metal complexes.
+Quantum energies, metal natural charge, polarizability and other calculated targets
+are deliberately excluded from the input features. Random splits are the suggested
+starting point; scaffold grouping may not be meaningful for every metal graph.
+
+**GDB-13:** The [publisher downloads](https://gdb.unibe.ch/downloads/) contain molecular
+structures without HOMO/LUMO labels. The adapter therefore exports **candidates.csv**,
+not a supervised training dataset. It streams plain/gzip SMILES without retaining the
+full database, samples valid rows reproducibly and deduplicates the sample. Sampling
+is uniform over valid rows, not over unique structures if the supplied input has
+repeats. Extra columns on a SMILES line are ignored. Unsupported records are logged.
+The default 5,000 sample is bounded in memory; scanning a full GDB-13 file still takes
+time. A publisher-provided million-molecule subset is a practical starting point.
+
+Feed candidates into the existing Gaussian workflow to obtain labels. Its existing
+10-heavy-atom filter still applies, even though GDB-13 itself contains up to 13:
+
+```bash
+uv run python main.py --csv data/gdb13/prepared/candidates.csv --id gdb13_pilot --sample 100
+```
+
+Prepare modes require local source files for tmQM/GDB-13. They do not automatically
+download those large collections. The downloader subcommand remains QM9-specific.
