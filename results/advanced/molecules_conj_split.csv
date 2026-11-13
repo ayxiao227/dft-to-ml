@@ -1,0 +1,2426 @@
+SourceRow,Name,SMILES,Partition
+0,(111C)methanamine,[11CH3]N,train
+1,(111C)propan-2-one,CC(=O)[11CH3],train
+2,"1,1,1,3,3-Pentadeuterio-5-deuteriooxypentan-2-one",[2H]C([2H])([2H])C(=O)C([2H])([2H])CCO[2H],train
+3,"[1,1,1-Trideuterio-2-(trideuteriomethyl)but-3-yn-2-yl] methanesulfonate",[2H]C([2H])([2H])C(C#C)(C([2H])([2H])[2H])OS(=O)(=O)C,train
+4,"1,1,2,3-Tetramethylcyclobutane",CC1CC(C1C)(C)C,train
+5,"1,1,2-Trideuterio-3,3-dimethylbut-1-ene",[2H]C(=C([2H])C(C)(C)C)[2H],train
+6,"1,1,2-Trimethylcyclohexane",CC1CCCCC1(C)C,train
+7,"1,1,2-Trimethylcyclopentane",CC1CCCC1(C)C,train
+8,"1,1,3,3-Tetramethylcyclopentane",CC1(CCC(C1)(C)C)C,train
+9,"1,1,3,3-Tetramethylguanidine",CN(C)C(=N)N(C)C,train
+10,"1,1,3,4-Tetramethylcyclopentane",CC1CC(CC1C)(C)C,train
+11,"1-(1,3-Dioxolan-2-yl)ethanamine",CC(C1OCCO1)N,train
+12,"1-(1,3-dioxolan-4-yl)-N,N-dimethylmethanamine",CN(C)CC1COCO1,train
+13,"1,1,3-Trimethoxypropane",COCCC(OC)OC,train
+14,"1,1,3-Trimethylcyclopentane",CC1CCC(C1)(C)C,train
+15,"1-(1,4-dioxan-2-yl)-N-methylmethanimine",CN=CC1COCCO1,train
+16,"1,1-Dideuteriopropylbenzene",[2H]C([2H])(CC)C1=CC=CC=C1,train
+17,"1,1-Diethylcyclopropane",CCC1(CC1)CC,train
+18,"1,1-Diisocyanoethene",C=C([N+]#[C-])[N+]#[C-],test
+19,"1,1-Dimethanidyl-3,3-di(methyl)cyclobutane",[CH2-]C1(CC(C1)([CH2+])[CH2+])[CH2-],train
+20,"1,1-Dimethoxy-3-methylbuta-1,3-diene",CC(=C)C=C(OC)OC,train
+21,"1,1-dimethoxy-N-methylethanamine",CC(NC)(OC)OC,train
+22,"1,1-Dimethoxyethane",CC(OC)OC,train
+23,"1,1-Dimethoxypropane",CCC(OC)OC,train
+24,"1,1-Dimethyl-2-(3-methylbut-1-en-2-yl)hydrazine",CC(C)C(=C)NN(C)C,train
+25,"1,1-Dimethyl-2-pyrrolidin-3-ylhydrazine",CN(C)NC1CCNC1,test
+26,"1,1-Dimethylhydrazine",CN(C)N,train
+27,"1,1-Dinitroethane",CC([N+](=O)[O-])[N+](=O)[O-],train
+28,"1,1-Dinitropropane",CCC([N+](=O)[O-])[N+](=O)[O-],train
+29,"1,1-Dipropylhydrazine",CCCN(CCC)N,test
+30,1-(1H-imidazol-5-yl)propan-2-one,CC(=O)CC1=CN=CN1,train
+31,1-(1H-pyrazol-5-yl)propan-1-amine,CCC(C1=CC=NN1)N,train
+32,1-(1H-Pyrrol-2-yl)propan-2-one,CC(=O)CC1=CC=CN1,train
+33,1-(1H-pyrrol-3-yl)propan-1-amine,CCC(C1=CNC=C1)N,train
+34,"1-[(1R,3S)-3-methylcyclopentyl]ethanone",C[C@H]1CC[C@H](C1)C(=O)C,train
+35,"1-[(1S,2R)-2-methylcyclopropyl]propan-2-one",C[C@@H]1C[C@H]1CC(=O)C,train
+36,"1-[(1S,4R)-4-hydroxycyclopent-2-en-1-yl]ethanone",CC(=O)[C@H]1C[C@H](C=C1)O,train
+37,"(1,2-13C2)propanoic acid",C[13CH2][13C](=O)O,train
+38,"1-(2,2-Dimethylhydrazinyl)cyclopropan-1-ol",CN(C)NC1(CC1)O,train
+39,"1-(2,2-Dimethylpropyl)-1-methylcyclopropane",CC1(CC1)CC(C)(C)C,train
+40,"1-(2,2-Dimethylpropyl)cyclopropene",CC(C)(C)CC1=CC1,train
+41,"1,2,2-Trimethylcyclopentan-1-ol",CC1(CCCC1(C)O)C,train
+42,"1,2,3,3a,4,6a-Hexahydropentalene",C1CC2CC=CC2C1,train
+43,"1,2,3,4-Tetrahydropyridin-2-amine",C1CC(NC=C1)N,train
+44,"1,2,3,6-Tetrahydropyrazine-2-carboxylic acid",C1C=NCC(N1)C(=O)O,test
+45,"1-(2,3-Dihydro-1,2-oxazol-3-yl)ethanone",CC(=O)C1C=CON1,train
+46,"1,2,3-Triaminoguanidine",C(=NN)(NN)NN,train
+47,"1,2,3-Trimethoxypropane",COCC(COC)OC,train
+48,"1,2,3-Trimethylcyclohexane",CC1CCCC(C1C)C,test
+49,"1,2,3-Trimethylpyrrolidine",CC1CCN(C1C)C,test
+50,"(1,2,4)Triazolo(1,5-a)pyridine",C1=CC2=NC=NN2C=C1,train
+51,"1,2,4-Trimethylbenzene",CC1=CC(=C(C=C1)C)C,test
+52,"1,2,4-Trimethylcyclohexane",CC1CCC(C(C1)C)C,train
+53,"1,2,4-Trimethylpiperazine",CC1CN(CCN1C)C,train
+54,"1,2,4-Trioxolane",C1OCOO1,train
+55,"1,2,5-Triazabicyclo[2.1.0]penta-2,4-diene",C1=NN2C1=N2,train
+56,"1,2,5-Trimethylpyrrole",CC1=CC=C(N1C)C,test
+57,"1-(2-Aminocyclopropyl)ethane-1,2-diol",C1C(C1N)C(CO)O,train
+58,1-(2-Aminoethyl)pyrrolidin-2-one,C1CC(=O)N(C1)CCN,train
+59,1-(2-Azabicyclo[3.1.0]hexan-3-yl)ethanone,CC(=O)C1CC2CC2N1,train
+60,1-(2-Deuterioethynyl)-4-methylbenzene,[2H]C#CC1=CC=C(C=C1)C,train
+61,"1,2-Diazabicyclo[2.2.2]octan-3-one",C1CN2CCC1C(=O)N2,train
+62,"1,2-Diazaspiro[3.5]nonane",C1CCC2(CC1)CNN2,train
+63,"1,2-Diazidoethane",C(CN=[N+]=[N-])N=[N+]=[N-],train
+64,"1,2-Dideuterio-3,3-dimethylbutane",[2H]CC([2H])C(C)(C)C,train
+65,"1,2-Diethylcyclobutane",CCC1CCC1CC,train
+66,"1,2-Diethyldiaziridine",CCN1CN1CC,train
+67,"1,2-Dimethoxyethane",COCCOC,test
+68,"1,2-Dimethoxypropan-1-amine",CC(C(N)OC)OC,train
+69,"1,2-Dimethyl-1-oxidopiperidin-1-ium",CC1CCCC[N+]1(C)[O-],test
+70,"1,2-Dimethylcyclohexane",CC1CCCCC1C,test
+71,"1,2-Dimethylcyclohexene",CC1=C(CCCC1)C,train
+72,"1,2-Dimethylcyclopentene",CC1=C(CCC1)C,train
+73,"1,2-Dimethylcyclopropane",CC1CC1C,test
+74,"1,2-Dimethylpiperidin-4-one",CC1CC(=O)CCN1C,train
+75,"1,2-Dimethylpiperidine",CC1CCCCN1C,train
+76,"1,2-Dimethylpyrrole-3-carbonitrile",CC1=C(C=CN1C)C#N,test
+77,"1,2-Dimethylpyrrolidine",CC1CCCN1C,train
+78,"1,2-Dioxaspiro[2.5]octane",C1CCC2(CC1)OO2,train
+79,1-(2-Ethenylcyclobutyl)ethanol,CC(C1CCC1C=C)O,train
+80,1-(2-Ethoxyethyl)aziridine,CCOCCN1CC1,train
+81,1-(2-Ethyl-3-methyloxiran-2-yl)ethanone,CCC1(C(O1)C)C(=O)C,train
+82,1-(2-Hydroperoxyethyl)imidazole,C1=CN(C=N1)CCOO,train
+83,1-(2-Hydroxyethyl)cyclopent-3-en-1-ol,C1C=CCC1(CCO)O,train
+84,"1-(2-Methoxyethyl)-1,2,4-triazole",COCCN1C=NC=N1,test
+85,1-(2-Methoxyethylamino)ethanol,CC(NCCOC)O,train
+86,1-(2-Methylbutoxy)ethanol,CCC(C)COC(C)O,train
+87,1-(2-Methyloxiran-2-yl)butan-2-one,CCC(=O)CC1(CO1)C,train
+88,"1-[(2R)-3,3-dimethyloxiran-2-yl]ethanone",CC(=O)[C@H]1C(O1)(C)C,train
+89,"1-[(2R,3R)-3-prop-2-enyloxiran-2-yl]ethanol",CC([C@@H]1[C@H](O1)CC=C)O,train
+90,"1-[(2S,3S)-3-methyloxiran-2-yl]ethanol",C[C@H]1[C@@H](O1)C(C)O,train
+91,"1-(3,3-Dimethyloxiran-2-yl)prop-2-en-1-ol",CC1(C(O1)C(C=C)O)C,train
+92,"1,3,4,5-Tetramethyl-1,2,4-triazolidine",CC1NN(C(N1C)C)C,train
+93,"1-(3,4-dihydro-2H-pyrrol-5-yl)propan-2-ol",CC(CC1=NCCC1)O,test
+94,"1,3,4-Oxadiazinan-5-one",C1C(=O)NNCO1,train
+95,"1,3,4-Oxadiazole",C1=NN=CO1,train
+96,"1,3,4-Oxadiazole-2-carboxylic acid",C1=NN=C(O1)C(=O)O,test
+97,"1,3,5-Triazin-2-amine",C1=NC=NC(=N1)N,train
+98,"1,3,5-Triazine-2,4-diamine",C1=NC(=NC(=N1)N)N,train
+99,"1,3,5-Trimethylcyclohexane",CC1CC(CC(C1)C)C,train
+100,"1,3,5-Trimethylcyclopentene",CC1CC(C(=C1)C)C,test
+101,"1,3,5-Trioxane",C1OCOCO1,train
+102,"1,3,5-Trioxepane",C1COCOCO1,train
+103,"1,3,6-Trioxocane",C1COCOCCO1,train
+104,1-(3-Acetyl-2H-azirin-2-yl)ethanone,CC(=O)C1C(=N1)C(=O)C,train
+105,"1,3-Bis(hydroxymethyl)-1-methylurea",CN(CO)C(=O)NCO,train
+106,"1,3-Diaminoimidazolidin-2-one",C1CN(C(=O)N1N)N,train
+107,"1,3-Diaminopropane-1,2-diol",C(C(C(N)O)O)N,train
+108,"1,3-Diazetidin-2-one",C1NC(=O)N1,train
+109,"1,3-Diazetidine",C1NCN1,test
+110,"1,3-Diazinane-5-carboxylic acid",C1C(CNCN1)C(=O)O,train
+111,"1,3-Diethyl-1-methylcyclobutane",CCC1CC(C1)(C)CC,test
+112,"1,3-Diiminopropan-2-one",C(=N)C(=O)C=N,train
+113,"1,3-Dimethoxybutane",CC(CCOC)OC,train
+114,"1,3-Dimethyl-4-methylimino-1,3-diazetidin-2-one",CN=C1N(C(=O)N1C)C,train
+115,"1,3-Dimethylimidazolidine-2,4-dione",CN1CC(=O)N(C1=O)C,train
+116,"1,3-Dimethylpyrrolidine-2,5-dione",CC1CC(=O)N(C1=O)C,train
+117,"1,3-Dioxan-5-ol",C1C(COCO1)O,train
+118,"1,3-Dioxane",C1COCOC1,train
+119,"1,3-Dioxepane",C1CCOCOC1,train
+120,"1,3-Dioxolan-4-yl hydrogen carbonate",C1C(OCO1)OC(=O)O,train
+121,"1,3-Dioxolane",C1COCO1,train
+122,1-(3-Ethenyloxiran-2-yl)ethanol,CC(C1C(O1)C=C)O,train
+123,1-(3-Methylbutoxy)ethanol,CC(C)CCOC(C)O,train
+124,"1,3-Oxazol-2-ylmethanol",C1=COC(=N1)CO,test
+125,"1,4,4-Trimethylazetidine-2,3-dione",CC1(C(=O)C(=O)N1C)C,train
+126,"1,4-Dihydropentalene",C1C=CC2=C1C=CC2,train
+127,"1,4-Dihydropyridin-2-ylmethanol",C1C=CNC(=C1)CO,train
+128,"1,4-Dihydropyridine",C1C=CNC=C1,test
+129,"1,4-Dihydroxy-3-methylpentan-2-one",CC(C(C)O)C(=O)CO,train
+130,"1,4-Dimethylcyclohepta-1,3-diene",CC1=CC=C(CCC1)C,train
+131,"1,4-Dimethylcyclohexane",CC1CCC(CC1)C,train
+132,"1,4-Dimethylpyrazole-3-carbonitrile",CC1=CN(N=C1C#N)C,train
+133,"1,4-Dioxane",C1COCCO1,train
+134,"1,4-Dioxane-2,3-diol",C1COC(C(O1)O)O,test
+135,"1,4-Dioxane-2,6-dione",C1C(=O)OC(=O)CO1,test
+136,1-(4H-imidazol-2-yl)-N-methylmethanamine,CNCC1=NCC=N1,train
+137,"1,5-Diethylcyclopenta-1,3-diene",CCC1C=CC=C1CC,train
+138,"1,5-Dihydropentalene",C1C=C2CC=CC2=C1,train
+139,"1,5-Diisocyanopentane",[C-]#[N+]CCCCC[N+]#[C-],train
+140,"1,5-Dimethyl-1,3,5-triazepane",CN1CCN(CNC1)C,train
+141,"1,5-dimethyl-2H-pyridine",CC1=CN(CC=C1)C,train
+142,"1,5-Dimethylpyrrol-2-ol",CC1=CC=C(N1C)O,train
+143,"1,5-Dimethylpyrrol-3-ol",CC1=CC(=CN1C)O,train
+144,"1,5-Dimethylpyrrole-2-carbonitrile",CC1=CC=C(N1C)C#N,train
+145,"1,5-Dimethylpyrrolidin-2-one",CC1CCC(=O)N1C,train
+146,"1,5-Dimethyltetrazole",CC1=NN=NN1C,train
+147,"1,6-Dihydro-2-benzofuran",C1C=CC2=COCC2=C1,train
+148,"1,6-Dioxaspiro(4.4)nonane",C1CC2(CCCO2)OC1,train
+149,"1,7-Dihydro-1,4-diazepin-2-one",C1C=CN=CC(=O)N1,test
+150,"1,7-Dihydrodiazepin-6-one",C1C(=O)C=CC=NN1,train
+151,"1,7-Dimethylbicyclo[4.1.0]heptane",CC1C2C1(CCCC2)C,train
+152,"1-Amino-1,3-diazinan-2-one",C1CNC(=O)N(C1)N,train
+153,(1-Amino-1-oxopropan-2-yl)carbamic acid,CC(C(=O)N)NC(=O)O,train
+154,1-Amino-3-methoxypropan-2-ol,COCC(CN)O,train
+155,1-Amino-3-(methylamino)propan-2-one,CNCC(=O)CN,train
+156,1-Amino-4-methylpentan-2-one,CC(C)CC(=O)CN,train
+157,1-Amino-6-methylidenepiperidin-2-one,C=C1CCCC(=O)N1N,test
+158,1-Aminocyclopropane-1-carboxylic acid,C1CC1(C(=O)O)N,train
+159,(1-Aminoimidazol-2-yl)methanol,C1=CN(C(=N1)CO)N,train
+160,1-(Aminomethyl)cyclobutan-1-ol,C1CC(C1)(CN)O,train
+161,1-(Aminomethyl)cyclohexan-1-ol,C1CCC(CC1)(CN)O,train
+162,1-Aminooxycyclobutane-1-carboxylic acid,C1CC(C1)(C(=O)O)ON,train
+163,"1-Aminooxypyrrolidine-2,5-dione",C1CC(=O)N(C1=O)ON,test
+164,1-Aminopentan-2-ol,CCCC(CN)O,train
+165,1-Aminopropan-2-one;ethene,CC(=O)CN.C=C,train
+166,1-Aminopropyl prop-2-enoate,CCC(N)OC(=O)C=C,train
+167,"1-Azabicyclo[2.2.0]hexane-2,3,5-trione",C1C(=O)C2N1C(=O)C2=O,train
+168,1-Azabicyclo[2.2.1]heptane-3-carbonitrile,C1CN2CC1C(C2)C#N,test
+169,1-Azabicyclo[3.2.1]octan-3-amine,C1CN2CC1CC(C2)N,train
+170,1-Azabicyclo[3.2.2]non-3-ene,C1CN2CCC1C=CC2,test
+171,1-Azaspiro[4.4]non-7-ene,C1CC2(CC=CC2)NC1,train
+172,1-(Azetidin-1-yl)prop-2-en-1-one,C=CC(=O)N1CCC1,train
+173,1-(Azetidin-2-yl)pyrrole,C1CNC1N2C=CC=C2,test
+174,1-Bicyclo[1.1.1]pentanyl(dideuterio)methanol,[2H]C([2H])(C12CC(C1)C2)O,test
+175,1-Butyl-1-methylhydrazine,CCCCN(C)N,train
+176,"1-Butyl-2,4-dioxabicyclo[1.1.0]butane",CCCCC12C(O1)O2,train
+177,1-Butyl-2-methylcyclopropan-1-ol,CCCCC1(CC1C)O,test
+178,"1-Butyl-3-methylcyclobuta-1,3-diene",CCCCC1=CC(=C1)C,test
+179,1-Butyl-3-methyldiaziridine,CCCCN1C(N1)C,test
+180,1-Butylpyrrole,CCCCN1C=CC=C1,train
+181,1-Butylpyrrolidine,CCCCN1CCCC1,train
+182,1-Cyano-1-(hydroxymethyl)guanidine,C(N(C#N)C(=N)N)O,train
+183,1-Cyano-2-(hydroxymethyl)guanidine,C(N=C(N)NC#N)O,train
+184,1-Cyano-3-ethyl-2-methylguanidine,CCNC(=NC)NC#N,test
+185,1-cyano-N-(2-methoxyethyl)formamide,COCCNC(=O)C#N,train
+186,1-cyano-N-methylcyclopropane-1-carboxamide,CNC(=O)C1(CC1)C#N,train
+187,1-Cyanocyclopropyl acetate,CC(=O)OC1(CC1)C#N,train
+188,1-Cyanoprop-1-enyl acetate,CC=C(C#N)OC(=O)C,test
+189,"1-Cyclopenta-1,3-dien-1-ylethanol",CC(C1=CC=CC1)O,train
+190,"1-Cyclopenta-1,4-dien-1-ylethanone",CC(=O)C1=CCC=C1,train
+191,"1-Cyclopenta-2,4-dien-1-ylpropan-1-ol",CCC(C1C=CC=C1)O,train
+192,"1-Cyclopropyl-2,3-dihydropyrrole",C1CN(C=C1)C2CC2,test
+193,1-Cyclopropyl-2-methylpropan-1-one,CC(C)C(=O)C1CC1,train
+194,1-Cyclopropylethanol,CC(C1CC1)O,train
+195,1-Cyclopropylidene-2-methoxycyclobutane,COC1CCC1=C2CC2,train
+196,1-cyclopropylidene-N-methylmethanimine,CN=C=C1CC1,test
+197,1-Deuteriobutan-2-one,[2H]CC(=O)CC,train
+198,1-Deuteriooct-2-yn-1-ol,[2H]C(C#CCCCCC)O,train
+199,1-Deuteriooctan-1-one,[2H]C(=O)CCCCCCC,test
+200,1-Deuteriooxypropan-2-ol,[2H]OCC(C)O,train
+201,1-Diazenylethyl acetate,CC(N=N)OC(=O)C,train
+202,1-(Dimethylamino)-1-(methylamino)propan-2-ol,CC(C(NC)N(C)C)O,train
+203,1-(Dimethylamino)-3-methoxyurea,CN(C)NC(=O)NOC,train
+204,1-(Dimethylamino)but-3-en-2-ol,CN(C)CC(C=C)O,train
+205,1-(Dimethylamino)pentan-2-ol,CCCC(CN(C)C)O,train
+206,"1-[(E)-but-2-enyl]-1,2,4-triazole",C/C=C/CN1C=NC=N1,train
+207,1-[(E)-but-2-enyl]triazole,C/C=C/CN1C=CN=N1,train
+208,1-[(E)-prop-1-enyl]pyrazole,C/C=C/N1C=CC=N1,test
+209,1-Ethenoxyimidazole,C=CON1C=CN=C1,train
+210,1-(Ethenoxymethoxy)-2-methylpropane,CC(C)COCOC=C,test
+211,1-(Ethenoxymethoxy)butane,CCCCOCOC=C,test
+212,1-ethenyl-2-methyl-2H-pyridine,CC1C=CC=CN1C=C,test
+213,1-Ethenyl-2-methylcyclopentan-1-ol,CC1CCCC1(C=C)O,train
+214,1-Ethenyl-2-methylidenespiro[2.2]pentane,C=CC1C(=C)C12CC2,train
+215,1-Ethenyl-3-methylbenzene,CC1=CC(=CC=C1)C=C,train
+216,"1-Ethenyl-5-methylcyclohexa-1,3-diene",CC1CC(=CC=C1)C=C,train
+217,1-Ethenylimidazolidine,C=CN1CCNC1,train
+218,(1-Ethenyltetrazol-5-yl)hydrazine,C=CN1C(=NN=N1)NN,test
+219,1-Ethoxy-1-methoxyethane,CCOC(C)OC,test
+220,1-Ethoxy-2-methoxyethane,CCOCCOC,test
+221,1-Ethoxy-2-methylpropane,CCOCC(C)C,train
+222,1-ethoxy-2H-pyridine,CCON1CC=CC=C1,train
+223,"1-Ethoxy-3,3-dimethylbutane",CCOCCC(C)(C)C,train
+224,1-Ethoxyaziridine-2-carboxamide,CCON1CC1C(=O)N,train
+225,1-Ethoxyimidazolidin-2-one,CCON1CCNC1=O,train
+226,"1-Ethyl-1,3-dimethylurea",CCN(C)C(=O)NC,train
+227,1-Ethyl-1-methylcyclopentane,CCC1(CCCC1)C,train
+228,1-Ethyl-1-propan-2-ylcyclopropane,CCC1(CC1)C(C)C,train
+229,1-Ethyl-2-methylcyclohexane,CCC1CCCCC1C,test
+230,1-Ethyl-3-(2-hydroxyethyl)urea,CCNC(=O)NCCO,train
+231,"1-Ethyl-3-methyl-1,2,4-triazole",CCN1C=NC(=N1)C,test
+232,1-Ethyl-3-methyldiaziridine,CCN1C(N1)C,train
+233,1-Ethyl-3-methylpiperidine,CCN1CCCC(C1)C,test
+234,1-Ethyl-4-Methylbenzene,CCC1=CC=C(C=C1)C,train
+235,1-Ethyl-4-methylcyclohexane,CCC1CCC(CC1)C,train
+236,"1-ethyl-5,6-dihydro-4H-pyrimidine",CCN1CCCN=C1,train
+237,1-Ethylcyclopentene,CCC1=CCCC1,test
+238,1-Ethylpiperidin-4-one,CCN1CCC(=O)CC1,train
+239,1-Ethylpyrimidin-4-one,CCN1C=CC(=O)N=C1,test
+240,(1-Ethylpyrrolidin-3-yl)methanol,CCN1CCC(C1)CO,test
+241,1-Ethylpyrrolidine,CCN1CCCC1,train
+242,1-Ethyltriazolidine,CCN1CCNN1,train
+243,"1-Ethynoxy-1,2-dimethylcyclopropane",CC1CC1(C)OC#C,train
+244,1-Ethynyl-2-methylcyclopentane,CC1CCCC1C#C,train
+245,1-Ethynylcyclohexene,C#CC1=CCCCC1,train
+246,1-Formyltriazole-4-carbonitrile,C1=C(N=NN1C=O)C#N,test
+247,1-Hydrazinylethanamine,CC(N)NN,test
+248,"1-Hydroperoxy-2,3-dihydropyrrole",C1CN(C=C1)OO,train
+249,1-Hydroperoxy-3-hydroxybutan-2-one,CC(C(=O)COO)O,train
+250,1-Hydroperoxy-4-methylpentan-2-one,CC(C)CC(=O)COO,train
+251,1-Hydroperoxyimidazole,C1=CN(C=N1)OO,test
+252,"1-hydroxy(1,2,3-13C3)propan-2-one",[13CH3][13C](=O)[13CH2]O,test
+253,"1-Hydroxy-1,3-bis(hydroxymethyl)urea",C(NC(=O)N(CO)O)O,train
+254,1-Hydroxy-1-methyl-3-(methylamino)urea,CNNC(=O)N(C)O,test
+255,1-Hydroxy-1-methylurea,CN(C(=O)N)O,train
+256,"1-Hydroxy-2,3-dimethylguanidine",CNC(=NC)NO,train
+257,(1-Hydroxy-2-methylpropan-2-yl)carbamic acid,CC(C)(CO)NC(=O)O,train
+258,"1-Hydroxy-5,5-dimethylpyrrolidin-2-ol",CC1(CCC(N1O)O)C,train
+259,1-Hydroxy-5-methyltriazole,CC1=CN=NN1O,test
+260,1-Hydroxy-5-oxopyrrolidine-2-carbaldehyde,C1CC(=O)N(C1C=O)O,train
+261,1-Hydroxyethyl carbamate,CC(O)OC(=O)N,train
+262,1-Hydroxyethylurea,CC(NC(=O)N)O,train
+263,1-Hydroxyimino-3-methylbutan-2-one,CC(C)C(=O)C=NO,train
+264,1-Hydroxyimino-3-methylpentan-2-one,CCC(C)C(=O)C=NO,train
+265,1-(Hydroxymethyl)-imidazolidin-2-one,C1CN(C(=O)N1)CO,train
+266,1-Iminopent-1-en-3-one,CCC(=O)C=C=N,train
+267,1-Methanidyl-4-methoxypiperidin-1-ium,COC1CC[NH+](CC1)[CH2-],train
+268,1-Methanidylpiperazin-1-ium,[CH2-][NH+]1CCNCC1,train
+269,1-Methoxy-1-(methoxymethyl)cyclopropane,COCC1(CC1)OC,train
+270,"1-Methoxy-2,3,3-trimethylbutane",CC(COC)C(C)(C)C,train
+271,1-Methoxy-2-methylprop-2-en-1-ol,CC(=C)C(O)OC,train
+272,"1-Methoxy 4-methylcyclohexa-1,4-diene",CC1=CCC(=CC1)OC,train
+273,1-Methoxy-4-methylpent-1-yne,CC(C)CC#COC,train
+274,1-methoxy-N-methylpentan-3-amine,CCC(CCOC)NC,train
+275,"1-Methoxybuta-1,3-diene",COC=CC=C,train
+276,"1-Methoxycyclohexa-1,4-diene",COC1=CCC=CC1,train
+277,1-Methoxycyclohexene,COC1=CCCCC1,train
+278,1-Methoxyethenyl methyl carbonate,COC(=C)OC(=O)OC,train
+279,1-Methoxyhept-2-ene,CCCCC=CCOC,test
+280,1-Methoxyhex-2-ene,CCCC=CCOC,train
+281,1-Methoxyhexan-2-one,CCCCC(=O)COC,train
+282,"1-(Methoxymethyl)-1,2-dimethylguanidine",CN=C(N)N(C)COC,test
+283,1-(Methoxymethyl)-2-methylcyclopropane,CC1CC1COC,train
+284,"1-(Methoxymethyl)-3,3-dimethyldiaziridine",CC1(NN1COC)C,train
+285,1-Methoxypiperidin-4-one,CON1CCC(=O)CC1,train
+286,1-Methoxyprop-1-en-2-ylcyclopropane,CC(=COC)C1CC1,train
+287,1-Methoxyprop-2-en-1-ol,COC(C=C)O,train
+288,1-Methoxypropan-2-yl hydrogen carbonate,CC(COC)OC(=O)O,train
+289,1-Methyl-1-(2-methylpropyl)urea,CC(C)CN(C)C(=O)N,test
+290,1-Methyl-1-(2-oxoethyl)guanidine,CN(CC=O)C(=N)N,test
+291,"1-Methyl-1,3,5,7-tetrazocane",CN1CNCNCNC1,test
+292,1-Methyl-1-pent-1-en-2-ylcyclopropane,CCCC(=C)C1(CC1)C,train
+293,1-methyl-2H-azepin-3-one,CN1CC(=O)C=CC=C1,train
+294,"1-methyl-3,6-dihydro-2H-azepin-7-one",CN1CCC=CCC1=O,train
+295,1-Methyl-3-azabicyclo[3.2.0]heptan-6-amine,CC12CC(C1CNC2)N,train
+296,1-Methyl-3-methylidenecycloheptane,CC1CCCCC(=C)C1,test
+297,"1-Methyl-3-nitro-1,2,4-triazole",CN1C=NC(=N1)[N+](=O)[O-],train
+298,1-Methyl-3-prop-2-ynylpyrrole,CN1C=CC(=C1)CC#C,test
+299,1-methyl-3H-azepin-2-one,CN1C=CC=CCC1=O,test
+300,1-Methyl-4-nitroimidazole,CN1C=C(N=C1)[N+](=O)[O-],train
+301,1-Methyl-4-nitrosobenzene,CC1=CC=C(C=C1)N=O,train
+302,1-Methyl-4-nitrosopiperazine,CN1CCN(CC1)N=O,train
+303,1-Methyl-4-prop-1-en-2-ylcyclopentene,CC1=CCC(C1)C(=C)C,test
+304,"1-methyl-5-methylidene-3,4-dihydro-2H-azepine",CN1CCCC(=C)C=C1,train
+305,1-Methyl-7-oxabicyclo[4.1.0]heptan-2-ol,CC12C(CCCC1O2)O,train
+306,1-(Methylamino)but-3-en-2-ol,CNCC(C=C)O,train
+307,1-(Methylamino)but-3-yn-2-ol,CNCC(C#C)O,test
+308,1-(Methylamino)cyclopropane-1-carboxylic acid,CNC1(CC1)C(=O)O,train
+309,1-(Methylamino)propan-2-ol,CC(CNC)O,train
+310,1-Methylazepan-4-ol,CN1CCCC(CC1)O,train
+311,1-Methylaziridine,CN1CC1,train
+312,"1-Methylcyclohepta-1,3,5-triene",CC1=CC=CC=CC1,train
+313,1-Methylcycloheptene,CC1=CCCCCC1,train
+314,1-Methylcyclohex-3-en-1-ol,CC1(CCC=CC1)O,train
+315,"(1-Methylcyclohexa-2,5-dien-1-yl)methanol",CC1(C=CCC=C1)CO,train
+316,1-Methylcyclohexene,CC1=CCCCC1,train
+317,1-Methylcyclopentene,CC1=CCCC1,train
+318,(1-Methylcycloprop-2-en-1-yl)methanol,CC1(C=C1)CO,train
+319,1-Methyldiazepan-3-one,CN1CCCCC(=O)N1,train
+320,1-Methylidene-2-(2-methylprop-2-enyl)cyclopropane,CC(=C)CC1CC1=C,train
+321,1-Methylimidazole,CN1C=CN=C1,test
+322,"1-Methylimidazolidine-2,4,5-trione",CN1C(=O)C(=O)NC1=O,train
+323,1-Methylpiperidine-4-carbonitrile,CN1CCC(CC1)C#N,train
+324,1-Methylpyrrolidin-2-ol,CN1CCCC1O,test
+325,1-Methylpyrrolidine,CN1CCCC1,train
+326,1-Morpholin-3-ylethanamine,CC(C1COCCN1)N,train
+327,"1-N,1-N,1-N',1-N'-tetramethylprop-2-yne-1,1-diamine",CN(C)C(C#C)N(C)C,train
+328,"1-N',1-N',2-trimethylprop-1-ene-1,1-diamine",CC(=C(N)N(C)C)C,train
+329,"1-N,1-N-dihydroxybutane-1,2-diamine",CCC(CN(O)O)N,train
+330,"1-N,1-N'-dimethylcyclobutane-1,1-diamine",CNC1(CCC1)NC,train
+331,"1-N"",1-N""-dimethylpropane-1,1,1-triamine",CCC(N)(N)N(C)C,train
+332,"1-N,2-N,3-trimethylcyclopropane-1,2-diamine",CC1C(C1NC)NC,test
+333,"1-N,2-N-dimethylcyclobutane-1,2-diamine",CNC1CCC1NC,train
+334,"1-N'-(oxolan-3-yl)ethane-1,1-diamine",CC(N)NC1CCOC1,train
+335,1-Nitrobutan-2-amine,CCC(C[N+](=O)[O-])N,train
+336,1-Nitrobutan-2-ol,CCC(C[N+](=O)[O-])O,train
+337,1-Nitrocyclohexene,C1CCC(=CC1)[N+](=O)[O-],train
+338,1-Nitrohexane,CCCCCC[N+](=O)[O-],train
+339,1-Nitropropan-2-ol,CC(C[N+](=O)[O-])O,train
+340,1-Nitropyrrolidine,C1CCN(C1)[N+](=O)[O-],test
+341,1-Oxa-7-azaspiro(4.4)nonane,C1CC2(CCNC2)OC1,train
+342,1-Oxaspiro[2.5]octan-4-one,C1CCC2(CO2)C(=O)C1,test
+343,1-Oxaspiro[2.5]octane,C1CCC2(CC1)CO2,train
+344,"1-oxido-2,2-bis(trideuteriomethyl)-(115N)3,4-dihydropyrrol-1-ium",[2H]C([2H])([2H])C1(CCC=[15N+]1[O-])C([2H])([2H])[2H],train
+345,"1-(Oxiran-2-yl)butane-1,4-diol",C1C(O1)C(CCCO)O,train
+346,1-Phenylaziridine,C1CN1C2=CC=CC=C2,train
+347,1-Prop-1-en-2-ylcyclopentene,CC(=C)C1=CCCC1,train
+348,1-(Prop-2-ynoxymethoxy)propane,CCCOCOCC#C,train
+349,1-Prop-2-ynylcyclohexene,C#CCC1=CCCCC1,train
+350,1-Propan-2-ylcyclopropane-1-carbonitrile,CC(C)C1(CC1)C#N,test
+351,1-Propan-2-yloxyaziridine-2-carbonitrile,CC(C)ON1CC1C#N,train
+352,1-Propan-2-yloxybutan-2-amine,CCC(COC(C)C)N,train
+353,1-Propan-2-yloxyethenol,CC(C)OC(=C)O,test
+354,1-Propan-2-yloxyprop-1-yne,CC#COC(C)C,test
+355,1-Propylpyrazolidine,CCCN1CCCN1,train
+356,1-Tert-butylpyrrolidine,CC(C)(C)N1CCCC1,train
+357,1-(Trioxidanyl)cyclohexene,C1CCC(=CC1)OOO,train
+358,1-[(Z)-1-methoxyprop-1-enyl]-1-methylhydrazine,C/C=C(/N(C)N)\OC,train
+359,1-[(Z)-but-1-en-3-ynyl]pyrrolidine,C#C/C=C\N1CCCC1,train
+360,1-[(Z)-but-2-en-2-yl]oxybutane,CCCCO/C(=C\C)/C,train
+361,(1E)-1-ethylidene-2-methylcyclopropane,C/C=C/1\CC1C,test
+362,(1E)-1-ethylidene-2-methylidenecyclohexane,C/C=C/1\CCCCC1=C,train
+363,"[(1E)-3-methylbuta-1,3-dienyl] acetate",CC(=C)/C=C/OC(=O)C,train
+364,"[(1E)-3-methylbuta-1,3-dienyl]cyclopropane",CC(=C)/C=C/C1CC1,train
+365,"(1E,3E)-N,N-dimethylhexa-1,3,5-trien-1-amine",CN(C)/C=C/C=C/C=C,train
+366,"(1E,3Z,5Z)-cycloocta-1,3,5-trien-1-ol",C/1C/C(=C\C=C/C=C1)/O,train
+367,"(1E,5E)-hexa-1,5-diene-1,6-diol",C(/C=C/O)C/C=C/O,test
+368,1H-imidazole-2-carbaldehyde,C1=CN=C(N1)C=O,test
+369,1H-isoindole,C1C2=CC=CC=C2C=N1,train
+370,1H-pyrazole-4-carbohydrazide,C1=C(C=NN1)C(=O)NN,train
+371,"1H-Pyrazolo(3,4-d)pyrimidine",C1=C2C=NNC2=NC=N1,train
+372,"[(1R)-1-(1,2,3-triaza-4-azanidacyclopenta-2,5-dien-5-yl)ethyl]azanium",C[C@H](C1=NN=N[N-]1)[NH3+],train
+373,[(1R)-1-cyclopropylethyl]urea,C[C@H](C1CC1)NC(=O)N,train
+374,(1R)-1-deuterio-2-(3-methylimidazol-4-yl)ethanamine,[H][C@@]([2H])(CC1=CN=CN1C)N,train
+375,(1R)-1-methoxy-2-methylpropan-1-amine,CC(C)[C@H](N)OC,train
+376,(1R)-2-azabicyclo[2.2.1]hept-5-en-3-one,C1[C@@H]2C=CC1C(=O)N2,train
+377,"[(1R,2R)-2-methylcyclopropyl]methanol",C[C@@H]1C[C@H]1CO,train
+378,"(1R,2R,3R)-3-methylcyclohexane-1,2-diol",C[C@@H]1CCC[C@H]([C@@H]1O)O,train
+379,"(1R,2R,3R,4R)-cyclopentane-1,2,3,4-tetrol",C1[C@H]([C@H]([C@@H]([C@@H]1O)O)O)O,train
+380,"(1R,2R,3S)-3-Aminocyclohexane-1,2-diol",C1C[C@@H]([C@H]([C@@H](C1)O)O)N,train
+381,"(1R,2R,4R)-2,4-dimethylcyclohexan-1-ol",C[C@@H]1CC[C@H]([C@@H](C1)C)O,train
+382,"(1R,2R,4S)-2-methoxybicyclo[2.2.1]heptane",CO[C@@H]1C[C@H]2CC[C@@H]1C2,train
+383,"(1R,2R,4S,6S)-tricyclo[4.2.1.02,4]nonane",C1C[C@@H]2C[C@H]1C[C@@H]3[C@H]2C3,test
+384,"(1R,2R,5R)-2-methylbicyclo[3.2.0]hept-3-en-2-ol",C[C@]1(C=C[C@@H]2[C@H]1CC2)O,train
+385,"(1R,2R,5S)-4-oxo-3-azabicyclo[3.1.0]hexane-2-carbonitrile",C1[C@@H]2[C@H]1C(=O)N[C@H]2C#N,train
+386,"(1R,2R)-cyclohex-4-ene-1,2-diol",C1C=CC[C@H]([C@@H]1O)O,train
+387,"(1R,2S,4S)-2-methyl-3-methylidenebicyclo[2.2.1]heptane",C[C@H]1[C@@H]2CC[C@@H](C2)C1=C,test
+388,"(1R,2S)-cyclohepta-3,5-diene-1,2-diol",C1C=CC=C[C@@H]([C@@H]1O)O,train
+389,"(1R,2Z,8S)-9-oxabicyclo[6.1.0]non-2-ene",C1CC[C@H]2[C@H](O2)/C=C\C1,train
+390,"(1R,3aR,6aR)-1-deuterio-4,5,6,6a-tetrahydro-3aH-pentalen-1-ol",[2H][C@]1(C=C[C@@H]2[C@H]1CCC2)O,train
+391,"(1R,4R,5R)-2-methylidenebicyclo[2.1.1]hexane-5-carbonitrile",C=C1C[C@H]2C[C@@H]1[C@@H]2C#N,train
+392,"(1R,4R,5R)-5-methylbicyclo[2.2.1]hept-2-ene",C[C@@H]1C[C@@H]2C[C@H]1C=C2,train
+393,"(1R,4S)-2,3-diazabicyclo[2.2.1]hept-2-ene",C1C[C@H]2C[C@@H]1N=N2,train
+394,"(1R,5R)-1-amino-3-oxabicyclo[3.1.0]hexan-2-one",C1[C@@H]2[C@]1(C(=O)OC2)N,train
+395,"(1R,5R)-6,8-dioxabicyclo[3.2.1]octan-2-one",C1CC(=O)[C@H]2CO[C@@H]1O2,train
+396,"(1R,5R)-6-oxabicyclo[3.2.1]oct-3-en-7-one",C1C=C[C@H]2C[C@@H]1C(=O)O2,train
+397,"(1R,5R)-7,7-dideuteriobicyclo[3.2.0]heptan-2-one",[2H]C1(C[C@H]2[C@@H]1C(=O)CC2)[2H],train
+398,"(1R,5R)-bicyclo[3.2.1]octan-2-one",C1C[C@@H]2C[C@H]1CCC2=O,train
+399,"(1R,5S)-bicyclo[3.2.0]heptane",C1C[C@@H]2CC[C@@H]2C1,train
+400,"(1R,6S,7R)-bicyclo[4.2.0]oct-2-en-7-ol",C1C[C@H]2[C@H](C[C@H]2O)C=C1,train
+401,"(1R,6S,8R)-8-deuteriobicyclo[4.2.0]oct-2-ene",[H][C@]1(C[C@H]2[C@@H]1C=CCC2)[2H],train
+402,"(1R,6S)-9-oxa-3-azabicyclo[4.2.1]nonane",C1C[C@@H]2CNCC[C@H]1O2,test
+403,"(1R,6S)-bicyclo[4.1.0]heptan-2-ol",C1C[C@H]2C[C@H]2C(C1)O,train
+404,(1R)-cyclohex-2-ene-1-carbonitrile,C1CC=C[C@@H](C1)C#N,train
+405,"(1S)-1-(1,2,4-oxadiazol-5-yl)ethanamine",C[C@@H](C1=NC=NO1)N,train
+406,(1S)-1-[(3R)-1-methylpyrrolidin-3-yl]ethanol,C[C@@H]([C@@H]1CCN(C1)C)O,test
+407,"(1S)-1-(5-methyl-1,3,4-oxadiazol-2-yl)ethanamine",CC1=NN=C(O1)[C@H](C)N,test
+408,(1S)-1-(oxiran-2-yl)butan-1-ol,CCC[C@@H](C1CO1)O,test
+409,"[(1S)-2,2-diethylcyclopropyl]methanamine",CCC1(C[C@@H]1CN)CC,train
+410,"[(1S,2R)-2-[(dimethylamino)methyl]cyclopropyl]methanol",CN(C)C[C@@H]1C[C@@H]1CO,test
+411,"(1S,2R,4S)-2-methylbicyclo[2.2.1]heptane",C[C@@H]1C[C@@H]2CC[C@H]1C2,train
+412,"[(1S,2S)-2-methylcyclopropyl]methylhydrazine",C[C@H]1C[C@@H]1CNN,train
+413,"(1S,2S,4R)-4-methylcyclohexane-1,2-diol",C[C@@H]1CC[C@@H]([C@H](C1)O)O,train
+414,"(1S,2S,4R)-7-methyl-7-azabicyclo[2.2.1]heptan-2-ol",CN1[C@@H]2CC[C@H]1[C@H](C2)O,test
+415,"(1S,2S,4S,7S)-3,8-dioxatricyclo[5.1.0.02,4]oct-5-ene",C1=C[C@H]2[C@H](O2)[C@@H]3[C@H]1O3,train
+416,"(1S,2S,5S)-5-methylbicyclo[3.2.0]heptan-2-ol",C[C@@]12CC[C@@H]1[C@H](CC2)O,test
+417,"[(1S,3R)-3-methylcyclohexyl]hydrazine",C[C@@H]1CCC[C@@H](C1)NN,train
+418,"(1S,3R,6R)-tricyclo[4.2.0.01,3]oct-4-en-8-one",C1[C@@H]2C=C[C@@H]3[C@]2(C3)C1=O,train
+419,"(1S,3S,5S)-3-methyl-2-oxabicyclo[3.2.0]heptan-7-one",C[C@H]1C[C@H]2CC(=O)[C@H]2O1,train
+420,(1S)-4-methylcyclohex-3-en-1-ol,CC1=CC[C@H](CC1)O,test
+421,"(1S,4R)-2-azabicyclo[2.2.0]hex-5-en-3-one",C1=C[C@H]2[C@@H]1C(=O)N2,train
+422,"(1S,4R,5R)-4-methyl-3-oxabicyclo[3.2.0]heptan-2-one",C[C@@H]1[C@@H]2CC[C@@H]2C(=O)O1,test
+423,"(1S,4S,5S)-4-hydroxy-6-oxabicyclo[3.1.0]hexan-2-one",C1[C@@H]([C@H]2[C@@H](C1=O)O2)O,train
+424,"(1S,5R)-2,6-diazabicyclo[3.2.0]heptan-7-one",C1CN[C@H]2[C@@H]1NC2=O,train
+425,"(1S,5R)-3-deuterio-5-methylcyclohex-2-en-1-ol",[2H]C1=C[C@H](C[C@@H](C1)C)O,train
+426,"(1S,5R)-5-(hydroxymethyl)-5-methylcyclopent-2-en-1-ol",C[C@@]1(CC=C[C@@H]1O)CO,test
+427,"(1S,5R)-6,6-dimethylbicyclo[3.1.0]hexan-2-one",CC1([C@H]2[C@@H]1C(=O)CC2)C,train
+428,"[(1S,5R)-6-methyl-6-bicyclo[3.1.0]hexanyl]methanol",CC1([C@H]2[C@@H]1CCC2)CO,train
+429,"(1S,5R,6R)-4-methylbicyclo[3.2.0]hept-3-en-6-ol",CC1=CC[C@@H]2[C@H]1[C@@H](C2)O,train
+430,"[(1S,5R,6R)-6-bicyclo[3.1.0]hex-2-enyl]methanol",C1C=C[C@H]2[C@@H]1[C@H]2CO,test
+431,"(1S,5R,6S)-bicyclo[3.2.1]octan-6-ol",C1C[C@H]2C[C@@H](C1)[C@H](C2)O,train
+432,"(1S,5S)-5-methyl-6-oxabicyclo[3.1.0]hexan-2-one",C[C@]12CCC(=O)[C@H]1O2,test
+433,"(1S,5S,6R)-6-methylbicyclo[3.2.1]octane",C[C@@H]1C[C@@H]2CCC[C@H]1C2,test
+434,"(1S,6R)-bicyclo[4.2.0]oct-2-en-7-one",C1C[C@@H]2[C@@H](CC2=O)C=C1,train
+435,"(1S,6S)-bicyclo[4.2.0]octane",C1CC[C@H]2CC[C@@H]2C1,test
+436,"(1Z)-1,2-dideuteriocyclooctene",[2H]/C/1=C(/CCCCCC1)\[2H],train
+437,(1Z)-1-hydroxyiminobutan-2-one,CCC(=O)/C=N\O,train
+438,(1Z)-1-hydroxyiminopentan-2-one,CCCC(=O)/C=N\O,test
+439,(214C)pyridine-3-carboxylic acid,C1=CC(=[14CH]N=C1)[14C](=O)O,train
+440,2-(113C)methyl(13C)aniline,[13CH3]C1=CC=CC=C1N,test
+441,"2-(1,3,5-Triazin-2-yl)ethanol",C1=NC=NC(=N1)CCO,train
+442,"2-(1,3-Dioxan-2-yl)ethanol",C1COC(OC1)CCO,train
+443,2-(1-Aminobutylamino)ethanol,CCCC(N)NCCO,test
+444,2-(1-Aminocyclopropyl)ethanol,C1CC1(CCO)N,train
+445,2-(1-Formylcyclopropyl)propanenitrile,CC(C#N)C1(CC1)C=O,test
+446,2-(1-Hydroxyethylamino)propan-2-ol,CC(NC(C)(C)O)O,train
+447,2-(1H-Imidazol-2-YL)acetaldehyde,C1=CN=C(N1)CC=O,train
+448,2-[(1R)-2-methylidenecyclopropyl]acetamide,C=C1C[C@@H]1CC(=O)N,train
+449,"2-(2,2,3,3,4,4,4-Heptadeuteriobutoxy)ethanol",[2H]C([2H])([2H])C([2H])([2H])C([2H])([2H])COCCO,train
+450,"2-(2,2-Dimethylpropyl)-2-methyloxirane",CC1(CO1)CC(C)(C)C,test
+451,2-[2-(2-Methylpropyl)hydrazinyl]ethanol,CC(C)CNNCCO,train
+452,2-[2-(2-Methylpropylidene)hydrazinyl]ethanol,CC(C)C=NNCCO,train
+453,"2,2,3,3-Tetradeuterio-4-methoxy-4-oxobutanoic acid",[2H]C([2H])(C(=O)O)C([2H])([2H])C(=O)OC,train
+454,"2,2,3,3-Tetramethylpentane",CCC(C)(C)C(C)(C)C,train
+455,"2,2,3,4-Tetramethylpentane",CC(C)C(C)C(C)(C)C,train
+456,"2-(2,3-Dimethylbut-2-enyl)oxirane",CC(=C(C)CC1CO1)C,train
+457,"2,2,3-Triaminopropan-1-ol",C(C(CO)(N)N)N,test
+458,"2,2,3-Trideuterio-3-(1,2,2-trideuterioethenyl)oxirane",[2H]C(=C([2H])C1(C(O1)([2H])[2H])[2H])[2H],train
+459,"2,2,3-Triethyloxirane",CCC1C(O1)(CC)CC,train
+460,"2,2,3-Trimethylcyclobutan-1-one",CC1CC(=O)C1(C)C,train
+461,"2,2,3-Trimethylhexane",CCCC(C)C(C)(C)C,test
+462,"2,2,3-Trimethylpentane",CCC(C)C(C)(C)C,train
+463,"2,2,4,4-Tetramethylpentane",CC(C)(C)CC(C)(C)C,test
+464,"2,2,4-Trimethylhexane",CCC(C)CC(C)(C)C,test
+465,"2,2,4-Trimethylpentane",CC(C)CC(C)(C)C,train
+466,"2,2,5,5-Tetradeuteriocyclohexane-1-carbonitrile",[2H]C1(CCC(C(C1)C#N)([2H])[2H])[2H],train
+467,"2,2,5,5-Tetramethylpyrrolidine",CC1(CCC(N1)(C)C)C,train
+468,"2,2,5-Trideuterio-5-propylcyclopentan-1-one",[2H]C1(CCC(C1=O)([2H])CCC)[2H],train
+469,"2,2,5-trimethyl-4H-1,3-dioxine",CC1=COC(OC1)(C)C,train
+470,2-(2-Amino-2-hydroxyethenoxy)acetic acid,C(C(=O)O)OC=C(N)O,train
+471,2-(2-Aminoaziridin-1-yl)ethanol,C1C(N1CCO)N,test
+472,2-(2-Aminopropoxy)propan-1-ol,CC(CO)OCC(C)N,test
+473,"2,2-Bis(aminomethyl)propane-1,3-diol",C(C(CN)(CO)CO)N,train
+474,"2,2-Bis(methylideneamino)propane-1,3-diamine",C=NC(CN)(CN)N=C,train
+475,"2,2-Bis(prop-2-ynyl)oxirane",C#CCC1(CO1)CC#C,train
+476,"2,2-Dideuterio-2-phenylethanol",[2H]C([2H])(CO)C1=CC=CC=C1,train
+477,"2,2-Dideuteriobut-3-en-1-ol",[2H]C([2H])(CO)C=C,train
+478,"2,2-Diethoxyethanol",CCOC(CO)OCC,test
+479,"2,2-Dihydroperoxybutane",CCC(C)(OO)OO,test
+480,"2,2-Dihydroxy-3-oxobutanoic acid",CC(=O)C(C(=O)O)(O)O,test
+481,"2,2-Dimethyl-1,3-dioxane",CC1(OCCCO1)C,train
+482,"2,2-Dimethyl-1,3-dioxolane",CC1(OCCO1)C,test
+483,"2,2-Dimethyl-1-prop-2-ynoxypropane",CC(C)(C)COCC#C,train
+484,"2,2-Dimethyl-3,4,5,6-tetrahydroazepine",CC1(CCCCC=N1)C,train
+485,"2,2-Dimethyl-4-methylidenecyclobutane-1,3-dione",CC1(C(=O)C(=C)C1=O)C,test
+486,"2,2-Dimethyl-4-oxopentanal",CC(=O)CC(C)(C)C=O,test
+487,"2,2-dimethyl-N-propan-2-ylcyclopropan-1-amine",CC(C)NC1CC1(C)C,train
+488,2-(2-(Dimethylamino)ethoxy)ethanol,CN(C)CCOCCO,train
+489,"2,2-Dimethylcyclobutane-1-carbaldehyde",CC1(CCC1C=O)C,train
+490,"2,2-Dimethylheptane",CCCCCC(C)(C)C,train
+491,"2,2-Dimethylhexan-3-ol",CCCC(C(C)(C)C)O,train
+492,"2,2-Dimethylhexane",CCCCC(C)(C)C,train
+493,"2,2-Dimethylpent-4-enal",CC(C)(CC=C)C=O,train
+494,"2,2-Dimethylpentane-1,5-diamine",CC(C)(CCCN)CN,train
+495,"2,2-Dimethylpentanoic acid",CCCC(C)(C)C(=O)O,test
+496,"2,2-Dimethylpropanedinitrile",CC(C)(C#N)C#N,train
+497,2-(2-Ethylbutyl)oxirane,CCC(CC)CC1CO1,test
+498,2-(2-Hydroxyethoxy)acetamide,C(COCC(=O)N)O,train
+499,2-(2-Hydroxyethylideneamino)ethanol,C(CO)N=CCO,train
+500,2-(2-Hydroxyethylperoxy)propan-1-ol,CC(CO)OOCCO,train
+501,"2-(2-Hydroxypropoxy)ethane-1,1-diol",CC(COCC(O)O)O,train
+502,2-(2-Iminopyrrolidin-1-yl)acetonitrile,C1CC(=N)N(C1)CC#N,train
+503,2-(2-Methoxyethoxy)acetamide,COCCOCC(=O)N,train
+504,2-(2-Methylbutan-2-ylamino)acetonitrile,CCC(C)(C)NCC#N,train
+505,2-(2-Methylprop-1-enoxymethyl)oxirane,CC(=COCC1CO1)C,train
+506,2-(2-Methylprop-1-enyl)guanidine,CC(=CN=C(N)N)C,train
+507,2-(2-Methylpropyl)cyclobutan-1-one,CC(C)CC1CCC1=O,test
+508,2-(2H-pyran-6-yl)acetaldehyde,C1C=CC=C(O1)CC=O,test
+509,"2-[(2R,3S)-3-methyloxiran-2-yl]propan-2-ol",C[C@H]1[C@@H](O1)C(C)(C)O,test
+510,"2,3,3-Trimethylhexane",CCCC(C)(C)C(C)C,train
+511,"2,3,3a,4,5,6,7,7a-Octahydro-1,2-benzoxazole",C1CCC2C(C1)CNO2,train
+512,"2,3,3a,4,5,6,7,7a-Octahydro-1,3-benzoxazole",C1CCC2C(C1)NCO2,train
+513,"(2,3,4,5,6,7-13C6)azepan-2-one",[13CH2]1[13CH2][13CH2][13C](=O)N[13CH2][13CH2]1,train
+514,"(2,3,4,5,6-Pentadeuteriophenyl)hydrazine",[2H]C1=C(C(=C(C(=C1[2H])[2H])NN)[2H])[2H],train
+515,"2,3,4,7-tetrahydro-1H-1,3-diazepine",C1C=CCNCN1,train
+516,"2,3,4,7-Tetrahydrooxepin-2-ol",C1CC(OCC=C1)O,train
+517,"2,3,4-Trideuteriopyridine",[2H]C1=C(C(=NC=C1)[2H])[2H],train
+518,"2,3,4-Trimethylfuran",CC1=COC(=C1C)C,test
+519,"2,3,4-Trimethylhexane",CCC(C)C(C)C(C)C,train
+520,"2,3,4-Trimethylpent-2-ene",CC(C)C(=C(C)C)C,train
+521,"2,3,4-Trimethylpentane",CC(C)C(C)C(C)C,train
+522,"2,3,4-Trimethylpyridine",CC1=C(C(=NC=C1)C)C,test
+523,"2,3,5,8-Tetrahydroimidazo[1,2-a]pyrimidine",C1CN2CC=CNC2=N1,train
+524,"2,3-Di(propan-2-yl)oxaziridine",CC(C)C1N(O1)C(C)C,train
+525,"2,3-Diamino-2-methylpropanoic acid",CC(CN)(C(=O)O)N,train
+526,"2,3-Dihydro-1,2-oxazole-5-carboxylic acid",C1C=C(ON1)C(=O)O,train
+527,"2,3-dihydro-1H-pyrrol-5-ylmethanamine",C1CNC(=C1)CN,test
+528,"2,3-dihydro-1H-pyrrolo(3,4-c)pyridine",C1C2=C(CN1)C=NC=C2,test
+529,"2,3-Dihydrooxatriazole",C1=NNNO1,train
+530,"2,3-Dihydroxy-3-methylbutanoic acid",CC(C)(C(C(=O)O)O)O,test
+531,"2,3-dihydroxy-N,N-dimethylpropanamide",CN(C)C(=O)C(CO)O,train
+532,"2,3-Dihydroxypropanenitrile",C(C(C#N)O)O,test
+533,"2,3-Dimethyl-2-propan-2-yloxirane",CC1C(O1)(C)C(C)C,train
+534,"2,3-Dimethyl-3-(methylideneamino)butan-2-ol",CC(C)(C(C)(C)O)N=C,train
+535,"2,3-Dimethylaniline",CC1=C(C(=CC=C1)N)C,train
+536,"2,3-Dimethylaziridin-1-amine",CC1C(N1N)C,train
+537,"2,3-Dimethylaziridine",CC1C(N1)C,train
+538,"2,3-Dimethylbicyclo[2.2.1]hepta-2,5-diene",CC1=C(C2CC1C=C2)C,train
+539,"2,3-Dimethylbutan-1-ol",CC(C)C(C)CO,train
+540,"2,3-Dimethylbutanal",CC(C)C(C)C=O,train
+541,"2,3-Dimethylbutanamide",CC(C)C(C)C(=O)N,train
+542,"2,3-Dimethylbutanoic acid",CC(C)C(C)C(=O)O,train
+543,"2,3-Dimethylcyclopenten-1-amine",CC1CCC(=C1C)N,train
+544,"2,3-Dimethylfuran",CC1=C(OC=C1)C,test
+545,"2,3-Dimethylheptane",CCCCC(C)C(C)C,train
+546,"2,3-Dimethylhex-4-yn-3-ol",CC#CC(C)(C(C)C)O,train
+547,"2,3-Dimethylhexa-1,4-diene",CC=CC(C)C(=C)C,train
+548,"2,3-Dimethylhexane",CCCC(C)C(C)C,train
+549,"2,3-Dimethylpent-1-ene",CCC(C)C(=C)C,train
+550,"2,3-Dimethylpentan-3-ol",CCC(C)(C(C)C)O,train
+551,"2,3-Dimethylpentanal",CCC(C)C(C)C=O,train
+552,"2,3-Dimethylpentane",CCC(C)C(C)C,train
+553,"2,3-Dimethylpiperidine",CC1CCCNC1C,train
+554,"2,3-Dimethylpyrazine",CC1=NC=CN=C1C,test
+555,"2,3-Dioxabicyclo(2.2.1)heptane",C1CC2CC1OO2,test
+556,"2,3-Dioxabicyclo[3.1.0]hexane",C1C2C1OOC2,train
+557,2-(3-methyl-2H-imidazol-1-yl)acetaldehyde,CN1CN(C=C1)CC=O,train
+558,2-(3-Methylcyclopentyl)ethanol,CC1CCC(C1)CCO,train
+559,2-(3-Methylidenecyclobutyl)acetic acid,C=C1CC(C1)CC(=O)O,train
+560,2-(3-Oxocyclobutyl)acetaldehyde,C1C(CC1=O)CC=O,train
+561,2-(3-Oxocyclopentyl)acetonitrile,C1CC(=O)CC1CC#N,train
+562,2-(3H-pyrrol-5-yl)acetaldehyde,C1C=C(N=C1)CC=O,train
+563,2-[(3R)-3-aminopyrrolidin-1-yl]ethanol,C1CN(C[C@@H]1N)CCO,train
+564,2-[(3S)-5-oxooxolan-3-yl]acetaldehyde,C1[C@@H](COC1=O)CC=O,test
+565,"2,4,4-Trimethylhexane",CCC(C)(C)CC(C)C,test
+566,"2,4,5-Trimethyl-1,3-dioxolane",CC1C(OC(O1)C)C,train
+567,"2,4,6-Trimethyl-1,3-diazinane",CC1CC(NC(N1)C)C,train
+568,"2,4,6-Trimethylpiperidine",CC1CC(NC(C1)C)C,train
+569,"2,4,6-Trimethylpyridine",CC1=CC(=NC(=C1)C)C,train
+570,"2,4-Diamino-2-methylbutanoic acid",CC(CCN)(C(=O)O)N,train
+571,"2,4-Diaminophenol",C1=CC(=C(C=C1N)N)O,train
+572,"2,4-Dihydroxybutanamide",C(CO)C(C(=O)N)O,train
+573,"2,4-Diisocyanopentane",CC(CC(C)[N+]#[C-])[N+]#[C-],train
+574,"2,4-Dimethyl-1,2,3,4-tetrahydro-1,3,5-triazin-6-amine",CC1NC(N=C(N1)N)C,train
+575,"2,4-Dimethyl-1,3,5-triazine",CC1=NC(=NC=N1)C,test
+576,"2,4-Dimethylaniline",CC1=CC(=C(C=C1)N)C,train
+577,"2,4-Dimethylbicyclo[3.1.0]hexa-1(6),2,4-triene",CC1=CC(=C2C1=C2)C,train
+578,"2,4-Dimethylfuran",CC1=CC(=CO1)C,train
+579,"2,4-Dimethylheptane",CCCC(C)CC(C)C,train
+580,"2,4-Dimethylhexan-3-ol",CCC(C)C(C(C)C)O,train
+581,"2,4-Dimethylpenta-1,3-diene",CC(=CC(=C)C)C,test
+582,"2,4-Dimethylpentane",CC(C)CC(C)C,train
+583,"2,4-Dimethylpiperidine",CC1CCNC(C1)C,train
+584,"2,4-Dimethylpyridine",CC1=CC(=NC=C1)C,train
+585,"2,4-Dioxabicyclo[3.3.1]nonane",C1CC2CC(C1)OCO2,train
+586,"(2,5-14C2)1,3-diazinane-2,4,6-trione",[14CH2]1C(=O)N[14C](=O)NC1=O,train
+587,"2,5,5-Trimethyl-2,6-dihydro-1,3-oxazine",CC1N=CC(CO1)(C)C,train
+588,"2,5-Diaminopentanoic Acid",C(CC(C(=O)O)N)CN,train
+589,"2,5-Diethyl-3,4-dihydropyrazole",CCC1=NN(CC1)CC,train
+590,"2,5-Diethynyl-1,3,4-oxadiazole",C#CC1=NN=C(O1)C#C,train
+591,"2,5-Dihydro-1,2,3,5-oxatriazole",C1=NNON1,train
+592,"2,5-Dihydroxycyclohexan-1-one",C1CC(C(=O)CC1O)O,train
+593,"2,5-Dihydroxyhexanal",CC(CCC(C=O)O)O,train
+594,"2,5-Dimethyl-1,3-dioxolan-4-one",CC1C(=O)OC(O1)C,train
+595,"2,5-Dimethyl-1-nitrosopyrrolidine",CC1CCC(N1N=O)C,train
+596,"2,5-Dimethyl-4,5-dihydro-1,3-oxazin-6-one",CC1CN=C(OC1=O)C,test
+597,"2,5-Dimethylaniline",CC1=CC(=C(C=C1)C)N,train
+598,"2,5-Dimethylbicyclo[3.1.0]hexan-1-amine",CC1CCC2(C1(C2)N)C,train
+599,"2,5-Dimethylcyclohexan-1-ol",CC1CCC(C(C1)O)C,test
+600,"2,5-Dimethylcyclopent-3-en-1-one",CC1C=CC(C1=O)C,train
+601,"2,5-Dimethylfuran",CC1=CC=C(O1)C,train
+602,"2,5-Dimethylhex-3-ene",CC(C)C=CC(C)C,test
+603,"2,5-Dimethylhexan-3-amine",CC(C)CC(C(C)C)N,train
+604,"2,5-Dimethylhexane",CC(C)CCC(C)C,train
+605,"2,5-Dimethylphenol",CC1=CC(=C(C=C1)C)O,test
+606,"2,5-Dimethylpiperazine",CC1CNC(CN1)C,train
+607,"2,5-Dimethylpyrazine",CC1=CN=C(C=N1)C,train
+608,2-(5-Methyltetrazol-2-yl)acetonitrile,CC1=NN(N=N1)CC#N,train
+609,"2,6-Diazabicyclo[2.2.0]hexa-1(6),2,4-triene",C1=C2C=NC2=N1,train
+610,"2,6-Dimethyl-1,4-dioxane",CC1COCC(O1)C,test
+611,"2,6-Dimethyl-4-(trideuteriomethyl)pyridine",[2H]C([2H])([2H])C1=CC(=NC(=C1)C)C,train
+612,"2,6-Dimethylaniline",CC1=C(C(=CC=C1)C)N,train
+613,"2,6-Dimethylmorpholine",CC1CNCC(O1)C,test
+614,"2,6-Dimethylpiperazine",CC1CNCC(N1)C,train
+615,"2,6-Dimethylpyrazine",CC1=CN=CC(=N1)C,train
+616,"2,6-Dioxaspiro(3.3)heptane",C1C2(CO1)COC2,train
+617,"2,7-Diazabicyclo[4.1.0]hepta-2,4,6-triene",C1=CC2=NC2N=C1,train
+618,"2-Amino-1,3-dioxepan-5-ol",C1COC(OCC1O)N,train
+619,"2-Amino-2,4-dimethylpentanenitrile",CC(C)CC(C)(C#N)N,train
+620,2-Amino-2-methylpentanoic acid,CCCC(C)(C(=O)O)N,test
+621,(2-Amino-2-methylpropyl) formate,CC(C)(COC=O)N,train
+622,"2-Amino-3,4-dioxobutanoic acid",C(=O)C(=O)C(C(=O)O)N,train
+623,2-Amino-3-hydroxybutanoic acid,CC(C(C(=O)O)N)O,train
+624,2-Amino-3-methoxy-2-methylpropanoic acid,CC(COC)(C(=O)O)N,train
+625,2-Amino-3-methoxypropanamide,COCC(C(=O)N)N,train
+626,2-Amino-3-methylbutanoic acid;azane,CC(C)C(C(=O)O)N.N,train
+627,2-Amino-3-methylhexan-2-ol,CCCC(C)C(C)(N)O,train
+628,2-Amino-3-methylpentan-1-ol,CCC(C)C(CO)N,train
+629,2-Amino-3-methylpentanoic acid,CCC(C)C(C(=O)O)N,train
+630,2-Amino-4-methylpentan-1-ol,CC(C)CC(CO)N,test
+631,2-Amino-4-methylpentan-2-ol,CC(C)CC(C)(N)O,train
+632,2-Amino-4-methylphenol,CC1=CC(=C(C=C1)O)N,test
+633,2-Amino-4-oxobutanoic acid,C(C=O)C(C(=O)O)N,train
+634,2-Amino-5-methylphenol,CC1=CC(=C(C=C1)N)O,train
+635,"2-[Amino(dideuterio)methyl]-2,3,3,3-tetradeuteriopropanoic acid",[2H]C([2H])([2H])C([2H])(C(=O)O)C([2H])([2H])N,train
+636,2-amino-N-carbamoylacetamide,C(C(=O)NC(=O)N)N,test
+637,2-amino-N-methyl-3-(methylamino)propanamide,CNCC(C(=O)NC)N,test
+638,2-amino-N-methylacetamide,CNC(=O)CN,train
+639,2-amino-N-prop-2-enylpropanamide,CC(C(=O)NCC=C)N,train
+640,2-Aminobenzaldehyde,C1=CC=C(C(=C1)C=O)N,train
+641,2-Aminobut-2-enedinitrile,C(=C(C#N)N)C#N,train
+642,2-Aminobut-3-enoic acid,C=CC(C(=O)O)N,test
+643,2-Aminocyclobutan-1-ol,C1CC(C1N)O,test
+644,"2-Aminocyclopenta-1,4-diene-1-carbonitrile",C1C=CC(=C1N)C#N,train
+645,"2-Aminoethane-1,1,2-tricarbonitrile",C(#N)C(C#N)C(C#N)N,train
+646,2-aminoethyl Acetate,CC(=O)OCCN,train
+647,2-(Aminomethyl)-2-ethylbutan-1-ol,CCC(CC)(CN)CO,test
+648,2-(Aminomethyl)butanoic acid,CCC(CN)C(=O)O,train
+649,"2-(Aminomethyl)pentane-1,5-diamine",C(CC(CN)CN)CN,train
+650,2-(Aminomethyl)phenol,C1=CC=C(C(=C1)CN)O,test
+651,2-(Aminomethyl)prop-2-en-1-ol,C=C(CN)CO,train
+652,2-(Aminomethylidene)but-3-enoic acid,C=CC(=CN)C(=O)O,train
+653,2-Aminooxy-2-methylpropanal,CC(C)(C=O)ON,train
+654,2-Aminophenol,C1=CC=C(C(=C1)N)O,test
+655,2-Aminopropanamide,CC(C(=O)N)N,train
+656,2-Aminopropanediamide,C(C(=O)N)(C(=O)N)N,train
+657,2-Aminopyrazole-3-carbonitrile,C1=C(N(N=C1)N)C#N,train
+658,2-Azabicyclo[2.1.0]pentan-3-one,C1C2C1NC2=O,train
+659,2-Azabicyclo(2.2.1)heptane,C1CC2CC1CN2,train
+660,2-Azabicyclo(2.2.2)octane,C1CC2CCC1CN2,train
+661,2-(Azetidin-2-yl)acetaldehyde,C1CNC1CC=O,train
+662,2-Azidoethanol,C(CO)N=[N+]=[N-],train
+663,2-Butoxyethanol,CCCCOCCO,train
+664,2-Butyl-3-ethyloxirane,CCCCC1C(O1)CC,train
+665,2-Butylfuran,CCCCC1=CC=CO1,train
+666,2-Butylguanidine,CCCCN=C(N)N,train
+667,2-Cyano-2-methylbutanoic acid,CCC(C)(C#N)C(=O)O,train
+668,2-Cyano-3-methylbut-2-enoic acid,CC(=C(C#N)C(=O)O)C,test
+669,2-Cyano-3-oxopropanoic acid,C(=O)C(C#N)C(=O)O,train
+670,2-Cyanobutanamide,CCC(C#N)C(=O)N,test
+671,2-Cyanocyclobutene-1-carboxamide,C1CC(=C1C#N)C(=O)N,train
+672,2-Cyanoethyl 2-aminoacetate,C(COC(=O)CN)C#N,test
+673,2-Cyanoethylurea,C(CNC(=O)N)C#N,train
+674,2-Cyclobutyl-2-oxoacetic acid,C1CC(C1)C(=O)C(=O)O,train
+675,"2-Cyclohexa-2,4-dien-1-ylacetonitrile",C1C=CC=CC1CC#N,train
+676,2-Cyclohexylethanol,C1CCC(CC1)CCO,train
+677,2-Cyclohexyloxirane,C1CCC(CC1)C2CO2,test
+678,"2-Cyclopenta-1,3-dien-1-ylacetic acid",C1C=CC=C1CC(=O)O,test
+679,"2-Cyclopenta-1,4-dien-1-ylethanol",[CH-]1C=CC(=C1)CCO,test
+680,2-cyclopropyl-N'-hydroxyethanimidamide,C1CC1C/C(=N/O)/N,train
+681,2-Cyclopropylcyclopropane-1-carbaldehyde,C1CC1C2CC2C=O,train
+682,2-(Cyclopropylmethoxy)propanal,CC(C=O)OCC1CC1,train
+683,2-Deuterio-1-phenylethanol,[2H]CC(C1=CC=CC=C1)O,train
+684,"2-deuterio-N,N-dimethylpyrrol-1-amine",[2H]C1=CC=CN1N(C)C,train
+685,"2-(Deuteriomethyl)-1,1-dimethylcyclopentane",[2H]CC1CCCC1(C)C,train
+686,2-(Diethylamino)acetonitrile,CCN(CC)CC#N,train
+687,2-(Dihydroxymethyl)pentanal,CCCC(C=O)C(O)O,train
+688,2-(Dimethoxymethyl)prop-2-en-1-ol,COC(C(=C)CO)OC,train
+689,2-(Dimethylamino)-2-tritioethanol,[3H]C(CO)N(C)C,train
+690,2-(Dimethylamino)-3-methylbut-3-en-1-ol,CC(=C)C(CO)N(C)C,train
+691,2-(Dimethylamino)ethanol,CN(C)CCO,train
+692,2-(Dimethylamino)propanedial,CN(C)C(C=O)C=O,train
+693,2-[(E)-2-methylpropylideneamino]guanidine,CC(C)/C=N/N=C(N)N,train
+694,2-[(E)-but-1-en-3-ynyl]furan,C#C/C=C/C1=CC=CO1,test
+695,"2-[(E)-but-1-enyl]-1,3-dioxolane",CC/C=C/C1OCCO1,test
+696,2-[(E)-prop-1-enoxy]butane,CCC(C)O/C=C/C,train
+697,2-[(E)-prop-1-enyl]-2H-furan-5-one,C/C=C/C1C=CC(=O)O1,train
+698,2-Ethenoxy-3-methyloxirane,CC1C(O1)OC=C,train
+699,"2-Ethenyl-1,3-dioxolan-2-ol",C=CC1(OCCO1)O,train
+700,"2-Ethenyl-1,4-dimethylpyrrole",CC1=CN(C(=C1)C=C)C,train
+701,2-ethenyl-1H-pyrazol-3-one,C=CN1C(=O)C=CN1,train
+702,2-Ethenyl-2-ethyloxirane,CCC1(CO1)C=C,train
+703,"2-Ethenyl-2-ethylpropane-1,3-diol",CCC(CO)(CO)C=C,train
+704,"2-ethenyl-2H-1,3-oxazol-5-one",C=CC1N=CC(=O)O1,train
+705,2-ethenyl-2H-furan-5-one,C=CC1C=CC(=O)O1,test
+706,"2-Ethenyl-5-ethyl-4,5-dihydro-1,3-oxazole",CCC1CN=C(O1)C=C,train
+707,"2-ethenyl-5-methyl-4,5-dihydro-1H-imidazole",CC1CN=C(N1)C=C,test
+708,"2-Ethenyl-5-methylcyclohexa-1,3-diene",CC1CC=C(C=C1)C=C,train
+709,2-Ethenyl-6-methylpyridine,CC1=NC(=CC=C1)C=C,train
+710,"2-Ethenylbicyclo[4.1.0]hepta-1(6),2,4-triene",C=CC1=CC=CC2=C1C2,train
+711,"2-Ethenylcyclohexa-1,3-diene",C=CC1=CCCC=C1,train
+712,2-Ethenylfuran,C=CC1=CC=CO1,train
+713,2-Ethenylidene-4-methylpentan-1-ol,CC(C)CC(=C=C)CO,train
+714,"2-Ethoxy-1,1-dimethoxyethane",CCOCC(OC)OC,train
+715,2-Ethoxy-1-methoxypropan-1-ol,CCOC(C)C(O)OC,train
+716,"2-Ethoxy-3-methylbuta-1,3-diene",CCOC(=C)C(=C)C,train
+717,2-Ethoxypyridine,CCOC1=CC=CC=N1,train
+718,"2-Ethyl-1,3,5-triazine",CCC1=NC=NC=N1,train
+719,2-Ethyl-1-hydroxyaziridine,CCC1CN1O,train
+720,2-Ethyl-2-hydroxybutanoic acid,CCC(CC)(C(=O)O)O,train
+721,2-Ethyl-2-methylcyclopropan-1-one,CCC1(CC1=O)C,train
+722,2-Ethyl-2-methyloxirane,CCC1(CO1)C,train
+723,2-Ethyl-3-methyloxetane,CCC1C(CO1)C,train
+724,2-Ethyl-3-Methylpyrazine,CCC1=NC=CN=C1C,train
+725,2-Ethyl-3-prop-1-en-2-yloxirane,CCC1C(O1)C(=C)C,train
+726,2-Ethyl-3-propyloxirane,CCCC1C(O1)CC,train
+727,"2-Ethyl-4,5-dihydro-1,3-dioxepine",CCC1OCCC=CO1,test
+728,2-Ethyl-5-ethynyltetrazole,CCN1N=C(N=N1)C#C,train
+729,2-Ethyl-5-methylpyrazine,CCC1=NC=C(N=C1)C,test
+730,"2-ethyl-5H-1,2-oxazole",CCN1C=CCO1,train
+731,2-Ethyl-6-methylpyrazine,CCC1=NC(=CN=C1)C,train
+732,"2-ethyl-N'-methylpropane-1,3-diamine",CCC(CN)CNC,train
+733,"2-ethyl-N,N-dimethylcyclopropan-1-amine",CCC1CC1N(C)C,train
+734,2-Ethylaniline,CCC1=CC=CC=C1N,train
+735,(2-Ethylcyclopropyl)methanamine,CCC1CC1CN,train
+736,2-Ethylfuran,CCC1=CC=CO1,test
+737,2-Ethylhex-2-Enal,CCCC=C(CC)C=O,train
+738,2-Ethylhexanal,CCCCC(CC)C=O,train
+739,"2-Ethylidene-1,1-dimethylcyclopentane",CC=C1CCCC1(C)C,train
+740,2-Ethyloxolane-3-carbaldehyde,CCC1C(CCO1)C=O,train
+741,2-Ethylpiperidine,CCC1CCCCN1,test
+742,2-Ethylpyridine,CCC1=CC=CC=N1,test
+743,2-Ethynylcyclohexan-1-one,C#CC1CCCCC1=O,train
+744,2-Ethynylhexan-1-ol,CCCCC(CO)C#C,train
+745,2-Formylprop-2-enehydrazide,C=C(C=O)C(=O)NN,train
+746,2-(Furan-2-yl)propan-2-amine,CC(C)(C1=CC=CO1)N,train
+747,2-(Furan-2-yloxy)ethanol,C1=COC(=C1)OCCO,train
+748,2-Hydrazinylacetamide,C(C(=O)N)NN,train
+749,2-Hydrazinylpropanoic acid,CC(C(=O)O)NN,train
+750,2-hydroperoxy-1H-pyrrole,C1=CNC(=C1)OO,train
+751,2-Hydroperoxy-3-methylidenepentane,CCC(=C)C(C)OO,train
+752,2-Hydroperoxyethynol,C(#COO)O,train
+753,"2-Hydroxy-1,2-dihydroazepin-7-one",C1=CC(NC(=O)C=C1)O,train
+754,"2-Hydroxy-1,3-dihydropyridazin-6-one",C1C=CC(=O)NN1O,train
+755,2-hydroxy-2-[(1S)-2-methylidenecyclopropyl]acetonitrile,C=C1C[C@@H]1C(C#N)O,test
+756,2-Hydroxy-2-methylbutanamide,CCC(C)(C(=O)N)O,train
+757,2-hydroxy-4-methyl-1H-pyridazin-6-ol,CC1=CN(NC(=C1)O)O,train
+758,2-Hydroxy-4-methylpent-4-enamide,CC(=C)CC(C(=O)N)O,train
+759,2-[Hydroxy(methoxy)methylidene]propanedinitrile,COC(=C(C#N)C#N)O,train
+760,2-hydroxy-N'-methylacetohydrazide,CNNC(=O)CO,train
+761,"2-hydroxy-N,N,2-trimethylpropanamide",CC(C)(C(=O)N(C)C)O,train
+762,2-Hydroxyacetic acid;methane,C.C(C(=O)O)O,train
+763,2-(Hydroxyamino)-2-methylpropanoic acid,CC(C)(C(=O)O)NO,train
+764,2-(Hydroxyamino)propanedinitrile,C(#N)C(C#N)NO,test
+765,2-Hydroxybutanenitrile,CCC(C#N)O,test
+766,2-Hydroxyethyl 2-aminoacetate,C(COC(=O)CN)O,train
+767,2-Hydroxyethyl(methanidyl)azanium,[CH2-][NH2+]CCO,test
+768,2-Hydroxyethylcarbamic acid,C(CO)NC(=O)O,train
+769,2-Hydroxyhexanal,CCCCC(C=O)O,train
+770,2-Hydroxyhexanoic acid,CCCCC(C(=O)O)O,train
+771,2-Hydroxyiminobutanamide,CCC(=NO)C(=O)N,train
+772,"2-(Hydroxymethyl)-1,2-dihydropyrrol-5-one",C1=CC(=O)NC1CO,train
+773,2-(Hydroxymethyl)-4-oxobutanoic acid,C(C=O)C(CO)C(=O)O,train
+774,2-(Hydroxymethyl)cyclohex-3-en-1-ol,C1CC(C(C=C1)CO)O,train
+775,2-(Hydroxymethyl)oxirane-2-carboxamide,C1C(O1)(CO)C(=O)N,train
+776,"2-(Hydroxymethyl)pyrrolidine-3,4-diol",C1C(C(C(N1)CO)O)O,train
+777,"2-(Hydroxymethylidene)cyclopent-4-ene-1,3-dione",C1=CC(=O)C(=CO)C1=O,train
+778,2-Hydroxypropan-2-ylurea,CC(C)(NC(=O)N)O,train
+779,2-Hydroxypropyl nitrate,CC(CO[N+](=O)[O-])O,train
+780,2-Imidazolidin-2-ylethanamine,C1CNC(N1)CCN,train
+781,2-Imino-5-methylpyridin-1-amine,CC1=CN(C(=N)C=C1)N,test
+782,2-Iminobutanedioic acid,C(C(=N)C(=O)O)C(=O)O,test
+783,"2-Isocyanato-1,3,5-triazine",C1=NC=NC(=N1)N=C=O,train
+784,"2-Isocyanato-4-methyl-1,3-oxazole",CC1=COC(=N1)N=C=O,train
+785,2-Isocyano-3-methylbutane,CC(C)C(C)[N+]#[C-],test
+786,"2-Methoxy-1,3,5-triazine",COC1=NC=NC=N1,train
+787,"2-Methoxy-1,3-dioxolane",COC1OCCO1,test
+788,"2-Methoxy-1,4-dioxane",COC1COCCO1,train
+789,"2-Methoxy-1-methylcyclohexa-1,3-diene",CC1=C(C=CCC1)OC,train
+790,2-Methoxy-1-oxidopyrimidin-1-ium,COC1=NC=CC=[N+]1[O-],test
+791,2-Methoxy-1-prop-2-ynoxypropane,CC(COCC#C)OC,train
+792,2-Methoxy-2-methylpentan-3-ol,CCC(C(C)(C)OC)O,train
+793,"2-Methoxy-3,4-dimethylpentane",CC(C)C(C)C(C)OC,train
+794,"2-Methoxy-4-methyl-1,3-dioxolane",CC1COC(O1)OC,train
+795,2-Methoxy-4-methylpentan-3-one,CC(C)C(=O)C(C)OC,train
+796,2-Methoxy-5-methylpyrazine,CC1=CN=C(C=N1)OC,train
+797,2-Methoxy-6-methylpyrazine,CC1=CN=CC(=N1)OC,train
+798,2-methoxy-N-[(Z)-prop-1-enyl]acetamide,C/C=C\NC(=O)COC,test
+799,2-Methoxyaniline,COC1=CC=CC=C1N,train
+800,2-Methoxybutan-1-ol,CCC(CO)OC,train
+801,2-Methoxyethanol,COCCO,train
+802,2-Methoxyethoxymethoxymethanamine,COCCOCOCN,train
+803,2-Methoxyethyl methyl carbonate,COCCOC(=O)OC,train
+804,2-Methoxyfuran,COC1=CC=CO1,train
+805,"2-(Methoxymethyl)-2-methylpropane-1,3-diol",CC(CO)(CO)COC,train
+806,2-(Methoxymethyl)cyclopentan-1-ol,COCC1CCCC1O,train
+807,2-Methoxypent-4-yn-2-ol,CC(CC#C)(O)OC,test
+808,2-Methoxypropane,CC(C)OC,test
+809,2-Methoxypropanoic acid,CC(C(=O)O)OC,test
+810,2-Methyl-1-(1-methylcyclopropyl)prop-2-en-1-ol,CC(=C)C(C1(CC1)C)O,test
+811,"2-Methyl-1,2-dihydropyrazine-3,6-dione",CC1C(=O)N=CC(=O)N1,train
+812,"2-Methyl-1,2-oxazolidine-3,5-dione",CN1C(=O)CC(=O)O1,test
+813,"2-Methyl-1,3,6-trioxocane",CC1OCCOCCO1,train
+814,"(2-Methyl-1,3-dioxolan-4-yl)methanol",CC1OCC(O1)CO,train
+815,2-Methyl-1-methylideneguanidine,CN=C(N)N=C,train
+816,2-Methyl-1-nitroprop-1-ene,CC(=C[N+](=O)[O-])C,train
+817,2-Methyl-1-nitropropane,CC(C)C[N+](=O)[O-],test
+818,2-Methyl-2-(3-methylbutyl)oxirane,CC(C)CCC1(CO1)C,train
+819,2-Methyl-2-azabicyclo[2.1.1]hexane,CN1CC2CC1C2,test
+820,"2-Methyl-2-azatricyclo[2.1.1.01,4]hexane",CN1CC23C1(C2)C3,train
+821,2-Methyl-2-nitropropanenitrile,CC(C)(C#N)[N+](=O)[O-],test
+822,2-Methyl-2-nitrosopropane,CC(C)(C)N=O,train
+823,"2-Methyl-2-prop-1-en-2-ylpropane-1,3-diol",CC(=C)C(C)(CO)CO,train
+824,2-Methyl-2-prop-2-ynoxybutane,CCC(C)(C)OCC#C,train
+825,2-Methyl-2-propoxypropanal,CCCOC(C)(C)C=O,train
+826,"2-Methyl-2-propyl-1,3-dioxolane",CCCC1(OCCO1)C,train
+827,2-methyl(313C)propanoic acid,CC([13CH3])C(=O)O,train
+828,"2-methyl-3,5,6,7-tetrahydro-2H-pyrrolo[1,2-a]imidazole",CC1CN2CCCC2=N1,train
+829,"2-Methyl-3,7-dioxabicyclo[4.1.0]heptan-4-ol",CC1C2C(O2)CC(O1)O,test
+830,"2-Methyl-3-nitroso-1,3-oxazolidine",CC1N(CCO1)N=O,train
+831,2-Methyl-3-oxopropanoic acid,CC(C=O)C(=O)O,train
+832,2-Methyl-3-prop-1-en-2-yloxyprop-1-ene,CC(=C)COC(=C)C,train
+833,2-Methyl-3-propan-2-ylaziridine,CC1C(N1)C(C)C,train
+834,(2-Methyl-3-pyridinyl)diazene,CC1=C(C=CC=N1)N=N,test
+835,"(2-Methyl-4-methylidene-1,3-dioxolan-2-yl)methanol",CC1(OCC(=C)O1)CO,train
+836,"2-Methyl-4-propan-2-yl-1,3-oxazole",CC1=NC(=CO1)C(C)C,test
+837,2-methyl-5-prop-2-enyl-1H-imidazole,CC1=NC=C(N1)CC=C,train
+838,"2-(Methylamino)butane-1,4-diol",CNC(CCO)CO,test
+839,"2-(Methylamino)ethane-1,1,2-triol",CNC(C(O)O)O,test
+840,2-(Methylamino)ethanol,CNCCO,test
+841,2-(Methylamino)propanenitrile,CC(C#N)NC,train
+842,2-Methylaziridine,CC1CN1,train
+843,2-Methylbenzonitrile,CC1=CC=CC=C1C#N,train
+844,2-Methylbicyclo[3.2.1]oct-2-ene,CC1=CCC2CCC1C2,train
+845,2-Methylbicyclo[4.1.0]hept-3-ene,CC1C=CCC2C1C2,test
+846,2-Methylbut-3-enamide,CC(C=C)C(=O)N,train
+847,2-Methylbutan-2-ylcyanamide,CCC(C)(C)NC#N,train
+848,2-Methylbutanal,CCC(C)C=O,train
+849,2-Methylbutyl Acetate,CCC(C)COC(=O)C,train
+850,2-Methylbutyl formate,CCC(C)COC=O,train
+851,2-Methylcycloheptan-1-amine,CC1CCCCCC1N,train
+852,(2-Methylcyclohexyl)methanamine,CC1CCCCC1CN,train
+853,(2-Methylcyclohexyl)methanol,CC1CCCCC1CO,train
+854,"(2-Methylcyclopenta-1,4-dien-1-yl)methanol",CC1=C(C=CC1)CO,train
+855,"(2-Methylcyclopenta-2,4-dien-1-ylidene)methanediol",CC1=CC=CC1=C(O)O,test
+856,2-Methylfuran,CC1=CC=CO1,train
+857,2-Methylheptanal,CCCCCC(C)C=O,test
+858,2-Methylheptane,CCCCCC(C)C,train
+859,"2-Methylhexa-1,4,5-trien-3-ol",CC(=C)C(C=C=C)O,test
+860,2-Methylhexan-1-amine,CCCCC(C)CN,train
+861,2-Methylhexane,CCCCC(C)C,test
+862,2-Methylidene-5-oxohexanal,CC(=O)CCC(=C)C=O,test
+863,2-Methylidenecyclohexan-1-ol,C=C1CCCCC1O,train
+864,2-Methyliminocyclohexan-1-one,CN=C1CCCCC1=O,train
+865,2-Methyloxazinane-3-carbonitrile,CN1C(CCCO1)C#N,train
+866,(2-Methyloxiran-2-yl) acetate,CC(=O)OC1(CO1)C,train
+867,2-Methylpent-2-enenitrile,CCC=C(C)C#N,train
+868,2-Methylpentan-2-ol,CCCC(C)(C)O,train
+869,2-Methylpentane,CCCC(C)C,train
+870,2-Methylpentanenitrile,CCCC(C)C#N,train
+871,2-Methylpiperazine,CC1CNCCN1,train
+872,2-Methylpiperidine,CC1CCCCN1,train
+873,2-Methylprop-1-enylidenecyclobutane,CC(=C=C1CCC1)C,test
+874,2-Methylprop-2-en-1-imine,CC(=C)C=N,test
+875,"2-Methylprop-2-ene-1,1,1,3,3-pentamine",CC(=C(N)N)C(N)(N)N,train
+876,2-Methylpropanedinitrile,CC(C#N)C#N,train
+877,(2-Methylpropylideneamino)urea,CC(C)C=NNC(=O)N,train
+878,2-Methylpyrazine,CC1=NC=CN=C1,train
+879,2-Methylpyridin-3-ol,CC1=C(C=CC=N1)O,test
+880,2-Methylpyridine,CC1=CC=CC=N1,train
+881,2-Methylpyrrolidin-3-ol,CC1C(CCN1)O,train
+882,2-Methylpyrrolidine,CC1CCCN1,train
+883,"2-N,2-N-dimethyl-4,5-dihydroimidazole-1,2-diamine",CN(C)C1=NCCN1N,test
+884,"2-N,3-dimethylbutane-1,2-diamine",CC(C)C(CN)NC,train
+885,2-nitro-1H-triazol-5-one,C1=NN(NC1=O)[N+](=O)[O-],train
+886,"2-Nitrocyclohexa-1,3-diene",C1CC=C(C=C1)[N+](=O)[O-],train
+887,2-Nitroethanol,C(CO)[N+](=O)[O-],train
+888,2-Nitroethyl nitrate,C(CO[N+](=O)[O-])[N+](=O)[O-],train
+889,2-Nitrofuran,C1=COC(=C1)[N+](=O)[O-],train
+890,2-Nitropropane,CC(C)[N+](=O)[O-],train
+891,2-Nitrosoprop-2-enoic acid,C=C(C(=O)O)N=O,train
+892,2-Nitrosopropanedioic acid,C(C(=O)O)(C(=O)O)N=O,train
+893,2-Oxabicyclo[3.2.1]octane,C1CC2CC1CCO2,train
+894,2-Oxoazetidine-1-carboxamide,C1CN(C1=O)C(=O)N,train
+895,2-Oxocyclopentane-1-carbonitrile,C1CC(C(=O)C1)C#N,train
+896,2-Oxoethanimidamide,C(=O)C(=N)N,train
+897,2-Oxoethyl carbamate,C(C=O)OC(=O)N,train
+898,2-Oxoethyl formate,C(C=O)OC=O,train
+899,2-(Oxolan-3-yl)acetonitrile,C1COCC1CC#N,train
+900,2-Oxopropanedial,C(=O)C(=O)C=O,train
+901,2-Phenylethanol,C1=CC=C(C=C1)CCO,train
+902,2-Propan-2-ylcyclopropan-1-ol,CC(C)C1CC1O,train
+903,2-Propan-2-yloxaziridin-3-one,CC(C)N1C(=O)O1,train
+904,"2-Propoxy-4,5-dihydro-1,3-oxazole",CCCOC1=NCCO1,train
+905,2-Propoxyacetaldehyde,CCCOCC=O,train
+906,2-Propoxyacetic acid,CCCOCC(=O)O,test
+907,"2-Propyl-3,4-dihydropyrazole",CCCN1CCC=N1,test
+908,2-(Propylamino)ethanol,CCCNCCO,train
+909,2-(Propylamino)propanenitrile,CCCNC(C)C#N,train
+910,2-Propyloxadiaziridine,CCCN1NO1,train
+911,2-Propyloxaziridin-3-one,CCCN1C(=O)O1,test
+912,2-Propylpentanal,CCCC(CCC)C=O,train
+913,2-Propylpiperidine,CCCC1CCCCN1,test
+914,2-Propylpyridine,CCCC1=CC=CC=N1,train
+915,"2-tert-Butyl-1,1-dimethylcyclopropane",CC1(CC1C(C)(C)C)C,train
+916,2-Tert-butyl-3-methylcycloprop-2-en-1-one,CC1=C(C1=O)C(C)(C)C,test
+917,2-(tert-Butylamino)ethanol,CC(C)(C)NCCO,train
+918,2-tert-Butylcyclobutan-1-one,CC(C)(C)C1CCC1=O,train
+919,"2-Tert-butylpropane-1,3-diol",CC(C)(C)C(CO)CO,train
+920,"(2E)-2-ethylidene-1,3-oxazol-5-one",C/C=C/1\N=CC(=O)O1,train
+921,"(2E)-2-ethylidene-3-methylbutane-1,3-diamine",C/C=C(\CN)/C(C)(C)N,train
+922,"(2E)-2-ethylidene-4-methyl-1,3-dioxolane",C/C=C/1\OCC(O1)C,train
+923,(2E)-2-(hydroxymethylidene)butanal,CC/C(=C\O)/C=O,train
+924,(2E)-2-pyrrolidin-1-yliminoacetonitrile,C1CCN(C1)/N=C/C#N,train
+925,"(2E)-3,4-dimethylpenta-2,4-dien-1-ol",CC(=C)/C(=C/CO)/C,train
+926,"(2E)-4-hydroxypenta-2,4-dienoic Acid",C=C(/C=C/C(=O)O)O,test
+927,"(2E,4E)-2,4-dideuteriohexa-2,4-dienoic acid",[2H]/C(=C\C)/C=C(\[2H])/C(=O)O,train
+928,"(2E,4Z)-5-hydroxy-4-methylpenta-2,4-dienal",C/C(=C/O)/C=C/C=O,train
+929,"(2E,5E)-3,5-dimethylhepta-2,5-diene",C/C=C(/C/C(=C/C)/C)\C,train
+930,"(2E,5E)-4-methylhepta-2,5-diene",C/C=C/C(/C=C/C)C,train
+931,"(2E,5E)-nona-2,5-diene",CCC/C=C/C/C=C/C,test
+932,"(2E,6E)-octa-2,6-dienenitrile",C/C=C/CC/C=C/C#N,test
+933,"(2E)-hexa-2,5-dienamide",C=CC/C=C/C(=O)N,train
+934,(2E)-N-ethyl-2-hydroxyiminoacetamide,CCNC(=O)/C=N/O,train
+935,"2H-1,3-oxazine-2-carboxylic acid",C1=COC(N=C1)C(=O)O,train
+936,2H-benzimidazole,C1N=C2C=CC=CC2=N1,train
+937,2H-Cyclopenta(d)pyridazine,C1=CC2=CNN=CC2=C1,train
+938,2H-furan,C1C=C=CO1,train
+939,[(2H)hydroxy](2H2)amine,[2H]N([2H])O[2H],train
+940,"2H-Imidazo[5,1-B][1,3]oxazine",C1C=CN2C=NC=C2O1,test
+941,2H-pyran-2-yl formate,C1=CC(OC=C1)OC=O,test
+942,"2H-pyran-3,6-diamine",C1C(=CC=C(O1)N)N,train
+943,2H-pyridine-1-carboxamide,C1C=CC=CN1C(=O)N,train
+944,2H-pyrrole-2-carboxylic acid,C1=CC(N=C1)C(=O)O,test
+945,2H-triazine-1-carboxylic acid,C1=CN(NN=C1)C(=O)O,train
+946,"(2R)-1,2-dimethylpiperidine",C[C@@H]1CCCCN1C,train
+947,(2R)-1-methyl-2-propylcyclopentane,CCC[C@@H]1CCCC1C,train
+948,(2R)-1-methylpiperidine-2-carbonitrile,CN1CCCC[C@@H]1C#N,train
+949,(2R)-2-(2-hydroxyethoxy)-2-methoxyethanol,CO[C@@H](CO)OCCO,test
+950,(2R)-2-amino-3-oxopropanoic acid,C(=O)[C@H](C(=O)O)N,train
+951,(2R)-2-aminohex-4-ynamide,CC#CC[C@H](C(=O)N)N,train
+952,(2R)-2-aminohex-4-ynoic acid,CC#CC[C@H](C(=O)O)N,train
+953,(2R)-2-aminopropanal,C[C@H](C=O)N,train
+954,(2R)-2-azaniumyl-3-hydroxy-3-methylbutanoate,CC(C)([C@H](C(=O)[O-])[NH3+])O,train
+955,(2R)-2-azaniumyl-3-methylbut-3-enoate,CC(=C)[C@H](C(=O)[O-])[NH3+],train
+956,(2R)-2-(carboxyamino)propanoic acid,C[C@H](C(=O)O)NC(=O)O,train
+957,"(2R)-2-deuteriobutane-1,4-diamine",[H][C@@]([2H])(CCN)CN,train
+958,"(2R)-2-ethenyl-3-methylbutane-1,3-diol",CC(C)([C@@H](CO)C=C)O,train
+959,"(2R)-2-ethoxy-3,4-dihydro-2H-pyran",CCO[C@H]1CCC=CO1,train
+960,(2R)-2-ethoxypropanoic acid,CCO[C@H](C)C(=O)O,train
+961,(2R)-2-ethylpiperazine,CC[C@@H]1CNCCN1,train
+962,(2R)-2-Ethynyloxirane,C#C[C@@H]1CO1,test
+963,(2r)-2-(Furan-2-yl)propanal,C[C@@H](C=O)C1=CC=CO1,train
+964,(2R)-2-(methylamino)propanoic acid,C[C@H](C(=O)O)NC,train
+965,(2R)-2-methylpent-3-yn-1-ol,CC#C[C@@H](C)CO,test
+966,(2R)-2-nitrobutane,CC[C@@H](C)[N+](=O)[O-],train
+967,"(2R)-3,4-dihydro-2H-pyrrole-2-carboxylic acid",C1C[C@@H](N=C1)C(=O)O,train
+968,"(2R)-3-aminopropane-1,2-diol",C([C@H](CO)O)N,train
+969,(2R)-3-methylpentan-2-amine,CCC(C)[C@@H](C)N,train
+970,"(2R,3R)-1,2-dimethyl-3-propan-2-ylaziridine",C[C@@H]1[C@H](N1C)C(C)C,train
+971,"(2R,3R)-1,3-dimethylaziridine-2-carbonitrile",C[C@@H]1[C@@H](N1C)C#N,train
+972,"(2R,3R)-2,3-diethyloxirane",CC[C@@H]1[C@H](O1)CC,train
+973,"(2R,3R)-2-but-3-enyl-3-ethenyloxirane",C=CCC[C@@H]1[C@H](O1)C=C,train
+974,"(2R,3R)-2-ethenyloxolan-3-ol",C=C[C@@H]1[C@@H](CCO1)O,test
+975,"(2R,3R)-2-methyl-3-propyloxolane",CCC[C@@H]1CCO[C@@H]1C,train
+976,"(2R,3R)-3-aminobutane-1,2,4-triol",C([C@H]([C@H](CO)O)N)O,test
+977,"[(2R,3R)-3-prop-2-enyloxiran-2-yl]methanol",C=CC[C@@H]1[C@H](O1)CO,train
+978,"(2R,3R)-3-propan-2-yloxybutan-2-ol",C[C@H]([C@@H](C)OC(C)C)O,test
+979,"(2R,3R)-4-amino-2-hydroxy-3-methylbutanoic acid",C[C@H](CN)[C@H](C(=O)O)O,test
+980,"(2R,3R)-pent-4-yne-2,3-diol",C[C@H]([C@@H](C#C)O)O,train
+981,"(2R,3S)-2-aminohex-5-en-3-ol",C[C@H]([C@H](CC=C)O)N,train
+982,"(2R,3S)-2-methyl-3-pentyloxirane",CCCCC[C@H]1[C@H](O1)C,train
+983,"(2R,3S)-2-nitropentan-3-ol",CC[C@@H]([C@@H](C)[N+](=O)[O-])O,train
+984,"(2R,3S)-3-methyl-5-oxopyrrolidine-2-carbonitrile",C[C@H]1CC(=O)N[C@H]1C#N,train
+985,"(2R,3S,4R)-3,4-dimethylhexan-2-ol",CC[C@@H](C)[C@H](C)[C@@H](C)O,train
+986,"(2R,4S)-2-ethyl-2,4-dimethyl-1,3-dioxolane",CC[C@@]1(OC[C@@H](O1)C)C,test
+987,"(2R,5R)-2,5-dimethylpiperazine",C[C@@H]1CN[C@@H](CN1)C,train
+988,"(2R,5R)-5-methyloxolan-2-amine",C[C@@H]1CC[C@@H](O1)N,train
+989,"(2R,5S)-1,2,5-trimethylpiperidine",C[C@H]1CC[C@H](N(C1)C)C,train
+990,"(2R,5S)-2-ethyl-1,5-dimethylpyrrolidine",CC[C@@H]1CC[C@@H](N1C)C,train
+991,"(2R,5S)-5-methylhept-6-en-2-ol",C[C@@H](CC[C@@H](C)O)C=C,train
+992,"(2R,6S)-2-hydroxy-6-methyl-2H-pyran-5-one",C[C@H]1C(=O)C=C[C@@H](O1)O,train
+993,"[(2R,6S)-6-methyl-3,6-dihydro-2H-pyran-2-yl]methanol",C[C@H]1C=CC[C@@H](O1)CO,test
+994,[(2R)-but-3-en-2-yl]cyclopropane,C[C@H](C=C)C1CC1,train
+995,[(2R)-butan-2-yl] nitrite,CC[C@@H](C)ON=O,train
+996,(2R)-heptan-2-amine,CCCCC[C@@H](C)N,train
+997,"(2R)-N'-ethyl-N',2-dimethylpropane-1,3-diamine",CCN(C)C[C@H](C)CN,train
+998,"(2R)-propane-1,1,2,3-tetrol",C([C@H](C(O)O)O)O,train
+999,(2S)-1-[(2S)-oxiran-2-yl]but-3-en-2-ol,C=C[C@H](C[C@H]1CO1)O,train
+1000,"(2S)-1-aminopropane-1,1,2-triol",C[C@@H](C(N)(O)O)O,train
+1001,(2S)-1-cyclopropylpropan-2-amine,C[C@@H](CC1CC1)N,test
+1002,(2S)-1-ethoxypropan-2-amine,CCOC[C@H](C)N,train
+1003,[(2S)-1-hydroxybut-3-en-2-yl] acetate,CC(=O)O[C@H](CO)C=C,train
+1004,(2S)-1-(propan-2-ylamino)propan-2-ol,C[C@@H](CNC(C)C)O,test
+1005,"(2S)-2,3-dimethyloxirane",C[C@H]1C(O1)C,test
+1006,(2S)-2-(3-hydroxypropylamino)propanenitrile,C[C@@H](C#N)NCCCO,train
+1007,(2S)-2-amino-2-[(3S)-oxolan-3-yl]ethanol,C1COC[C@@H]1[C@@H](CO)N,train
+1008,(2S)-2-amino-3-(dimethylamino)propan-1-ol,CN(C)C[C@@H](CO)N,train
+1009,(2S)-2-amino-3-methoxypropanal,COC[C@@H](C=O)N,train
+1010,(2S)-2-amino-N-methylbutanamide,CC[C@@H](C(=O)NC)N,test
+1011,(2S)-2-aminohexanamide,CCCC[C@@H](C(=O)N)N,test
+1012,(2S)-2-aminopropanehydrazide,C[C@@H](C(=O)NN)N,train
+1013,(2S)-2-azaniumyl-2-methylpentanoate,CCC[C@@](C)(C(=O)[O-])[NH3+],train
+1014,(2S)-2-(furan-2-yl)propan-1-ol,C[C@@H](CO)C1=CC=CO1,train
+1015,"(2S)-2-(hydroxymethyl)pyrrolidine-3,4-diol",C1C(C([C@@H](N1)CO)O)O,train
+1016,"(2S)-2-methoxybutane-1,4-diol",CO[C@@H](CCO)CO,train
+1017,(2S)-2-(methoxymethoxymethyl)oxirane,COCOC[C@@H]1CO1,train
+1018,(2S)-2-(Methoxymethyl)-1-methylpyrrolidine,CN1CCC[C@H]1COC,train
+1019,"(2S)-2-(methoxymethyl)-5-methyl-3,4-dihydro-2H-pyrrole",CC1=N[C@@H](CC1)COC,train
+1020,(2S)-2-(methylamino)hexan-1-ol,CCCC[C@@H](CO)NC,train
+1021,"(2S)-2-N-methyl-2-N-propylpropane-1,2-diamine",CCCN(C)[C@@H](C)CN,train
+1022,(2S)-2-propan-2-yloxypropanoic acid,C[C@@H](C(=O)O)OC(C)C,train
+1023,(2S)-3-azaniumyl-2-hydroxypropanoate,C([C@@H](C(=O)[O-])O)[NH3+],test
+1024,"(2S)-3-hydroxy-2,3-dimethylbutanoic acid",C[C@H](C(=O)O)C(C)(C)O,train
+1025,(2S)-3-hydroxy-2-(hydroxymethylamino)propanoic acid,C([C@@H](C(=O)O)NCO)O,train
+1026,(2S)-3-Methyl-2-(methylamino)butan-1-ol,CC(C)[C@@H](CO)NC,train
+1027,"(2S)-3-methyl-2-propan-2-yl-1,3-oxazolidine",CC(C)[C@H]1N(CCO1)C,train
+1028,(2S)-3-methyl-N-propan-2-ylbutan-2-amine,C[C@@H](C(C)C)NC(C)C,train
+1029,[(2S)-3-methylbutan-2-yl]hydrazine,C[C@@H](C(C)C)NN,test
+1030,[(2S)-3-methylbutan-2-yl]urea,C[C@@H](C(C)C)NC(=O)N,train
+1031,"(2S,3R)-2-amino-N,3-dihydroxybutanamide",C[C@H]([C@@H](C(=O)NO)N)O,train
+1032,"(2S,3R)-2-azaniumyl-3-hydroxy-2-methylbutanoate",C[C@H]([C@@](C)(C(=O)[O-])[NH3+])O,train
+1033,"(2S,3R)-2-azaniumyl-3-(trideuteriomethyl)pentanoate",[2H]C([2H])([2H])[C@H](CC)[C@@H](C(=O)[O-])[NH3+],test
+1034,"(2S,3R)-3-aminobutane-1,2-diol",C[C@H]([C@@H](CO)O)N,train
+1035,"(2S,3S)-1-aminopent-4-ene-2,3-diol",C=C[C@@H]([C@H](CN)O)O,train
+1036,"(2S,3S)-2-amino-4,4,4-trideuterio-3-methylbutanoic acid",[2H]C([2H])([2H])[C@H](C)[C@@H](C(=O)O)N,test
+1037,"(2S,3S)-2-butyl-3-deuteriooxirane",[H][C@@]1([C@@H](O1)CCCC)[2H],train
+1038,"(2S,3S)-2-(hydroxymethyl)pyrrolidin-3-ol",C1CN[C@H]([C@H]1O)CO,train
+1039,"[(2S,3S)-3-ethenyl(2,3-13C2)oxiran-2-yl](113C)methanol",C=C[13C@H]1[13C@@H](O1)[13CH2]O,train
+1040,"(2S,3S)-3-hydroperoxypent-4-en-2-ol",C[C@@H]([C@H](C=C)OO)O,train
+1041,"(2S,3S,4R)-pyrrolidine-2,3,4-triol",C1[C@H]([C@@H]([C@@H](N1)O)O)O,train
+1042,(2S)-4-amino-4-methylpentan-2-ol,C[C@@H](CC(C)(C)N)O,train
+1043,"(2S)-4-ethyl-2,3-dihydrofuran-2-carbonitrile",CCC1=CO[C@@H](C1)C#N,test
+1044,(2S)-4-nitrobutan-2-ol,C[C@@H](CC[N+](=O)[O-])O,test
+1045,(2S)-4-oxoazetidine-2-carboxylic acid,C1[C@H](NC1=O)C(=O)O,train
+1046,"(2S,4R)-4-(hydroxymethyl)azetidine-2-carboxylic acid",C1[C@@H](N[C@@H]1C(=O)O)CO,train
+1047,"(2S,4S)-2,4-Dimethylpyrrolidine",C[C@H]1C[C@@H](NC1)C,train
+1048,"(2S,4S)-2-amino-3,4,5,5,5-pentadeuterio-4-(113C)methylpentanoic acid",[2H]C([C@@H](C(=O)O)N)[C@]([2H])([13CH3])C([2H])([2H])[2H],train
+1049,"(2S,4S)-2-ethenyl-4-methyloxane",C[C@H]1CCO[C@@H](C1)C=C,train
+1050,"(2S,5S)-2,5-dimethylpiperazine",C[C@H]1CN[C@H](CN1)C,train
+1051,"(2S,5S)-hex-3-yne-2,5-diol",C[C@@H](C#C[C@H](C)O)O,train
+1052,"(2S)-N-methyl-2,5-dihydro-1H-pyrrole-2-carboxamide",CNC(=O)[C@@H]1C=CCN1,train
+1053,"(2S)-N,N,2-trimethylpentan-1-amine",CCC[C@H](C)CN(C)C,train
+1054,"(2Z)-2,5-dimethylhexa-2,5-dienal",CC(=C)C/C=C(/C)\C=O,train
+1055,"(2Z,4Z)-3-methylhexa-2,4-diene",C/C=C\C(=C/C)\C,test
+1056,"(2Z,6Z)-4,5-dihydroazocine",C/1C/C=C\N=C/C=C1,train
+1057,"(2Z)-octa-2,7-dien-1-ol",C=CCCC/C=C\CO,train
+1058,"[(2Z)-penta-2,4-dien-2-yl]cyclopropane",C/C(=C/C=C)/C1CC1,test
+1059,"3-(1,3-dioxolan-2-yl)(313C)propanenitrile",C1COC(O1)[13CH2]CC#N,train
+1060,3-(1-Aminocyclopropyl)prop-2-enoic acid,C1CC1(C=CC(=O)O)N,train
+1061,3-(1-Hydroxyethoxy)propanamide,CC(O)OCCC(=O)N,train
+1062,3-(2-Methylaziridin-1-yl)propanenitrile,CC1CN1CCC#N,train
+1063,3-(2-Methylpropoxy)propanenitrile,CC(C)COCCC#N,train
+1064,3-(2-Oxoazetidin-1-yl)propanal,C1CN(C1=O)CCC=O,test
+1065,3-(2-Oxopropoxy)propanenitrile,CC(=O)COCCC#N,train
+1066,"3,3,4-Trimethylhexane",CCC(C)C(C)(C)CC,train
+1067,"3,3,4-Trimethylpent-4-en-1-ol",CC(=C)C(C)(C)CCO,test
+1068,"3,3,4-Trimethylpent-4-en-2-ol",CC(C(C)(C)C(=C)C)O,train
+1069,"3,3,5-Trimethylcyclohexene",CC1CC=CC(C1)(C)C,train
+1070,"3,3-Bis(hydroxymethyl)cyclobutan-1-ol",C1C(CC1(CO)CO)O,train
+1071,"3,3-Diethyloxetane",CCC1(COC1)CC,test
+1072,"3,3-Dihydroxy-2-methylidenebutanoic acid",CC(C(=C)C(=O)O)(O)O,train
+1073,"3,3-Dimethoxybutan-2-ol",CC(C(C)(OC)OC)O,train
+1074,"3,3-Dimethoxypropanal",COC(CC=O)OC,train
+1075,"3,3-Dimethyl-4-oxoazetidine-2-carbonitrile",CC1(C(NC1=O)C#N)C,test
+1076,"3,3-Dimethylazetidin-2-one",CC1(CNC1=O)C,train
+1077,"3,3-Dimethylbutanal",CC(C)(C)CC=O,train
+1078,"3,3-Dimethylbutane-1,2,4-triol",CC(C)(CO)C(CO)O,train
+1079,"3,3-Dimethylcyclopentene",CC1(CCC=C1)C,train
+1080,"3,3-Dimethylhexanal",CCCC(C)(C)CC=O,test
+1081,"3,3-Dimethyloxetane",CC1(COC1)C,train
+1082,"3,3-Dimethylpent-1-ene",CCC(C)(C)C=C,train
+1083,"3,3-Dimethylpentane",CCC(C)(C)CC,test
+1084,"3,3-Dimethylpiperidine",CC1(CCCNC1)C,test
+1085,3-(3-Hydroxypropoxy)propanenitrile,C(CO)COCCC#N,train
+1086,"3,4,5,6-Tetrahydro-2H-azepine",C1CCC=NCC1,train
+1087,"3,4,5-Trihydroxypentan-2-one",CC(=O)C(C(CO)O)O,train
+1088,"3,4,5-Trimethylpyridine",CC1=CN=CC(=C1C)C,train
+1089,"3,4-dihydro-2H-pyran-6-carbonitrile",C1CC=C(OC1)C#N,test
+1090,"3,4-Dihydropyridine-2,5-dione",C1CC(=O)N=CC1=O,test
+1091,"3,4-Dihydroxy-2-methylidenebutanoic acid",C=C(C(CO)O)C(=O)O,test
+1092,"3,4-Dihydroxyhexan-2-one",CCC(C(C(=O)C)O)O,train
+1093,"3,4-dimethyl-3,6-dihydro-2H-pyran",CC1COCC=C1C,train
+1094,"3,4-Dimethyl-5-methylidene-1,4-dihydropyrazole",CC1C(=NNC1=C)C,test
+1095,"3,4-Dimethylaniline",CC1=C(C=C(C=C1)N)C,train
+1096,"3,4-Dimethylcyclopent-2-en-1-one",CC1CC(=O)C=C1C,train
+1097,"(3,4-Dimethylcyclopent-3-en-1-yl)methanamine",CC1=C(CC(C1)CN)C,train
+1098,"3,4-Dimethylcyclopenta-2,4-dien-1-one",CC1=CC(=O)C=C1C,train
+1099,"3,4-Dimethylfuran",CC1=COC=C1C,train
+1100,"3,4-Dimethylhexane",CCC(C)C(C)CC,train
+1101,"3,4-Dimethylpent-3-en-1-yne",CC(=C(C)C#C)C,train
+1102,"3,4-Dimethylpentan-1-amine",CC(C)C(C)CCN,train
+1103,"3,4-Dimethylpentanal",CC(C)C(C)CC=O,test
+1104,"3,4-Dimethylpyridine",CC1=C(C=NC=C1)C,train
+1105,"3,4-Dinitrosooxolane",C1C(C(CO1)N=O)N=O,train
+1106,"3,5-Dimethyl-2,5-dihydro-1,2,4-oxadiazole",CC1N=C(NO1)C,train
+1107,"3,5-Dimethyl-5-azabicyclo[2.1.0]pentan-2-ol",CC1C2C(C1O)N2C,train
+1108,"3,5-Dimethylaniline",CC1=CC(=CC(=C1)N)C,train
+1109,"3,5-Dimethylcyclohex-2-en-1-one",CC1CC(=CC(=O)C1)C,test
+1110,"3,5-Dimethylcyclohexan-1-ol",CC1CC(CC(C1)O)C,train
+1111,"3,5-Dimethyldioxolane",CC1CC(OO1)C,train
+1112,"3,5-Dimethylhex-1-yn-3-amine",CC(C)CC(C)(C#C)N,train
+1113,"3,5-Dimethylidenepyrrolidin-2-one",C=C1CC(=C)NC1=O,train
+1114,"3,5-Dimethylmorpholine",CC1COCC(N1)C,train
+1115,"3,5-Dimethylpiperidine",CC1CC(CNC1)C,train
+1116,"3,5-Dimethylpyridine",CC1=CC(=CN=C1)C,train
+1117,"3,6-Diazabicyclo[3.1.0]hexa-1,3,5-triene",C1=C2C(=N2)C=N1,train
+1118,"3,6-Diazabicyclo[3.1.1]heptane",C1C2CNCC1N2,train
+1119,"3,6-Dihydro-1,2,4,5-tetrazine-3,6-diamine",C1(N=NC(N=N1)N)N,train
+1120,"3,6-Dimethyl-1,2,4-triazine",CC1=CN=C(N=N1)C,train
+1121,"3,6-Dioxabicyclo[3.1.0]hexane",C1C2C(O2)CO1,test
+1122,"3,9-Diazabicyclo[3.3.1]nonane",C1CC2CNCC(C1)N2,train
+1123,3-Amino-2-hydroxybutanenitrile,CC(C(C#N)O)N,train
+1124,"3-Amino-2-methylcyclohexa-2,4-dien-1-one",CC1=C(C=CCC1=O)N,train
+1125,3-Amino-2-methylidenebutanoic acid,CC(C(=C)C(=O)O)N,test
+1126,3-Amino-2-methylpropanenitrile,CC(CN)C#N,train
+1127,[(3-Amino-2-methylpropyl)amino]methanol,CC(CN)CNCO,test
+1128,3-Amino-3-methyl-2-methylidenebutanamide,CC(C)(C(=C)C(=O)N)N,train
+1129,3-Amino-3-Oxopropanoic Acid,C(C(=O)N)C(=O)O,train
+1130,3-amino-5-(hydroxymethyl)-3H-furan-2-one,C1=C(OC(=O)C1N)CO,train
+1131,"3-Amino-5-methylcyclopentane-1,2-diol",CC1CC(C(C1O)O)N,train
+1132,"3-amino-N,N-dimethylbutanamide",CC(CC(=O)N(C)C)N,train
+1133,3-Aminobenzonitrile,C1=CC(=CC(=C1)N)C#N,train
+1134,3-Aminobutanal,CC(CC=O)N,train
+1135,3-Aminocyclohex-2-en-1-one,C1CC(=CC(=O)C1)N,train
+1136,3-Aminoheptan-1-ol,CCCCC(CCO)N,train
+1137,3-Aminohexanoic acid,CCCC(CC(=O)O)N,test
+1138,3-(Aminomethoxy)propanoic acid,C(COCN)C(=O)O,train
+1139,3-(Aminomethyl)pentan-1-ol,CCC(CCO)CN,train
+1140,"3-(Aminomethyl)pyrrolidine-2,5-dione",C1C(C(=O)NC1=O)CN,train
+1141,3-Aminophenol,C1=CC(=CC(=C1)O)N,train
+1142,3-Aminopropanimidamide,C(CN)C(=N)N,train
+1143,3-Aminopropyl nitrate,C(CN)CO[N+](=O)[O-],train
+1144,3-Azabicyclo[3.2.2]nonane,C1CC2CCC1CNC2,train
+1145,3-Azabicyclo[3.3.1]nonane,C1CC2CC(C1)CNC2,train
+1146,3-Azido-2-methoxypropan-1-ol,COC(CN=[N+]=[N-])CO,train
+1147,3-Butyldioxolane,CCCCC1CCOO1,train
+1148,3-Cyano-2-methylpropanoic acid,CC(CC#N)C(=O)O,train
+1149,"3-Cyclopropyl-1-methyl-1,2,4-triazole",CN1C=NC(=N1)C2CC2,train
+1150,3-(Cyclopropyl(methyl)amino)propanenitrile,CN(CCC#N)C1CC1,train
+1151,3-Cyclopropylidene-2-methylbutan-2-ol,CC(=C1CC1)C(C)(C)O,train
+1152,"3-Deuterio-2,5-bis(trideuteriomethyl)aniline",[2H]C1=CC(=CC(=C1C([2H])([2H])[2H])N)C([2H])([2H])[2H],train
+1153,3-deuterio-3-(113C)methyl-2-oxo(413C)butanoic acid,[2H]C([13CH3])([13CH3])C(=O)C(=O)O,train
+1154,3-Deuterio-5-methylcyclohex-2-en-1-one,[2H]C1=CC(=O)CC(C1)C,train
+1155,3-Deuteriocyclopent-2-en-1-one,[2H]C1=CC(=O)CC1,train
+1156,3-Deuterioprop-2-enyl acetate,[2H]C=CCOC(=O)C,train
+1157,3-Diazopropanenitrile,C(C=[N+]=[N-])C#N,train
+1158,3-(Dimethylamino)-2-methylpropanamide,CC(CN(C)C)C(=O)N,train
+1159,3-(Dimethylamino)butanal,CC(CC=O)N(C)C,test
+1160,3-(Dimethylamino)prop-2-enenitrile,CN(C)C=CC#N,train
+1161,3-[(E)-but-2-enoxy]propanenitrile,C/C=C/COCCC#N,test
+1162,3-[(E)-prop-1-enyl]oxolan-2-one,C/C=C/C1CCOC1=O,train
+1163,"3-Ethenyl-1,2-dihydroimidazole",C=CN1CNC=C1,train
+1164,"3-Ethenyl-1-methylcyclopenta-1,3-diene",CC1=CC(=CC1)C=C,train
+1165,"3-Ethenyl-2,2-dimethylcyclopropane-1-carbaldehyde",CC1(C(C1C=O)C=C)C,train
+1166,3-Ethenyl-3-methylpiperidine,CC1(CCCNC1)C=C,train
+1167,3-Ethenyl-7-oxabicyclo[4.1.0]hept-1(6)-ene,C=CC1CCC2=C(C1)O2,train
+1168,"3-Ethenyl-7-oxabicyclo[4.1.0]hepta-1(6),2,4-triene",C=CC1=CC2=C(O2)C=C1,train
+1169,"3-Ethenylcyclopropane-1,2-dicarbonitrile",C=CC1C(C1C#N)C#N,train
+1170,3-Ethenylidene-5-methyloxolan-2-one,CC1CC(=C=C)C(=O)O1,test
+1171,3-Ethoxy-2-methylbutan-2-ol,CCOC(C)C(C)(C)O,train
+1172,3-Ethoxy-2-methylbutanenitrile,CCOC(C)C(C)C#N,train
+1173,3-Ethoxycyclopent-2-en-1-one,CCOC1=CC(=O)CC1,test
+1174,"3-Ethoxyhexa-1,5-diene",CCOC(CC=C)C=C,train
+1175,3-Ethoxypyrazol-4-one,CCOC1=NN=CC1=O,train
+1176,"3-Ethyl-1,3-oxazinan-5-one",CCN1CC(=O)COC1,train
+1177,"3-Ethyl-2,2-dimethylpentane",CCC(CC)C(C)(C)C,test
+1178,"3-Ethyl-2,4-dimethylpentane",CCC(C(C)C)C(C)C,train
+1179,"3-Ethyl-2,4-dimethylpyrrolidine",CCC1C(CNC1C)C,train
+1180,3-Ethyl-2-methylhexane,CCCC(CC)C(C)C,train
+1181,3-Ethyl-2-methylpent-2-enal,CCC(=C(C)C=O)CC,test
+1182,3-Ethyl-2-methylpentane,CCC(CC)C(C)C,train
+1183,3-Ethyl-2-methylpyridine,CCC1=C(N=CC=C1)C,train
+1184,3-Ethyl-3-methylcyclopropene,CCC1(C=C1)C,train
+1185,3-Ethyl-3-methylpent-4-en-2-one,CCC(C)(C=C)C(=O)C,test
+1186,3-Ethyl-3-prop-1-en-2-yloxetane,CCC1(COC1)C(=C)C,train
+1187,"3-Ethyl-4,4-dimethyloxetan-2-one",CCC1C(=O)OC1(C)C,train
+1188,"3-Ethyl-4-methyl-1,3-oxazolidin-2-one",CCN1C(COC1=O)C,train
+1189,3-Ethyl-4-methylpyridine,CCC1=C(C=CN=C1)C,train
+1190,3-(Ethylamino)butanamide,CCNC(C)CC(=O)N,test
+1191,3-Ethylazepane,CCC1CCCCNC1,train
+1192,3-Ethylcyclobutene,CCC1CC=C1,train
+1193,3-Ethylcyclopentene,CCC1CCC=C1,test
+1194,3-Ethyldioxetane,CCC1COO1,train
+1195,3-(Ethylideneamino)propanal,CC=NCCC=O,train
+1196,3-Ethylideneoxetane,CC=C1COC1,train
+1197,3-Ethylpent-1-yn-3-amine,CCC(CC)(C#C)N,train
+1198,"3-Ethylpentane-2,4-dione",CCC(C(=O)C)C(=O)C,train
+1199,3-Ethynylcyclohex-2-en-1-ol,C#CC1=CC(CCC1)O,train
+1200,3-Ethynylhexan-1-ol,CCCC(CCO)C#C,train
+1201,3-(Furan-2-yl)prop-2-yn-1-amine,C1=COC(=C1)C#CCN,train
+1202,3-Hydroperoxy-2-methylidenebutanamide,CC(C(=C)C(=O)N)OO,train
+1203,3-Hydroperoxy-2-methylpropanoic acid,CC(COO)C(=O)O,train
+1204,3-Hydroxy-1-methyl-1-(methylamino)urea,CNN(C)C(=O)NO,train
+1205,3-Hydroxy-2-(hydroxyamino)propanoic acid,C(C(C(=O)O)NO)O,train
+1206,3-hydroxy-2-methyl-4H-pyrimidine,CC1=NC=CCN1O,train
+1207,3-Hydroxy-2-methylbutanenitrile,CC(C#N)C(C)O,test
+1208,3-Hydroxy-2-methylcyclopentene-1-carbonitrile,CC1=C(CCC1O)C#N,train
+1209,3-Hydroxy-3-methylhex-5-enal,CC(CC=C)(CC=O)O,train
+1210,3-Hydroxy-3-methylpent-4-en-2-one,CC(=O)C(C)(C=C)O,train
+1211,3-Hydroxy-3-nitrobutan-2-one,CC(=O)C(C)([N+](=O)[O-])O,train
+1212,3-Hydroxy-4-methylpentanenitrile,CC(C)C(CC#N)O,train
+1213,3-Hydroxy-5-methylhex-5-en-2-one,CC(=C)CC(C(=O)C)O,train
+1214,"3-hydroxy-N,N-dimethylpropanamide",CN(C)C(=O)CCO,train
+1215,3-(Hydroxyamino)propanal,C(CNO)C=O,train
+1216,3-Hydroxybenzaldehyde,C1=CC(=CC(=C1)O)C=O,train
+1217,3-hydroxybutan-2-yl Nitrate,CC(C(C)O[N+](=O)[O-])O,train
+1218,3-Hydroxybutanal,CC(CC=O)O,train
+1219,3-Hydroxybutanenitrile,CC(CC#N)O,train
+1220,3-Hydroxycyclopent-3-en-1-one,C1C=C(CC1=O)O,test
+1221,"3-(Hydroxyimino)-2,2-dimethylpropan-1-OL",CC(C)(CO)C=NO,test
+1222,"3-(Hydroxymethyl)-2-methyl-1,2-oxazol-5-one",CN1C(=CC(=O)O1)CO,test
+1223,"3-(hydroxymethyl)-2H-1,2-oxazol-5-one",C1=C(NOC1=O)CO,test
+1224,3-(Hydroxymethyl)imidazolidin-4-one,C1C(=O)N(CN1)CO,train
+1225,"3-(Hydroxymethyl)pentane-2,4-diol",CC(C(CO)C(C)O)O,train
+1226,3-Hydroxypropoxycarbamic acid,C(CO)CONC(=O)O,train
+1227,"3-imino-N,N-dimethylpropan-1-amine",CN(C)CCC=N,train
+1228,3-Isocyanato-2-methylfuran,CC1=C(C=CO1)N=C=O,test
+1229,3-Isocyano-2-oxopropanal,[C-]#[N+]CC(=O)C=O,train
+1230,3-Methoxy-1-methylpyrrolidin-2-one,CN1CCC(C1=O)OC,train
+1231,3-Methoxy-1-methylpyrrolidine,CN1CCC(C1)OC,test
+1232,3-Methoxy-2-methylpropanal,CC(COC)C=O,test
+1233,3-Methoxy-3-methyl-2-methylidenebutanenitrile,CC(C)(C(=C)C#N)OC,train
+1234,3-Methoxy-3-methylbutanoic acid,CC(C)(CC(=O)O)OC,train
+1235,3-Methoxy-3-methylpent-1-yne,CCC(C)(C#C)OC,train
+1236,"3-Methoxy-4-methyl-4,5-dihydro-1,2-oxazole",CC1CON=C1OC,train
+1237,3-methoxy-N-methylpropan-1-imine,CN=CCCOC,train
+1238,3-Methoxybutanoic acid,CC(CC(=O)O)OC,train
+1239,3-(Methoxymethoxy)butan-2-one,CC(C(=O)C)OCOC,train
+1240,"3-(Methoxymethyl)-1,3-oxazolidin-2-one",COCN1CCOC1=O,train
+1241,"3-(Methoxymethyl)-2,5-dihydrofuran",COCC1=CCOC1,train
+1242,3-Methoxyphenol,COC1=CC=CC(=C1)O,train
+1243,3-Methoxyprop-2-enal,COC=CC=O,train
+1244,(3-Methoxypyrrolidin-1-yl)methanol,COC1CCN(C1)CO,test
+1245,"3-Methyl-1,2,3,3a,4,5-hexahydropentalene",CC1CCC2=CCCC12,train
+1246,"(3-Methyl-1,2,4-oxadiazol-5-yl)methanamine",CC1=NOC(=N1)CN,train
+1247,"3-methyl-2,6-dihydro-1H-pyrimidine",CN1CNCC=C1,train
+1248,3-Methyl-2-oxopentanamide,CCC(C)C(=O)C(=O)N,train
+1249,3-Methyl-2-prop-1-en-2-ylbut-2-enal,CC(=C(C=O)C(=C)C)C,train
+1250,3-Methyl-2-propoxybut-1-ene,CCCOC(=C)C(C)C,train
+1251,"3-methyl-2H-pyridine-1,2-diamine",CC1=CC=CN(C1N)N,train
+1252,"3-Methyl-3,4-dihydrodiazete",CC1CN=N1,train
+1253,3-Methyl-3-propan-2-yldiazirine,CC(C)C1(N=N1)C,train
+1254,3-Methyl-3-propan-2-yloxetan-2-one,CC(C)C1(COC1=O)C,train
+1255,"3-Methyl-4-prop-2-ynyl-1,2-oxazole",CC1=NOC=C1CC#C,train
+1256,"3-methyl-5H-pyrazolo[5,1-c][1,2,4]triazole",CC1=NN=C2N1NC=C2,train
+1257,"3-Methyl-7-oxabicyclo[4.1.0]hepta-1(6),2,4-trien-2-ol",CC1=C(C2=C(O2)C=C1)O,train
+1258,3-[Methyl(prop-2-enyl)amino]propan-1-ol,CN(CCCO)CC=C,train
+1259,3-Methylbicyclo[1.1.1]pentane-1-carboxylic acid,CC12CC(C1)(C2)C(=O)O,train
+1260,3-Methylbut-1-yne,CC(C)C#C,test
+1261,3-methylbutan-2-yl Nitrate,CC(C)C(C)O[N+](=O)[O-],test
+1262,3-Methylbutanehydrazide,CC(C)CC(=O)NN,train
+1263,"3-Methylcyclohepta-1,4,6-trien-1-ol",CC1C=CC=CC(=C1)O,train
+1264,"3-Methylcyclohexa-3,5-diene-1,2-diol",CC1=CC=CC(C1O)O,test
+1265,3-Methylcyclopentene,CC1CCC=C1,train
+1266,3-Methyldioxiran-3-amine,CC1(OO1)N,train
+1267,3-Methylfuran,CC1=COC=C1,train
+1268,3-Methylfuran-2-amine,CC1=C(OC=C1)N,train
+1269,"3-Methylhepta-1,4-diene",CCC=CC(C)C=C,train
+1270,"3-Methylhepta-1,4-diyne",CCC#CC(C)C#C,train
+1271,3-Methylheptan-2-one,CCCCC(C)C(=O)C,train
+1272,3-Methylhex-2-en-1-ol,CCCC(=CCO)C,test
+1273,3-Methylhex-5-yn-2-one,CC(CC#C)C(=O)C,train
+1274,"3-Methylhexa-2,4-diene",CC=CC(=CC)C,train
+1275,"3-Methylhexa-3,4-dien-2-amine",CC=C=C(C)C(C)N,train
+1276,3-Methylhexan-1-ol,CCCC(C)CCO,train
+1277,3-Methylhexan-2-ol,CCCC(C)C(C)O,train
+1278,3-Methylidenedioxolane,C=C1CCOO1,train
+1279,3-Methylideneheptanenitrile,CCCCC(=C)CC#N,train
+1280,3-Methylidenehex-1-en-5-yne,C=CC(=C)CC#C,train
+1281,"3-Methylidenehexane-2,5-dione",CC(=O)CC(=C)C(=O)C,train
+1282,3-Methylideneoxane,C=C1CCCOC1,train
+1283,3-Methyloctane,CCCCCC(C)CC,train
+1284,"3-Methyloxirane-2,2-diamine",CC1C(O1)(N)N,train
+1285,3-Methylpent-3-enoic acid,CC=C(C)CC(=O)O,train
+1286,3-Methylpent-4-enamide,CC(CC(=O)N)C=C,train
+1287,"3-Methylpenta-1,3-diene",CC=C(C)C=C,train
+1288,"3-Methylpenta-1,4-diyn-3-ol",CC(C#C)(C#C)O,train
+1289,3-Methylpentan-2-ol,CCC(C)C(C)O,train
+1290,3-Methylpentan-2-One,CCC(C)C(=O)C,train
+1291,3-Methylpentane,CCC(C)CC,train
+1292,3-Methylpiperazine-1-carbaldehyde,CC1CN(CCN1)C=O,test
+1293,3-Methylpiperidine-1-carbaldehyde,CC1CCCN(C1)C=O,train
+1294,3-Methylpyridine,CC1=CN=CC=C1,train
+1295,3-Methylpyridine-2-carbonitrile,CC1=C(N=CC=C1)C#N,train
+1296,3-Methylpyrrolidin-2-one,CC1CCNC1=O,train
+1297,3-Methylpyrrolidin-3-ol,CC1(CCNC1)O,train
+1298,3-Methylpyrrolidine,CC1CCNC1,train
+1299,3-Nitrohex-2-ene,CCCC(=CC)[N+](=O)[O-],train
+1300,3-Nitropentane,CCC(CC)[N+](=O)[O-],train
+1301,3-Oxa-6-azabicyclo(3.1.0)hexane,C1C2C(N2)CO1,train
+1302,3-(Oxetan-2-yl)propanenitrile,C1COC1CCC#N,train
+1303,"3-(Oxiran-2-ylmethyl)-1,3-oxazolidine",C1COCN1CC2CO2,test
+1304,3-Oxocyclobutane-1-carbonitrile,C1C(CC1=O)C#N,test
+1305,3-Oxopropanoic acid,C(C=O)C(=O)O,train
+1306,3-Oxopropyl acetate,CC(=O)OCCC=O,train
+1307,3-Prop-2-enoxybutanal,CC(CC=O)OCC=C,train
+1308,3-Prop-2-enoxyperoxyprop-1-ene,C=CCOOOCC=C,train
+1309,"3-Propan-2-yl-1,2,4-triazol-1-amine",CC(C)C1=NN(C=N1)N,train
+1310,3-Propan-2-ylazetidin-3-amine,CC(C)C1(CNC1)N,train
+1311,3-Propan-2-ylhex-1-en-4-yne,CC#CC(C=C)C(C)C,train
+1312,3-Propan-2-yloxybutanal,CC(C)OC(C)CC=O,train
+1313,3-Propylidenecyclopentene,CCC=C1CCC=C1,train
+1314,3-Tert-butylazetidine,CC(C)(C)C1CNC1,train
+1315,3-Tert-butyloxiran-2-one,CC(C)(C)C1C(=O)O1,train
+1316,3-Tritiopropanoic acid,[3H]CCC(=O)O,test
+1317,"3a,4,5,6,7,7a-Hexahydro-1-benzofuran",C1CCC2C(C1)C=CO2,test
+1318,"3a,7a-Dihydro-1,3-benzodioxole",C1OC2C=CC=CC2O1,train
+1319,3aH-indole,C1=CC2C=CN=C2C=C1,train
+1320,"(3aR,4S,6aR)-1,2,3,3a,4,5,6,6a-octahydrocyclopenta[c]pyrrol-4-amine",C1C[C@@H]([C@@H]2[C@@H]1CNC2)N,train
+1321,"(3aR,5S,6aS)-3,3a,4,5,6,6a-hexahydro-2H-cyclopenta[b]furan-5-ol",C1CO[C@@H]2[C@H]1C[C@@H](C2)O,test
+1322,"(3aR,6aS)-2-methyl-4,5,6,6a-tetrahydro-3aH-cyclopenta[d]oxazole",CC1=N[C@@H]2CCC[C@@H]2O1,train
+1323,"(3aR,7aR)-2,3,3a,4,7,7a-hexahydro-1H-isoindole",C1C=CC[C@@H]2[C@@H]1CNC2,train
+1324,"(3aS,4R,6aR)-2,2,3,3,3a,4,5,5,6a-nonadeuteriofuro[2,3-b]furan-4-ol",[2H][C@]12[C@@](C(O[C@]1(OC(C2([2H])[2H])([2H])[2H])[2H])([2H])[2H])([2H])O,train
+1325,"(3aS,6aR)-3,3a,4,5,6,6a-hexahydro-1H-cyclopenta[d]imidazol-2-one",C1C[C@@H]2[C@H](C1)NC(=O)N2,train
+1326,"(3aS,7aR)-3a,4,7,7a-tetrahydro-1H-indene",C1C=CC[C@H]2[C@H]1CC=C2,train
+1327,(3E)-3-hydroxyimino-4-methylpent-4-en-2-one,CC(=C)/C(=N\O)/C(=O)C,train
+1328,(3E)-3-(hydroxymethylidene)oxan-2-one,C1C/C(=C\O)/C(=O)OC1,train
+1329,(3E)-3-Methoxyiminopropanenitrile,CO/N=C/CC#N,train
+1330,"(3E)-4-methylocta-1,3-diene",CCCC/C(=C/C=C)/C,train
+1331,"(3E,5E)-2-methylhepta-3,5-dien-2-ol",C/C=C/C=C/C(C)(C)O,train
+1332,"(3E,5E)-3,4-dimethylhepta-1,3,5-triene",C/C=C/C(=C(\C)/C=C)/C,train
+1333,"(3E,5E)-nona-1,3,5,7-tetraene",CC=C/C=C/C=C/C=C,train
+1334,3H-Indazole,C1C2=CC=CC=C2N=N1,train
+1335,"3H-Pyrrolo[2,3-C]pyridine",C1C=NC2=C1C=CN=C2,train
+1336,(3R)-3-acetyloxolan-2-one,CC(=O)[C@H]1CCOC1=O,train
+1337,(3R)-3-azaniumylpentanoate,CC[C@H](CC(=O)[O-])[NH3+],test
+1338,(3R)-3-(dimethylamino)butanoic acid,C[C@H](CC(=O)O)N(C)C,test
+1339,(3R)-3-hydroxy-3-methyl(113C)pentan-2-one,CC[C@](C)(C(=O)[13CH3])O,train
+1340,(3R)-3-methoxycyclopentene,CO[C@@H]1CCC=C1,test
+1341,(3R)-3-methoxyhept-1-yne,CCCC[C@H](C#C)OC,train
+1342,(3R)-3-Methyl-2-oxopentanoic acid,CC[C@@H](C)C(=O)C(=O)O,train
+1343,"(3R,4R)-3-deuteriooctan-4-ol",[H][C@@]([2H])(CC)[C@H](CCCC)O,train
+1344,"(3R,4R)-3-methylheptan-4-ol",CCC[C@H]([C@H](C)CC)O,train
+1345,"(3R,4R,5S)-4-amino-5-(hydroxymethyl)pyrrolidin-3-ol",C1[C@H]([C@@H]([C@H](N1)CO)N)O,train
+1346,"(3R,4S)-3,4-dihydroxy-3-methylpentan-2-one",C[C@@H]([C@](C)(C(=O)C)O)O,train
+1347,"(3R,4S)-3,4-dihydroxyhex-5-enenitrile",C=C[C@@H]([C@@H](CC#N)O)O,test
+1348,"(3R,4S)-3-ethyl-4-(hydroxymethyl)azetidin-2-one",CC[C@@H]1[C@H](NC1=O)CO,train
+1349,"(3R,4S,6R)-6-methylpiperidine-3,4-diol",C[C@@H]1C[C@@H]([C@@H](CN1)O)O,train
+1350,"(3R,5R)-3,5-dimethylmorpholine",C[C@@H]1COC[C@H](N1)C,train
+1351,"(3R,5R)-3-(hydroxymethyl)-5-methyloxolan-2-one",C[C@@H]1C[C@@H](C(=O)O1)CO,test
+1352,"(3R,5R)-Heptane-3,5-diol",CC[C@H](C[C@@H](CC)O)O,test
+1353,(3R)-morpholin-4-ium-3-carboxylate,C1COC[C@@H]([NH2+]1)C(=O)[O-],train
+1354,(3S)-1-ethylpiperidin-3-amine,CCN1CCC[C@@H](C1)N,train
+1355,(3S)-3-amino-3H-furan-2-one,C1=COC(=O)[C@H]1N,train
+1356,(3S)-3-amino-5-methylhexan-2-one,CC(C)C[C@@H](C(=O)C)N,train
+1357,(3S)-3-aminocyclohexan-1-one,C1C[C@@H](CC(=O)C1)N,train
+1358,(3S)-3-azaniumylhex-5-enoate,C=CC[C@@H](CC(=O)[O-])[NH3+],train
+1359,(3S)-3-hydroxyoxane-3-carbonitrile,C1C[C@@](COC1)(C#N)O,train
+1360,(3S)-3-propylpyrrolidin-2-one,CCC[C@H]1CCNC1=O,train
+1361,"(3S,3aR,6aR)-3,3a,4,5,6,6a-hexahydro-2H-cyclopenta[b]furan-3-ol",C1C[C@H]2[C@@H](C1)OC[C@H]2O,train
+1362,(3S)-4-deuterio-3-methylpentanamide,[2H]C(C)[C@H](C)CC(=O)N,test
+1363,"(3S,4R)-3,4-dihydro-2H-pyran-3,4-diol",C1[C@@H]([C@@H](C=CO1)O)O,train
+1364,"(3S,4R)-3,4-dihydro-2H-pyrrole-3,4-diol",C1[C@@H]([C@@H](C=N1)O)O,train
+1365,"(3S,4R)-3-hydroxy-4-methylhex-5-enal",C[C@H](C=C)[C@H](CC=O)O,train
+1366,"(3S,4R)-4-methyloxane-3,4-diol",C[C@]1(CCOC[C@@H]1O)O,train
+1367,"[(3S,4S)-4-(methylamino)oxolan-3-yl]methanol",CN[C@@H]1COC[C@@H]1CO,train
+1368,"(3S,4S,5S)-3-amino-4,5-dimethyloxolan-2-one",C[C@@H]1[C@@H](OC(=O)[C@H]1N)C,train
+1369,"(3S,4S)-hept-1-en-6-yne-3,4-diol",C=C[C@@H]([C@H](CC#C)O)O,train
+1370,(3S)-5-methylhex-5-en-3-ol,CC[C@@H](CC(=C)C)O,train
+1371,"(3S,5S)-3-amino-5-(hydroxymethyl)oxolan-2-one",C1[C@H](OC(=O)[C@H]1N)CO,train
+1372,"(3S,5S)-5-methoxydioxolan-3-ol",CO[C@@H]1C[C@H](OO1)O,train
+1373,"(3S,6S)-3-deuterio-6-methoxycyclohexene",[H][C@@]1(CC[C@@H](C=C1)OC)[2H],train
+1374,(3S)-hept-4-yn-3-ol,CCC#C[C@H](CC)O,train
+1375,(3S)-N-ethyl-3-hydroxybutanamide,CCNC(=O)C[C@H](C)O,train
+1376,(3Z)-3-ethylidenehex-1-ene,CCC/C(=C/C)/C=C,train
+1377,"(3Z)-3-(hydroxymethylidene)oxolane-2,4-dione",C1C(=O)/C(=C/O)/C(=O)O1,train
+1378,(3Z)-3-(methylhydrazinylidene)butan-2-one,C/C(=N/NC)/C(=O)C,train
+1379,"(3Z)-4-methylhexa-3,5-dien-2-imine",C/C(=C/C(=N)C)/C=C,test
+1380,"(3Z)-4-methylhexa-3,5-dien-2-one",C/C(=C/C(=O)C)/C=C,train
+1381,"(3Z)-5-methylhexa-3,5-dien-2-one",CC(=C)/C=C\C(=O)C,train
+1382,"4-(1-Aminoethyl)-1,3-oxazolidin-2-one",CC(C1COC(=O)N1)N,train
+1383,"4-(2-Hydroxyethyl)-1,3-dioxolan-2-one",C1C(OC(=O)O1)CCO,train
+1384,4-(2-Hydroxyethyl)-3-methylazetidin-2-one,CC1C(NC1=O)CCO,train
+1385,"4-(2-Methylpropyl)-1,3-oxazolidine",CC(C)CC1COCN1,train
+1386,"4-(2-Methylpropyl)-4,5-dihydro-1,3-oxazole",CC(C)CC1COC=N1,train
+1387,"4,4,5-Trimethyl-2-methylidene-1,3-oxazolidine",CC1C(NC(=C)O1)(C)C,test
+1388,"4,4-Dihydroxy-2-methylidenebutanamide",C=C(CC(O)O)C(=O)N,train
+1389,"4,4-Dihydroxy-3-methylbutanoic acid",CC(CC(=O)O)C(O)O,test
+1390,"4,4-Dimethoxy-2-methylbut-1-ene",CC(=C)CC(OC)OC,train
+1391,"4,4-Dimethyl-1,3-dioxan-5-ol",CC1(C(COCO1)O)C,test
+1392,"4,4-Dimethyl-1,3-dioxane",CC1(CCOCO1)C,train
+1393,"4,4-Dimethyl-2,3-diazabicyclo[3.2.0]hept-2-ene",CC1(C2CCC2N=N1)C,test
+1394,"4,4-Dimethyl-3-oxopentanal",CC(C)(C)C(=O)CC=O,test
+1395,"4,4-Dimethylcyclohexa-2,5-dien-1-ol",CC1(C=CC(C=C1)O)C,test
+1396,"4,4-Dimethylcyclohexan-1-amine",CC1(CCC(CC1)N)C,train
+1397,"4,4-Dimethylhexa-1,5-dien-3-ol",CC(C)(C=C)C(C=C)O,train
+1398,"4,4-Dimethylhexanal",CCC(C)(C)CCC=O,train
+1399,"(4,4-Dimethyloxetan-2-YL)methanol",CC1(CC(O1)CO)C,train
+1400,"4,4-Dimethylpent-1-ene",CC(C)(C)CC=C,train
+1401,"4,4-Dimethylpentan-2-ol",CC(CC(C)(C)C)O,train
+1402,"4,4-Dimethylpentanal",CC(C)(C)CCC=O,train
+1403,"4,4-Dimethylpentanoic acid",CC(C)(C)CCC(=O)O,test
+1404,"4,5,6,7-Tetrahydro-1,3-diazepin-1-ylhydrazine;hydrochloride",C1CCN(C=NC1)NN.Cl,test
+1405,"4,5,6,7-tetrahydro-1H-1,3-diazepin-2-ylmethanamine",C1CCN=C(NC1)CN,train
+1406,"4,5,6,7-tetrahydro-1H-indazole",C1CCC2=C(C1)C=NN2,train
+1407,"4,5-Diamino-1,2,4-triazolidin-3-one",C1(NNC(=O)N1N)N,train
+1408,"4,5-Diethyl-1,2-oxazole",CCC1=C(ON=C1)CC,train
+1409,"4,5-Dihydro-1,4-oxazepine",C1C=COC=CN1,train
+1410,"4,5-dihydro-1H-imidazol-5-amine",C1C(NC=N1)N,train
+1411,"4,5-Dimethyl-1,3-dihydropyrrol-2-one",CC1=C(NC(=O)C1)C,train
+1412,"4,5-Dimethyl-1H-imidazole",CC1=C(N=CN1)C,train
+1413,"4,5-Dimethyl-3-methylideneoxolan-2-one",CC1C(OC(=O)C1=C)C,test
+1414,"4,5-Dimethylcyclopent-2-en-1-ol",CC1C=CC(C1C)O,test
+1415,"(4,5-Dimethylpyrrolidin-3-yl)methanol",CC1C(NCC1CO)C,train
+1416,"4,6-Dimethyl-1,3,5-triazinan-2-one",CC1NC(NC(=O)N1)C,train
+1417,"4,6-Dimethyl-1,4,5,6-tetrahydropyrimidin-2-amine",CC1CC(N=C(N1)N)C,train
+1418,"4,6-Dimethylpyrimidine",CC1=CC(=NC=N1)C,test
+1419,"4,7-dihydro-1H-indazole",C1C=CCC2=C1C=NN2,test
+1420,"4,8-Dioxatricyclo[5.1.0.03,5]octane",C1C2C(O2)CC3C1O3,test
+1421,4-Acetylazetidin-2-one,CC(=O)C1CC(=O)N1,test
+1422,4-Amino-2-hydroxybutanamide,C(CN)C(C(=O)N)O,train
+1423,4-Amino-2-hydroxybutanoic acid,C(CN)C(C(=O)O)O,train
+1424,(4-Amino-2-methylcyclopentyl)methanol,CC1CC(CC1CO)N,train
+1425,4-Amino-3-ethylpentan-1-ol,CCC(CCO)C(C)N,train
+1426,4-Amino-3-hydroxybutanoic acid,C(C(CN)O)C(=O)O,train
+1427,4-Amino-4-methoxypentan-2-ol,CC(CC(C)(N)OC)O,train
+1428,4-Amino-4-oxobut-2-enoic acid,C(=CC(=O)O)C(=O)N,train
+1429,"4-amino-5,5-dimethyl-1H-imidazol-2-one",CC1(C(=NC(=O)N1)N)C,test
+1430,4-Aminobutanamide,C(CC(=O)N)CN,train
+1431,4-Aminobutanenitrile,C(CC#N)CN,train
+1432,(4-Aminocyclopent-2-en-1-yl)methanol,C1C(C=CC1N)CO,train
+1433,"4-Aminocyclopent-4-ene-1,3-dione",C1C(=O)C=C(C1=O)N,train
+1434,(4-Aminooxan-4-yl)methanol,C1COCCC1(CO)N,train
+1435,4-Aminopent-1-en-3-ol,CC(C(C=C)O)N,train
+1436,4-Aminopent-4-enamide,C=C(CCC(=O)N)N,train
+1437,"4-Aminopentane-1,3-diol",CC(C(CCO)O)N,train
+1438,4-Aminophenol,C1=CC(=CC=C1N)O,train
+1439,4-Aminotriazole-1-carboxylic acid,C1=C(N=NN1C(=O)O)N,train
+1440,"4-Azidobutane-1,2-diol",C(CN=[N+]=[N-])C(CO)O,train
+1441,"4-Butan-2-yl-1,3-oxazolidine",CCC(C)C1COCN1,train
+1442,4-Cyanobutanoic acid,C(CC#N)CC(=O)O,train
+1443,4-Deuterio-2-methoxypyrimidine,[2H]C1=CC=NC(=N1)OC,train
+1444,4-(Dimethylamino)butan-1-ol,CN(C)CCCCO,train
+1445,"4-Ethenyl-1,2,3,6-tetrahydropyridine",C=CC1=CCNCC1,train
+1446,"4-Ethenyl-1,2-dimethylcyclopentane",CC1CC(CC1C)C=C,train
+1447,"4-Ethenyl-2-methylidene-1,3-dioxolane",C=CC1COC(=C)O1,test
+1448,4-Ethoxy-3-methylpent-1-yne,CCOC(C)C(C)C#C,train
+1449,"4-Ethyl-1,2,4-triazolidine-3,5-dione",CCN1C(=O)NNC1=O,train
+1450,"4-Ethyl-1,3-dimethyl-1,3-diazetidin-2-one",CCC1N(C(=O)N1C)C,train
+1451,"4-Ethyl-1,3-dioxolane",CCC1COCO1,train
+1452,4-Ethyl-1-methylpyrrolidin-2-one,CCC1CC(=O)N(C1)C,train
+1453,4-ethyl-1H-pyrazine,CCN1C=CNC=C1,train
+1454,"4-Ethyl-2-methyl-1,2-oxazol-5-one",CCC1=CN(OC1=O)C,test
+1455,4-Ethyl-2-methylhexane,CCC(CC)CC(C)C,test
+1456,4-Ethyl-2-methylpyridine,CCC1=CC(=NC=C1)C,train
+1457,"4-Ethyl-3,5-dimethylidene-1,2,4-oxadiazolidine",CCN1C(=C)NOC1=C,train
+1458,"4-Ethyl-3-methyl-5-methylidene-1,2,4-oxadiazole",CCN1C(=NOC1=C)C,train
+1459,"4-Ethyl-5-methyl-1,3-dioxolan-2-one",CCC1C(OC(=O)O1)C,test
+1460,4-Ethylhept-3-ene,CCCC(=CCC)CC,train
+1461,4-Ethylhexan-3-one,CCC(CC)C(=O)CC,test
+1462,4-Ethylphenol,CCC1=CC=C(C=C1)O,train
+1463,4-Ethylpiperidine,CCC1CCNCC1,train
+1464,4-Ethylpyridin-2-amine,CCC1=CC(=NC=C1)N,train
+1465,4-Ethylpyridine,CCC1=CC=NC=C1,train
+1466,4-Ethynylphenol,C#CC1=CC=C(C=C1)O,train
+1467,"4-Hydrazinyl-1,3,5-triazin-2-amine",C1=NC(=NC(=N1)NN)N,test
+1468,4-Hydroperoxypentan-2-one,CC(CC(=O)C)OO,train
+1469,"4-Hydroxy-4-methyl-1,3-dioxolan-2-one",CC1(COC(=O)O1)O,train
+1470,4-Hydroxy-4-methylpentanal,CC(C)(CCC=O)O,train
+1471,4-Hydroxy-5-oxohexanal,CC(=O)C(CCC=O)O,train
+1472,4-(hydroxyamino)butanoic Acid,C(CC(=O)O)CNO,train
+1473,4-Hydroxycyclohept-2-en-1-one,C1CC(C=CC(=O)C1)O,train
+1474,4-Hydroxycyclohex-3-en-1-one,C1CC(=CCC1=O)O,train
+1475,"4-Hydroxycyclohex-4-ene-1,3-dione",C1C=C(C(=O)CC1=O)O,test
+1476,"4-Hydroxycyclohexa-2,5-dien-1-one",C1=CC(=O)C=CC1O,test
+1477,4-Hydroxyhex-5-en-3-one,CCC(=O)C(C=C)O,train
+1478,"4-Hydroxyhexa-1,5-dien-3-one",C=CC(C(=O)C=C)O,train
+1479,4-(Hydroxymethyl)cyclopent-2-en-1-ol,C1C(C=CC1O)CO,train
+1480,4-(Hydroxymethyl)oxan-4-ol,C1COCCC1(CO)O,train
+1481,4-Hydroxypiperidine-4-carbonitrile,C1CNCCC1(C#N)O,train
+1482,(4-Hydroxypyrrolidin-2-yl)methanediol,C1C(CNC1C(O)O)O,train
+1483,"4-Methoxy-1,3,5-triazin-2-amine",COC1=NC=NC(=N1)N,train
+1484,"4-Methoxy-1,3-dioxepane",COC1CCCOCO1,train
+1485,"4-Methoxy-1,5-dimethylpyrazole",CC1=C(C=NN1C)OC,train
+1486,4-Methoxy-4-methylcyclohexene,CC1(CCC=CC1)OC,train
+1487,4-(Methoxyamino)pyrrolidin-3-ol,CONC1CNCC1O,train
+1488,"4-Methoxycyclohexa-2,4-dien-1-imine",COC1=CCC(=N)C=C1,train
+1489,4-Methoxyfuran-2-carbaldehyde,COC1=COC(=C1)C=O,train
+1490,4-Methoxyheptane,CCCC(CCC)OC,test
+1491,4-Methoxyoxane;hydrate,COC1CCOCC1.O,train
+1492,4-Methoxypentan-1-amine,CC(CCCN)OC,train
+1493,4-Methoxyphenol,COC1=CC=C(C=C1)O,train
+1494,4-Methoxypyridine,COC1=CC=NC=C1,train
+1495,"4-Methyl-1,2,4-oxadiazinane-3,5-dione",CN1C(=O)CONC1=O,train
+1496,"4-Methyl-1,2-dimethylidenecyclopentane",CC1CC(=C)C(=C)C1,train
+1497,"4-Methyl-1,3-dioxane",CC1CCOCO1,train
+1498,"(4-Methyl-1,3-oxazol-5-yl)methanol",CC1=C(OC=N1)CO,train
+1499,"4-Methyl-1,3-oxazole-2-carbaldehyde",CC1=COC(=N1)C=O,train
+1500,"4-methyl-2,5-dihydro-1H-imidazole-5-carbaldehyde",CC1=NCNC1C=O,train
+1501,"4-Methyl-2-propyl-1,3-dioxolane",CCCC1OCC(O1)C,train
+1502,4-Methyl-3-oxabicyclo[3.2.0]heptan-2-ol,CC1C2CCC2C(O1)O,test
+1503,4-Methyl-3-oxopentanoic acid,CC(C)C(=O)CC(=O)O,train
+1504,"4-methyl-4,5-dihydro-3H-pyrazole",CC1CN=NC1,train
+1505,"4-(Methylamino)-1,2,4-triazin-5-one",CNN1C=NN=CC1=O,test
+1506,4-(Methylamino)butan-2-ol,CC(CCNC)O,train
+1507,4-Methylazetidin-2-one,CC1CC(=O)N1,train
+1508,4-Methylazocane,CC1CCCCNCC1,train
+1509,4-Methylbenzaldehyde,CC1=CC=C(C=C1)C=O,train
+1510,4-Methylbicyclo[3.2.0]heptan-6-one,CC1CCC2C1C(=O)C2,train
+1511,4-Methylcyclohexene,CC1CCC=CC1,test
+1512,4-Methylhept-3-en-2-one,CCCC(=CC(=O)C)C,train
+1513,4-Methylhept-3-ene,CCCC(=CCC)C,train
+1514,4-Methylhept-4-en-3-one,CCC=C(C)C(=O)CC,train
+1515,4-Methylheptane,CCCC(C)CCC,train
+1516,4-Methylhexan-1-amine,CCC(C)CCCN,train
+1517,4-Methylhexan-3-ol,CCC(C)C(CC)O,train
+1518,"4-Methylhexane-1,3-diamine",CCC(C)C(CCN)N,train
+1519,4-Methylideneheptan-3-ol,CCCC(=C)C(CC)O,train
+1520,4-Methylideneoxetan-2-imine,C=C1CC(=N)O1,train
+1521,4-Methyloctane,CCCCC(C)CCC,train
+1522,4-Methyloxolane-2-carbaldehyde,CC1CC(OC1)C=O,train
+1523,4-Methylpent-1-en-2-ol,CC(C)CC(=C)O,train
+1524,"4-Methylpent-2-yne-1,4-diol",CC(C)(C#CCO)O,train
+1525,"4-Methylpentane-1,2,3-triol",CC(C)C(C(CO)O)O,train
+1526,"4-Methylpentane-1,2-diol",CC(C)CC(CO)O,train
+1527,4-Methylpentanenitrile,CC(C)CCC#N,train
+1528,(4-Methylpiperazin-2-ylidene)methanone,CN1CCNC(=C=O)C1,train
+1529,"4-Methylpiperazine-2,6-dione",CN1CC(=O)NC(=O)C1,train
+1530,4-Methylpiperidine,CC1CCNCC1,train
+1531,4-Methylpyridine,CC1=CC=NC=C1,train
+1532,4-Methylpyrimidin-5-ol,CC1=NC=NC=C1O,train
+1533,4-Methylpyrimidine,CC1=NC=NC=C1,train
+1534,4-nitro-1H-pyrazole,C1=C(C=NN1)[N+](=O)[O-],train
+1535,4-Nitrobutanenitrile,C(CC#N)C[N+](=O)[O-],train
+1536,4-Nitromorpholine,C1COCCN1[N+](=O)[O-],train
+1537,4-Nitropiperidine,C1CNCCC1[N+](=O)[O-],train
+1538,4-Nitropyridine,C1=CN=CC=C1[N+](=O)[O-],train
+1539,"4-Nitroso-2,3-dihydro-1,4-oxazine",C1COC=CN1N=O,train
+1540,4-Nitrosoaniline,C1=CC(=CC=C1N)N=O,train
+1541,"4-Oxa-1,7-diazabicyclo[4.1.0]hept-6-ene",C1COCC2=NN21,train
+1542,4-Prop-2-enoxybut-2-yn-1-ol,C=CCOCC#CCO,train
+1543,4-prop-2-ynoxy-1H-pyrazole,C#CCOC1=CNN=C1,train
+1544,4-propan-2-yl-3H-furan-2-one,CC(C)C1=COC(=O)C1,test
+1545,4-Propan-2-yloxybutan-2-ol,CC(C)OCCC(C)O,train
+1546,"4-Propyl-1,3-dioxol-2-one",CCCC1=COC(=O)O1,train
+1547,4-Propylpiperidine,CCCC1CCNCC1,train
+1548,"4-Tert-butyl-1,3-dioxolane",CC(C)(C)C1COCO1,train
+1549,"4H-Pyrazolo[3,4-d]pyrimidine",C1C2=CN=NC2=NC=N1,train
+1550,4H-trioxazine,C1=COOON1,train
+1551,(4R)-4-ethenylcyclohexene,C=C[C@@H]1CCC=CC1,train
+1552,"(4R)-4-ethyl-1,3-oxazolidin-2-one",CC[C@@H]1COC(=O)N1,train
+1553,"(4R)-4-ethyl-3-methyl-1,3-oxazolidin-2-one",CC[C@@H]1COC(=O)N1C,test
+1554,(4R)-4-hydroxy-3-methylcyclopent-2-en-1-one,CC1=CC(=O)C[C@H]1O,train
+1555,"(4R)-4-hydroxy-5,5-dimethylcyclopent-2-en-1-one",CC1([C@@H](C=CC1=O)O)C,train
+1556,"(4R,5R)-3,4,5-trimethyl-4,5-dihydro-1,2-oxazole",C[C@H]1[C@H](ON=C1C)C,train
+1557,"(4R,5R)-5-ethenyl-4-hydroxyoxolan-2-one",C=C[C@@H]1[C@@H](CC(=O)O1)O,train
+1558,"(4R,5S)-4,5-dimethyl-3-methylideneoxolan-2-one",C[C@H]1[C@@H](OC(=O)C1=C)C,train
+1559,"(4R,5Z)-hepta-1,5-dien-4-ol",C/C=C\[C@@H](CC=C)O,train
+1560,"(4S)-2-oxo-1,3-oxazolidine-4-carboxylic acid",C1[C@H](NC(=O)O1)C(=O)O,train
+1561,(4S)-4-(1-hydroxypropyl)azetidin-2-one,CCC([C@@H]1CC(=O)N1)O,test
+1562,(4S)-4-(2-hydroxyethyl)azetidin-2-one,C1[C@@H](NC1=O)CCO,train
+1563,"(4S)-4-ethenyl-2,2-dimethyl-1,3-dioxolane",CC1(OC[C@@H](O1)C=C)C,test
+1564,(4S)-4-Ethoxypentan-2-one,CCO[C@@H](C)CC(=O)C,train
+1565,(4S)-4-ethylcyclopent-2-en-1-one,CC[C@H]1CC(=O)C=C1,test
+1566,(4S)-4-(hydroxymethyl)-1-methylpyrrolidin-2-one,CN1C[C@H](CC1=O)CO,train
+1567,(4S)-4-methylhept-1-en-4-ol,CCC[C@@](C)(CC=C)O,train
+1568,(4S)-4-methylpiperidin-3-one,C[C@H]1CCNCC1=O,train
+1569,"(4S,5E)-hepta-1,5-dien-4-ol",C/C=C/[C@H](CC=C)O,train
+1570,"(4S,5R)-5-ethyl-4-hydroxyoxolan-2-one",CC[C@@H]1[C@H](CC(=O)O1)O,train
+1571,"5,5,5-Trideuterio-4-(trideuteriomethyl)pent-1-ene",[2H]C([2H])([2H])C(CC=C)C([2H])([2H])[2H],train
+1572,"5,5-Dimethoxypent-2-ene",CC=CCC(OC)OC,test
+1573,"5,5-Dimethylhex-3-yn-2-amine",CC(C#CC(C)(C)C)N,train
+1574,"5,5-Dimethylpiperazin-2-one",CC1(CNC(=O)CN1)C,train
+1575,"5,6,7,8-tetrahydro-1H-[1,2,4]triazolo[1,2-a]pyridazine",C1CCN2C=NCN2C1,train
+1576,"5,6-dihydro-2H-oxadiazine-4-carboxylic acid",C1CONN=C1C(=O)O,test
+1577,"5,6-Dihydro-4H-pyrrolo(1,2-b)pyrazole",C1CC2=CC=NN2C1,test
+1578,"5,6-Dimethyl-2,3-dioxabicyclo[2.2.1]heptane",CC1C(C2CC1OO2)C,train
+1579,"5,7-Dimethyl-2,3-dihydro-1H-[1,4]diazepine",CC1=CC(=NCCN1)C,train
+1580,"5-Amino-1,3-diazinan-2-one",C1C(CNC(=O)N1)N,test
+1581,5-Amino-2-(methylamino)pentanal,CNC(CCCN)C=O,train
+1582,5-Amino-2-methylpyridin-3-ol,CC1=C(C=C(C=N1)N)O,train
+1583,5-Aminohexanenitrile,CC(CCCC#N)N,train
+1584,5-Aminohexanoic acid,CC(CCCC(=O)O)N,train
+1585,5-(Aminomethyl)-3-methyltriazol-4-amine,CN1C(=C(N=N1)CN)N,train
+1586,5-Aminopentan-1-ol,C(CCN)CCO,train
+1587,5-Azidopentanal,C(CCN=[N+]=[N-])CC=O,train
+1588,"5-Cyclopropyl-3,4-dihydro-2H-pyrrole",C1CC(=NC1)C2CC2,train
+1589,5-Diazohex-1-ene,CC(=[N+]=[N-])CCC=C,train
+1590,"5-Ethenylcyclopenta-1,3-diene",C=CC1C=CC=C1,test
+1591,"5-Ethyl-1,3-dioxan-2-amine",CCC1COC(OC1)N,test
+1592,5-Ethyl-1-hydroxytriazole,CCC1=CN=NN1O,train
+1593,5-Ethyl-2-methylpyridine,CCC1=CN=C(C=C1)C,train
+1594,5-Ethylbicyclo[2.2.1]hept-1-ene,CCC1CC2=CCC1C2,test
+1595,5-Ethylideneoxolan-2-one,CC=C1CCC(=O)O1,train
+1596,"5-Ethyloxolane-2,3-diol",CCC1CC(C(O1)O)O,train
+1597,(5-Ethynylfuran-2-yl)methanol,C#CC1=CC=C(O1)CO,train
+1598,5-Ethynylpyridin-3-amine,C#CC1=CC(=CN=C1)N,train
+1599,"5-Hydroxy-1,4-dimethylimidazolidin-2-one",CC1C(N(C(=O)N1)C)O,train
+1600,5-Hydroxy-1-methylpyrimidin-4-one,CN1C=C(C(=O)N=C1)O,train
+1601,"5-Hydroxy-3,7-dioxabicyclo[4.1.0]heptan-2-one",C1C(C2C(O2)C(=O)O1)O,test
+1602,5-Hydroxy-3-Oxopentanoic Acid,C(CO)C(=O)CC(=O)O,train
+1603,5-Hydroxy-4-methylhexan-3-one,CCC(=O)C(C)C(C)O,train
+1604,"5-hydroxy-5-methyl-(213C,1,3-14N2)1,3-diazolidine-2,4-dione",CC1(C(=O)[14NH][13C](=O)[14NH]1)O,test
+1605,5-hydroxy-N-methylpentanamide,CNC(=O)CCCCO,test
+1606,5-Hydroxyhept-4-en-3-one,CCC(=CC(=O)CC)O,train
+1607,5-Hydroxyhexanamide,CC(CCCC(=O)N)O,train
+1608,5-(Hydroxymethyl)-1-methylpyrrolidin-3-ol,CN1CC(CC1CO)O,train
+1609,5-(Hydroxymethyl)cyclopent-2-en-1-one,C1C=CC(=O)C1CO,test
+1610,5-(Hydroxymethyl)oxolan-2-one,C1CC(=O)OC1CO,train
+1611,5-Hydroxypentanal,C(CCO)CC=O,train
+1612,5-Hydroxypentanoic acid,C(CCO)CC(=O)O,train
+1613,5-Imino-4-methylcyclopenten-1-ol,CC1CC=C(C1=N)O,test
+1614,"5-Isocyanato-3-methyl-1,2-oxazole",CC1=NOC(=C1)N=C=O,test
+1615,5-Isocyanopentanoic acid,[C-]#[N+]CCCCC(=O)O,train
+1616,5-Methoxybicyclo[2.2.1]hept-2-ene,COC1CC2CC1C=C2,train
+1617,5-Methoxyfuran-2-carbaldehyde,COC1=CC=C(O1)C=O,train
+1618,(5-Methoxyfuran-2-yl)methanol,COC1=CC=C(O1)CO,test
+1619,5-Methoxyhex-1-yne,CC(CCC#C)OC,train
+1620,"5-(Methoxymethyl)-1,2-oxazole",COCC1=CC=NO1,train
+1621,5-(Methoxymethyl)pyrrolidin-3-ol,COCC1CC(CN1)O,train
+1622,5-Methoxypentan-1-ol,COCCCCCO,test
+1623,"5-Methyl-1,2,4-oxadiazole-3-carboxamide",CC1=NC(=NO1)C(=O)N,train
+1624,5-methyl-1H-pyrazole-3-carboxylic acid,CC1=CC(=NN1)C(=O)O,test
+1625,5-methyl-1H-pyrrole-3-carbonitrile,CC1=CC(=CN1)C#N,train
+1626,"5-methyl-(211C)1H-pyrimidine-2,4-dione",CC1=CN[11C](=O)NC1=O,test
+1627,"5-methyl-2,5,6,7-tetrahydro-1H-1,4-diazepin-3-amine",CC1CCNCC(=N1)N,train
+1628,"5-Methyl-2,5-dihydropyran-6,6-diol",CC1C=CCOC1(O)O,train
+1629,"5-methyl-3,4-dihydro-2H-pyran-6-ol",CC1=C(OCCC1)O,test
+1630,"5-methyl-3-[(E)-prop-1-enyl]-1,2-oxazole",C/C=C/C1=NOC(=C1)C,train
+1631,"5-Methyl-3-prop-1-en-2-yl-1,2-oxazole",CC1=CC(=NO1)C(=C)C,train
+1632,5-Methyl-4-methylidenehex-5-en-2-one,CC(=C)C(=C)CC(=O)C,test
+1633,5-methyl-4H-imidazole,CC1=NC=NC1,train
+1634,5-(Methylamino)pentan-1-ol,CNCCCCCO,train
+1635,5-Methylazepan-2-one,CC1CCC(=O)NCC1,train
+1636,5-Methylfuran-2-amine,CC1=CC=C(O1)N,train
+1637,5-Methylfuran-2-carboxamide,CC1=CC=C(O1)C(=O)N,train
+1638,"5-Methylhepta-1,3,6-triene",CC(C=C)C=CC=C,train
+1639,5-Methylhex-2-ene,CC=CCC(C)C,test
+1640,5-Methylhex-3-en-2-one,CC(C)C=CC(=O)C,test
+1641,"5-Methylhexane-1,3-diamine",CC(C)CC(CCN)N,train
+1642,5-Methylhexanenitrile,CC(C)CCCC#N,train
+1643,5-Methylhexanoic acid,CC(C)CCCC(=O)O,train
+1644,5-Methylidene-7-oxabicyclo[4.1.0]hept-3-en-2-ol,C=C1C=CC(C2C1O2)O,train
+1645,5-Methylideneheptan-3-ol,CCC(CC(=C)CC)O,test
+1646,"5-Methylocta-1,6-diene",CC=CC(C)CCC=C,train
+1647,5-Methyloxane-2-carbonitrile,CC1CCC(OC1)C#N,train
+1648,(5-Methylpiperazin-2-yl)methanamine,CC1CNC(CN1)CN,train
+1649,5-Methylpyridazine-4-carbaldehyde,CC1=CN=NC=C1C=O,train
+1650,5-Methylpyrimidine,CC1=CN=CN=C1,train
+1651,"5-Methyltricyclo[3.2.0.02,7]heptane",CC12CCC3C1C3C2,train
+1652,5-Oxabicyclo[2.1.1]hexane,C1CC2CC1O2,train
+1653,5-Oxaspiro[3.4]octan-6-one,C1CC2(C1)CCC(=O)O2,train
+1654,"5-Prop-2-enyl-1,3-dioxane",C=CCC1COCOC1,train
+1655,"5-tert-butyl-3,4-dihydro-2H-pyrrole",CC(C)(C)C1=NCCC1,train
+1656,"(5E)-1-ethenyl-5-ethylidenecyclopenta-1,3-diene",C/C=C/1\C=CC=C1C=C,train
+1657,"(5E)-2-methylhepta-2,5-dien-4-ol",C/C=C/C(C=C(C)C)O,train
+1658,(5E)-5-ethylidene-7-oxabicyclo[2.2.1]hept-2-ene,C/C=C/1\CC2C=CC1O2,train
+1659,"(5E)-5-ethylidenepyrrolidine-2,4-dione",C/C=C/1\C(=O)CC(=O)N1,train
+1660,"5H-1,2-oxazole-2-carboxamide",C1C=CN(O1)C(=O)N,test
+1661,"5H-imidazo[1,2-b]pyrazol-6-amine",C1=CN2C(=N1)C=C(N2)N,train
+1662,"(5R,6R)-1-azabicyclo[3.2.1]octan-6-amine",C1C[C@@H]2CN(C1)C[C@@H]2N,test
+1663,"(5S)-2,2,5-trimethylcyclopentan-1-one",C[C@H]1CCC(C1=O)(C)C,train
+1664,"(5S)-5-methyl-2,5-dihydro-1H-1,2,4-triazin-6-one",C[C@H]1C(=O)NNC=N1,train
+1665,"6,7-Diazabicyclo[3.2.1]octane",C1CC2CC(C1)NN2,train
+1666,"6,7-dihydro-1H-imidazo[4,5-c]pyridine",C1CN=CC2=C1NC=N2,train
+1667,"6,7-dihydro-5H-pyrazolo[1,2-a][1,2,4]triazol-4-ium-6-thiol",C1C(C[N+]2=CN=CN21)S,test
+1668,"6,7-Dihydro-5H-pyrrolo[1,2-c]imidazol-7-amine",C1CN2C=NC=C2C1N,train
+1669,"6,8-Dioxabicyclo[3.2.1]oct-2-ene",C1C=CC2COC1O2,test
+1670,"6,8-Dioxabicyclo[3.2.1]octan-3-ol",C1C(CC2OCC1O2)O,train
+1671,"6,8-Dioxabicyclo(3.2.1)octan-7-one",C1CC2C(=O)OC(C1)O2,train
+1672,6-Amino-2-methylhexan-3-one,CC(C)C(=O)CCCN,train
+1673,6-Aminohexanenitrile,C(CCC#N)CCN,train
+1674,6-Aminohexanoic Acid,C(CCC(=O)O)CCN,train
+1675,6-azido-2H-pyran,C1C=CC=C(O1)N=[N+]=[N-],train
+1676,"6-ethoxy-3,6-dihydro-2H-pyran",CCOC1C=CCCO1,train
+1677,6-Ethylpyridazin-3-amine,CCC1=NN=C(C=C1)N,train
+1678,6-Ethylpyridin-3-amine,CCC1=NC=C(C=C1)N,train
+1679,6-Hydroxy-5-methyloxan-2-one,CC1CCC(=O)OC1O,train
+1680,"6-Hydroxy-6-methylcyclohexa-2,4-dien-1-one",CC1(C=CC=CC1=O)O,train
+1681,6-Hydroxyhexanoic Acid,C(CCC(=O)O)CCO,train
+1682,6-Isocyanopyridin-3-ol,[C-]#[N+]C1=NC=C(C=C1)O,train
+1683,6-Methoxy-1-oxidopyrimidin-1-ium,COC1=[N+](C=NC=C1)[O-],train
+1684,6-Methoxydioxan-4-one,COC1CC(=O)COO1,test
+1685,6-Methoxypyridazin-3-amine,COC1=NN=C(C=C1)N,train
+1686,"6-Methyl-3,4-dihydropyridine",CC1=CCCC=N1,train
+1687,"6-Methyl-3,8-dioxatricyclo[3.2.1.02,4]octane",CC1CC2C3C(C1O2)O3,train
+1688,6-Methyl-7-oxabicyclo(4.1.0)heptan-2-one,CC12CCCC(=O)C1O2,train
+1689,6-Methylazepan-2-one,CC1CCCC(=O)NC1,train
+1690,"6-Methylbicyclo[3.1.0]hexa-1(6),2,4-triene",CC1=C2C1=CC=C2,train
+1691,6-Methylbicyclo[3.1.0]hexan-2-ol,CC1C2C1C(CC2)O,train
+1692,6-Methylcyclohex-3-en-1-one,CC1CC=CCC1=O,train
+1693,6-Methylhept-1-yn-3-ol,CC(C)CCC(C#C)O,train
+1694,"6-Methylhept-5-en-2-amine, (+-)-",CC(CCC=C(C)C)N,train
+1695,6-Methylheptanal,CC(C)CCCCC=O,train
+1696,6-Methylpyridazin-3-amine,CC1=NN=C(C=C1)N,train
+1697,6-Methylpyridazine-3-carbaldehyde,CC1=NN=C(C=C1)C=O,test
+1698,"6-Oxa-2,7-diazaspiro[3.4]octane",C1C2(CN1)CNOC2,train
+1699,6-Oxabicyclo[3.2.2]nonane,C1CC2CCC(C1)OC2,train
+1700,"6-Oxatricyclo[3.1.1.02,4]hepta-1,4-diene",C1C2=C3CC(=C21)O3,train
+1701,"6-Oxatricyclo[5.2.0.02,5]nona-1(7),2(5)-diene",C1CC2=C1C3=C(O2)CC3,test
+1702,6-propan-2-yl-2H-pyran,CC(C)C1=CC=CCO1,train
+1703,"6H-furo[2,3-b]pyran",C1C=CC2=C(O1)OC=C2,test
+1704,(6R)-6-methylazepan-2-one,C[C@@H]1CCCC(=O)NC1,train
+1705,"(6R,7S)-6,7-Dimethylbicyclo[3.2.0]hept-1(5)-ene",C[C@@H]1[C@@H](C2=C1CCC2)C,train
+1706,(6R)-N-methyl-1-azabicyclo[4.1.0]heptan-7-imine,CN=C1[C@@H]2N1CCCC2,train
+1707,(6S)-6-methoxycyclohexen-1-ol,CO[C@H]1CCCC=C1O,train
+1708,"7,8-Diazatetracyclo(3.3.0.02,4.03,6)oct-7-ene",C12C3C1C4C2C3N=N4,train
+1709,"7,8-Dihydro-(1,2,4)triazolo(4,3-b)pyridazine",C1CC2=NN=CN2N=C1,train
+1710,7-Azabicyclo[2.2.1]heptane-2-carbonitrile,C1CC2C(CC1N2)C#N,train
+1711,"7-Azaspiro[3.5]nona-5,8-diene",C1CC2(C1)C=CNC=C2,train
+1712,7-Ethylidenebicyclo[2.2.1]heptane,CC=C1C2CCC1CC2,train
+1713,"7-methyl-2,3,5,8-tetrahydro-1H-pyrrolizine",CC1=CCN2C1CCC2,train
+1714,7-Methyl-5-azaspiro[2.4]heptan-7-amine,CC1(CNCC12CC2)N,train
+1715,7-Methyl-7-azabicyclo[4.1.0]heptane,CN1C2C1CCCC2,train
+1716,7-Methylspiro[3.4]octane,CC1CCC2(C1)CCC2,train
+1717,7-Oxabicyclo(2.2.1)heptane,C1CC2CCC1O2,test
+1718,7-Oxabicyclo(4.1.0)hept-3-ene,C1C=CCC2C1O2,train
+1719,7-Oxabicyclo[4.1.0]heptan-2-one,C1CC2C(O2)C(=O)C1,train
+1720,7-Oxabicyclo(4.2.0)octane,C1CCC2C(C1)CO2,train
+1721,7H-indole,C1C=CC=C2C1=NC=C2,test
+1722,8-Azabicyclo[3.2.1]octan-3-ol,C1CC2CC(CC1N2)O,train
+1723,"8-Methyl-3-oxatricyclo[3.2.1.02,4]octane",CC1C2CCC1C3C2O3,train
+1724,"8-Methylbicyclo(3,2,1)octane",CC1C2CCCC1CC2,test
+1725,Acetaldehyde,CC=O,train
+1726,Acetamide,CC(=O)N,train
+1727,Acetamide;2-aminoacetic acid,CC(=O)N.C(C(=O)O)N,train
+1728,Acetic Acid,CC(=O)O,test
+1729,Acetic acid C-13,C[13C](=O)O,train
+1730,Acetonitrile,CC#N,train
+1731,Acetylene;methane,C.C#C,train
+1732,Acetyloxymethylimino-methyl-oxidoazanium,CC(=O)OCN=[N+](C)[O-],train
+1733,Amino Nitrate,NO[N+](=O)[O-],train
+1734,Aniline,C1=CC=C(C=C1)N,train
+1735,Azane;1-methoxypropane,CCCOC.N,test
+1736,Azane;2-(2-hydroxyethylamino)propan-1-ol,CC(CO)NCCO.N,train
+1737,Azane;2-methylbutan-2-amine,CCC(C)(C)N.N,train
+1738,Azane;2-methylidenepentanamide,CCCC(=C)C(=O)N.N,test
+1739,Azane;3-ethylpyridine,CCC1=CN=CC=C1.N,test
+1740,Azane;3-methylbutan-1-ol,CC(C)CCO.N,test
+1741,Azane;cycloheptane,C1CCCCCC1.N.N,test
+1742,Azepane,C1CCCNCC1,train
+1743,Azepane-1-carbonitrile,C1CCCN(CC1)C#N,test
+1744,Azepane-2-carbaldehyde,C1CCC(NCC1)C=O,train
+1745,Azetidine,C1CNC1,train
+1746,Azetidine-1-carboxamide,C1CN(C1)C(=O)N,train
+1747,Aziridine,C1CN1,train
+1748,Aziridine-1-carbohydrazide,C1CN1C(=O)NN,train
+1749,Benzamide,C1=CC=C(C=C1)C(=O)N,train
+1750,Benzene,C1=CC=CC=C1,train
+1751,Benzenediazonium hydroxide,C1=CC=C(C=C1)[N+]#N.[OH-],train
+1752,"Bicyclo[2.2.0]hexa-1,3,5-triene;ethanamine",CCN.C1=CC2=CC=C21,train
+1753,Bicyclo(2.2.1)hept-2-en-7-ol,C1CC2C=CC1C2O,train
+1754,Bicyclo(2.2.1)hept-5-ene-2-carbonitrile,C1C2CC(C1C=C2)C#N,test
+1755,"Bicyclo[2.2.1]hepta-2,5-dien-7-ol",C1=CC2C=CC1C2O,train
+1756,Bicyclo(2.2.1)heptane,C1CC2CCC1C2,train
+1757,"Bicyclo[2.2.1]heptane-2,3-diol",C1CC2CC1C(C2O)O,train
+1758,Bicyclo(2.2.2)octane,C1CC2CCC1CC2,train
+1759,Bicyclo(3.1.0)hexane,C1CC2CC2C1,train
+1760,"Bicyclo[3.2.1]octa-2,6-dien-8-one",C1C=CC2C=CC1C2=O,test
+1761,"Bicyclo[4.1.0]hepta-1,3,5-triene;hydroxy-methyl-oxophosphanium",C[P+](=O)O.C1C2=CC=CC=C21,test
+1762,"Bicyclo(4.2.1)nona-2,4-diene",C1CC2CC1C=CC=C2,test
+1763,Bicyclo[5.1.0]oct-1(7)-en-8-one,C1CCC2=C(C2=O)CC1,test
+1764,Bicyclo[5.1.0]oct-2-ene,C1CC=CC2CC2C1,test
+1765,Bicyclo[5.1.0]oct-3-ene,C1CC2CC2CC=C1,test
+1766,Bicyclo[5.1.0]octan-2-amine,C1CCC(C2CC2C1)N,test
+1767,[Bis(hydroxymethyl)amino]-deuteriomethanol,[2H]C(N(CO)CO)O,train
+1768,But-2-enal,CC=CC=O,train
+1769,But-2-ene,CC=CC,train
+1770,But-2-enedinitrile,C(=CC#N)C#N,test
+1771,but-3-en-2-yl N-methylcarbamate,CC(C=C)OC(=O)NC,train
+1772,But-3-yn-1-amine,C#CCCN,test
+1773,Butan-1-ol;methane,C.CCCCO,train
+1774,Butan-2-one;2-methylpropane,CCC(=O)C.CC(C)C,train
+1775,"Butane-1,1,4,4-tetramine",C(CC(N)N)C(N)N,test
+1776,Butane;methane,C.CCCC,train
+1777,Butanimidamide,CCCC(=N)N,train
+1778,Butyl cyanate,CCCCOC#N,train
+1779,Butyl Formate,CCCCOC=O,test
+1780,Butyl-methylimino-oxidoazanium,CCCC[N+](=NC)[O-],test
+1781,Butyl nitrate,CCCCO[N+](=O)[O-],train
+1782,Butyl nitrite,CCCCON=O,train
+1783,Butylurea,CCCCNC(=O)N,train
+1784,Carbamic Acid,C(=O)(N)O,train
+1785,Carbon Monoxide,[C-]#[O+],train
+1786,CID 5465260,C(/N=C(/N)\NC#N)O,train
+1787,CID 6263013,CC(C)(/C(=N\O)/N)O,train
+1788,"cis-(1R,2R)-2-tert-butylcyclopropan-1-ol",CC(C)(C)[C@H]1C[C@H]1O,test
+1789,"cis-(1R,2S)-2-(2-hydroxyethyl)-2-methylcyclopropan-1-ol",C[C@@]1(C[C@H]1O)CCO,train
+1790,"cis-(1R,2S)-2-methyl-N-prop-2-enylcyclobutan-1-amine",C[C@H]1CC[C@H]1NCC=C,train
+1791,"cis-(1R,3S)-1-methoxy-3-methylcyclopentane",C[C@H]1CC[C@H](C1)OC,test
+1792,"cis-(1S,2R)-2-methylcyclopropane-1-carbohydrazide",C[C@@H]1C[C@@H]1C(=O)NN,test
+1793,"cis-(1S,2R)-3,3-dimethylcyclopropane-1,2-dicarbaldehyde",CC1([C@@H]([C@@H]1C=O)C=O)C,test
+1794,"cis-(1S,2S)-2-ethenylcyclopropane-1-carbaldehyde",C=C[C@@H]1C[C@@H]1C=O,train
+1795,"cis-(1S,3R)-3-nitrocyclopentan-1-ol",C1C[C@@H](C[C@@H]1[N+](=O)[O-])O,train
+1796,"cis-(2R,5S)-2,5-dimethylcyclohexan-1-one",C[C@H]1CC[C@H](C(=O)C1)C,train
+1797,"cis-(2S,5R)-2,5-dimethylcyclohexan-1-ol",C[C@@H]1CC[C@@H](C(C1)O)C,train
+1798,Cyanic acid,C(#N)O,train
+1799,[Cyano(methyl)amino]carbamic acid,CN(C#N)NC(=O)O,train
+1800,"Cyclobutane-1,2-dicarbaldehyde",C1CC(C1C=O)C=O,test
+1801,"Cyclobutane-1,3-dione",C1C(=O)CC1=O,test
+1802,Cyclobutanol,C1CC(C1)O,train
+1803,Cyclobutanone,C1CC(=O)C1,train
+1804,Cyclobutene,C1CC=C1,train
+1805,Cyclobutylhydrazine,C1CC(C1)NN,train
+1806,(Cyclobutylideneamino)urea,C1CC(=NNC(=O)N)C1,train
+1807,"Cyclohepta-1,3-dien-1-amine",C1CC=CC=C(C1)N,train
+1808,"Cyclohepta-2,4,6-trien-1-ylmethanol",C1=CC=CC(C=C1)CO,train
+1809,"Cycloheptane-1,1-diamine",C1CCCC(CC1)(N)N,train
+1810,"Cycloheptane-1,1-diol",C1CCCC(CC1)(O)O,train
+1811,Cycloheptanecarbonitrile,C1CCCC(CC1)C#N,test
+1812,Cyclohepten-1-ylmethanamine,C1CCC=C(CC1)CN,test
+1813,Cycloheptene,C1CCC=CCC1,test
+1814,"Cyclohex-2-ene-1,1-diol",C1CC=CC(C1)(O)O,train
+1815,"Cyclohexa-1,5-dien-1-yl formate",C1CC=C(C=C1)OC=O,train
+1816,Cyclohexanecarboxamide,C1CCC(CC1)C(=O)N,train
+1817,Cyclohexanecarboxylic acid,C1CCC(CC1)C(=O)O,train
+1818,Cyclohexanol,C1CCC(CC1)O,train
+1819,Cyclohexene,C1CCC=CC1,train
+1820,Cyclohexyl(deuterio)methanone,[2H]C(=O)C1CCCCC1,train
+1821,Cyclohexyl formate,C1CCC(CC1)OC=O,train
+1822,Cyclohexylhydrazine,C1CCC(CC1)NN,test
+1823,Cyclooct-4-en-1-ol,C1CC=CCCC(C1)O,train
+1824,"Cycloocta-1,3-diene",C1CCC=CC=CC1,train
+1825,Cyclooctane,C1CCCCCCC1,train
+1826,Cyclooctanol,C1CCCC(CCC1)O,test
+1827,"Cyclopenta-2,4-dien-1-amine",C1=CC(C=C1)N,train
+1828,"Cyclopentane-1,2,3-triol",C1CC(C(C1O)O)O,test
+1829,Cyclopentanecarbonitrile,C1CCC(C1)C#N,test
+1830,Cyclopentanecarbonyl cyanide,C1CCC(C1)C(=O)C#N,train
+1831,Cyclopentene,C1CC=CC1,test
+1832,Cyclopropane,C1CC1,train
+1833,Cyclopropanol,C1CC1O,test
+1834,Cyclopropyl-(1-methylcyclopropyl)methanimine,CC1(CC1)C(=N)C2CC2,test
+1835,Cyclopropyl nitrate,C1CC1O[N+](=O)[O-],train
+1836,Cyclopropylbenzene,C1CC1C2=CC=CC=C2,train
+1837,Cyclopropylmethyl-methanidyl-propylazanium,CCC[NH+]([CH2-])CC1CC1,train
+1838,Diaminomethyl 2-methylprop-2-enoate,CC(=C)C(=O)OC(N)N,train
+1839,Diazepin-1-amine,C1=CC=NN(C=C1)N,train
+1840,Diazo(nitro)methane,C(=[N+]=[N-])[N+](=O)[O-],train
+1841,Diazocyclohexane,C1CCC(=[N+]=[N-])CC1,train
+1842,Diazomethane,C=[N+]=[N-],train
+1843,Dideuterio-[1-[dideuterio(hydroxy)methyl]cyclobutyl]methanol,[2H]C([2H])(C1(CCC1)C([2H])([2H])O)O,train
+1844,Diethyl Carbonate,CCOC(=O)OCC,train
+1845,Diethylcyanamide,CCN(CC)C#N,test
+1846,Dimethoxymethane,COCOC,train
+1847,(Dimethylamino)methyl-methanidyl-dimethylazanium,CN(C)C[N+](C)(C)[CH2-],train
+1848,Dimethylcyanamide,CN(C)C#N,train
+1849,Dimethyldiazene,CN=NC,test
+1850,Dinitromethane,C([N+](=O)[O-])[N+](=O)[O-],train
+1851,Dioxan-3-amine,C1CC(OOC1)N,test
+1852,(E)-1-isocyanato-2-methylbut-1-ene,CC/C(=C/N=C=O)/C,train
+1853,(E)-1-isocyano-3-methylbut-1-ene,CC(C)/C=C/[N+]#[C-],train
+1854,(E)-1-methoxyhept-3-ene,CCC/C=C/CCOC,train
+1855,(E)-1-methoxyhex-1-ene,CCCC/C=C/OC,train
+1856,"(E)-2,2-Dimethylhept-3-ene",CCC/C=C/C(C)(C)C,train
+1857,"(E)-2,2-dimethylpent-3-enamide",C/C=C/C(C)(C)C(=O)N,train
+1858,"(E)-2,5-dimethylhept-3-ene",CCC(C)/C=C/C(C)C,train
+1859,(E)-2-aminobut-2-enamide,C/C=C(\C(=O)N)/N,train
+1860,(E)-2-deuterio-6-methylhept-4-en-2-ol,[2H]C(C)(C/C=C/C(C)C)O,train
+1861,(E)-2-ethenylbut-2-enamide,C/C=C(\C=C)/C(=O)N,train
+1862,(E)-2-hydroxyhex-4-en-3-one,C/C=C/C(=O)C(C)O,test
+1863,(E)-2-methylhept-5-en-3-one,C/C=C/CC(=O)C(C)C,train
+1864,(E)-2-methylhept-5-enenitrile,C/C=C/CCC(C)C#N,train
+1865,(E)-2-methylpent-2-en-4-yn-1-ol,C/C(=C\C#C)/CO,train
+1866,"(E,2R)-1-(methylamino)pent-3-en-2-ol",C/C=C/[C@H](CNC)O,train
+1867,"(E,2R)-2-hydroxy-3-methylpent-3-enenitrile",C/C=C(\C)/[C@H](C#N)O,test
+1868,"(E,2S,3S)-hex-4-ene-1,2,3-triol",C/C=C/[C@@H]([C@H](CO)O)O,train
+1869,(E)-3-aminobut-2-enamide,C/C(=C\C(=O)N)/N,test
+1870,(E)-3-(dimethylamino)-2-methylprop-2-enamide,C/C(=C\N(C)C)/C(=O)N,train
+1871,(E)-3-ethenyl-2-methylpent-3-en-2-ol,C/C=C(\C=C)/C(C)(C)O,train
+1872,(E)-3-hydroxyhex-4-enamide,C/C=C/C(CC(=O)N)O,train
+1873,(E)-3-(methylamino)but-2-enenitrile,C/C(=C\C#N)/NC,train
+1874,(E)-3-(methylamino)pent-3-en-2-one,C/C=C(\C(=O)C)/NC,train
+1875,(E)-3-(methylamino)prop-2-enenitrile,CN/C=C/C#N,test
+1876,(E)-3-methylhept-4-enal,CC/C=C/C(C)CC=O,train
+1877,(E)-3-methylhex-2-en-2-amine,CCC/C(=C(\C)/N)/C,train
+1878,(E)-3-propan-2-ylpent-3-en-1-ol,C/C=C(\CCO)/C(C)C,train
+1879,"(E,3R)-3-hydroxyhex-4-enoic acid",C/C=C/[C@@H](CC(=O)O)O,test
+1880,"(E,3R)-3-methylhex-4-en-2-one",C/C=C/[C@@H](C)C(=O)C,test
+1881,"(E)-4,4,4-trideuterio-3-methylbut-2-en-1-ol",[2H]C([2H])([2H])/C(=C/CO)/C,train
+1882,"(E)-4-amino-2,3-ditritiobut-2-enoic acid",[3H]/C(=C(/[3H])\C(=O)O)/CN,test
+1883,(E)-4-deuteriooct-3-en-1-ol,[2H]/C(=C\CCO)/CCCC,train
+1884,(E)-4-methoxyhex-3-en-2-one,CC/C(=C\C(=O)C)/OC,train
+1885,(E)-4-Methylamino-but-3-en-2-one,CC(=O)/C=C/NC,train
+1886,(E)-4-methylhept-4-en-1-yne,CC/C=C(\C)/CC#C,train
+1887,(E)-4-methylhept-5-en-1-yn-3-ol,C/C=C/C(C)C(C#C)O,test
+1888,(E)-4-methylhept-5-enal,C/C=C/C(C)CCC=O,train
+1889,(E)-4-methylhex-4-en-2-one,C/C=C(\C)/CC(=O)C,test
+1890,"(E,4S)-4-amino-2-methylpent-2-en-1-ol",C[C@@H](/C=C(\C)/CO)N,train
+1891,"(E)-5,5-dimethoxypent-2-ene",C/C=C/CC(OC)OC,train
+1892,(E)-5-hydroxyhept-3-en-2-one,CCC(/C=C/C(=O)C)O,train
+1893,(E)-6-methoxyhex-5-en-3-yn-2-ol,CC(C#C/C=C/OC)O,train
+1894,[(E)-but-2-en-2-yl]cyclopentane,C/C=C(\C)/C1CCCC1,test
+1895,(E)-but-2-ene;methane,C.C/C=C/C,train
+1896,(E)-dihydroperoxydiazene,N(=N/OO)\OO,test
+1897,(E)-hept-4-en-2-yn-1-ol,CC/C=C/C#CCO,train
+1898,(E)-hex-2-en-5-yn-1-ol,C#CC/C=C/CO,test
+1899,(E)-methoxyimino-methyl-oxidoazanium,C/[N+](=N\OC)/[O-],train
+1900,"(E)-N,4-dimethylpent-2-en-3-amine",C/C=C(\C(C)C)/NC,train
+1901,(E)-N-carbamoylbut-2-enamide,C/C=C/C(=O)NC(=O)N,train
+1902,(E)-N-[(E)-prop-1-enyl]prop-1-en-1-amine,C/C=C/N/C=C/C,train
+1903,(E)-N-ethyl-N-methylprop-1-en-1-amine,CCN(C)/C=C/C,train
+1904,(E)-N-propan-2-ylbut-1-en-1-amine,CC/C=C/NC(C)C,train
+1905,(E)-oct-5-en-4-one,CCCC(=O)/C=C/CC,test
+1906,(E)-pentylidenehydrazine,CCCC/C=N/N,train
+1907,[(E)-prop-1-enyl]cyclobutane,C/C=C/C1CCC1,test
+1908,[(E)-prop-2-ynylideneamino]urea,C#C/C=N/NC(=O)N,test
+1909,"Ethane-1,1,1,2,2,2-hexol",C(C(O)(O)O)(O)(O)O,train
+1910,"Ethane-1,2-diol;prop-1-ene",CC=C.C(CO)O,train
+1911,Ethane;prop-2-en-1-ol,CC.C=CCO,train
+1912,"Ethene-1,1,2-tricarbaldehyde",C(=C(C=O)C=O)C=O,train
+1913,Ethene;2-methylidenebutanoic acid,CCC(=C)C(=O)O.C=C,train
+1914,Ethene;prop-2-enenitrile,C=C.C=CC#N,train
+1915,Ethenyl but-2-enoate,CC=CC(=O)OC=C,test
+1916,Ethenyl nitrite,C=CON=O,train
+1917,Ethenyl pent-4-enoate,C=CCCC(=O)OC=C,test
+1918,Ethenyl prop-2-eneperoxoate,C=CC(=O)OOC=C,test
+1919,Ethenylcycloheptane,C=CC1CCCCCC1,train
+1920,Ethenylperoxyperoxyethene,C=COOOOC=C,train
+1921,ethyl (1E)-N-isocyanomethanimidate,CCO/C=N/[N+]#[C-],train
+1922,ethyl (1Z)-N-formylmethanehydrazonate,CCO/C=N\NC=O,train
+1923,"Ethyl 2,2,2-trideuterioethanimidate",[2H]C([2H])([2H])C(=N)OCC,train
+1924,ethyl 2-[(2S)-oxiran-2-yl]acetate,CCOC(=O)C[C@H]1CO1,train
+1925,Ethyl 2-aminoacetate;formaldehyde,CCOC(=O)CN.C=O,train
+1926,Ethyl 2-deuterioprop-2-enoate,[2H]C(=C)C(=O)OCC,train
+1927,ethyl 2-methanidylidyne(15N)azaniumylacetate,CCOC(=O)C[15N+]#[C-],train
+1928,Ethyl 2-methoxyacetate,CCOC(=O)COC,train
+1929,Ethyl 2-methylbut-2-enoate,CCOC(=O)C(=CC)C,train
+1930,ethyl (2R)-2-hydroxypropanoate,CCOC(=O)[C@@H](C)O,train
+1931,"Ethyl 3,3,3-trideuterio-2-methylpropanoate",[2H]C([2H])([2H])C(C)C(=O)OCC,train
+1932,Ethyl 3-cyanopropanoate,CCOC(=O)CCC#N,train
+1933,Ethyl Acetate,CCOC(=O)C,train
+1934,Ethyl(dimethyl)azanium nitrate,CC[NH+](C)C.[N+](=O)([O-])[O-],test
+1935,Ethyl(formyl)carbamic acid,CCN(C=O)C(=O)O,train
+1936,ethyl N-ethenyl-N-hydroxycarbamate,CCOC(=O)N(C=C)O,train
+1937,Ethyl Nitrate,CCO[N+](=O)[O-],train
+1938,Ethyl Nitrite,CCON=O,test
+1939,Ethyl pent-2-enoate,CCC=CC(=O)OCC,test
+1940,ethyl (Z)-3-hydroxyprop-2-enoate,CCOC(=O)/C=C\O,train
+1941,Ethylamino butanimidate,CCCC(=N)ONCC,train
+1942,Ethylamino formate,CCNOC=O,train
+1943,Ethylbenzene,CCC1=CC=CC=C1,train
+1944,Ethylcyclopentane,CCC1CCCC1,train
+1945,Ethylcyclopropane,CCC1CC1,train
+1946,Ethylhydrazine,CCNN,test
+1947,Ethylidenecyclohexane,CC=C1CCCCC1,train
+1948,Ethylidenecyclopentane,CC=C1CCCC1,train
+1949,Ethylurea,CCNC(=O)N,train
+1950,Ethynol,C#CO,test
+1951,Ethynyl hydrogen carbonate,C#COC(=O)O,train
+1952,Formaldehyde,C=O,train
+1953,Formamide,C(=O)N,test
+1954,Formic Acid,C(=O)O,train
+1955,Formyl(oxido)azanium,C(=O)[NH2+][O-],train
+1956,(Formyldiazenyl) carbamate,C(=O)N=NOC(=O)N,train
+1957,Fulvene,C=C1C=CC=C1,train
+1958,"Furan-3,4-dicarbaldehyde",C1=C(C(=CO1)C=O)C=O,train
+1959,Furan-3-carbonitrile,C1=COC=C1C#N,train
+1960,"Furo[3,4-B]pyridine",C1=CC2=COC=C2N=C1,train
+1961,Guanidine,C(=N)(N)N,train
+1962,Hept-2-ynenitrile,CCCCC#CC#N,train
+1963,Hept-3-enal,CCCC=CCC=O,train
+1964,Hept-3-yne,CCCC#CCC,train
+1965,Hept-4-enal,CCC=CCCC=O,train
+1966,"Hept-6-ene-1,3-diol",C=CCCC(CCO)O,test
+1967,"Hepta-1,3-diyn-1-ol",CCCC#CC#CO,test
+1968,"Hepta-1,5-diene-3,4-diol",CC=CC(C(C=C)O)O,train
+1969,"Hepta-1,6-dien-4-ol",C=CCC(CC=C)O,train
+1970,"Hepta-2,4-dien-1-ol",CCC=CC=CCO,train
+1971,"Hepta-3,5-dien-2-one",CC=CC=CC(=O)C,train
+1972,"Hepta-4,5-dien-1-ol",CC=C=CCCCO,train
+1973,Heptan-2-ylhydrazine,CCCCCC(C)NN,test
+1974,Heptanal,CCCCCCC=O,train
+1975,Heptane,CCCCCCC,train
+1976,Heptanedial,C(CCC=O)CCC=O,train
+1977,Heptanedinitrile,C(CCC#N)CCC#N,train
+1978,Heptanenitrile,CCCCCCC#N,train
+1979,Hex-2-ene,CCCC=CC,train
+1980,Hex-2-enyl formate,CCCC=CCOC=O,train
+1981,Hex-2-yn-1-ol,CCCC#CCO,train
+1982,"Hex-2-yne-1,6-diol",C(CC#CCO)CO,train
+1983,"Hex-3-en-1,5-diyne",C#CC=CC#C,test
+1984,Hex-3-enal,CCC=CCC=O,train
+1985,Hex-4-en-1-ol,CC=CCCCO,train
+1986,Hex-4-en-1-yn-3-ol,CC=CC(C#C)O,train
+1987,Hex-4-en-1-yn-3-one,CC=CC(=O)C#C,train
+1988,Hex-4-en-2-one,CC=CCC(=O)C,train
+1989,Hex-4-en-3-one,CCC(=O)C=CC,test
+1990,Hex-4-yn-1-ol,CC#CCCCO,train
+1991,Hex-5-en-2-ynal,C=CCC#CC=O,train
+1992,Hex-5-en-3-yn-1-ol,C=CC#CCCO,train
+1993,"Hexa-1,5-diyn-3-one",C#CCC(=O)C#C,test
+1994,"Hexa-2,4-dienenitrile",CC=CC=CC#N,train
+1995,"Hexa-3,5-dien-1-OL",C=CC=CCCO,train
+1996,Hexan-3-amine,CCCC(CC)N,train
+1997,Hexanamide,CCCCCC(=O)N,train
+1998,"Hexane-2,2,3-triamine",CCCC(C(C)(N)N)N,train
+1999,"Hexane-3,4-diol",CCC(C(CC)O)O,train
+2000,Hexanedial,C(CCC=O)CC=O,train
+2001,Hexanoic Acid,CCCCCC(=O)O,train
+2002,Hydrazine;piperazine,C1CNCCN1.NN,train
+2003,(Hydroxyamino) formate,C(=O)ONO,train
+2004,Hydroxycarbamoyl hydrogen carbonate,C(=O)(NO)OC(=O)O,train
+2005,(Hydroxycarbamoylamino)carbamic acid,C(=O)(NNC(=O)O)NO,test
+2006,Hydroxylamine,NO,train
+2007,(Hydroxymethyl)-2-methylpropanoate],CC(C)C(=O)OCO,test
+2008,Hydroxymethyl 3-hydroxypropanoate,C(CO)C(=O)OCO,train
+2009,(Hydroxymethylamino)methanol,C(NCO)O,train
+2010,Hydroxymethylimino-methyl-oxidoazanium,C[N+](=NCO)[O-],train
+2011,"Imidazo[5,1-b][1,3,4]oxadiazol-7-amine",C1=NC(=C2N1N=CO2)N,train
+2012,"Imidazole-1,2-dicarbonitrile",C1=CN(C(=N1)C#N)C#N,test
+2013,Imidazolidin-1-ylmethanamine,C1CN(CN1)CN,train
+2014,Iminomethylidenecyanamide,C(=N)=NC#N,train
+2015,Isocyanatooxymethanol,C(O)ON=C=O,train
+2016,Isocyanic acid,C(=N)=O,test
+2017,Methane,C,train
+2018,Methane;octane,C.CCCCCCCC,train
+2019,Methane;piperidin-4-ol,C.C1CNCCC1O,test
+2020,Methanediamine,C(N)N,train
+2021,Methanediol,C(O)O,train
+2022,Methanidyl-methyl-methylideneazanium,C[N+](=C)[CH2-],train
+2023,Methanol,CO,train
+2024,Methanol;pentan-1-ol,CCCCCO.CO,train
+2025,Methoxy(methoxymethoxy)methanol,COCOC(O)OC,test
+2026,Methoxyethane,CCOC,train
+2027,methoxymethyl (E)-but-2-enoate,C/C=C/C(=O)OCOC,train
+2028,Methoxyurea,CONC(=O)N,train
+2029,Methyl 1-hydroxy-2-methylcyclopropane-1-carboxylate,CC1CC1(C(=O)OC)O,train
+2030,Methyl 1-(methylamino)cyclopropane-1-carboxylate,CNC1(CC1)C(=O)OC,train
+2031,methyl 1H-imidazole-2-carboxylate,COC(=O)C1=NC=CN1,train
+2032,"Methyl 2,3-dihydroxybutanoate",CC(C(C(=O)OC)O)O,train
+2033,Methyl 2-ethynylbut-2-enoate,CC=C(C#C)C(=O)OC,train
+2034,Methyl 2-(hydroxyamino)propanoate,CC(C(=O)OC)NO,train
+2035,Methyl 2-hydroxybutanoate,CCC(C(=O)OC)O,train
+2036,Methyl 2-hydroxypent-4-enoate,COC(=O)C(CC=C)O,train
+2037,Methyl 2-methylcyclopropane-1-carboxylate,CC1CC1C(=O)OC,train
+2038,"methyl (2R)-2,5-dihydro-1H-pyrrole-2-carboxylate",COC(=O)[C@H]1C=CCN1,train
+2039,"methyl (2R,3S)-2-amino-3-hydroxybutanoate",C[C@@H]([C@H](C(=O)OC)N)O,train
+2040,methyl (2S)-2-hydroxy-2-methoxyacetate,CO[C@@H](C(=O)OC)O,train
+2041,methyl (2S)-4-hydroxyazetidine-2-carboxylate,COC(=O)[C@@H]1CC(N1)O,train
+2042,Methyl 3-amino-2-methylprop-2-enoate,CC(=CN)C(=O)OC,test
+2043,Methyl 3-(aziridin-1-yl)prop-2-enoate,COC(=O)C=CN1CC1,train
+2044,Methyl 3-cyanopropanoate,COC(=O)CCC#N,train
+2045,Methyl 3-(methoxyamino)propanoate,COC(=O)CCNOC,train
+2046,Methyl 3-methyl-2-methylidenebut-3-enoate,CC(=C)C(=C)C(=O)OC,train
+2047,Methyl 3-(methylamino)propanoate,CNCCC(=O)OC,train
+2048,"Methyl(3-methylbuta-1,2-dienyl)diazene",CC(=C=CN=NC)C,train
+2049,methyl 3-oxo(314C)butanoate,C[14C](=O)CC(=O)OC,train
+2050,methyl 3H-pyrazole-3-carboxylate,COC(=O)C1C=CN=N1,train
+2051,Methyl 4-oxobut-2-enoate,COC(=O)C=CC=O,train
+2052,Methyl 4-oxobut-3-enoate,COC(=O)CC=C=O,train
+2053,Methyl aziridine-1-carboxylate,COC(=O)N1CC1,train
+2054,Methyl but-2-enoate,CC=CC(=O)OC,train
+2055,Methyl Carbamate,COC(=O)N,train
+2056,Methyl cyclopentanecarboxylate,COC(=O)C1CCCC1,train
+2057,Methyl cyclopropanecarboxylate,COC(=O)C1CC1,train
+2058,"methyl N-(1,2-dihydroxyethyl)carbamate",COC(=O)NC(CO)O,train
+2059,methyl N-(1-oxoprop-1-en-2-yl)carbamate,CC(=C=O)NC(=O)OC,train
+2060,methyl N-acetyl-N-methylcarbamate,CC(=O)N(C)C(=O)OC,train
+2061,Methyl N-butylcarbamate,CCCCNC(=O)OC,train
+2062,methyl N-carbamoylcarbamate,COC(=O)NC(=O)N,train
+2063,Methyl N-cyanocarbamate,COC(=O)NC#N,train
+2064,methyl N-ethylethanimidate,CCN=C(C)OC,train
+2065,methyl N-methyl-N-(methylaminomethyl)carbamate,CNCN(C)C(=O)OC,train
+2066,methyl N-(N'-methylcarbamimidoyl)carbamate,CN=C(N)NC(=O)OC,train
+2067,methyl N-prop-1-en-2-ylpropanimidate,CCC(=NC(=C)C)OC,test
+2068,methyl (NE)-N-(2-amino-2-oxoethylidene)carbamate,COC(=O)/N=C/C(=O)N,train
+2069,Methyl nitrate,CO[N+](=O)[O-],train
+2070,Methyl nitrite,CON=O,train
+2071,Methyl triazole-2-carboxylate,COC(=O)N1N=CC=N1,train
+2072,Methylamino prop-2-enyl carbonate,CNOC(=O)OCC=C,train
+2073,Methylcarbamic acid,CNC(=O)O,train
+2074,Methylcyanamide,CNC#N,train
+2075,Methylcyclohexane,CC1CCCCC1,train
+2076,Methylcyclooctatetraene,C/C/1=C/C=C\C=C/C=C1,train
+2077,Methyldiazene,CN=N,train
+2078,Methylurea,CNC(=O)N,train
+2079,Morpholin-3-amine,C1COCC(N1)N,test
+2080,Morpholine,C1COCCN1,test
+2081,"N-(1,2,4-triazol-1-ylmethyl)ethanamine",CCNCN1C=NC=N1,train
+2082,"N-(1,3-diazinan-5-yl)formamide",C1C(CNCN1)NC=O,train
+2083,"N-(1,3-dimethoxypropan-2-ylidene)hydroxylamine",COCC(=NO)COC,train
+2084,N-(1-amino-2-methylpropan-2-yl)formamide,CC(C)(CN)NC=O,train
+2085,"N,1-dimethylpyrrolidin-3-amine",CNC1CCN(C1)C,train
+2086,N-[1-(hydroxyamino)butan-2-yl]hydroxylamine,CCC(CNO)NO,train
+2087,N-(1-hydroxypropan-2-yl)acetamide,CC(CO)NC(=O)C,train
+2088,"N-[(1R)-1,2-dihydroxyethyl]-N-methylethanimidamide",CC(=N)N(C)[C@@H](CO)O,train
+2089,"N-(2,2,6,6-tetradeuteriocyclohexylidene)hydroxylamine",[2H]C1(CCCC(C1=NO)([2H])[2H])[2H],train
+2090,"N-(2,3-dimethylbutyl)formamide",CC(C)C(C)CNC=O,test
+2091,N-(2-aminoethyl)acetamide,CC(=O)NCCN,train
+2092,N-(2-Aminoethyl)butanamide,CCCC(=O)NCCN,test
+2093,N-(2-Aminoethyl)formamide,C(CNC=O)N,train
+2094,N'-(2-aminoethyl)methanimidamide,C(CN=CN)N,train
+2095,N-[2-(aziridin-1-yl)ethyl]hydroxylamine,C1CN1CCNO,train
+2096,N-(2-bicyclo[3.1.0]hexanylidene)hydroxylamine,C1CC(=NO)C2C1C2,train
+2097,"N,2-diethoxyethanamine",CCOCCNOCC,train
+2098,"N,2-Dihydroxy-2-methylpropanimidamide",CC(C)(/C(=N/O)/N)O,train
+2099,"N,2-dihydroxy-N-methylpropanamide",CC(C(=O)N(C)O)O,train
+2100,N-[2-(dihydroxyamino)butyl]hydroxylamine,CCC(CNO)N(O)O,train
+2101,"N,2-Dihydroxybutanimidamide",CCC(/C(=N/O)/N)O,train
+2102,N-(2-(Dimethylamino)ethyl)acetamide,CC(=O)NCCN(C)C,train
+2103,"N,2-dimethylhexan-3-amine",CCCC(C(C)C)NC,train
+2104,N-(2-ethoxyethyl)-N-ethylhydroxylamine,CCN(CCOCC)O,train
+2105,N-(2-ethoxyethyl)-N-methylhydroxylamine,CCOCCN(C)O,train
+2106,N-(2-hydroxyethyl)-2-(methylamino)acetamide,CNCC(=O)NCCO,train
+2107,N-(2-Hydroxyethyl)formamide,C(CO)NC=O,train
+2108,N-(2-Hydroxyethyl)-N-methylformamide,CN(CCO)C=O,train
+2109,N-(2-hydroxypentan-3-yl)formamide,CCC(C(C)O)NC=O,train
+2110,N-(2-methoxyethyl)acetamide,CC(=O)NCCOC,train
+2111,N-(2-methoxyethyl)methanimine,COCCN=C,test
+2112,N-(2-methylbut-3-en-2-yl)acetamide,CC(=O)NC(C)(C)C=C,train
+2113,N-(2-methylcyclohexylidene)hydroxylamine,CC1CCCCC1=NO,train
+2114,N-(2-Methylphenyl)hydroxylamine,CC1=CC=CC=C1NO,train
+2115,N-(2-methylprop-1-enyl)prop-2-en-1-imine,CC(=CN=CC=C)C,train
+2116,N-[(2-methylpropan-2-yl)oxy]methanimine,CC(C)(C)ON=C,test
+2117,N-(2-oxopropyl)acetamide,CC(=O)CNC(=O)C,train
+2118,N-[2-(propylamino)ethyl]formamide,CCCNCCNC=O,train
+2119,N-[(2E)-2-amino-2-hydroxyiminoethyl]formamide,C(/C(=N\O)/N)NC=O,test
+2120,N-(2H-pyran-2-yl)hydroxylamine,C1=CC(OC=C1)NO,train
+2121,N-(2H-tetrazol-5-ylamino)formamide,C(=O)NNC1=NNN=N1,train
+2122,N-[(2R)-3-oxobutan-2-yl]acetamide,C[C@H](C(=O)C)NC(=O)C,train
+2123,N-[(2R)-but-3-yn-2-yl]hydroxylamine,C[C@H](C#C)NO,test
+2124,N-[(2R)-butan-2-yl]cyclopropanamine,CC[C@@H](C)NC1CC1,train
+2125,N-[(2S)-3-(hydroxyamino)-3-methylbutan-2-yl]hydroxylamine,C[C@@H](C(C)(C)NO)NO,train
+2126,"N,3,3-trimethylbutan-2-imine",CC(=NC)C(C)(C)C,train
+2127,N-(3-(dimethylamino)propyl)formamide,CN(C)CCCNC=O,train
+2128,"N,3-Dimethylbut-2-en-1-amine",CC(=CCNC)C,train
+2129,N-(3-hydroxypropyl)acetamide,CC(=O)NCCCO,train
+2130,N-(3-methylbutan-2-yl)formamide,CC(C)C(C)NC=O,train
+2131,"N-[(3E)-penta-1,3-dien-3-yl]acetamide",C/C=C(\C=C)/NC(=O)C,test
+2132,"N-(4,5-dihydroimidazol-1-ylmethyl)formamide",C1CN(C=N1)CNC=O,test
+2133,N-[4-(methylideneamino)butyl]methanimine,C=NCCCCN=C,test
+2134,N-(4-methylmorpholin-3-yl)methanimine,CN1CCOCC1N=C,train
+2135,N-(4-methylpent-3-en-2-ylidene)hydroxylamine,CC(=CC(=NO)C)C,train
+2136,N-(4-Methylphenyl)hydroxylamine,CC1=CC=C(C=C1)NO,train
+2137,"N,5-dimethyl-1H-pyrazol-4-amine",CC1=C(C=NN1)NC,train
+2138,"N-(5-methyl-1,3,4-oxadiazol-2-yl)formamide",CC1=NN=C(O1)NC=O,train
+2139,N-acetyl-2-aminoacetamide,CC(=O)NC(=O)CN,train
+2140,N'-acetyl-2-hydroxyacetohydrazide,CC(=O)NNC(=O)CO,train
+2141,N'-aminobut-3-enimidamide,C=CCC(=NN)N,train
+2142,N'-(aminomethyl)-N'-methylmethanediamine,CN(CN)CN,train
+2143,N-butan-2-yl-N-(hydroxymethyl)nitrous Amide,CCC(C)N(CO)N=O,train
+2144,N-butan-2-yl-N-methylacetamide,CCC(C)N(C)C(=O)C,train
+2145,N'-butan-2-ylmethanimidamide,CCC(C)N=CN,test
+2146,N-butan-2-yloxyformamide,CCC(C)ONC=O,train
+2147,N-butan-2-ylpropan-1-imine,CCC=NC(C)CC,train
+2148,N-(butanoylamino)formamide,CCCC(=O)NNC=O,train
+2149,N-butyl-N-formylformamide,CCCCN(C=O)C=O,test
+2150,N-Butyl-N-nitrosoformamide,CCCCN(C=O)N=O,train
+2151,N-Butylacetamide,CCCCNC(=O)C,test
+2152,N-Butylformamide,CCCCNC=O,train
+2153,N-(cyanomethyl)propanamide,CCC(=O)NCC#N,train
+2154,N-cyclohexyl-N-methylhydroxylamine,CN(C1CCCCC1)O,train
+2155,N'-cyclopropylmethanimidamide,C1CC1N=CN,train
+2156,N-(cyclopropylmethyl)acetamide,CC(=O)NCC1CC1,train
+2157,N-deuteriooctan-1-amine,[2H]NCCCCCCCC,train
+2158,N-(dicyclopropylmethyl)hydroxylamine,C1CC1C(C2CC2)NO,test
+2159,N-[(E)-2-methylprop-2-enylideneamino]acetamide,CC(=C)/C=N/NC(=O)C,train
+2160,N-[(E)-3-methoxybut-1-enyl]formamide,CC(/C=C/NC=O)OC,train
+2161,N-[(E)-but-2-en-2-yl]oxypropan-2-imine,C/C=C(\C)/ON=C(C)C,train
+2162,N-[(E)-prop-1-enyl]butan-1-amine,CCCCN/C=C/C,train
+2163,N-Ethenyl-N-ethylacetamide,CCN(C=C)C(=O)C,test
+2164,N-Ethenyl-N-methylnitramide,CN(C=C)[N+](=O)[O-],train
+2165,N-ethenylideneformamide,C=C=NC=O,train
+2166,N-Ethoxy-N-ethylnitrous amide,CCN(N=O)OCC,train
+2167,N-ethoxymethyl-acetamide,CCOCNC(=O)C,train
+2168,N-ethoxyprop-2-en-1-amine,CCONCC=C,test
+2169,"N-ethyl-2,2-dimethylpropanamide",CCNC(=O)C(C)(C)C,train
+2170,N-ethyl-2-hydrazinylethanamine,CCNCCNN,train
+2171,N-Ethyl-3-oxobutanamide,CCNC(=O)CC(=O)C,train
+2172,"N-ethyl-N,2-dimethylprop-2-enamide",CCN(C)C(=O)C(=C)C,test
+2173,N-Ethyl-N-methylacetamide,CCN(C)C(=O)C,train
+2174,N-ethyl-N-methylprop-2-enamide,CCN(C)C(=O)C=C,train
+2175,N-Ethylaniline,CCNC1=CC=CC=C1,train
+2176,"N'-ethylethane-1,2-diamine;N-methylmethanamine",CCNCCN.CNC,train
+2177,N'-ethylmethanediamine,CCNCN,train
+2178,N-Ethylpentan-2-amine,CCCC(C)NCC,train
+2179,N-ethylpropan-1-amine;N-methylmethanamine,CCCNCC.CNC,train
+2180,N-(formamidomethyl)propanamide,CCC(=O)NCNC=O,train
+2181,N-formyl-2-methylpropanamide,CC(C)C(=O)NC=O,train
+2182,N-(furan-2-ylmethyl)ethanamine,CCNCC1=CC=CO1,train
+2183,N-heptylidenehydroxylamine,CCCCCCC=NO,train
+2184,n-Hexan-2-ylformamide,CCCCC(C)NC=O,train
+2185,N-hydrazinylnitrous amide,NNNN=O,test
+2186,"N'-hydroxy-1,3-oxazole-5-carboximidamide",C1=C(OC=N1)/C(=N/O)/N,train
+2187,N-hydroxy-3-(methylamino)butanamide,CC(CC(=O)NO)NC,train
+2188,N-hydroxy-N-(2-oxoethyl)formamide,C(C=O)N(C=O)O,train
+2189,N-hydroxyfuran-3-carboxamide,C1=COC=C1C(=O)NO,train
+2190,N-hydroxypropan-2-imine oxide,CC(=[N+](O)[O-])C,test
+2191,N-methoxy-2-oxopropanamide,CC(=O)C(=O)NOC,train
+2192,N'-methoxy-3-methylbutanimidamide,CC(C)C/C(=N/OC)/N,train
+2193,N-methoxybutanamide,CCCC(=O)NOC,train
+2194,N-(methoxymethyl)-3-methylbutan-1-amine,CC(C)CCNCOC,train
+2195,"N-methyl-1-(1,2,4-triazol-1-yl)ethanimine",CC(=NC)N1C=NC=N1,test
+2196,"N-methyl-1,2,4-triazol-1-amine",CNN1C=NC=N1,train
+2197,"N-methyl-1,2,5-oxadiazole-3-carboxamide",CNC(=O)C1=NON=C1,train
+2198,N-methyl-1-(2-methyloxolan-2-yl)methanamine,CC1(CCCO1)CNC,train
+2199,"N-methyl-1,3,5-triazin-2-amine",CNC1=NC=NC=N1,train
+2200,"N-methyl-1,3-oxazol-2-amine",CNC1=NC=CO1,train
+2201,"N-methyl-1-(5-methyl-1,3-oxazol-4-yl)methanamine",CC1=C(N=CO1)CNC,test
+2202,N-methyl-2-(methylideneamino)oxyethanamine,CNCCON=C,train
+2203,N-methyl-3-azabicyclo[3.2.0]heptan-1-amine,CNC12CCC1CNC2,train
+2204,N-methyl-N-(methyldiazenyl)acetamide,CC(=O)N(C)N=NC,train
+2205,N'-methyl-N-(methyliminomethylamino)methanimidamide,CN=CNNC=NC,train
+2206,N'-methyl-N'-prop-2-ynylmethanediamine,CN(CC#C)CN,test
+2207,N-Methyl-n-propylcyclopropanamine,CCCN(C)C1CC1,train
+2208,N-methyl-N-[(Z)-propylideneamino]methanamine,CC/C=N\N(C)C,train
+2209,N-Methylacetamide,CC(=O)NC,train
+2210,N'-Methylacetohydrazide,CC(=O)NNC,train
+2211,N-methylcyclopentanecarboxamide,CNC(=O)C1CCCC1,test
+2212,N-methylcyclopropanecarboximidamide,CN=C(C1CC1)N,train
+2213,N-Methylformamide,CNC=O,train
+2214,N-methylidene-N'-propan-2-ylmethanimidamide,CC(C)N=CN=C,train
+2215,N-methylmethanamine;pentan-1-amine,CCCCCN.CNC,train
+2216,N-Methylpentanamide,CCCCC(=O)NC,train
+2217,N-Methylpropanamide,CCC(=O)NC,test
+2218,"N,N,2,2-Tetramethylpropane-1,3-diamine",CC(C)(CN)CN(C)C,test
+2219,"N,N,2-Trimethylpropane-1,3-diamine",CC(CN)CN(C)C,train
+2220,"N,N,3-trimethyl-2,4-dioxabicyclo[1.1.0]butan-1-amine",CC12C(O1)(O2)N(C)C,train
+2221,"N,N,3-trimethylpentan-3-amine",CCC(C)(CC)N(C)C,train
+2222,"N,N,4-trimethylpenta-1,3-dien-2-amine",CC(=CC(=C)N(C)C)C,train
+2223,"N,N-Bis(2-hydroxyethyl)formamide",C(CO)N(CCO)C=O,test
+2224,"N,N-diaminomethanamine",CN(N)N,test
+2225,"N,N-dideuteriopropan-2-amine",[2H]N([2H])C(C)C,train
+2226,"N,N-Diethylacetamide",CCN(CC)C(=O)C,train
+2227,"N,N-dimethyl-1,3-dioxan-2-amine",CN(C)C1OCCCO1,train
+2228,"N,N-dimethyl-1,3-dioxolan-2-amine",CN(C)C1OCCO1,train
+2229,"N,N-dimethyl-1-(3-methyloxetan-3-yl)methanamine",CC1(COC1)CN(C)C,test
+2230,"N,N-Dimethyl-1-azaspiro[2.3]hex-1-en-2-amine",CN(C)C1=NC12CCC2,train
+2231,"N,N-dimethyl-1-(oxiran-2-yl)propan-2-amine",CC(CC1CO1)N(C)C,train
+2232,"N,N-dimethyl-2-(methylamino)acetamide",CNCC(=O)N(C)C,train
+2233,"N,N-Dimethylaniline",CN(C)C1=CC=CC=C1,train
+2234,"N,N-dimethylbutanimidamide",CCCC(=N)N(C)C,train
+2235,"N,N-dimethylcyclohexa-1,5-dien-1-amine",CN(C)C1=CCCC=C1,train
+2236,"N,N-dimethylcyclopenta-1,4-dien-1-amine",CN(C)C1=C[CH-]C=C1,test
+2237,"N',N'-dimethylethane-1,2-diamine;ethanamine",CCN.CN(C)CCN,train
+2238,"N,N-Dimethylpentanamide",CCCCC(=O)N(C)C,train
+2239,"N,N-dimethylpyrazol-1-amine",CN(C)N1C=CC=N1,test
+2240,"N,N-Dipropylformamide",CCCN(CCC)C=O,train
+2241,"N,N,N',N'-Tetramethylmethanediamine",CN(C)CN(C)C,test
+2242,"N,N,N'-trimethylbutanimidamide",CCCC(=NC)N(C)C,train
+2243,"N,N,N'-trimethylprop-2-enimidamide",CN=C(C=C)N(C)C,test
+2244,N-pent-2-en-3-ylethanimine,CCC(=CC)N=CC,train
+2245,N-pent-3-yn-2-ylacetamide,CC#CC(C)NC(=O)C,train
+2246,N-pentan-3-yloxymethanimine,CCC(CC)ON=C,test
+2247,N-Phenylhydroxylamine,C1=CC=C(C=C1)NO,train
+2248,N'-(prop-2-enylideneamino)ethanimidamide,CC(=NN=CC=C)N,train
+2249,"N-propan-2-yl-1,5-dihydro-1,2,4-triazol-4-amine",CC(C)NN1CNN=C1,train
+2250,"N-propyl-4,5-dihydro-1,3-oxazol-2-amine",CCCNC1=NCCO1,train
+2251,N-Propylformamide,CCCNC=O,test
+2252,N-(propylideneamino)butan-1-amine,CCCCNN=CCC,test
+2253,N-tert-butylhydroxylamine,CC(C)(C)NO,train
+2254,(NE)-N-(1-ethoxypropan-2-ylidene)hydroxylamine,CCOC/C(=N/O)/C,train
+2255,(NE)-N-(3-nitrobutylidene)hydroxylamine,CC(C/C=N/O)[N+](=O)[O-],train
+2256,(NE)-N-[(5-deuteriofuran-2-yl)methylidene]hydroxylamine,[2H]C1=CC=C(O1)/C=N/O,train
+2257,(NE)-N-prop-2-ynylidenehydroxylamine,C#C/C=N/O,test
+2258,Nitric Acid,[N+](=O)(O)[O-],train
+2259,Nitrobenzene,C1=CC=C(C=C1)[N+](=O)[O-],train
+2260,Nitrocyclohexane,C1CCC(CC1)[N+](=O)[O-],train
+2261,Nitrocyclopentane,C1CCC(C1)[N+](=O)[O-],train
+2262,Nitromethane,C[N+](=O)[O-],train
+2263,Nitrosobenzene,C1=CC=C(C=C1)N=O,train
+2264,Nitrosoethane,CCN=O,train
+2265,Nitrosourea,C(=O)(N)NN=O,train
+2266,Nitrourea,C(=O)(N)N[N+](=O)[O-],train
+2267,Nitrous Acid,N(=O)O,train
+2268,Nitrous Oxide,[N-]=[N+]=O,train
+2269,Non-2-ene,CCCCCCC=CC,train
+2270,Non-3-ene,CCCCCC=CCC,train
+2271,Nonane,CCCCCCCCC,train
+2272,"(NZ)-N-[1-(1,2,4-triazol-1-yl)ethylidene]hydroxylamine",C/C(=N/O)/N1C=NC=N1,train
+2273,"(NZ)-N-(1,3-dioxolan-4-ylidene)hydroxylamine",C1/C(=N/O)/OCO1,test
+2274,(NZ)-N-(2-methylpentan-3-ylidene)hydroxylamine,CC/C(=N/O)/C(C)C,train
+2275,O-(1-aminoethenyl)hydroxylamine,C=C(N)ON,train
+2276,O-(1-methoxypropyl)hydroxylamine,CCC(OC)ON,train
+2277,O-(3-aminocyclohexyl)hydroxylamine,C1CC(CC(C1)ON)N,test
+2278,O-(3-azidopropyl)hydroxylamine,C(CN=[N+]=[N-])CON,train
+2279,O-Benzylhydroxylamine,C1=CC=C(C=C1)CON,train
+2280,O-Cyclopent-2-en-1-ylhydroxylamine,C1CC(C=C1)ON,train
+2281,O-Phenylhydroxylamine,C1=CC=C(C=C1)ON,train
+2282,Oct-1-en-6-yn-3-one,CC#CCCC(=O)C=C,test
+2283,Oct-2-enal,CCCCCC=CC=O,train
+2284,Oct-2-ene,CCCCCC=CC,train
+2285,Oct-2-ynal,CCCCCC#CC=O,train
+2286,Oct-3-yne,CCCCC#CCC,train
+2287,Oct-5-yn-3-ol,CCC#CCC(CC)O,train
+2288,Oct-6-enal,CC=CCCCCC=O,test
+2289,Oct-7-en-1-ol,C=CCCCCCCO,train
+2290,Oct-7-en-1-yn-3-ol,C=CCCCC(C#C)O,train
+2291,"Octa-1,3,6-triene",CC=CCC=CC=C,train
+2292,"Octa-1,3,7-triene",C=CCCC=CC=C,test
+2293,"Octa-1,3-diene",CCCCC=CC=C,test
+2294,"Octa-1,7-dien-3-ol",C=CCCCC(C=C)O,train
+2295,"Octa-2,3-dienenitrile",CCCCC=C=CC#N,train
+2296,"Octa-2,4,6-trienal",CC=CC=CC=CC=O,train
+2297,"Octa-2,4-dien-1-ol",CCCC=CC=CCO,train
+2298,"Octa-2,4-dienal",CCCC=CC=CC=O,train
+2299,"Octa-2,4-diyn-1-amine",CCCC#CC#CCN,test
+2300,"Octa-3,5-dien-2-ol",CCC=CC=CC(C)O,train
+2301,"Octa-3,6-dien-2-one",CC=CCC=CC(=O)C,train
+2302,Octan-4-one,CCCCC(=O)CCC,train
+2303,Octanal,CCCCCCCC=O,train
+2304,Octane,CCCCCCCC,test
+2305,Oxadiazol-2-ium-2-ylazanide,C1=CO[N+](=N1)[NH-],train
+2306,Oxaldehyde;propanedial,C(C=O)C=O.C(=O)C=O,train
+2307,Oxalic Acid,C(=O)(C(=O)O)O,train
+2308,Oxamide,C(=O)(C(=O)N)N,train
+2309,Oxan-4-yl formate,C1COCCC1OC=O,train
+2310,Oxepan-4-ylmethanol,C1CC(CCOC1)CO,test
+2311,Oxetan-3-ol,C1C(CO1)O,train
+2312,Oxetan-3-yl formate,C1C(CO1)OC=O,test
+2313,Oxetan-3-yl hydrogen carbonate,C1C(CO1)OC(=O)O,train
+2314,Oxolan-3-yl carbamate,C1COCC1OC(=O)N,train
+2315,Ozone,[O-][O+]=O,test
+2316,Pent-2-enenitrile,CCC=CC#N,train
+2317,"Penta-1,4-dien-1-amine",C=CCC=CN,train
+2318,"Penta-1,4-diene-1,1-diamine",C=CCC=C(N)N,train
+2319,"Penta-1,4-diyne",C#CCC#C,train
+2320,"Penta-2,4-dienal",C=CC=CC=O,test
+2321,"Pentacyclo[3.2.0.01,6.02,7.03,7]heptane",C1C2C3C24C35C1C45,train
+2322,"Pentacyclo(4.3.0.02,5.03,8.04,7)nonane",C1C2C3C4C1C5C2C3C45,train
+2323,Pentan-3-yl nitrate,CCC(CC)O[N+](=O)[O-],train
+2324,Pentanal,CCCCC=O,train
+2325,Pentane,CCCCC,train
+2326,Pentanoic Acid,CCCCC(=O)O,train
+2327,Pentylcyclopropane,CCCCCC1CC1,train
+2328,Peroxycyanic acid,C(#N)OO,test
+2329,Phenol,C1=CC=C(C=C1)O,train
+2330,Phenoxyhydrazine,C1=CC=C(C=C1)ONN,train
+2331,Phenylcyanamide,C1=CC=C(C=C1)NC#N,train
+2332,Phenylhydrazine,C1=CC=C(C=C1)NN,train
+2333,"Piperazine-2,6-dione",C1C(=O)NC(=O)CN1,train
+2334,Piperidin-2-ylmethanol,C1CCNC(C1)CO,train
+2335,Piperidin-3-ylmethanol,C1CC(CNC1)CO,test
+2336,prop-1-en-2-yl N-methylcarbamate,CC(=C)OC(=O)NC,train
+2337,Prop-1-yn-1-amine,CC#CN,train
+2338,Prop-2-ynylcarbamic acid,C#CCNC(=O)O,train
+2339,"Propa-1,2-dienylcyclopentane",C=C=CC1CCCC1,train
+2340,"Propan-2-yl 2,2-dihydroxyacetate",CC(C)OC(=O)C(O)O,train
+2341,propan-2-yl N-nitrosocarbamate,CC(C)OC(=O)NN=O,train
+2342,Propan-2-yl prop-2-ynoate,CC(C)OC(=O)C#C,train
+2343,Propan-2-yloxy formate,CC(C)OOC=O,train
+2344,Propanoyloxy formate,CCC(=O)OOC=O,train
+2345,Propyl Acetate,CCCOC(=O)C,train
+2346,Propyl carbamate,CCCOC(=O)N,test
+2347,Propyl nitrite,CCCON=O,train
+2348,Propylazanium nitrate,CCC[NH3+].[N+](=O)([O-])[O-],train
+2349,Propylcyclohexane,CCCC1CCCCC1,train
+2350,Propylcyclopentane,CCCC1CCCC1,train
+2351,Propylurea,CCCNC(=O)N,train
+2352,Pyrazine,C1=CN=CC=N1,train
+2353,Pyrazol-1-yldiazene,C1=CN(N=C1)N=N,train
+2354,Pyrazolidine,C1CNNC1,train
+2355,"Pyrazolo(1,5-a)pyridine",C1=CC2=CC=NN2C=C1,train
+2356,"Pyrazolo-[1,5-d][1,2,4]triazine",C1=C2C=NN=CN2N=C1,train
+2357,Pyridazine,C1=CC=NN=C1,train
+2358,Pyridin-2-ylcyanamide,C1=CC=NC(=C1)NC#N,train
+2359,Pyridin-4-yl methanimidate,C1=CN=CC=C1OC=N,train
+2360,Pyridine-2-carbonitrile,C1=CC=NC(=C1)C#N,train
+2361,"Pyrimidine-4,6-diamine",C1=C(N=CN=C1N)N,train
+2362,Pyrrolidine,C1CCNC1,train
+2363,"Pyrrolidine-1,3-diamine",C1CN(CC1N)N,train
+2364,Pyrrolidine-1-carbonitrile,C1CCN(C1)C#N,train
+2365,"Pyrrolidine-2,3,4,5-tetrone",C1(=O)C(=O)C(=O)NC1=O,train
+2366,"Pyrrolo[2,3-b]pyrrole",C1=CN=C2C1=CC=N2,train
+2367,Spiro(3.4)octan-2-one,C1CCC2(C1)CC(=O)C2,train
+2368,Spiro(4.4)nonane,C1CCC2(C1)CCCC2,train
+2369,"Spiro[bicyclo[2.1.0]pentane-5,5'-cyclopenta-1,3-diene]",C1CC2C1C23C=CC=C3,test
+2370,Styrene,C=CC1=CC=CC=C1,train
+2371,tert-Butyl acetate,CC(=O)OC(C)(C)C,train
+2372,tert-Butyl carbamate,CC(C)(C)OC(=O)N,train
+2373,tert-Butyl Formate,CC(C)(C)OC=O,train
+2374,tert-butyl N-hydroxycarbamate,CC(C)(C)OC(=O)NO,train
+2375,Tert-Butyl nitrite,CC(C)(C)ON=O,train
+2376,Toluene,CC1=CC=CC=C1,train
+2377,"trans-(1R,2R)-1,2-dimethylcyclopropane-1-carbaldehyde",C[C@@H]1C[C@@]1(C)C=O,train
+2378,"trans-(1R,2R)-1-methoxy-2-methylcyclopentane",C[C@@H]1CCC[C@H]1OC,test
+2379,"trans-(1R,2R)-1-N,2-N-dimethylcyclopropane-1,2-diamine",CN[C@@H]1C[C@H]1NC,train
+2380,"trans-(1R,2R)-2-azaniumylcyclopentane-1-carboxylate",C1C[C@H]([C@@H](C1)[NH3+])C(=O)[O-],test
+2381,"trans-(1R,2R)-2-ethyl-2-formylcyclopropane-1-carbonitrile",CC[C@]1(C[C@H]1C#N)C=O,train
+2382,"trans-(1R,2R)-2-(hydroxymethyl)cyclohexan-1-ol",C1CC[C@H]([C@H](C1)CO)O,train
+2383,"trans-(1R,2R)-4,4-dimethylcyclopentane-1,2-diol",CC1(C[C@H]([C@@H](C1)O)O)C,train
+2384,"trans-(1R,2S)-1,4,4-trideuteriocyclohexane-1,2-diol",[2H][C@]1(CCC(C[C@@H]1O)([2H])[2H])O,test
+2385,"trans-(1R,2S)-2-aminocyclopentane-1-carbaldehyde",C1C[C@H]([C@H](C1)N)C=O,train
+2386,"trans-(1R,2S,3E)-3-ethylidene-2-methylcyclobutane-1-carbonitrile",C/C=C/1\C[C@H]([C@@H]1C)C#N,train
+2387,"trans-(1S,2R)-2-ethenylcyclopropane-1-carbaldehyde",C=C[C@H]1C[C@@H]1C=O,train
+2388,"trans-(1S,2S)-2-(furan-2-yl)cyclopropan-1-amine",C1[C@@H]([C@H]1N)C2=CC=CO2,train
+2389,"trans-(1S,4S)-4-(hydroxymethyl)-2,2-dimethylcyclobutan-1-ol",CC1(C[C@H]([C@@H]1O)CO)C,train
+2390,"trans-(2R,5R)-2,5-dimethylcyclopentan-1-one",C[C@@H]1CC[C@H](C1=O)C,test
+2391,"trans-(2S,5S)-1,2,5-trimethylcyclopentan-1-ol",C[C@H]1CC[C@@H](C1(C)O)C,train
+2392,Triazene,NN=N,test
+2393,"Triazolo[1,5-b]pyridazine",C1=CC2=CN=NN2N=C1,test
+2394,"Tricyclo[3.1.1.03,6]heptane-6-carbaldehyde",C1C2CC3C2(C1C3)C=O,train
+2395,Tris(hydroxymethyl)azanium hydroxide,C([NH+](CO)CO)O.[OH-],train
+2396,[(Z)-1-aminoethylideneamino] acetate,C/C(=N/OC(=O)C)/N,train
+2397,(Z)-1-aminohept-1-en-2-ol,CCCCC/C(=C/N)/O,train
+2398,(Z)-1-(methoxymethoxy)prop-1-en-2-amine,C/C(=C/OCOC)/N,train
+2399,(Z)-1-propan-2-yloxybut-1-ene,CC/C=C\OC(C)C,train
+2400,"(Z)-2,4,4-trimethylpent-2-enal",C/C(=C/C(C)(C)C)/C=O,train
+2401,(Z)-2-(hydroxymethyl)pent-2-enenitrile,CC/C=C(\CO)/C#N,train
+2402,(Z)-2-hydroxypent-2-enoic acid,CC/C=C(/C(=O)O)\O,train
+2403,(Z)-2-methoxy-3-nitrobut-2-ene,C/C(=C(\C)/OC)/[N+](=O)[O-],train
+2404,(Z)-2-oxohex-3-enoic acid,CC/C=C\C(=O)C(=O)O,train
+2405,"(Z,2S,5R)-hex-3-ene-2,5-diol",C[C@H](/C=C\[C@H](C)O)O,train
+2406,"(Z)-3,3-dimethoxyprop-1-ene-1,2-diol",COC(/C(=C/O)/O)OC,train
+2407,"(Z)-3,4-dimethylhex-4-en-2-one",C/C=C(/C)\C(C)C(=O)C,train
+2408,(Z)-3-Methylhept-2-ene,CCCC/C(=C\C)/C,train
+2409,"(Z,3R)-2-methylhex-4-en-3-ol",C/C=C\[C@@H](C(C)C)O,test
+2410,(Z)-4-aminobut-3-enoic acid,C(/C=C\N)C(=O)O,train
+2411,(Z)-4-hydroxybut-2-enamide,C(/C=C\C(=O)N)O,test
+2412,(Z)-4-oxopent-2-enenitrile,CC(=O)/C=C\C#N,train
+2413,(Z)-4-prop-2-enoxybut-2-en-1-ol,C=CCOC/C=C\CO,train
+2414,"(Z,4R)-oct-2-en-4-ol",CCCC[C@H](/C=C\C)O,train
+2415,(Z)-5-hydroxy-3-methylpent-2-enal,C/C(=C/C=O)/CCO,train
+2416,(Z)-5-Methylhept-3-ene,CC/C=C\C(C)CC,test
+2417,(Z)-6-Methylhept-2-ene,C/C=C\CCC(C)C,train
+2418,(Z)-hept-5-enoic acid,C/C=C\CCCC(=O)O,train
+2419,"(Z)-hex-1-ene-1,2-diol",CCCC/C(=C/O)/O,train
+2420,(Z)-methoxyimino-oxido-(2-oxopropyl)azanium,CC(=O)C/[N+](=N/OC)/[O-],train
+2421,(Z)-N-imidazol-1-ylethanimine,C/C=N\N1C=CN=C1,train
+2422,(Z)-N-methoxy-3-methylbutan-2-imine,CC(C)/C(=N\OC)/C,test
+2423,"(Z)-N,N-diethylbut-1-en-1-amine",CC/C=C\N(CC)CC,train
+2424,"(Z)-pent-2-ene-2,4-diol",CC(/C=C(/C)\O)O,train

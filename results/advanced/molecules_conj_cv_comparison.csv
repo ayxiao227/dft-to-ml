@@ -1,0 +1,6 @@
+Model,CV_MAE_eV,CV_MAE_std,CV_RMSE_eV,CV_R2,Seconds,Parameters
+ExtraTrees,0.3876286596387071,0.01867696879487522,0.6579984227274539,0.8027913921662394,12.283518669000046,"{""model__min_samples_leaf"": 1, ""model__max_features"": 0.5, ""model__max_depth"": 12}"
+RandomForest,0.41017483291841655,0.015083134096557769,0.6657899133681587,0.7988553321904472,11.791663705000019,"{""model__min_samples_leaf"": 1, ""model__max_features"": ""sqrt"", ""model__max_depth"": 12}"
+RBF_SVR,0.42638336006081784,0.01852762471532224,0.7350737228076936,0.7548286126599125,7.459562822000066,"{""model__gamma"": 0.01, ""model__epsilon"": 0.1, ""model__C"": 100.0}"
+HistGradientBoosting,0.43499615825885324,0.017663677417188828,0.6993062176831301,0.7782158340619892,4.85585078500003,"{""model__min_samples_leaf"": 20, ""model__max_leaf_nodes"": 15, ""model__learning_rate"": 0.1, ""model__l2_regularization"": 0.0}"
+Ridge,0.6011736080457805,0.004915198300237365,0.8955691509255214,0.6370010467238257,0.30451262499997256,"{""model__alpha"": 1.0}"

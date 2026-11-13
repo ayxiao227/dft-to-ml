@@ -1,0 +1,786 @@
+IUPACName,SMILES,Name,file,file_name_col
+1-aminopropan-2-ol,CC(CN)O,1-Amino-2-propanol,data_1_1_aminopropan_2_ol.log,data_1_1_amino_2_propanol.log
+"1,2-dichloroethane",C(CCl)Cl,"1,2-Dichloroethane",data_1_1_2_dichloroethane.log,data_1_1_2_dichloroethane.log
+2-chloroacetaldehyde,C(C=O)Cl,Chloroacetaldehyde,data_1_2_chloroacetaldehyde.log,data_1_chloroacetaldehyde.log
+2-chloroethanol,C(CCl)O,2-Chloroethanol,data_1_2_chloroethanol.log,data_1_2_chloroethanol.log
+3-aminopropanal,C(CN)C=O,"Propanal, 3-amino-",data_1_3_aminopropanal.log,data_1_propanal_3_amino.log
+"ethane-1,2-diol",C(CO)O,Ethylene Glycol,data_1_ethane_1_2_diol.log,data_1_ethylene_glycol.log
+acetate,CC(=O)[O-],Acetate,data_1_acetate.log,data_1_acetate.log
+3-hydroxybutan-2-one,CC(C(=O)C)O,Acetoin,data_1_3_hydroxybutan_2_one.log,data_1_acetoin.log
+propan-2-one,CC(=O)C,Acetone,data_1_propan_2_one.log,data_1_acetone.log
+1-aminopropan-2-one,CC(=O)CN,(2-Oxopropyl)amine,data_1_1_aminopropan_2_one.log,data_1_2_oxopropyl_amine.log
+azane,N,Ammonia,data_1_azane.log,data_1_ammonia.log
+azanium,[NH4+],Ammonium,data_1_azanium.log,data_1_ammonium.log
+amino(phosphanyl)methanol,C(N)(O)P,Amino(phosphanyl)methanol,data_1_amino_phosphanyl_methanol.log,data_1_amino_phosphanyl_methanol.log
+3-aminopropanoic acid,C(CN)C(=O)O,Beta-Alanine,data_1_3_aminopropanoic_acid.log,data_1_beta_alanine.log
+bromide,[Br-],Bromide ion,data_1_bromide.log,data_1_bromide_ion.log
+bromane,Br,Hydrogen Bromide,data_1_bromane.log,data_1_hydrogen_bromide.log
+"butane-2,3-diol",CC(C(C)O)O,"2,3-Butanediol",data_1_butane_2_3_diol.log,data_1_2_3_butanediol.log
+butan-1-ol,CCCCO,1-Butanol,data_1_butan_1_ol.log,data_1_1_butanol.log
+butanoic acid,CCCC(=O)O,Butyric Acid,data_1_butanoic_acid.log,data_1_butyric_acid.log
+calcium(2+),[Ca+2],Calcium Cation,data_1_calcium_2.log,data_1_calcium_cation.log
+carbamate,C(=O)(N)[O-],Carbamate,data_1_carbamate.log,data_1_carbamate.log
+formate,C(=O)[O-],Formate,data_1_formate.log,data_1_formate.log
+2-aminooxyacetate,C(C(=O)[O-])ON,Aminooxyacetate,data_1_2_aminooxyacetate.log,data_1_aminooxyacetate.log
+2-aminooxyacetic acid,C(C(=O)O)ON,(Aminooxy)acetic acid,data_1_2_aminooxyacetic_acid.log,data_1_aminooxy_acetic_acid.log
+2-chloroacetic acid,C(C(=O)O)Cl,Chloroacetic Acid,data_1_2_chloroacetic_acid.log,data_1_chloroacetic_acid.log
+chloride,[Cl-],Chloride,data_1_chloride.log,data_1_chloride.log
+chlorane,Cl,Hydrochloric Acid,data_1_chlorane.log,data_1_hydrochloric_acid.log
+2-aminoacetaldehyde,C(C=O)N,Aminoacetaldehyde,data_1_2_aminoacetaldehyde.log,data_1_aminoacetaldehyde.log
+sulfane,S,Hydrogen Sulfide,data_1_sulfane.log,data_1_hydrogen_sulfide.log
+,[O-]P(=O)[O-],CID 406,data_1_nan.log,data_1_cid_406.log
+phosphonic acid,OP(=O)O,Phosphonic acid,data_1_phosphonic_acid.log,data_1_phosphonic_acid.log
+"propane-1,3-diamine",C(CN)CN,"1,3-Propanediamine",data_1_propane_1_3_diamine.log,data_1_1_3_propanediamine.log
+1H-imidazol-5-amine,C1=C(NC=N1)N,4-Aminoimidazole,data_1_1h_imidazol_5_amine.log,data_1_4_aminoimidazole.log
+"1,4-dihydroimidazol-5-one",C1C(=O)NC=N1,Imidazolone,data_1_1_4_dihydroimidazol_5_one.log,data_1_imidazolone.log
+selane,[SeH2],Hydrogen selenide,data_1_selane.log,data_1_hydrogen_selenide.log
+2-aminopropanoic acid,CC(C(=O)O)N,DL-alanine,data_1_2_aminopropanoic_acid.log,data_1_dl_alanine.log
+2-hydroxypropanoic acid,CC(C(=O)O)O,Lactic Acid,data_1_2_hydroxypropanoic_acid.log,data_1_lactic_acid.log
+"butane-2,3-dione",CC(=O)C(=O)C,Butanedione,data_1_butane_2_3_dione.log,data_1_butanedione.log
+"1,3-dihydroxypropan-2-one",C(C(=O)CO)O,Dihydroxyacetone,data_1_1_3_dihydroxypropan_2_one.log,data_1_dihydroxyacetone.log
+N-methylmethanamine,CNC,Dimethylamine,data_1_n_methylmethanamine.log,data_1_dimethylamine.log
+methylsulfinylmethane,CS(=O)C,Dimethyl Sulfoxide,data_1_methylsulfinylmethane.log,data_1_dimethyl_sulfoxide.log
+2-aminoethanol,C(CO)N,Ethanolamine,data_1_2_aminoethanol.log,data_1_ethanolamine.log
+2-aminoacetic acid,C(C(=O)O)N,Glycine,data_1_2_aminoacetic_acid.log,data_1_glycine.log
+"2,3-dihydroxypropanal",C(C(C=O)O)O,Glyceraldehyde,data_1_2_3_dihydroxypropanal.log,data_1_glyceraldehyde.log
+"propane-1,2,3-triol",C(C(CO)O)O,Glycerol,data_1_propane_1_2_3_triol.log,data_1_glycerol.log
+2-hydroxyacetaldehyde,C(C=O)O,Glycolaldehyde,data_1_2_hydroxyacetaldehyde.log,data_1_glycolaldehyde.log
+2-hydroxyacetic acid,C(C(=O)O)O,Glycolic Acid,data_1_2_hydroxyacetic_acid.log,data_1_glycolic_acid.log
+oxaldehydic acid,C(=O)C(=O)O,Glyoxylic Acid,data_1_oxaldehydic_acid.log,data_1_glyoxylic_acid.log
+formonitrile,C#N,Hydrogen Cyanide,data_1_formonitrile.log,data_1_hydrogen_cyanide.log
+hydrogen carbonate,C(=O)(O)[O-],Bicarbonate Ion,data_1_hydrogen_carbonate.log,data_1_bicarbonate_ion.log
+thiocyanic acid,C(#N)S,Thiocyanic Acid,data_1_thiocyanic_acid.log,data_1_thiocyanic_acid.log
+molecular hydrogen,[HH],Hydrogen,data_1_molecular_hydrogen.log,data_1_hydrogen.log
+1H-imidazole,C1=CN=CN1,Imidazole,data_1_1h_imidazole.log,data_1_imidazole.log
+potassium(1+),[K+],Potassium Cation,data_1_potassium_1.log,data_1_potassium_cation.log
+2-hydroxypropanal,CC(C=O)O,Lactaldehyde,data_1_2_hydroxypropanal.log,data_1_lactaldehyde.log
+methanethiol,CS,Methanethiol,data_1_methanethiol.log,data_1_methanethiol.log
+2-oxopropanal,CC(=O)C=O,Methylglyoxal,data_1_2_oxopropanal.log,data_1_methylglyoxal.log
+carbanide,[CH3-],Methanide,data_1_carbanide.log,data_1_methanide.log
+magnesium(2+),[Mg+2],Magnesium ion,data_1_magnesium_2.log,data_1_magnesium_ion.log
+sodium(1+),[Na+],Sodium ion,data_1_sodium_1.log,data_1_sodium_ion.log
+hydroxyazanium,[NH3+]O,Hydroxyammonium,data_1_hydroxyazanium.log,data_1_hydroxyammonium.log
+nickel(2+),[Ni+2],Nickel cation,data_1_nickel_2.log,data_1_nickel_cation.log
+nickel,[Ni],Nickel,data_1_nickel.log,data_1_nickel.log
+nitrate,[N+](=O)([O-])[O-],Nitrate,data_1_nitrate.log,data_1_nitrate.log
+nitrite,N(=O)[O-],Nitrite,data_1_nitrite.log,data_1_nitrite.log
+molecular nitrogen,N#N,Nitrogen,data_1_molecular_nitrogen.log,data_1_nitrogen.log
+hydroxide,[OH-],Hydroxide,data_1_hydroxide.log,data_1_hydroxide.log
+oxidane,O,Water,data_1_oxidane.log,data_1_water.log
+molecular oxygen,O=O,Oxygen,data_1_molecular_oxygen.log,data_1_oxygen.log
+dihydrogen phosphate,OP(=O)(O)[O-],Dihydrogenphosphate,data_1_dihydrogen_phosphate.log,data_1_dihydrogenphosphate.log
+phosphoric acid,OP(=O)(O)O,Phosphoric Acid,data_1_phosphoric_acid.log,data_1_phosphoric_acid.log
+"propane-1,2-diol",CC(CO)O,Propylene Glycol,data_1_propane_1_2_diol.log,data_1_propylene_glycol.log
+propan-1-ol,CCCO,1-Propanol,data_1_propan_1_ol.log,data_1_1_propanol.log
+propanoic acid,CCC(=O)O,Propionic Acid,data_1_propanoic_acid.log,data_1_propionic_acid.log
+hydron,[H+],Hydrogen cation,data_1_hydron.log,data_1_hydrogen_cation.log
+"butane-1,4-diamine",C(CCN)CN,Putrescine,data_1_butane_1_4_diamine.log,data_1_putrescine.log
+1H-pyrazole,C1=CNN=C1,Pyrazole,data_1_1h_pyrazole.log,data_1_pyrazole.log
+"1,2-dihydropyrimidine",C1NC=CC=N1,Dihydropyrimidine,data_1_1_2_dihydropyrimidine.log,data_1_dihydropyrimidine.log
+2-oxopropanoic acid,CC(=O)C(=O)O,Pyruvic Acid,data_1_2_oxopropanoic_acid.log,data_1_pyruvic_acid.log
+phosphate,[O-]P(=O)([O-])[O-],Phosphate,data_1_phosphate.log,data_1_phosphate.log
+methylsulfanylmethane,CSC,Dimethyl Sulfide,data_1_methylsulfanylmethane.log,data_1_dimethyl_sulfide.log
+2-(methylamino)acetic acid,CNCC(=O)O,Sarcosine,data_1_2_methylamino_acetic_acid.log,data_1_sarcosine.log
+sulfite,[O-]S(=O)[O-],Sulfite,data_1_sulfite.log,data_1_sulfite.log
+sulfurous acid,OS(=O)O,Sulfurous Acid,data_1_sulfurous_acid.log,data_1_sulfurous_acid.log
+sulfate,[O-]S(=O)(=O)[O-],Sulfate Ion,data_1_sulfate.log,data_1_sulfate_ion.log
+sulfuric acid,OS(=O)(=O)O,Sulfuric Acid,data_1_sulfuric_acid.log,data_1_sulfuric_acid.log
+sulfur dioxide,O=S=O,Sulfur Dioxide,data_1_sulfur_dioxide.log,data_1_sulfur_dioxide.log
+thiolane,C1CCSC1,Tetrahydrothiophene,data_1_thiolane.log,data_1_tetrahydrothiophene.log
+2-sulfanylacetic acid,C(C(=O)O)S,Thioglycolic Acid,data_1_2_sulfanylacetic_acid.log,data_1_thioglycolic_acid.log
+"N,N-dimethylmethanamine oxide",C[N+](C)(C)[O-],Trimethylamine oxide,data_1_n_n_dimethylmethanamine_oxide.log,data_1_trimethylamine_oxide.log
+"N,N-dimethylmethanamine",CN(C)C,Trimethylamine,data_1_n_n_dimethylmethanamine.log,data_1_trimethylamine.log
+trimethylsulfanium,C[S+](C)C,Trimethylsulfonium,data_1_trimethylsulfanium.log,data_1_trimethylsulfonium.log
+2-sulfanylethanol,C(CS)O,2-Mercaptoethanol,data_1_2_sulfanylethanol.log,data_1_2_mercaptoethanol.log
+"1H-1,2,4-triazol-5-amine",C1=NNC(=N1)N,Amitrole,data_1_1h_1_2_4_triazol_5_amine.log,data_1_amitrole.log
+3-aminopropanenitrile,C(CN)C#N,3-Aminopropionitrile,data_1_3_aminopropanenitrile.log,data_1_3_aminopropionitrile.log
+"3-fluoropropane-1,2-diol",C(C(CF)O)O,"3-Fluoro-1,2-propanediol",data_1_3_fluoropropane_1_2_diol.log,data_1_3_fluoro_1_2_propanediol.log
+3-methoxypropan-1-amine,COCCCN,3-Methoxypropylamine,data_1_3_methoxypropan_1_amine.log,data_1_3_methoxypropylamine.log
+pyridin-4-amine,C1=CN=CC=C1N,4-Aminopyridine,data_1_pyridin_4_amine.log,data_1_4_aminopyridine.log
+1H-imidazol-5-ylmethanol,C1=C(NC=N1)CO,4-Imidazolemethanol,data_1_1h_imidazol_5_ylmethanol.log,data_1_4_imidazolemethanol.log
+N-hydroxyacetamide,CC(=O)NO,Acetohydroxamic Acid,data_1_n_hydroxyacetamide.log,data_1_acetohydroxamic_acid.log
+trifluoroalumane,F[Al](F)F,Aluminum fluoride,data_1_trifluoroalumane.log,data_1_aluminum_fluoride.log
+2-aminoguanidine,C(=NN)(N)N,Aminoguanidine,data_1_2_aminoguanidine.log,data_1_aminoguanidine.log
+oxetan-2-one,C1COC1=O,Beta-Propiolactone,data_1_oxetan_2_one.log,data_1_beta_propiolactone.log
+cyclopentanamine,C1CCC(C1)N,Cyclopentylamine,data_1_cyclopentanamine.log,data_1_cyclopentylamine.log
+ethoxyethane,CCOCC,Diethyl Ether,data_1_ethoxyethane.log,data_1_diethyl_ether.log
+"ethane-1,2-diamine",C(CN)N,Ethylenediamine,data_1_ethane_1_2_diamine.log,data_1_ethylenediamine.log
+4-methyl-1H-pyrazole,CC1=CNN=C1,4-Methylpyrazole,data_1_4_methyl_1h_pyrazole.log,data_1_4_methylpyrazole.log
+furan-2-ylmethanamine,C1=COC(=C1)CN,Furfurylamine,data_1_furan_2_ylmethanamine.log,data_1_furfurylamine.log
+propan-2-ol,CC(C)O,Isopropanol,data_1_propan_2_ol.log,data_1_isopropanol.log
+lithium hydroxide,[Li+].[OH-],Lithium Hydroxide,data_1_lithium_hydroxide.log,data_1_lithium_hydroxide.log
+2-methylprop-2-enoic acid,CC(=C)C(=O)O,Methacrylic Acid,data_1_2_methylprop_2_enoic_acid.log,data_1_methacrylic_acid.log
+potassium chloride,[Cl-].[K+],Potassium Chloride,data_1_potassium_chloride.log,data_1_potassium_chloride.log
+2-aminopropan-1-ol,CC(CO)N,2-Aminopropanol,data_1_2_aminopropan_1_ol.log,data_1_2_aminopropanol.log
+methyl carbamimidothioate,CSC(=N)N,2-Methyl-2-thiopseudourea,data_1_methyl_carbamimidothioate.log,data_1_2_methyl_2_thiopseudourea.log
+aminourea,C(=O)(N)NN,Semicarbazide,data_1_aminourea.log,data_1_semicarbazide.log
+sodium chloride,[Na+].[Cl-],Sodium Chloride,data_1_sodium_chloride.log,data_1_sodium_chloride.log
+sodium fluoride,[F-].[Na+],Sodium Fluoride,data_1_sodium_fluoride.log,data_1_sodium_fluoride.log
+2-fluoroacetate,C(C(=O)[O-])F,Fluoroacetate anion,data_1_2_fluoroacetate.log,data_1_fluoroacetate_anion.log
+2-fluoroacetic acid,C(C(=O)O)F,Fluoroacetic acid,data_1_2_fluoroacetic_acid.log,data_1_fluoroacetic_acid.log
+krypton,[Kr],Krypton,data_1_krypton.log,data_1_krypton.log
+ethyl carbamate,CCOC(=O)N,"Carbamic acid, ethyl ester",data_1_ethyl_carbamate.log,data_1_carbamic_acid_ethyl_ester.log
+guanidine;hydrochloride,C(=N)(N)N.Cl,Guanidine Hydrochloride,data_1_guanidine_hydrochloride.log,data_1_guanidine_hydrochloride.log
+(2S)-2-aminopropanoic acid,C[C@@H](C(=O)O)N,L-Alanine,data_1_2s_2_aminopropanoic_acid.log,data_1_l_alanine.log
+3-isothiocyanatoprop-1-ene,C=CCN=C=S,Allyl Isothiocyanate,data_1_3_isothiocyanatoprop_1_ene.log,data_1_allyl_isothiocyanate.log
+cyanide,[C-]#N,Cyanide,data_1_cyanide.log,data_1_cyanide.log
+sulfamic acid,NS(=O)(=O)O,Sulfamic Acid,data_1_sulfamic_acid.log,data_1_sulfamic_acid.log
+2-aminoethanethiol,C(CS)N,Cysteamine,data_1_2_aminoethanethiol.log,data_1_cysteamine.log
+"N,N-dimethylnitrous amide",CN(C)N=O,N-Nitrosodimethylamine,data_1_n_n_dimethylnitrous_amide.log,data_1_n_nitrosodimethylamine.log
+"3,5-dimethyl-1H-pyrazole",CC1=CC(=NN1)C,"3,5-Dimethylpyrazole",data_1_3_5_dimethyl_1h_pyrazole.log,data_1_3_5_dimethylpyrazole.log
+methylsulfonylmethane,CS(=O)(=O)C,Dimethyl Sulfone,data_1_methylsulfonylmethane.log,data_1_dimethyl_sulfone.log
+"N,N-dimethylformamide",CN(C)C=O,Dimethylformamide,data_1_n_n_dimethylformamide.log,data_1_dimethylformamide.log
+pentan-1-ol,CCCCCO,1-Pentanol,data_1_pentan_1_ol.log,data_1_1_pentanol.log
+bromomethane,CBr,Methyl Bromide,data_1_bromomethane.log,data_1_methyl_bromide.log
+ethene,C=C,Ethylene,data_1_ethene.log,data_1_ethylene.log
+chloromethane,CCl,Methyl Chloride,data_1_chloromethane.log,data_1_methyl_chloride.log
+methanamine,CN,Methylamine,data_1_methanamine.log,data_1_methylamine.log
+borane;N-methylmethanamine,B.CNC,borane;N-methylmethanamine,data_1_borane_n_methylmethanamine.log,data_1_borane_n_methylmethanamine.log
+borane,B,Borane,data_1_borane.log,data_1_borane.log
+prop-1-yne,CC#C,Propyne,data_1_prop_1_yne.log,data_1_propyne.log
+chloroethane,CCCl,Chloroethane,data_1_chloroethane.log,data_1_chloroethane.log
+chloroethene,C=CCl,Vinyl Chloride,data_1_chloroethene.log,data_1_vinyl_chloride.log
+fluoroethene,C=CF,Vinyl Fluoride,data_1_fluoroethene.log,data_1_vinyl_fluoride.log
+ethanamine,CCN,Ethylamine,data_1_ethanamine.log,data_1_ethylamine.log
+ethanethiol,CCS,Ethanethiol,data_1_ethanethiol.log,data_1_ethanethiol.log
+dichloromethane,C(Cl)Cl,Dichloromethane,data_1_dichloromethane.log,data_1_dichloromethane.log
+difluoromethane,C(F)F,Difluoromethane,data_1_difluoromethane.log,data_1_difluoromethane.log
+methanedithione,C(=S)=S,Carbon Disulfide,data_1_methanedithione.log,data_1_carbon_disulfide.log
+N-methylidenehydroxylamine,C=NO,Nitrone,data_1_n_methylidenehydroxylamine.log,data_1_nitrone.log
+oxirane,C1CO1,Ethylene Oxide,data_1_oxirane.log,data_1_ethylene_oxide.log
+trifluoroborane,B(F)(F)F,Boron trifluoride,data_1_trifluoroborane.log,data_1_boron_trifluoride.log
+aluminum carbanide,[CH3-].[CH3-].[CH3-].[Al+3],Aluminum carbanide,data_1_aluminum_carbanide.log,data_1_aluminum_carbanide.log
+2-methylpropane,CC(C)C,Isobutane,data_1_2_methylpropane.log,data_1_isobutane.log
+2-chloropropane,CC(C)Cl,2-Chloropropane,data_1_2_chloropropane.log,data_1_2_chloropropane.log
+propan-2-amine,CC(C)N,Isopropylamine,data_1_propan_2_amine.log,data_1_isopropylamine.log
+propane-2-thiol,CC(C)S,2-Propanethiol,data_1_propane_2_thiol.log,data_1_2_propanethiol.log
+"1,1-dichloroethane",CC(Cl)Cl,"1,1-Dichloroethane",data_1_1_1_dichloroethane.log,data_1_1_1_dichloroethane.log
+"1,1-dichloroethene",C=C(Cl)Cl,Vinylidene chloride,data_1_1_1_dichloroethene.log,data_1_vinylidene_chloride.log
+acetyl chloride,CC(=O)Cl,Acetyl chloride,data_1_acetyl_chloride.log,data_1_acetyl_chloride.log
+"1,1-difluoroethane",CC(F)F,"1,1-Difluoroethane",data_1_1_1_difluoroethane.log,data_1_1_1_difluoroethane.log
+"1,1-difluoroethene",C=C(F)F,Vinylidene fluoride,data_1_1_1_difluoroethene.log,data_1_vinylidene_fluoride.log
+carbonyl dichloride,C(=O)(Cl)Cl,Phosgene,data_1_carbonyl_dichloride.log,data_1_phosgene.log
+chloro(difluoro)methane,C(F)(F)Cl,Chlorodifluoromethane,data_1_chloro_difluoro_methane.log,data_1_chlorodifluoromethane.log
+fluoroform,C(F)(F)F,Trifluoromethane,data_1_fluoroform.log,data_1_trifluoromethane.log
+2-methyloxirane,CC1CO1,Propylene Oxide,data_1_2_methyloxirane.log,data_1_propylene_oxide.log
+tetramethylazanium,C[N+](C)(C)C,Tetramethylammonium,data_1_tetramethylazanium.log,data_1_tetramethylammonium.log
+2-methylpropan-2-amine,CC(C)(C)N,Tert-Butylamine,data_1_2_methylpropan_2_amine.log,data_1_tert_butylamine.log
+2-methylpropan-2-ol,CC(C)(C)O,tert-Butanol,data_1_2_methylpropan_2_ol.log,data_1_tert_butanol.log
+2-methylpropane-2-thiol,CC(C)(C)S,tert-Butyl mercaptan,data_1_2_methylpropane_2_thiol.log,data_1_tert_butyl_mercaptan.log
+tetrafluoromethane,C(F)(F)(F)F,Carbon tetrafluoride,data_1_tetrafluoromethane.log,data_1_carbon_tetrafluoride.log
+methanesulfonic acid,CS(=O)(=O)O,Methanesulfonic Acid,data_1_methanesulfonic_acid.log,data_1_methanesulfonic_acid.log
+tetramethylsilane,C[Si](C)(C)C,Tetramethylsilane,data_1_tetramethylsilane.log,data_1_tetramethylsilane.log
+"2,2-dimethylpropan-1-ol",CC(C)(C)CO,Neopentyl alcohol,data_1_2_2_dimethylpropan_1_ol.log,data_1_neopentyl_alcohol.log
+2-methylbutan-2-ol,CCC(C)(C)O,2-Methyl-2-butanol,data_1_2_methylbutan_2_ol.log,data_1_2_methyl_2_butanol.log
+2-hydroxy-2-methylpropanenitrile,CC(C)(C#N)O,Acetone Cyanohydrin,data_1_2_hydroxy_2_methylpropanenitrile.log,data_1_acetone_cyanohydrin.log
+2-hydroperoxy-2-methylpropane,CC(C)(C)OO,tert-Butyl hydroperoxide,data_1_2_hydroperoxy_2_methylpropane.log,data_1_tert_butyl_hydroperoxide.log
+3-methylpent-1-yn-3-ol,CCC(C)(C#C)O,3-Methyl-1-pentyn-3-ol,data_1_3_methylpent_1_yn_3_ol.log,data_1_3_methyl_1_pentyn_3_ol.log
+2-methylbutane,CCC(C)C,Isopentane,data_1_2_methylbutane.log,data_1_isopentane.log
+"2-methylbuta-1,3-diene",CC(=C)C=C,Isoprene,data_1_2_methylbuta_1_3_diene.log,data_1_isoprene.log
+2-methylpropan-1-amine,CC(C)CN,Isobutylamine,data_1_2_methylpropan_1_amine.log,data_1_isobutylamine.log
+2-methylpropanenitrile,CC(C)C#N,Isobutyronitrile,data_1_2_methylpropanenitrile.log,data_1_isobutyronitrile.log
+2-methylpropan-1-ol,CC(C)CO,Isobutanol,data_1_2_methylpropan_1_ol.log,data_1_isobutanol.log
+2-methylpropanal,CC(C)C=O,Isobutyraldehyde,data_1_2_methylpropanal.log,data_1_isobutyraldehyde.log
+2-methylprop-2-enal,CC(=C)C=O,Methacrolein,data_1_2_methylprop_2_enal.log,data_1_methacrolein.log
+2-chlorobutane,CCC(C)Cl,2-Chlorobutane,data_1_2_chlorobutane.log,data_1_2_chlorobutane.log
+2-chloropropan-1-ol,CC(CO)Cl,Propylene Chlorohydrin,data_1_2_chloropropan_1_ol.log,data_1_propylene_chlorohydrin.log
+"propane-1,2-diamine",CC(CN)N,Propylenediamine,data_1_propane_1_2_diamine.log,data_1_propylenediamine.log
+butan-2-ol,CCC(C)O,(+-)-2-Butanol,data_1_butan_2_ol.log,data_1_2_butanol.log
+butan-2-one,CCC(=O)C,Methyl Ethyl Ketone,data_1_butan_2_one.log,data_1_methyl_ethyl_ketone.log
+but-3-en-2-one,CC(=O)C=C,Methyl vinyl ketone,data_1_but_3_en_2_one.log,data_1_methyl_vinyl_ketone.log
+1-chloropropan-2-one,CC(=O)CCl,Chloroacetone,data_1_1_chloropropan_2_one.log,data_1_chloroacetone.log
+2-hydroxypropanenitrile,CC(C#N)O,Lactonitrile,data_1_2_hydroxypropanenitrile.log,data_1_lactonitrile.log
+propanamide,CCC(=O)N,Propionamide,data_1_propanamide.log,data_1_propionamide.log
+prop-2-enamide,C=CC(=O)N,Acrylamide,data_1_prop_2_enamide.log,data_1_acrylamide.log
+2-chloroacetamide,C(C(=O)N)Cl,Chloroacetamide,data_1_2_chloroacetamide.log,data_1_chloroacetamide.log
+prop-2-enoic acid,C=CC(=O)O,Acrylic Acid,data_1_prop_2_enoic_acid.log,data_1_acrylic_acid.log
+ethaneperoxoic acid,CC(=O)OO,Peracetic Acid,data_1_ethaneperoxoic_acid.log,data_1_peracetic_acid.log
+methyl carbonochloridate,COC(=O)Cl,Methyl chloroformate,data_1_methyl_carbonochloridate.log,data_1_methyl_chloroformate.log
+1-nitroethane,CC[N+](=O)[O-],Nitroethane,data_1_1_nitroethane.log,data_1_nitroethane.log
+2-methylpropanoic acid,CC(C)C(=O)O,Isobutyric Acid,data_1_2_methylpropanoic_acid.log,data_1_isobutyric_acid.log
+2-methylprop-2-enamide,CC(=C)C(=O)N,Methacrylamide,data_1_2_methylprop_2_enamide.log,data_1_methacrylamide.log
+chloroalumane,[AlH2]Cl,Chloroalane,data_1_chloroalumane.log,data_1_chloroalane.log
+2-methylbutan-1-amine,CCC(C)CN,2-Methylbutylamine,data_1_2_methylbutan_1_amine.log,data_1_2_methylbutylamine.log
+pentan-3-one,CCC(=O)CC,Ethyl ketone,data_1_pentan_3_one.log,data_1_ethyl_ketone.log
+N-butan-2-ylidenehydroxylamine,CCC(=NO)C,2-Butanone oxime,data_1_n_butan_2_ylidenehydroxylamine.log,data_1_2_butanone_oxime.log
+"1,3-dimethylurea",CNC(=O)NC,"N,N'-Dimethylurea",data_1_1_3_dimethylurea.log,data_1_n_n_dimethylurea.log
+methyl prop-2-enoate,COC(=O)C=C,Methyl Acrylate,data_1_methyl_prop_2_enoate.log,data_1_methyl_acrylate.log
+2-methyloxolane,CC1CCCO1,2-Methyltetrahydrofuran,data_1_2_methyloxolane.log,data_1_2_methyltetrahydrofuran.log
+oxolan-2-one,C1CC(=O)OC1,Gamma-Butyrolactone,data_1_oxolan_2_one.log,data_1_gamma_butyrolactone.log
+"1,3-dioxolan-2-one",C1COC(=O)O1,Ethylene carbonate,data_1_1_3_dioxolan_2_one.log,data_1_ethylene_carbonate.log
+triethylborane,B(CC)(CC)CC,Triethylborane,data_1_triethylborane.log,data_1_triethylborane.log
+furan-2-ylmethanol,C1=COC(=C1)CO,Furfuryl Alcohol,data_1_furan_2_ylmethanol.log,data_1_furfuryl_alcohol.log
+furan-2-carbaldehyde,C1=COC(=C1)C=O,Furfural,data_1_furan_2_carbaldehyde.log,data_1_furfural.log
+"cyclopenta-1,3-diene",C1C=CC=C1,Cyclopentadiene,data_1_cyclopenta_1_3_diene.log,data_1_cyclopentadiene.log
+boric acid,B(O)(O)O,Boric Acid,data_1_boric_acid.log,data_1_boric_acid.log
+hex-1-yn-3-ol,CCCC(C#C)O,Propylethinylcarbinol,data_1_hex_1_yn_3_ol.log,data_1_propylethinylcarbinol.log
+methyl 2-cyanoacetate,COC(=O)CC#N,Methyl cyanoacetate,data_1_methyl_2_cyanoacetate.log,data_1_methyl_cyanoacetate.log
+2-ethyloxirane,CCC1CO1,"1,2-Epoxybutane",data_1_2_ethyloxirane.log,data_1_1_2_epoxybutane.log
+2-(chloromethyl)oxirane,C1C(O1)CCl,Epichlorohydrin,data_1_2_chloromethyl_oxirane.log,data_1_epichlorohydrin.log
+but-1-ene,CCC=C,1-Butene,data_1_but_1_ene.log,data_1_1_butene.log
+"buta-1,3-diene",C=CC=C,"1,3-Butadiene",data_1_buta_1_3_diene.log,data_1_1_3_butadiene.log
+but-1-yne,CCC#C,1-Butyne,data_1_but_1_yne.log,data_1_1_butyne.log
+prop-2-enal,C=CC=O,Acrolein,data_1_prop_2_enal.log,data_1_acrolein.log
+propane-1-thiol,CCCS,Propyl mercaptan,data_1_propane_1_thiol.log,data_1_propyl_mercaptan.log
+3-chloroprop-1-ene,C=CCCl,Allyl chloride,data_1_3_chloroprop_1_ene.log,data_1_allyl_chloride.log
+propan-1-amine,CCCN,Propylamine,data_1_propan_1_amine.log,data_1_propylamine.log
+prop-2-en-1-amine,C=CCN,Allylamine,data_1_prop_2_en_1_amine.log,data_1_allylamine.log
+propanenitrile,CCC#N,Propionitrile,data_1_propanenitrile.log,data_1_propionitrile.log
+prop-2-enenitrile,C=CC#N,Acrylonitrile,data_1_prop_2_enenitrile.log,data_1_acrylonitrile.log
+2-chloroacetonitrile,C(C#N)Cl,Chloroacetonitrile,data_1_2_chloroacetonitrile.log,data_1_chloroacetonitrile.log
+2-hydroxyacetonitrile,C(C#N)O,Hydroxyacetonitrile,data_1_2_hydroxyacetonitrile.log,data_1_hydroxyacetonitrile.log
+prop-2-en-1-ol,C=CCO,Allyl Alcohol,data_1_prop_2_en_1_ol.log,data_1_allyl_alcohol.log
+prop-2-yn-1-ol,C#CCO,Propargyl alcohol,data_1_prop_2_yn_1_ol.log,data_1_propargyl_alcohol.log
+oxaldehyde,C(=O)C=O,Glyoxal,data_1_oxaldehyde.log,data_1_glyoxal.log
+methoxyethene,COC=C,Methyl vinyl ether,data_1_methoxyethene.log,data_1_methyl_vinyl_ether.log
+N-ethylidenehydroxylamine,CC=NO,Aldoxime,data_1_n_ethylidenehydroxylamine.log,data_1_aldoxime.log
+chloro(methoxy)methane,COCCl,Chloromethyl Methyl Ether,data_1_chloro_methoxy_methane.log,data_1_chloromethyl_methyl_ether.log
+3-methylbutan-1-amine,CC(C)CCN,Isoamylamine,data_1_3_methylbutan_1_amine.log,data_1_isoamylamine.log
+pentan-2-one,CCCC(=O)C,2-Pentanone,data_1_pentan_2_one.log,data_1_2_pentanone.log
+"butane-1,3-diol",CC(CCO)O,"1,3-Butanediol",data_1_butane_1_3_diol.log,data_1_1_3_butanediol.log
+2-cyanoacetamide,C(C#N)C(=O)N,Cyanoacetamide,data_1_2_cyanoacetamide.log,data_1_cyanoacetamide.log
+1-methoxypropan-2-ol,CC(COC)O,1-Methoxy-2-propanol,data_1_1_methoxypropan_2_ol.log,data_1_1_methoxy_2_propanol.log
+ethenyl acetate,CC(=O)OC=C,Vinyl Acetate,data_1_ethenyl_acetate.log,data_1_vinyl_acetate.log
+"3-methyl-1,4-dihydropyrazol-5-one",CC1=NNC(=O)C1,3-Methyl-2-pyrazolin-5-one,data_1_3_methyl_1_4_dihydropyrazol_5_one.log,data_1_3_methyl_2_pyrazolin_5_one.log
+"furan-2,5-dione",C1=CC(=O)OC1=O,Maleic Anhydride,data_1_furan_2_5_dione.log,data_1_maleic_anhydride.log
+cyclohexanamine,C1CCC(CC1)N,Cyclohexylamine,data_1_cyclohexanamine.log,data_1_cyclohexylamine.log
+pyran-4-one,C1=COC=CC1=O,4H-pyran-4-one,data_1_pyran_4_one.log,data_1_4h_pyran_4_one.log
+pyridin-3-ol,C1=CC(=CN=C1)O,3-Hydroxypyridine,data_1_pyridin_3_ol.log,data_1_3_hydroxypyridine.log
+pyrimidin-2-amine,C1=CN=C(N=C1)N,2-Aminopyrimidine,data_1_pyrimidin_2_amine.log,data_1_2_aminopyrimidine.log
+hex-5-en-2-one,CC(=O)CCC=C,5-Hexene-2-one,data_1_hex_5_en_2_one.log,data_1_5_hexene_2_one.log
+hex-3-yn-2-ol,CCC#CC(C)O,3-Hexyn-2-ol,data_1_hex_3_yn_2_ol.log,data_1_3_hexyn_2_ol.log
+pent-1-ene,CCCC=C,1-Pentene,data_1_pent_1_ene.log,data_1_1_pentene.log
+1-chlorobutane,CCCCCl,Butyl Chloride,data_1_1_chlorobutane.log,data_1_butyl_chloride.log
+butan-1-amine,CCCCN,Butylamine,data_1_butan_1_amine.log,data_1_butylamine.log
+butanenitrile,CCCC#N,Butyronitrile,data_1_butanenitrile.log,data_1_butyronitrile.log
+but-3-enenitrile,C=CCC#N,3-Butenenitrile,data_1_but_3_enenitrile.log,data_1_3_butenenitrile.log
+propanedinitrile,C(C#N)C#N,Malononitrile,data_1_propanedinitrile.log,data_1_malononitrile.log
+3-hydroxypropanenitrile,C(CO)C#N,Hydracrylonitrile,data_1_3_hydroxypropanenitrile.log,data_1_hydracrylonitrile.log
+butane-1-thiol,CCCCS,Butanethiol,data_1_butane_1_thiol.log,data_1_butanethiol.log
+"N'-methylethane-1,2-diamine",CNCCN,N-Methylethylenediamine,data_1_n_methylethane_1_2_diamine.log,data_1_n_methylethylenediamine.log
+2-(methylideneamino)acetonitrile,C=NCC#N,2-(Methyleneamino)acetonitrile,data_1_2_methylideneamino_acetonitrile.log,data_1_2_methyleneamino_acetonitrile.log
+2-hydrazinylethanol,C(CO)NN,2-Hydrazinoethanol,data_1_2_hydrazinylethanol.log,data_1_2_hydrazinoethanol.log
+2-methoxyethanamine,COCCN,2-Methoxyethylamine,data_1_2_methoxyethanamine.log,data_1_2_methoxyethylamine.log
+N-ethylethanamine,CCNCC,Diethylamine,data_1_n_ethylethanamine.log,data_1_diethylamine.log
+isocyanatoethane,CCN=C=O,Ethyl isocyanate,data_1_isocyanatoethane.log,data_1_ethyl_isocyanate.log
+ethenoxyethane,CCOC=C,Ethyl vinyl ether,data_1_ethenoxyethane.log,data_1_ethyl_vinyl_ether.log
+ethenoxyethene,C=COC=C,Vinyl ether,data_1_ethenoxyethene.log,data_1_vinyl_ether.log
+1H-pyrrole,C1=CNC=C1,Pyrrole,data_1_1h_pyrrole.log,data_1_pyrrole.log
+oxolane,C1CCOC1,Tetrahydrofuran,data_1_oxolane.log,data_1_tetrahydrofuran.log
+thiophene,C1=CSC=C1,Thiophene,data_1_thiophene.log,data_1_thiophene.log
+pentan-1-amine,CCCCCN,Pentylamine,data_1_pentan_1_amine.log,data_1_pentylamine.log
+pentanenitrile,CCCCC#N,Valeronitrile,data_1_pentanenitrile.log,data_1_valeronitrile.log
+butanedinitrile,C(CC#N)C#N,Succinonitrile,data_1_butanedinitrile.log,data_1_succinonitrile.log
+"butane-1,4-diol",C(CCO)CO,"1,4-Butanediol",data_1_butane_1_4_diol.log,data_1_1_4_butanediol.log
+"but-2-ene-1,4-diol",C(C=CCO)O,"2-Butene-1,4-diol",data_1_but_2_ene_1_4_diol.log,data_1_2_butene_1_4_diol.log
+"but-2-yne-1,4-diol",C(C#CCO)O,"2-Butyne-1,4-diol",data_1_but_2_yne_1_4_diol.log,data_1_2_butyne_1_4_diol.log
+N-methylbutan-1-amine,CCCCNC,N-Methylbutylamine,data_1_n_methylbutan_1_amine.log,data_1_n_methylbutylamine.log
+N-butylidenehydroxylamine,CCCC=NO,"Butanal, oxime",data_1_n_butylidenehydroxylamine.log,data_1_butanal_oxime.log
+"N,N'-dimethylethane-1,2-diamine",CNCCNC,"N,N'-Dimethylethylenediamine",data_1_n_n_dimethylethane_1_2_diamine.log,data_1_n_n_dimethylethylenediamine.log
+2-ethoxyethanol,CCOCCO,Glycol monoethyl ether,data_1_2_ethoxyethanol.log,data_1_glycol_monoethyl_ether.log
+"hexa-2,4-dien-1-ol",CC=CC=CCO,"2,4-Hexadien-1-OL",data_1_hexa_2_4_dien_1_ol.log,data_1_2_4_hexadien_1_ol.log
+1-isocyanatobutane,CCCCN=C=O,Butyl isocyanate,data_1_1_isocyanatobutane.log,data_1_butyl_isocyanate.log
+prop-1-ene,CC=C,Propylene,data_1_prop_1_ene.log,data_1_propylene.log
+methoxymethane,COC,Dimethyl Ether,data_1_methoxymethane.log,data_1_dimethyl_ether.log
+2-methylprop-1-ene,CC(=C)C,Isobutylene,data_1_2_methylprop_1_ene.log,data_1_isobutylene.log
+2-methylbut-3-en-2-ol,CC(C)(C=C)O,2-Methyl-3-buten-2-ol,data_1_2_methylbut_3_en_2_ol.log,data_1_2_methyl_3_buten_2_ol.log
+2-methylbut-3-yn-2-ol,CC(C)(C#C)O,2-Methyl-3-butyn-2-ol,data_1_2_methylbut_3_yn_2_ol.log,data_1_2_methyl_3_butyn_2_ol.log
+1-hydroxypropan-2-one,CC(=O)CO,Hydroxyacetone,data_1_1_hydroxypropan_2_one.log,data_1_hydroxyacetone.log
+2-methoxyprop-1-ene,CC(=C)OC,2-Methoxypropene,data_1_2_methoxyprop_1_ene.log,data_1_2_methoxypropene.log
+imidazolidin-2-one,C1CNC(=O)N1,2-Imidazolidinone,data_1_imidazolidin_2_one.log,data_1_2_imidazolidinone.log
+"bicyclo[2.2.1]hepta-2,5-diene",C1C2C=CC1C=C2,Norbornadiene,data_1_bicyclo_2_2_1_hepta_2_5_diene.log,data_1_norbornadiene.log
+2-methylbutan-1-ol,CCC(C)CO,2-Methyl-1-butanol,data_1_2_methylbutan_1_ol.log,data_1_2_methyl_1_butanol.log
+2-cyanoacetohydrazide,C(C#N)C(=O)NN,Cyanoacetic acid hydrazide,data_1_2_cyanoacetohydrazide.log,data_1_cyanoacetic_acid_hydrazide.log
+4-methylpent-3-en-2-one,CC(=CC(=O)C)C,Mesityl oxide,data_1_4_methylpent_3_en_2_one.log,data_1_mesityl_oxide.log
+1H-pyridin-2-one,C1=CC(=O)NC=C1,2-Pyridone,data_1_1h_pyridin_2_one.log,data_1_2_pyridone.log
+oxane,C1CCOCC1,Tetrahydropyran,data_1_oxane.log,data_1_tetrahydropyran.log
+sodium cyanide,[C-]#N.[Na+],Sodium Cyanide,data_1_sodium_cyanide.log,data_1_sodium_cyanide.log
+hydroxymethanesulfinic acid,C(O)S(=O)O,Hydroxymethanesulfinic Acid,data_1_hydroxymethanesulfinic_acid.log,data_1_hydroxymethanesulfinic_acid.log
+N-(2-methylpropylidene)hydroxylamine,CC(C)C=NO,"Propanal, 2-methyl-, oxime",data_1_n_2_methylpropylidene_hydroxylamine.log,data_1_propanal_2_methyl_oxime.log
+potassium cyanide,[C-]#N.[K+],Potassium Cyanide,data_1_potassium_cyanide.log,data_1_potassium_cyanide.log
+3-aminopropan-1-ol,C(CN)CO,3-Amino-1-propanol,data_1_3_aminopropan_1_ol.log,data_1_3_amino_1_propanol.log
+spiro[2.2]pentane,C1CC12CC2,Spiropentane,data_1_spiro_2_2_pentane.log,data_1_spiropentane.log
+bicyclo[2.1.0]pentane,C1CC2C1C2,Housane,data_1_bicyclo_2_1_0_pentane.log,data_1_housane.log
+7-oxabicyclo[4.1.0]heptane,C1CCC2C(C1)O2,Cyclohexene oxide,data_1_7_oxabicyclo_4_1_0_heptane.log,data_1_cyclohexene_oxide.log
+thietane,C1CSC1,Thietane,data_1_thietane.log,data_1_thietane.log
+"1,2-oxazole",C1=CON=C1,Isoxazole,data_1_1_2_oxazole.log,data_1_isoxazole.log
+"1,3-oxazole",C1=COC=N1,Oxazole,data_1_1_3_oxazole.log,data_1_oxazole.log
+"1,3-thiazole",C1=CSC=N1,Thiazole,data_1_1_3_thiazole.log,data_1_thiazole.log
+"3,5-dimethyl-1,2-oxazole",CC1=CC(=NO1)C,"3,5-Dimethylisoxazole",data_1_3_5_dimethyl_1_2_oxazole.log,data_1_3_5_dimethylisoxazole.log
+thiocyanate,C(#N)[S-],Thiocyanate,data_1_thiocyanate.log,data_1_thiocyanate.log
+ethylsulfanylethane,CCSCC,Ethyl sulfide,data_1_ethylsulfanylethane.log,data_1_ethyl_sulfide.log
+fluoroethane,CCF,Fluoroethane,data_1_fluoroethane.log,data_1_fluoroethane.log
+carbonyl chloride fluoride,C(=O)(F)Cl,Carbonyl chloride fluoride,data_1_carbonyl_chloride_fluoride.log,data_1_carbonyl_chloride_fluoride.log
+carbonyl difluoride,C(=O)(F)F,Carbonyl fluoride,data_1_carbonyl_difluoride.log,data_1_carbonyl_fluoride.log
+2-fluoro-2-methylpropane,CC(C)(C)F,"Propane, 2-fluoro-2-methyl-",data_1_2_fluoro_2_methylpropane.log,data_1_propane_2_fluoro_2_methyl.log
+difluoro(dimethyl)silane,C[Si](C)(F)F,"Silane, difluorodimethyl-",data_1_difluoro_dimethyl_silane.log,data_1_silane_difluorodimethyl.log
+"1-chloro-1,2-difluoroethene",C(=C(F)Cl)F,"1-Chloro-1,2-difluoroethene",data_1_1_chloro_1_2_difluoroethene.log,data_1_1_chloro_1_2_difluoroethene.log
+2-fluoroacetyl chloride,C(C(=O)Cl)F,Fluoroacetyl chloride,data_1_2_fluoroacetyl_chloride.log,data_1_fluoroacetyl_chloride.log
+"2-chloro-1,1-difluoroethene",C(=C(F)F)Cl,"Ethene, 2-chloro-1,1-difluoro-",data_1_2_chloro_1_1_difluoroethene.log,data_1_ethene_2_chloro_1_1_difluoro.log
+"1,1,2-trifluoroethene",C(=C(F)F)F,Trifluoroethylene,data_1_1_1_2_trifluoroethene.log,data_1_trifluoroethylene.log
+oxalyl difluoride,C(=O)(C(=O)F)F,Ethanedioyl difluoride,data_1_oxalyl_difluoride.log,data_1_ethanedioyl_difluoride.log
+2-fluoroethanol,C(CF)O,2-Fluoroethanol,data_1_2_fluoroethanol.log,data_1_2_fluoroethanol.log
+2-cyanoacetic acid,C(C#N)C(=O)O,Cyanoacetic acid,data_1_2_cyanoacetic_acid.log,data_1_cyanoacetic_acid.log
+2-fluoropyridine,C1=CC=NC(=C1)F,2-Fluoropyridine,data_1_2_fluoropyridine.log,data_1_2_fluoropyridine.log
+"1,4-difluorobutane",C(CCF)CF,"Butane, 1,4-difluoro-",data_1_1_4_difluorobutane.log,data_1_butane_1_4_difluoro.log
+4-fluorobutan-1-ol,C(CCF)CO,4-Fluorobutan-1-ol,data_1_4_fluorobutan_1_ol.log,data_1_4_fluorobutan_1_ol.log
+"2,2,2-trifluoroethanamine",C(C(F)(F)F)N,"Ethanamine, 2,2,2-trifluoro-",data_1_2_2_2_trifluoroethanamine.log,data_1_ethanamine_2_2_2_trifluoro.log
+"2,2-difluoroacetic acid",C(C(=O)O)(F)F,Difluoroacetic acid,data_1_2_2_difluoroacetic_acid.log,data_1_difluoroacetic_acid.log
+"1,4-difluorobut-2-ene",C(C=CCF)F,"(E)-1,4-difluorobut-2-ene",data_1_1_4_difluorobut_2_ene.log,data_1_e_1_4_difluorobut_2_ene.log
+4-fluorobutanenitrile,C(CC#N)CF,"Butyronitrile, 4-fluoro-",data_1_4_fluorobutanenitrile.log,data_1_butyronitrile_4_fluoro.log
+methanidylidynesilanylium,[C-]#[Si+],Silicon carbide,data_1_methanidylidynesilanylium.log,data_1_silicon_carbide.log
+thiirane,C1CS1,Thiirane,data_1_thiirane.log,data_1_thiirane.log
+2-fluoropropane,CC(C)F,2-Fluoropropane,data_1_2_fluoropropane.log,data_1_2_fluoropropane.log
+"1,1,1-trifluoroethane",CC(F)(F)F,"1,1,1-Trifluoroethane",data_1_1_1_1_trifluoroethane.log,data_1_1_1_1_trifluoroethane.log
+fluoro(trimethyl)silane,C[Si](C)(C)F,Fluorotrimethylsilane,data_1_fluoro_trimethyl_silane.log,data_1_fluorotrimethylsilane.log
+1-fluoropropan-2-one,CC(=O)CF,Fluoroacetone,data_1_1_fluoropropan_2_one.log,data_1_fluoroacetone.log
+"1,1,2-trifluoroethane",C(C(F)F)F,"1,1,2-Trifluoroethane",data_1_1_1_2_trifluoroethane.log,data_1_1_1_2_trifluoroethane.log
+"N,N-dimethylcarbamoyl fluoride",CN(C)C(=O)F,"N,N-Dimethylcarbamic fluoride",data_1_n_n_dimethylcarbamoyl_fluoride.log,data_1_n_n_dimethylcarbamic_fluoride.log
+methyl 2-fluoroacetate,COC(=O)CF,Methyl fluoroacetate,data_1_methyl_2_fluoroacetate.log,data_1_methyl_fluoroacetate.log
+oxolan-3-ol,C1COCC1O,"3-Furanol, tetrahydro-",data_1_oxolan_3_ol.log,data_1_3_furanol_tetrahydro.log
+1-(aziridin-1-yl)ethanone,CC(=O)N1CC1,Acetylethylenimine,data_1_1_aziridin_1_yl_ethanone.log,data_1_acetylethylenimine.log
+2-fluoroethanamine;hydrochloride,C(CF)N.Cl,"Ethanamine, 2-fluoro-, hydrochloride",data_1_2_fluoroethanamine_hydrochloride.log,data_1_ethanamine_2_fluoro_hydrochloride.log
+2-fluoroethanamine,C(CF)N,2-Fluoroethylamine,data_1_2_fluoroethanamine.log,data_1_2_fluoroethylamine.log
+"buta-1,3-diyne",C#CC#C,"1,3-Butadiyne",data_1_buta_1_3_diyne.log,data_1_1_3_butadiyne.log
+1-fluoropropane,CCCF,"Propane, 1-fluoro-",data_1_1_fluoropropane.log,data_1_propane_1_fluoro.log
+oxalonitrile,C(#N)C#N,Cyanogen,data_1_oxalonitrile.log,data_1_cyanogen.log
+3-fluoropropanoic acid,C(CF)C(=O)O,"Propanoic acid, 3-fluoro-",data_1_3_fluoropropanoic_acid.log,data_1_propanoic_acid_3_fluoro.log
+2-cyanoguanidine,C(#N)N=C(N)N,Dicyandiamide,data_1_2_cyanoguanidine.log,data_1_dicyandiamide.log
+fluorobenzene,C1=CC=C(C=C1)F,Fluorobenzene,data_1_fluorobenzene.log,data_1_fluorobenzene.log
+pyridin-3-amine,C1=CC(=CN=C1)N,3-Aminopyridine,data_1_pyridin_3_amine.log,data_1_3_aminopyridine.log
+3-fluoropropan-1-amine,C(CN)CF,3-Fluoropropan-1-amine,data_1_3_fluoropropan_1_amine.log,data_1_3_fluoropropan_1_amine.log
+"propa-1,2-diene",C=C=C,Allene,data_1_propa_1_2_diene.log,data_1_allene.log
+ethenone,C=C=O,Ketene,data_1_ethenone.log,data_1_ketene.log
+sulfanylidenemethanone,C(=O)=S,Carbonyl Sulfide,data_1_sulfanylidenemethanone.log,data_1_carbonyl_sulfide.log
+"2,2-dimethylpropane",CC(C)(C)C,Neopentane,data_1_2_2_dimethylpropane.log,data_1_neopentane.log
+ethenyl(trimethyl)azanium,C[N+](C)(C)C=C,"N,N,N-Trimethylethenaminium",data_1_ethenyl_trimethyl_azanium.log,data_1_n_n_n_trimethylethenaminium.log
+prop-2-ynoic acid,C#CC(=O)O,Propiolic Acid,data_1_prop_2_ynoic_acid.log,data_1_propiolic_acid.log
+2-methylguanidine,CN=C(N)N,Methylguanidine,data_1_2_methylguanidine.log,data_1_methylguanidine.log
+2-methylbut-2-enal,CC=C(C)C=O,2-Methyl-2-butenal,data_1_2_methylbut_2_enal.log,data_1_2_methyl_2_butenal.log
+"but-3-ene-1,2-diol",C=CC(CO)O,"3-Butene-1,2-diol",data_1_but_3_ene_1_2_diol.log,data_1_3_butene_1_2_diol.log
+2H-furan-5-one,C1C=CC(=O)O1,2(5H)-Furanone,data_1_2h_furan_5_one.log,data_1_2_5h_furanone.log
+furan-3-carbaldehyde,C1=COC=C1C=O,3-Furaldehyde,data_1_furan_3_carbaldehyde.log,data_1_3_furaldehyde.log
+bicyclo[2.2.1]hept-2-ene,C1CC2CC1C=C2,2-Norbornene,data_1_bicyclo_2_2_1_hept_2_ene.log,data_1_2_norbornene.log
+2-(fluoromethyl)oxirane,C1C(O1)CF,"1,2-Epoxy-3-fluoropropane",data_1_2_fluoromethyl_oxirane.log,data_1_1_2_epoxy_3_fluoropropane.log
+but-2-yne,CC#CC,Dimethylacetylene,data_1_but_2_yne.log,data_1_dimethylacetylene.log
+2-fluoroacetonitrile,C(C#N)F,"Acetonitrile, fluoro-",data_1_2_fluoroacetonitrile.log,data_1_acetonitrile_fluoro.log
+pyridin-2-amine,C1=CC=NC(=C1)N,2-Aminopyridine,data_1_pyridin_2_amine.log,data_1_2_aminopyridine.log
+"propane-1,3-diol",C(CO)CO,"1,3-Propanediol",data_1_propane_1_3_diol.log,data_1_1_3_propanediol.log
+cyanocyanamide,C(#N)NC#N,Dicyanamide,data_1_cyanocyanamide.log,data_1_dicyanamide.log
+"1,3-thiazolidine",C1CSCN1,Thiazolidine,data_1_1_3_thiazolidine.log,data_1_thiazolidine.log
+1-fluoro-2-isocyanatoethane,C(CF)N=C=O,1-Fluoro-2-isocyanatoethane,data_1_1_fluoro_2_isocyanatoethane.log,data_1_1_fluoro_2_isocyanatoethane.log
+hex-2-enal,CCCC=CC=O,Hexenal,data_1_hex_2_enal.log,data_1_hexenal.log
+N-methylmethanamine;hydrochloride,CNC.Cl,"Dimethylamine, hydrochloride",data_1_n_methylmethanamine_hydrochloride.log,data_1_dimethylamine_hydrochloride.log
+carbononitridic chloride,C(#N)Cl,Cyanogen Chloride,data_1_carbononitridic_chloride.log,data_1_cyanogen_chloride.log
+azane;carbonic acid,C(=O)(O)O.N.N,Hartshorn salt,data_1_azane_carbonic_acid.log,data_1_hartshorn_salt.log
+ethanethioic S-acid,CC(=O)S,Thioacetic acid,data_1_ethanethioic_s_acid.log,data_1_thioacetic_acid.log
+2-chloro-2-methylpropane,CC(C)(C)Cl,tert-BUTYL CHLORIDE,data_1_2_chloro_2_methylpropane.log,data_1_tert_butyl_chloride.log
+2-methylbut-2-ene,CC=C(C)C,2-Methyl-2-butene,data_1_2_methylbut_2_ene.log,data_1_2_methyl_2_butene.log
+1-chloro-2-methylpropane,CC(C)CCl,Isobutyl chloride,data_1_1_chloro_2_methylpropane.log,data_1_isobutyl_chloride.log
+1-chloro-2-methylprop-1-ene,CC(=CCl)C,"1-Propene, 1-chloro-2-methyl-",data_1_1_chloro_2_methylprop_1_ene.log,data_1_1_propene_1_chloro_2_methyl.log
+2-methylprop-2-en-1-ol,CC(=C)CO,Methallyl alcohol,data_1_2_methylprop_2_en_1_ol.log,data_1_methallyl_alcohol.log
+2-methylpropane-1-thiol,CC(C)CS,Isobutyl mercaptan,data_1_2_methylpropane_1_thiol.log,data_1_isobutyl_mercaptan.log
+butane-2-thiol,CCC(C)S,2-Butanethiol,data_1_butane_2_thiol.log,data_1_2_butanethiol.log
+"2,3-dimethylbuta-1,3-diene",CC(=C)C(=C)C,"2,3-Dimethyl-1,3-butadiene",data_1_2_3_dimethylbuta_1_3_diene.log,data_1_2_3_dimethyl_1_3_butadiene.log
+"2-methyl-4,5-dihydro-1H-imidazole",CC1=NCCN1,2-Methylimidazoline,data_1_2_methyl_4_5_dihydro_1h_imidazole.log,data_1_2_methylimidazoline.log
+alumanuide,[AlH4-],"Aluminate(1-), tetrahydro-, (T-4)-",data_1_alumanuide.log,data_1_aluminate_1_tetrahydro_t_4.log
+1-chloropropane,CCCCl,1-Chloropropane,data_1_1_chloropropane.log,data_1_1_chloropropane.log
+"1,2-dichloroethene",C(=CCl)Cl,"1,2-Dichloroethylene",data_1_1_2_dichloroethene.log,data_1_1_2_dichloroethylene.log
+2-aminoacetonitrile,C(C#N)N,Aminoacetonitrile,data_1_2_aminoacetonitrile.log,data_1_aminoacetonitrile.log
+"ethane-1,2-dithiol",C(CS)S,"1,2-Ethanedithiol",data_1_ethane_1_2_dithiol.log,data_1_1_2_ethanedithiol.log
+azane;formic acid,C(=O)O.N,Formic acid (ammonium salt),data_1_azane_formic_acid.log,data_1_formic_acid_ammonium_salt.log
+butanamide,CCCC(=O)N,Butyramide,data_1_butanamide.log,data_1_butyramide.log
+propan-2-yl nitrite,CC(C)ON=O,Isopropyl nitrite,data_1_propan_2_yl_nitrite.log,data_1_isopropyl_nitrite.log
+"pyrrole-2,5-dione",C1=CC(=O)NC1=O,Maleimide,data_1_pyrrole_2_5_dione.log,data_1_maleimide.log
+3-chloropropanenitrile,C(CCl)C#N,3-Chloropropionitrile,data_1_3_chloropropanenitrile.log,data_1_3_chloropropionitrile.log
+propanedial,C(C=O)C=O,Malonaldehyde,data_1_propanedial.log,data_1_malonaldehyde.log
+isothiocyanatoethane,CCN=C=S,Ethyl isothiocyanate,data_1_isothiocyanatoethane.log,data_1_ethyl_isothiocyanate.log
+ethyl thiocyanate,CCSC#N,Ethyl thiocyanate,data_1_ethyl_thiocyanate.log,data_1_ethyl_thiocyanate.log
+pentanedinitrile,C(CC#N)CC#N,Glutaronitrile,data_1_pentanedinitrile.log,data_1_glutaronitrile.log
+"cyclohepta-1,3,5-triene",C1C=CC=CC=C1,Cycloheptatriene,data_1_cyclohepta_1_3_5_triene.log,data_1_cycloheptatriene.log
+copper(1+) cyanide,[C-]#N.[Cu+],Copper cyanide,data_1_copper_1_cyanide.log,data_1_copper_cyanide.log
+zinc carbanide,[CH3-].[CH3-].[Zn+2],Dimethylzinc,data_1_zinc_carbanide.log,data_1_dimethylzinc.log
+magnesium carbonate,C(=O)([O-])[O-].[Mg+2],Magnesium Carbonate,data_1_magnesium_carbonate.log,data_1_magnesium_carbonate.log
+methyl propanoate,CCC(=O)OC,Methyl propionate,data_1_methyl_propanoate.log,data_1_methyl_propionate.log
+dilithium;carbonate,[Li+].[Li+].C(=O)([O-])[O-],Lithium Carbonate,data_1_dilithium_carbonate.log,data_1_lithium_carbonate.log
+2-methylthiophene,CC1=CC=CS1,2-Methylthiophene,data_1_2_methylthiophene.log,data_1_2_methylthiophene.log
+oxiran-2-ylmethanol,C1C(O1)CO,Glycidol,data_1_oxiran_2_ylmethanol.log,data_1_glycidol.log
+propan-1-amine;hydrochloride,CCCN.Cl,Propylamine hydrochloride,data_1_propan_1_amine_hydrochloride.log,data_1_propylamine_hydrochloride.log
+methylimino(sulfanylidene)methane,CN=C=S,Methyl isothiocyanate,data_1_methylimino_sulfanylidene_methane.log,data_1_methyl_isothiocyanate.log
+methyl thiocyanate,CSC#N,Methyl thiocyanate,data_1_methyl_thiocyanate.log,data_1_methyl_thiocyanate.log
+3-methylbut-2-en-1-ol,CC(=CCO)C,3-Methyl-2-buten-1-OL,data_1_3_methylbut_2_en_1_ol.log,data_1_3_methyl_2_buten_1_ol.log
+1-methoxypropane,CCCOC,Methyl propyl ether,data_1_1_methoxypropane.log,data_1_methyl_propyl_ether.log
+magnesium ethane,C[CH2-].C[CH2-].[Mg+2],Diethylmagnesium,data_1_magnesium_ethane.log,data_1_diethylmagnesium.log
+3-ethoxyprop-1-ene,CCOCC=C,Allyl ethyl ether,data_1_3_ethoxyprop_1_ene.log,data_1_allyl_ethyl_ether.log
+3-prop-2-enoxyprop-1-ene,C=CCOCC=C,Diallyl ether,data_1_3_prop_2_enoxyprop_1_ene.log,data_1_diallyl_ether.log
+ethanamine;hydrochloride,CCN.Cl,Ethylamine hydrochloride,data_1_ethanamine_hydrochloride.log,data_1_ethylamine_hydrochloride.log
+ethenol,C=CO,Vinyl alcohol,data_1_ethenol.log,data_1_vinyl_alcohol.log
+2-chloroprop-1-ene,CC(=C)Cl,2-Chloro-1-propene,data_1_2_chloroprop_1_ene.log,data_1_2_chloro_1_propene.log
+acetyl fluoride,CC(=O)F,Acetyl fluoride,data_1_acetyl_fluoride.log,data_1_acetyl_fluoride.log
+methanesulfonyl fluoride,CS(=O)(=O)F,Methanesulfonyl Fluoride,data_1_methanesulfonyl_fluoride.log,data_1_methanesulfonyl_fluoride.log
+"2,2-dimethyloxirane",CC1(CO1)C,Isobutylene oxide,data_1_2_2_dimethyloxirane.log,data_1_isobutylene_oxide.log
+"3,3-dimethylbut-1-ene",CC(C)(C)C=C,"3,3-Dimethyl-1-butene",data_1_3_3_dimethylbut_1_ene.log,data_1_3_3_dimethyl_1_butene.log
+dichloroalumane,[AlH](Cl)Cl,Aluminum dichloride,data_1_dichloroalumane.log,data_1_aluminum_dichloride.log
+3-methylbut-1-ene,CC(C)C=C,3-Methyl-1-butene,data_1_3_methylbut_1_ene.log,data_1_3_methyl_1_butene.log
+2-methylbut-1-ene,CCC(=C)C,2-Methyl-1-butene,data_1_2_methylbut_1_ene.log,data_1_2_methyl_1_butene.log
+3-chloro-2-methylprop-1-ene,CC(=C)CCl,3-Chloro-2-methyl-1-propene,data_1_3_chloro_2_methylprop_1_ene.log,data_1_3_chloro_2_methyl_1_propene.log
+3-chlorobut-1-ene,CC(C=C)Cl,3-Chloro-1-butene,data_1_3_chlorobut_1_ene.log,data_1_3_chloro_1_butene.log
+"2,3-dimethylbut-1-ene",CC(C)C(=C)C,"2,3-Dimethyl-1-butene",data_1_2_3_dimethylbut_1_ene.log,data_1_2_3_dimethyl_1_butene.log
+"2,3-dimethylbut-2-ene",CC(=C(C)C)C,"2,3-Dimethyl-2-butene",data_1_2_3_dimethylbut_2_ene.log,data_1_2_3_dimethyl_2_butene.log
+3-methylbutan-2-one,CC(C)C(=O)C,3-Methyl-2-butanone,data_1_3_methylbutan_2_one.log,data_1_3_methyl_2_butanone.log
+2-(oxiran-2-yl)oxirane,C1C(O1)C2CO2,Diepoxybutane,data_1_2_oxiran_2_yl_oxirane.log,data_1_diepoxybutane.log
+pentan-3-ol,CCC(CC)O,3-Pentanol,data_1_pentan_3_ol.log,data_1_3_pentanol.log
+"butane-1,2-diol",CCC(CO)O,"1,2-Butanediol",data_1_butane_1_2_diol.log,data_1_1_2_butanediol.log
+"1,2,4-triazol-4-amine",C1=NN=CN1N,"4-Amino-1,2,4-triazole",data_1_1_2_4_triazol_4_amine.log,data_1_4_amino_1_2_4_triazole.log
+"pyrrolidine-2,5-dione",C1CC(=O)NC1=O,Succinimide,data_1_pyrrolidine_2_5_dione.log,data_1_succinimide.log
+"buta-1,2-diene",CC=C=C,"1,2-Butadiene",data_1_buta_1_2_diene.log,data_1_1_2_butadiene.log
+1-chloroprop-1-ene,CC=CCl,1-Chloro-1-propene,data_1_1_chloroprop_1_ene.log,data_1_1_chloro_1_propene.log
+2-methyl-2H-furan-5-one,CC1C=CC(=O)O1,4-Hydroxy-2-pentenoic acid gamma-lactone,data_1_2_methyl_2h_furan_5_one.log,data_1_4_hydroxy_2_pentenoic_acid_gamma_lactone.log
+5-methyl-3H-furan-2-one,CC1=CCC(=O)O1,alpha-Angelica lactone,data_1_5_methyl_3h_furan_2_one.log,data_1_alpha_angelica_lactone.log
+"penta-1,4-diene",C=CCC=C,"1,4-Pentadiene",data_1_penta_1_4_diene.log,data_1_1_4_pentadiene.log
+1-chlorobut-2-ene,CC=CCCl,Crotyl chloride,data_1_1_chlorobut_2_ene.log,data_1_crotyl_chloride.log
+calcium dicyanide,[C-]#N.[C-]#N.[Ca+2],Calcium cyanide Ca(CN)2,data_1_calcium_dicyanide.log,data_1_calcium_cyanide_ca_cn_2.log
+hex-1-ene,CCCCC=C,1-Hexene,data_1_hex_1_ene.log,data_1_1_hexene.log
+"hexa-1,5-diene",C=CCCC=C,"1,5-Hexadiene",data_1_hexa_1_5_diene.log,data_1_1_5_hexadiene.log
+"hexa-1,4-diene",CC=CCC=C,"1,4-Hexadiene",data_1_hexa_1_4_diene.log,data_1_1_4_hexadiene.log
+"hexa-2,4-diene",CC=CC=CC,"2,4-Hexadiene",data_1_hexa_2_4_diene.log,data_1_2_4_hexadiene.log
+hex-3-ene,CCC=CCC,3-Hexene,data_1_hex_3_ene.log,data_1_3_hexene.log
+"hexa-1,3-diene",CCC=CC=C,Hexadiene,data_1_hexa_1_3_diene.log,data_1_hexadiene.log
+1-fluoropentane,CCCCCF,1-Fluoropentane,data_1_1_fluoropentane.log,data_1_1_fluoropentane.log
+pent-4-enenitrile,C=CCCC#N,4-Pentenenitrile,data_1_pent_4_enenitrile.log,data_1_4_pentenenitrile.log
+"cyclohexa-1,3-diene",C1CC=CC=C1,"1,3-Cyclohexadiene",data_1_cyclohexa_1_3_diene.log,data_1_1_3_cyclohexadiene.log
+hept-1-ene,CCCCCC=C,1-Heptene,data_1_hept_1_ene.log,data_1_1_heptene.log
+hept-2-ene,CCCCC=CC,2-Heptene,data_1_hept_2_ene.log,data_1_2_heptene.log
+hept-3-ene,CCCC=CCC,3-Heptene,data_1_hept_3_ene.log,data_1_3_heptene.log
+methylazanium chloride,C[NH3+].[Cl-],"Methanamine, hydrochloride (1:1)",data_1_methylazanium_chloride.log,data_1_methanamine_hydrochloride_1_1.log
+fluoromethane,CF,Fluoromethane,data_1_fluoromethane.log,data_1_fluoromethane.log
+methoxyazanium chloride,CO[NH3+].[Cl-],O-methylhydroxylammonium chloride,data_1_methoxyazanium_chloride.log,data_1_o_methylhydroxylammonium_chloride.log
+ethenamine,C=CN,Vinylamine,data_1_ethenamine.log,data_1_vinylamine.log
+chloro(fluoro)methane,C(F)Cl,Chlorofluoromethane,data_1_chloro_fluoro_methane.log,data_1_chlorofluoromethane.log
+isocyanomethane,C[N+]#[C-],Methyl isocyanide,data_1_isocyanomethane.log,data_1_methyl_isocyanide.log
+N-methylhydroxylamine,CNO,Methylhydroxylamine,data_1_n_methylhydroxylamine.log,data_1_methylhydroxylamine.log
+trimethylazanium chloride,C[NH+](C)C.[Cl-],Trimethylazanium;chloride,data_1_trimethylazanium_chloride.log,data_1_trimethylazanium_chloride.log
+"3-methylbuta-1,2-diene",CC(=C=C)C,"3-Methyl-1,2-butadiene",data_1_3_methylbuta_1_2_diene.log,data_1_3_methyl_1_2_butadiene.log
+but-3-en-2-ol,CC(C=C)O,3-Buten-2-ol,data_1_but_3_en_2_ol.log,data_1_3_buten_2_ol.log
+1-aminopropane-2-thiol,CC(CN)S,Propamine,data_1_1_aminopropane_2_thiol.log,data_1_propamine.log
+"N,N-dimethylethanamine",CCN(C)C,Dimethylethylamine,data_1_n_n_dimethylethanamine.log,data_1_dimethylethylamine.log
+methylcyclobutane,CC1CCC1,"Cyclobutane, methyl-",data_1_methylcyclobutane.log,data_1_cyclobutane_methyl.log
+3-methylbutan-2-amine,CC(C)C(C)N,"1,2-Dimethylpropylamine",data_1_3_methylbutan_2_amine.log,data_1_1_2_dimethylpropylamine.log
+3-methylbutan-2-ol,CC(C)C(C)O,3-Methyl-2-butanol,data_1_3_methylbutan_2_ol.log,data_1_3_methyl_2_butanol.log
+"1,1-dimethylurea",CN(C)C(=O)N,"N,N-Dimethylurea",data_1_1_1_dimethylurea.log,data_1_n_n_dimethylurea.log
+2-amino-2-methylpropan-1-ol,CC(C)(CO)N,2-Amino-2-methyl-1-propanol,data_1_2_amino_2_methylpropan_1_ol.log,data_1_2_amino_2_methyl_1_propanol.log
+3-methylpent-2-ene,CCC(=CC)C,3-Methyl-2-pentene,data_1_3_methylpent_2_ene.log,data_1_3_methyl_2_pentene.log
+pentan-3-amine,CCC(CC)N,3-Pentanamine,data_1_pentan_3_amine.log,data_1_3_pentanamine.log
+pent-1-en-3-ol,CCC(C=C)O,1-Penten-3-Ol,data_1_pent_1_en_3_ol.log,data_1_1_penten_3_ol.log
+N-ethyl-N-methylethanamine,CCN(C)CC,Diethylmethylamine,data_1_n_ethyl_n_methylethanamine.log,data_1_diethylmethylamine.log
+3-methyl-1H-pyrrole,CC1=CNC=C1,"1H-Pyrrole, 3-methyl-",data_1_3_methyl_1h_pyrrole.log,data_1_1h_pyrrole_3_methyl.log
+3-methylthiophene,CC1=CSC=C1,3-Methylthiophene,data_1_3_methylthiophene.log,data_1_3_methylthiophene.log
+pyrrolidin-2-one,C1CC(=O)NC1,2-Pyrrolidone,data_1_pyrrolidin_2_one.log,data_1_2_pyrrolidone.log
+2-methylpent-2-enal,CCC=C(C)C=O,2-Methyl-2-pentenal,data_1_2_methylpent_2_enal.log,data_1_2_methyl_2_pentenal.log
+ethyl prop-2-ynoate,CCOC(=O)C#C,Ethyl propiolate,data_1_ethyl_prop_2_ynoate.log,data_1_ethyl_propiolate.log
+ethyl(methyl)azanium chloride,CC[NH2+]C.[Cl-],Ethyl(methyl)ammonium chloride,data_1_ethyl_methyl_azanium_chloride.log,data_1_ethyl_methyl_ammonium_chloride.log
+N-methylethanamine,CCNC,N-Methylethylamine,data_1_n_methylethanamine.log,data_1_n_methylethylamine.log
+3-chloroprop-1-yne,C#CCCl,3-Chloro-1-propyne,data_1_3_chloroprop_1_yne.log,data_1_3_chloro_1_propyne.log
+prop-2-ynal,C#CC=O,Propynal,data_1_prop_2_ynal.log,data_1_propynal.log
+"1,2-difluoroethane",C(CF)F,"1,2-Difluoroethane",data_1_1_2_difluoroethane.log,data_1_1_2_difluoroethane.log
+isocyanoethane,CC[N+]#[C-],"Ethane, isocyano-",data_1_isocyanoethane.log,data_1_ethane_isocyano.log
+N'-hydroxymethanimidamide,C(=NO)N,N'-hydroxyimidoformamide,data_1_n_hydroxymethanimidamide.log,data_1_n_hydroxyimidoformamide.log
+methylimino(oxo)methane,CN=C=O,Methyl Isocyanate,data_1_methylimino_oxo_methane.log,data_1_methyl_isocyanate.log
+formohydrazide,C(=O)NN,Hydrazinecarboxaldehyde,data_1_formohydrazide.log,data_1_hydrazinecarboxaldehyde.log
+methylsulfanylethane,CCSC,Ethyl methyl sulfide,data_1_methylsulfanylethane.log,data_1_ethyl_methyl_sulfide.log
+(methyldisulfanyl)methane,CSSC,Dimethyl Disulfide,data_1_methyldisulfanyl_methane.log,data_1_dimethyl_disulfide.log
+2-methylpent-2-ene,CCC=C(C)C,2-Methyl-2-pentene,data_1_2_methylpent_2_ene.log,data_1_2_methyl_2_pentene.log
+3-methylbutanenitrile,CC(C)CC#N,Isovaleronitrile,data_1_3_methylbutanenitrile.log,data_1_isovaleronitrile.log
+pentan-2-amine,CCCC(C)N,2-Pentanamine,data_1_pentan_2_amine.log,data_1_2_pentanamine.log
+pent-4-en-2-ol,CC(CC=C)O,4-Penten-2-OL,data_1_pent_4_en_2_ol.log,data_1_4_penten_2_ol.log
+pent-3-en-2-one,CC=CC(=O)C,Pentenone,data_1_pent_3_en_2_one.log,data_1_pentenone.log
+"N,2-dimethylpropan-1-amine",CC(C)CNC,N-Methylisobutylamine,data_1_n_2_dimethylpropan_1_amine.log,data_1_n_methylisobutylamine.log
+1-methoxy-2-methylpropane,CC(C)COC,"Ether, isobutyl methyl",data_1_1_methoxy_2_methylpropane.log,data_1_ether_isobutyl_methyl.log
+2-methoxyacetic acid,COCC(=O)O,Methoxyacetic Acid,data_1_2_methoxyacetic_acid.log,data_1_methoxyacetic_acid.log
+N-ethylacetamide,CCNC(=O)C,Ethylacetamide,data_1_n_ethylacetamide.log,data_1_ethylacetamide.log
+2-ethoxypropane,CCOC(C)C,Ethyl isopropyl ether,data_1_2_ethoxypropane.log,data_1_ethyl_isopropyl_ether.log
+propan-2-yl formate,CC(C)OC=O,Isopropyl formate,data_1_propan_2_yl_formate.log,data_1_isopropyl_formate.log
+"2,5-dimethyl-1H-pyrrole",CC1=CC=C(N1)C,"2,5-Dimethylpyrrole",data_1_2_5_dimethyl_1h_pyrrole.log,data_1_2_5_dimethylpyrrole.log
+1H-pyridin-4-one,C1=CNC=CC1=O,4-Hydroxypyridine,data_1_1h_pyridin_4_one.log,data_1_4_hydroxypyridine.log
+1-methylpiperidine,CN1CCCCC1,N-Methylpiperidine,data_1_1_methylpiperidine.log,data_1_n_methylpiperidine.log
+pent-1-yne,CCCC#C,1-Pentyne,data_1_pent_1_yne.log,data_1_1_pentyne.log
+pent-2-yne,CCC#CC,2-Pentyne,data_1_pent_2_yne.log,data_1_2_pentyne.log
+"1-chlorobuta-1,3-diene",C=CC=CCl,"1,3-Butadiene, 1-chloro-",data_1_1_chlorobuta_1_3_diene.log,data_1_1_3_butadiene_1_chloro.log
+"1-chlorobuta-1,2-diene",CC=C=CCl,"1-Chloro-1,2-butadiene",data_1_1_chlorobuta_1_2_diene.log,data_1_1_chloro_1_2_butadiene.log
+3-chloropropan-1-ol,C(CO)CCl,3-Chloro-1-propanol,data_1_3_chloropropan_1_ol.log,data_1_3_chloro_1_propanol.log
+N-methylpropan-1-amine,CCCNC,N-Methylpropylamine,data_1_n_methylpropan_1_amine.log,data_1_n_methylpropylamine.log
+1-chloro-2-methoxyethane,COCCCl,2-Chloroethyl methyl ether,data_1_1_chloro_2_methoxyethane.log,data_1_2_chloroethyl_methyl_ether.log
+1-fluoro-2-methoxyethane,COCCF,"Ethane, 1-fluoro-2-methoxy-",data_1_1_fluoro_2_methoxyethane.log,data_1_ethane_1_fluoro_2_methoxy.log
+N-ethylformamide,CCNC=O,Ethylformamide,data_1_n_ethylformamide.log,data_1_ethylformamide.log
+ethenylsulfanylethane,CCSC=C,Ethyl Vinyl Sulfide,data_1_ethenylsulfanylethane.log,data_1_ethyl_vinyl_sulfide.log
+ethenylsulfanylethene,C=CSC=C,"Ethene, 1,1'-thiobis-",data_1_ethenylsulfanylethene.log,data_1_ethene_1_1_thiobis.log
+1-methoxybutane,CCCCOC,Butyl methyl ether,data_1_1_methoxybutane.log,data_1_butyl_methyl_ether.log
+1-ethoxypropane,CCCOCC,Ethyl propyl ether,data_1_1_ethoxypropane.log,data_1_ethyl_propyl_ether.log
+N-formamidoformamide,C(=O)NNC=O,"1,2-Hydrazinedicarboxaldehyde",data_1_n_formamidoformamide.log,data_1_1_2_hydrazinedicarboxaldehyde.log
+"cyclohexa-1,4-diene",C1C=CCC=C1,"1,4-Cyclohexadiene",data_1_cyclohexa_1_4_diene.log,data_1_1_4_cyclohexadiene.log
+hept-1-yne,CCCCCC#C,1-Heptyne,data_1_hept_1_yne.log,data_1_1_heptyne.log
+oxidoazaniumylidynemethane,[C-]#[N+][O-],Fulminate,data_1_oxidoazaniumylidynemethane.log,data_1_fulminate.log
+"2,2-dimethylpropanenitrile",CC(C)(C)C#N,Pivalonitrile,data_1_2_2_dimethylpropanenitrile.log,data_1_pivalonitrile.log
+"2,2-dimethylpropanal",CC(C)(C)C=O,Pivalaldehyde,data_1_2_2_dimethylpropanal.log,data_1_pivalaldehyde.log
+acetic acid;azane,CC(=O)O.N,Ammonia acetate,data_1_acetic_acid_azane.log,data_1_ammonia_acetate.log
+2-methyl-1H-pyrrole,CC1=CC=CN1,2-Methylpyrrole,data_1_2_methyl_1h_pyrrole.log,data_1_2_methylpyrrole.log
+2-fluoroacetamide,C(C(=O)N)F,Fluoroacetamide,data_1_2_fluoroacetamide.log,data_1_fluoroacetamide.log
+4-methylpent-2-ene,CC=CC(C)C,4-Methyl-2-pentene,data_1_4_methylpent_2_ene.log,data_1_4_methyl_2_pentene.log
+2-nitrosoguanidine,C(=NN=O)(N)N,Nitrosoguanidine,data_1_2_nitrosoguanidine.log,data_1_nitrosoguanidine.log
+4-methylideneoxetan-2-one,C=C1CC(=O)O1,Diketene,data_1_4_methylideneoxetan_2_one.log,data_1_diketene.log
+piperidin-2-one,C1CCNC(=O)C1,2-Piperidone,data_1_piperidin_2_one.log,data_1_2_piperidone.log
+deuteriomethane,[2H]C,Methane-D1,data_1_deuteriomethane.log,data_1_methane_d1.log
+magnesium;carbanide;chloride,[CH3-].[Mg+2].[Cl-],Methylmagnesium chloride,data_1_magnesium_carbanide_chloride.log,data_1_methylmagnesium_chloride.log
+"3,3,3-trifluoroprop-1-ene",C=CC(F)(F)F,"3,3,3-Trifluoropropene",data_1_3_3_3_trifluoroprop_1_ene.log,data_1_3_3_3_trifluoropropene.log
+2-chloroprop-1-en-1-one,CC(=C=O)Cl,2-Chloroprop-1-en-1-one,data_1_2_chloroprop_1_en_1_one.log,data_1_2_chloroprop_1_en_1_one.log
+"1,3-dihydroxyurea",C(=O)(NO)NO,Dihydroxyurea,data_1_1_3_dihydroxyurea.log,data_1_dihydroxyurea.log
+but-1-en-3-yne,C=CC#C,Vinyl acetylene,data_1_but_1_en_3_yne.log,data_1_vinyl_acetylene.log
+"4,4-dimethylpent-2-ene",CC=CC(C)(C)C,"2-Pentene, 4,4-dimethyl-",data_1_4_4_dimethylpent_2_ene.log,data_1_2_pentene_4_4_dimethyl.log
+4-methylpent-1-ene,CC(C)CC=C,4-Methyl-1-pentene,data_1_4_methylpent_1_ene.log,data_1_4_methyl_1_pentene.log
+hex-1-yne,CCCCC#C,1-Hexyne,data_1_hex_1_yne.log,data_1_1_hexyne.log
+"3-methyl-1,2-thiazole",CC1=NSC=C1,3-Methylisothiazole,data_1_3_methyl_1_2_thiazole.log,data_1_3_methylisothiazole.log
+"4-methyl-1,3-thiazole",CC1=CSC=N1,4-Methylthiazole,data_1_4_methyl_1_3_thiazole.log,data_1_4_methylthiazole.log
+2-methyl-1H-imidazole,CC1=NC=CN1,2-Methylimidazole,data_1_2_methyl_1h_imidazole.log,data_1_2_methylimidazole.log
+1-oxidopyridin-1-ium,C1=CC=[N+](C=C1)[O-],Pyridine N-Oxide,data_1_1_oxidopyridin_1_ium.log,data_1_pyridine_n_oxide.log
+2-sulfanylacetamide,C(C(=O)N)S,2-Mercaptoacetamide,data_1_2_sulfanylacetamide.log,data_1_2_mercaptoacetamide.log
+N-amino-N-methylformamide,CN(C=O)N,"Hydrazinecarboxaldehyde, 1-methyl-",data_1_n_amino_n_methylformamide.log,data_1_hydrazinecarboxaldehyde_1_methyl.log
+3-methylpent-1-ene,CCC(C)C=C,3-Methyl-1-pentene,data_1_3_methylpent_1_ene.log,data_1_3_methyl_1_pentene.log
+3-methylidenepentane,CCC(=C)CC,2-Ethyl-1-butene,data_1_3_methylidenepentane.log,data_1_2_ethyl_1_butene.log
+1-chloro-2-fluoroethane,C(CCl)F,1-Chloro-2-fluoroethane,data_1_1_chloro_2_fluoroethane.log,data_1_1_chloro_2_fluoroethane.log
+2-methylpent-1-ene,CCCC(=C)C,2-Methyl-1-pentene,data_1_2_methylpent_1_ene.log,data_1_2_methyl_1_pentene.log
+"2-methylpenta-1,4-diene",CC(=C)CC=C,"2-Methyl-1,4-pentadiene",data_1_2_methylpenta_1_4_diene.log,data_1_2_methyl_1_4_pentadiene.log
+3-methylbut-3-en-1-ol,CC(=C)CCO,3-Methyl-3-buten-1-ol,data_1_3_methylbut_3_en_1_ol.log,data_1_3_methyl_3_buten_1_ol.log
+hex-3-en-2-one,CCC=CC(=O)C,Hexen-2-al,data_1_hex_3_en_2_one.log,data_1_hexen_2_al.log
+but-2-yn-1-ol,CC#CCO,2-Butyn-1-ol,data_1_but_2_yn_1_ol.log,data_1_2_butyn_1_ol.log
+pent-2-enal,CCC=CC=O,2-Pentenal,data_1_pent_2_enal.log,data_1_2_pentenal.log
+2-ethenoxyethanol,C=COCCO,Hydroxyethyl vinyl ether,data_1_2_ethenoxyethanol.log,data_1_hydroxyethyl_vinyl_ether.log
+oxirane-2-carbaldehyde,C1C(O1)C=O,Glycidaldehyde,data_1_oxirane_2_carbaldehyde.log,data_1_glycidaldehyde.log
+1-cyclopropylethanone,CC(=O)C1CC1,Cyclopropyl methyl ketone,data_1_1_cyclopropylethanone.log,data_1_cyclopropyl_methyl_ketone.log
+"2-methylpropane-1,2-diamine",CC(C)(CN)N,2-Methylpropylenediamine,data_1_2_methylpropane_1_2_diamine.log,data_1_2_methylpropylenediamine.log
+prop-2-enoyl chloride,C=CC(=O)Cl,Acryloyl chloride,data_1_prop_2_enoyl_chloride.log,data_1_acryloyl_chloride.log
+3-methylbut-3-en-2-one,CC(=C)C(=O)C,Methyl isopropenyl ketone,data_1_3_methylbut_3_en_2_one.log,data_1_methyl_isopropenyl_ketone.log
+3-ethylpent-2-ene,CCC(=CC)CC,3-Ethyl-2-pentene,data_1_3_ethylpent_2_ene.log,data_1_3_ethyl_2_pentene.log
+"2-methylhexa-1,5-dien-3-yne",CC(=C)C#CC=C,"2-Methyl-1,5-hexadien-3-yne",data_1_2_methylhexa_1_5_dien_3_yne.log,data_1_2_methyl_1_5_hexadien_3_yne.log
+pent-4-en-1-ol,C=CCCCO,4-Penten-1-OL,data_1_pent_4_en_1_ol.log,data_1_4_penten_1_ol.log
+diethyldiazene,CCN=NCC,Azoethane,data_1_diethyldiazene.log,data_1_azoethane.log
+5-methyl-1H-imidazole,CC1=CN=CN1,4-Methylimidazole,data_1_5_methyl_1h_imidazole.log,data_1_4_methylimidazole.log
+cyclohex-2-en-1-ol,C1CC=CC(C1)O,2-Cyclohexen-1-OL,data_1_cyclohex_2_en_1_ol.log,data_1_2_cyclohexen_1_ol.log
+prop-2-ene-1-thiol,C=CCS,Allyl Mercaptan,data_1_prop_2_ene_1_thiol.log,data_1_allyl_mercaptan.log
+2-chloroethanamine,C(CCl)N,2-Chloroethylamine,data_1_2_chloroethanamine.log,data_1_2_chloroethylamine.log
+"1,3-dioxol-2-one",C1=COC(=O)O1,Vinylene carbonate,data_1_1_3_dioxol_2_one.log,data_1_vinylene_carbonate.log
+1-ethyl-2-methylideneaziridine,CCN1CC1=C,1-Ethyl-2-methyleneaziridine,data_1_1_ethyl_2_methylideneaziridine.log,data_1_1_ethyl_2_methyleneaziridine.log
+1-methylpyrrolidin-2-one,CN1CCCC1=O,N-methyl-2-pyrrolidone,data_1_1_methylpyrrolidin_2_one.log,data_1_n_methyl_2_pyrrolidone.log
+"3,3-dimethylbut-1-yne",CC(C)(C)C#C,"3,3-Dimethyl-1-butyne",data_1_3_3_dimethylbut_1_yne.log,data_1_3_3_dimethyl_1_butyne.log
+methyl prop-2-ynoate,COC(=O)C#C,Methyl propiolate,data_1_methyl_prop_2_ynoate.log,data_1_methyl_propiolate.log
+"4-methylpenta-1,3-diene",CC(=CC=C)C,"4-Methyl-1,3-pentadiene",data_1_4_methylpenta_1_3_diene.log,data_1_4_methyl_1_3_pentadiene.log
+2-ethenoxypropane,CC(C)OC=C,"Propane, 2-(ethenyloxy)-",data_1_2_ethenoxypropane.log,data_1_propane_2_ethenyloxy.log
+4-chlorobut-1-ene,C=CCCCl,4-Chloro-1-butene,data_1_4_chlorobut_1_ene.log,data_1_4_chloro_1_butene.log
+but-3-yn-1-ol,C#CCCO,3-Butyn-1-OL,data_1_but_3_yn_1_ol.log,data_1_3_butyn_1_ol.log
+hex-3-yne,CCC#CCC,3-Hexyne,data_1_hex_3_yne.log,data_1_3_hexyne.log
+1-ethoxyprop-1-ene,CCOC=CC,Ethyl 1-propenyl ether,data_1_1_ethoxyprop_1_ene.log,data_1_ethyl_1_propenyl_ether.log
+2-ethenyloxirane,C=CC1CO1,Vinyloxirane,data_1_2_ethenyloxirane.log,data_1_vinyloxirane.log
+cyclopent-2-en-1-one,C1CC(=O)C=C1,2-Cyclopenten-1-one,data_1_cyclopent_2_en_1_one.log,data_1_2_cyclopenten_1_one.log
+2-(methoxymethyl)oxirane,COCC1CO1,"1,2-Epoxy-3-methoxypropane",data_1_2_methoxymethyl_oxirane.log,data_1_1_2_epoxy_3_methoxypropane.log
+"2-ethyl-4,5-dihydro-1H-imidazole",CCC1=NCCN1,"2-Imidazoline, 2-ethyl-",data_1_2_ethyl_4_5_dihydro_1h_imidazole.log,data_1_2_imidazoline_2_ethyl.log
+cyclohex-2-en-1-one,C1CC=CC(=O)C1,2-Cyclohexen-1-one,data_1_cyclohex_2_en_1_one.log,data_1_2_cyclohexen_1_one.log
+1-methylpyridin-1-ium,C[N+]1=CC=CC=C1,N-Methylpyridinium,data_1_1_methylpyridin_1_ium.log,data_1_n_methylpyridinium.log
+methylphosphonic acid,CP(=O)(O)O,Methylphosphonic acid,data_1_methylphosphonic_acid.log,data_1_methylphosphonic_acid.log
+hydroxymethylurea,C(NC(=O)N)O,(Hydroxymethyl)urea,data_1_hydroxymethylurea.log,data_1_hydroxymethyl_urea.log
+cyanomethyl acetate,CC(=O)OCC#N,(Acetyloxy)acetonitrile,data_1_cyanomethyl_acetate.log,data_1_acetyloxy_acetonitrile.log
+2-propyloxirane,CCCC1CO1,"Oxirane, 2-propyl-",data_1_2_propyloxirane.log,data_1_oxirane_2_propyl.log
+1H-pyrrole-2-carbaldehyde,C1=CNC(=C1)C=O,Pyrrole-2-carboxaldehyde,data_1_1h_pyrrole_2_carbaldehyde.log,data_1_pyrrole_2_carboxaldehyde.log
+azanium hydrogen carbonate,C(=O)(O)[O-].[NH4+],Ammonium Bicarbonate,data_1_azanium_hydrogen_carbonate.log,data_1_ammonium_bicarbonate.log
+dihydroxy(dimethyl)silane,C[Si](C)(O)O,Dimethylsilanediol,data_1_dihydroxy_dimethyl_silane.log,data_1_dimethylsilanediol.log
+prop-2-ynenitrile,C#CC#N,2-Propynenitrile,data_1_prop_2_ynenitrile.log,data_1_2_propynenitrile.log
+but-2-ynedinitrile,C(#CC#N)C#N,Acetylenedicarbonitrile,data_1_but_2_ynedinitrile.log,data_1_acetylenedicarbonitrile.log
+2-methylthiirane,CC1CS1,Propylene sulfide,data_1_2_methylthiirane.log,data_1_propylene_sulfide.log
+2-(aziridin-1-yl)ethanol,C1CN1CCO,1-Aziridineethanol,data_1_2_aziridin_1_yl_ethanol.log,data_1_1_aziridineethanol.log
+3-(aziridin-1-yl)propanenitrile,C1CN1CCC#N,1-(2-Cyanoethyl)aziridine,data_1_3_aziridin_1_yl_propanenitrile.log,data_1_1_2_cyanoethyl_aziridine.log
+N-methoxymethanamine,CNOC,"N,O-Dimethylhydroxylamine",data_1_n_methoxymethanamine.log,data_1_n_o_dimethylhydroxylamine.log
+"2-methylpenta-1,3-diene",CC=CC(=C)C,"1,3-Pentadiene, 2-methyl-",data_1_2_methylpenta_1_3_diene.log,data_1_1_3_pentadiene_2_methyl.log
+methylidenecyclobutane,C=C1CCC1,Methylenecyclobutane,data_1_methylidenecyclobutane.log,data_1_methylenecyclobutane.log
+2-methylcyclopentan-1-one,CC1CCCC1=O,2-Methylcyclopentanone,data_1_2_methylcyclopentan_1_one.log,data_1_2_methylcyclopentanone.log
+2-methylcyclopent-2-en-1-one,CC1=CCCC1=O,2-Methyl-2-cyclopenten-1-one,data_1_2_methylcyclopent_2_en_1_one.log,data_1_2_methyl_2_cyclopenten_1_one.log
+1-butylaziridine,CCCCN1CC1,"Aziridine, 1-butyl-",data_1_1_butylaziridine.log,data_1_aziridine_1_butyl.log
+"1,1-dimethylguanidine",CN(C)C(=N)N,Dimethylguanidine,data_1_1_1_dimethylguanidine.log,data_1_dimethylguanidine.log
+N-methylprop-2-enamide,CNC(=O)C=C,Methylacrylamide,data_1_n_methylprop_2_enamide.log,data_1_methylacrylamide.log
+alumane,[AlH3],Aluminum hydride,data_1_alumane.log,data_1_aluminum_hydride.log
+"cis-(1S,2R)-1,2-dimethylcyclopentane",C[C@@H]1CCC[C@@H]1C,"1,2-Dimethylcyclopentane, cis-",data_1_cis_1s_2r_1_2_dimethylcyclopentane.log,data_1_1_2_dimethylcyclopentane_cis.log
+N-cyclopentylidenehydroxylamine,C1CCC(=NO)C1,"Cyclopentanone, oxime",data_1_n_cyclopentylidenehydroxylamine.log,data_1_cyclopentanone_oxime.log
+methylidenecyclohexane,C=C1CCCCC1,Methylenecyclohexane,data_1_methylidenecyclohexane.log,data_1_methylenecyclohexane.log
+sodium dioxoalumanuide,O=[Al-]=O.[Na+],Sodium aluminate,data_1_sodium_dioxoalumanuide.log,data_1_sodium_aluminate.log
+dihydroxy(oxo)silane,O[Si](=O)O,Metasilicic acid,data_1_dihydroxy_oxo_silane.log,data_1_metasilicic_acid.log
+oxoberyllium,[Be]=O,Beryllium Oxide,data_1_oxoberyllium.log,data_1_beryllium_oxide.log
+calcium dihydroxide,[OH-].[OH-].[Ca+2],Calcium;dihydroxide,data_1_calcium_dihydroxide.log,data_1_calcium_dihydroxide.log
+oxocalcium,O=[Ca],Calcium Oxide,data_1_oxocalcium.log,data_1_calcium_oxide.log
+calcium peroxide,[O-][O-].[Ca+2],Calcium peroxide,data_1_calcium_peroxide.log,data_1_calcium_peroxide.log
+oxocobalt,O=[Co],Cobalt(II) oxide,data_1_oxocobalt.log,data_1_cobalt_ii_oxide.log
+magnesium dihydroxide,[OH-].[OH-].[Mg+2],Mint-O-Mag,data_1_magnesium_dihydroxide.log,data_1_mint_o_mag.log
+oxomagnesium,O=[Mg],Magnesium Oxide,data_1_oxomagnesium.log,data_1_magnesium_oxide.log
+potassium hydroxide,[OH-].[K+],Potassium Hydroxide,data_1_potassium_hydroxide.log,data_1_potassium_hydroxide.log
+sodium hydroxide,[OH-].[Na+],Sodium Hydroxide,data_1_sodium_hydroxide.log,data_1_sodium_hydroxide.log
+dioxomanganese,O=[Mn]=O,Manganese dioxide,data_1_dioxomanganese.log,data_1_manganese_dioxide.log
+disodium;peroxide,[O-][O-].[Na+].[Na+],Sodium peroxide,data_1_disodium_peroxide.log,data_1_sodium_peroxide.log
+disodium;sulfide,[Na+].[Na+].[S-2],Sodium Sulfide,data_1_disodium_sulfide.log,data_1_sodium_sulfide.log
+oxonickel,O=[Ni],Nickel trioxide,data_1_oxonickel.log,data_1_nickel_trioxide.log
+oxozinc,O=[Zn],Desitin,data_1_oxozinc.log,data_1_desitin.log
+hydrogen peroxide;zinc,OO.[Zn],Zinc Peroxide,data_1_hydrogen_peroxide_zinc.log,data_1_zinc_peroxide.log
+sulfanylidenezinc,S=[Zn],Sphalerite,data_1_sulfanylidenezinc.log,data_1_sphalerite.log
+sulfanylideneiron,S=[Fe],Ferrous sulfide,data_1_sulfanylideneiron.log,data_1_ferrous_sulfide.log
+oxocopper,O=[Cu],Copper oxide,data_1_oxocopper.log,data_1_copper_oxide.log
+sulfanylidenecopper,S=[Cu],Copper monosulfide,data_1_sulfanylidenecopper.log,data_1_copper_monosulfide.log
+sulfanylidenecobalt,S=[Co],Cobalt sulfide,data_1_sulfanylidenecobalt.log,data_1_cobalt_sulfide.log
+"1,2-difluoroethene",C(=CF)F,"Ethene, 1,2-difluoro-",data_1_1_2_difluoroethene.log,data_1_ethene_1_2_difluoro.log
+2-methoxypropan-1-ol,CC(CO)OC,2-Methoxy-1-propanol,data_1_2_methoxypropan_1_ol.log,data_1_2_methoxy_1_propanol.log
+trioxochromium,O=[Cr](=O)=O,Chromium Trioxide,data_1_trioxochromium.log,data_1_chromium_trioxide.log
+fluorane,F,Hydrofluoric Acid,data_1_fluorane.log,data_1_hydrofluoric_acid.log
+azanium hydroxide,[NH4+].[OH-],Ammonium Hydroxide,data_1_azanium_hydroxide.log,data_1_ammonium_hydroxide.log
+azanium;fluoride;hydrofluoride,[NH4+].F.[F-],Ammonium bifluoride,data_1_azanium_fluoride_hydrofluoride.log,data_1_ammonium_bifluoride.log
+oxomanganese,O=[Mn],Manganous oxide,data_1_oxomanganese.log,data_1_manganous_oxide.log
+silicic acid,O[Si](O)(O)O,Orthosilicic acid,data_1_silicic_acid.log,data_1_orthosilicic_acid.log
+oxoiron,O=[Fe],Wustite,data_1_oxoiron.log,data_1_wustite.log
+but-3-yn-2-one,CC(=O)C#C,Butyn-2-one,data_1_but_3_yn_2_one.log,data_1_butyn_2_one.log
+5-methyl-1H-pyrazole,CC1=CC=NN1,3-Methylpyrazole,data_1_5_methyl_1h_pyrazole.log,data_1_3_methylpyrazole.log
+"1H-1,2,4-triazole-3,5-diamine",C1(=NC(=NN1)N)N,"3,5-Diamino-1,2,4-triazole",data_1_1h_1_2_4_triazole_3_5_diamine.log,data_1_3_5_diamino_1_2_4_triazole.log
+3-isocyanatoprop-1-ene,C=CCN=C=O,Allyl isocyanate,data_1_3_isocyanatoprop_1_ene.log,data_1_allyl_isocyanate.log
+"5-methyl-2,3-dihydrofuran",CC1=CCCO1,"2,3-Dihydro-5-methylfuran",data_1_5_methyl_2_3_dihydrofuran.log,data_1_2_3_dihydro_5_methylfuran.log
+formyl fluoride,C(=O)F,Formyl fluoride,data_1_formyl_fluoride.log,data_1_formyl_fluoride.log
+2-fluoroacetyl fluoride,C(C(=O)F)F,"Acetyl fluoride, fluoro-",data_1_2_fluoroacetyl_fluoride.log,data_1_acetyl_fluoride_fluoro.log
+2-methylsulfanylpropane,CC(C)SC,Isopropyl Methyl Sulfide,data_1_2_methylsulfanylpropane.log,data_1_isopropyl_methyl_sulfide.log
+pent-3-en-2-ol,CC=CC(C)O,(+-)-3-Penten-2-ol,data_1_pent_3_en_2_ol.log,data_1_3_penten_2_ol.log
+1-cyano-2-methylguanidine,CN=C(N)NC#N,N-cyano-N'-methylguanidine,data_1_1_cyano_2_methylguanidine.log,data_1_n_cyano_n_methylguanidine.log
+1-chloro-1-fluoroethane,CC(F)Cl,1-Chloro-1-fluoroethane,data_1_1_chloro_1_fluoroethane.log,data_1_1_chloro_1_fluoroethane.log
+pent-1-en-3-one,CCC(=O)C=C,1-Penten-3-one,data_1_pent_1_en_3_one.log,data_1_1_penten_3_one.log
+hex-1-en-3-one,CCCC(=O)C=C,1-Hexen-3-one,data_1_hex_1_en_3_one.log,data_1_1_hexen_3_one.log
+2-methoxy-2-methylpropane,CC(C)(C)OC,tert-Butyl methyl ether,data_1_2_methoxy_2_methylpropane.log,data_1_tert_butyl_methyl_ether.log
+3-(dimethylamino)propanenitrile,CN(C)CCC#N,Dimethylaminopropionitrile,data_1_3_dimethylamino_propanenitrile.log,data_1_dimethylaminopropionitrile.log
+3-methylcyclopentan-1-one,CC1CCC(=O)C1,3-Methylcyclopentanone,data_1_3_methylcyclopentan_1_one.log,data_1_3_methylcyclopentanone.log
+"trans-(1R,3R)-1,3-dimethylcyclopentane",C[C@@H]1CC[C@H](C1)C,"trans-1,3-Dimethylcyclopentane",data_1_trans_1r_3r_1_3_dimethylcyclopentane.log,data_1_trans_1_3_dimethylcyclopentane.log
+azanium thiocyanate,C(#N)[S-].[NH4+],Ammonium thiocyanate,data_1_azanium_thiocyanate.log,data_1_ammonium_thiocyanate.log
+3-methylpent-4-enal,CC(CC=O)C=C,3-Methyl-4-pentenal,data_1_3_methylpent_4_enal.log,data_1_3_methyl_4_pentenal.log
+but-3-yn-2-ol,CC(C#C)O,3-Butyn-2-ol,data_1_but_3_yn_2_ol.log,data_1_3_butyn_2_ol.log
+pent-4-enal,C=CCCC=O,4-Pentenal,data_1_pent_4_enal.log,data_1_4_pentenal.log
+3-ethoxypropanenitrile,CCOCCC#N,"Propanenitrile, 3-ethoxy-",data_1_3_ethoxypropanenitrile.log,data_1_propanenitrile_3_ethoxy.log
+"hexa-1,3,5-triene",C=CC=CC=C,"1,3,5-Hexatriene",data_1_hexa_1_3_5_triene.log,data_1_1_3_5_hexatriene.log
+1-fluorobutane,CCCCF,1-Fluorobutane,data_1_1_fluorobutane.log,data_1_1_fluorobutane.log
+chloro(methylsulfanyl)methane,CSCCl,Chloromethyl methyl sulfide,data_1_chloro_methylsulfanyl_methane.log,data_1_chloromethyl_methyl_sulfide.log
+"hepta-1,6-diene",C=CCCCC=C,"1,6-Heptadiene",data_1_hepta_1_6_diene.log,data_1_1_6_heptadiene.log
+"cis-(1S,3R)-1,3-dimethylcyclopentane",C[C@@H]1CC[C@@H](C1)C,"cis-1,3-Dimethylcyclopentane",data_1_cis_1s_3r_1_3_dimethylcyclopentane.log,data_1_cis_1_3_dimethylcyclopentane.log
+3-hydroxy-2-methylpropanenitrile,CC(CO)C#N,Propylene cyanohydrin,data_1_3_hydroxy_2_methylpropanenitrile.log,data_1_propylene_cyanohydrin.log
+2-methylpropan-1-imine,CC(C)C=N,Isobutyl-imine,data_1_2_methylpropan_1_imine.log,data_1_isobutyl_imine.log
+"N,N-dimethylprop-2-enamide",CN(C)C(=O)C=C,"N,N-Dimethylacrylamide",data_1_n_n_dimethylprop_2_enamide.log,data_1_n_n_dimethylacrylamide.log
+1-diazopropan-2-one,CC(=O)C=[N+]=[N-],1-Diazo-2-propanone,data_1_1_diazopropan_2_one.log,data_1_1_diazo_2_propanone.log
+nitrosyl chloride,N(=O)Cl,Nitrosyl chloride,data_1_nitrosyl_chloride.log,data_1_nitrosyl_chloride.log
+2-methylhex-2-ene,CCCC=C(C)C,2-Methyl-2-hexene,data_1_2_methylhex_2_ene.log,data_1_2_methyl_2_hexene.log
+3-methylcyclopent-2-en-1-one,CC1=CC(=O)CC1,3-Methyl-2-cyclopenten-1-one,data_1_3_methylcyclopent_2_en_1_one.log,data_1_3_methyl_2_cyclopenten_1_one.log
+chloromethanethioic S-acid,C(=O)(S)Cl,Chlorothioformic acid,data_1_chloromethanethioic_s_acid.log,data_1_chlorothioformic_acid.log
+magnesium carbanide,[CH3-].[CH3-].[Mg+2],Dimethylmagnesium,data_1_magnesium_carbanide.log,data_1_dimethylmagnesium.log
+hydroperoxymethane,COO,Methyl hydroperoxide,data_1_hydroperoxymethane.log,data_1_methyl_hydroperoxide.log
+2-hydroperoxypropane,CC(C)OO,"Hydroperoxide, 1-methylethyl",data_1_2_hydroperoxypropane.log,data_1_hydroperoxide_1_methylethyl.log
+4-methyloxetan-2-one,CC1CC(=O)O1,beta-BUTYROLACTONE,data_1_4_methyloxetan_2_one.log,data_1_beta_butyrolactone.log
+1-nitroprop-1-ene,CC=C[N+](=O)[O-],1-Nitro-1-propene,data_1_1_nitroprop_1_ene.log,data_1_1_nitro_1_propene.log
+,O[O-],Perhydroxyl radical,data_1_nan.log,data_1_perhydroxyl_radical.log
+chloromethoxyethane,CCOCCl,Chloromethyl ethyl ether,data_1_chloromethoxyethane.log,data_1_chloromethyl_ethyl_ether.log
+N-ethenyl-N-methylacetamide,CC(=O)N(C)C=C,N-Methyl-N-vinylacetamide,data_1_n_ethenyl_n_methylacetamide.log,data_1_n_methyl_n_vinylacetamide.log
+cyclopenten-1-ol,C1CC=C(C1)O,Cyclopentenol,data_1_cyclopenten_1_ol.log,data_1_cyclopentenol.log
+"1-chloropropa-1,2-diene",C=C=CCl,1-Chloropropadiene,data_1_1_chloropropa_1_2_diene.log,data_1_1_chloropropadiene.log
+"2,3-dimethyloxirane",CC1C(O1)C,2-Butylene oxide,data_1_2_3_dimethyloxirane.log,data_1_2_butylene_oxide.log
+amino(trimethyl)azanium,C[N+](C)(C)N,"1,1,1-Trimethylhydrazin-1-ium",data_1_amino_trimethyl_azanium.log,data_1_1_1_1_trimethylhydrazin_1_ium.log
+3-methylhex-1-ene,CCCC(C)C=C,3-Methyl-1-hexene,data_1_3_methylhex_1_ene.log,data_1_3_methyl_1_hexene.log
+3-methylidenepent-1-ene,CCC(=C)C=C,3-Methylene-1-pentene,data_1_3_methylidenepent_1_ene.log,data_1_3_methylene_1_pentene.log
+N-methylacetohydrazide,CC(=O)N(C)N,"Acetic acid, 1-methylhydrazide",data_1_n_methylacetohydrazide.log,data_1_acetic_acid_1_methylhydrazide.log
+2-(hydroxyamino)acetic acid,C(C(=O)O)NO,N-Hydroxyglycine,data_1_2_hydroxyamino_acetic_acid.log,data_1_n_hydroxyglycine.log
+magnesium acetate,CC(=O)[O-].[Mg+2],"Acetic acide, magnesium salt, octahydrate",data_1_magnesium_acetate.log,data_1_acetic_acide_magnesium_salt_octahydrate.log
+N-(cyanomethyl)-N-methylnitrous amide,CN(CC#N)N=O,2-(Methylnitrosoamino)acetonitrile,data_1_n_cyanomethyl_n_methylnitrous_amide.log,data_1_2_methylnitrosoamino_acetonitrile.log
+"N,N-diethylhydroxylamine",CCN(CC)O,Diethylhydroxylamine,data_1_n_n_diethylhydroxylamine.log,data_1_diethylhydroxylamine.log
+aziridine-1-carboxamide,C1CN1C(=O)N,1-Aziridinecarboxamide,data_1_aziridine_1_carboxamide.log,data_1_1_aziridinecarboxamide.log
+but-2-enoic acid,CC=CC(=O)O,2-Butenoic acid,data_1_but_2_enoic_acid.log,data_1_2_butenoic_acid.log
+4-methylpent-4-en-2-one,CC(=C)CC(=O)C,"4-Penten-2-one, 4-methyl-",data_1_4_methylpent_4_en_2_one.log,data_1_4_penten_2_one_4_methyl.log
+4-methylhex-1-ene,CCC(C)CC=C,4-Methyl-1-hexene,data_1_4_methylhex_1_ene.log,data_1_4_methyl_1_hexene.log
+chloric acid,OCl(=O)=O,Chloric acid,data_1_chloric_acid.log,data_1_chloric_acid.log
+carbonate,C(=O)([O-])[O-],Carbonate Ion,data_1_carbonate.log,data_1_carbonate_ion.log
+1-methylsulfanylpropane,CCCSC,Methyl propyl sulphide,data_1_1_methylsulfanylpropane.log,data_1_methyl_propyl_sulphide.log
+1-tert-butylaziridine,CC(C)(C)N1CC1,"AZIRIDINE, 1-tert-BUTYL-",data_1_1_tert_butylaziridine.log,data_1_aziridine_1_tert_butyl.log
+3-ethylpent-1-ene,CCC(CC)C=C,3-Ethyl-1-pentene,data_1_3_ethylpent_1_ene.log,data_1_3_ethyl_1_pentene.log
+"2-methylhexa-1,5-diene",CC(=C)CCC=C,"2-Methyl-1,5-hexadiene",data_1_2_methylhexa_1_5_diene.log,data_1_2_methyl_1_5_hexadiene.log
+"cyclohepta-1,3-diene",C1CC=CC=CC1,"1,3-Cycloheptadiene",data_1_cyclohepta_1_3_diene.log,data_1_1_3_cycloheptadiene.log
+but-2-en-1-ol,CC=CCO,2-Buten-1-ol,data_1_but_2_en_1_ol.log,data_1_2_buten_1_ol.log
+"N,N-dimethylnitramide",CN(C)[N+](=O)[O-],Dimethylnitramine,data_1_n_n_dimethylnitramide.log,data_1_dimethylnitramine.log
+"1,3-dimethylimidazol-1-ium",CN1C=C[N+](=C1)C,"1,3-Dimethylimidazolium",data_1_1_3_dimethylimidazol_1_ium.log,data_1_1_3_dimethylimidazolium.log
+1-(oxiran-2-yl)ethanone,CC(=O)C1CO1,"Ethanone, 1-oxiranyl-",data_1_1_oxiran_2_yl_ethanone.log,data_1_ethanone_1_oxiranyl.log
+furan-3-ylmethanol,C1=COC=C1CO,3-Furanmethanol,data_1_furan_3_ylmethanol.log,data_1_3_furanmethanol.log
+2H-tetrazol-5-amine,C1(=NNN=N1)N,Aminotetrazole,data_1_2h_tetrazol_5_amine.log,data_1_aminotetrazole.log
+1-chlorobut-1-ene,CCC=CCl,Chlorobutene,data_1_1_chlorobut_1_ene.log,data_1_chlorobutene.log
+3-methylbut-2-enamide,CC(=CC(=O)N)C,Senecioic acid amide,data_1_3_methylbut_2_enamide.log,data_1_senecioic_acid_amide.log
+2-chloro-N-methylethanamine,CNCCCl,"Ethanamine, 2-chloro-N-methyl-",data_1_2_chloro_n_methylethanamine.log,data_1_ethanamine_2_chloro_n_methyl.log
+oxirane-2-carbonitrile,C1C(O1)C#N,2-Cyanoethylene oxide,data_1_oxirane_2_carbonitrile.log,data_1_2_cyanoethylene_oxide.log
+N-ethenyl-N-methylnitrous amide,CN(C=C)N=O,N-Nitrosomethylvinylamine,data_1_n_ethenyl_n_methylnitrous_amide.log,data_1_n_nitrosomethylvinylamine.log
+1H-pyrimidin-6-one,C1=CN=CNC1=O,4-Hydroxypyrimidine,data_1_1h_pyrimidin_6_one.log,data_1_4_hydroxypyrimidine.log
+pent-3-enenitrile,CC=CCC#N,"3-Pentenenitrile, Pract.",data_1_pent_3_enenitrile.log,data_1_3_pentenenitrile_pract.log
+1-deuteriooxybutane,[2H]OCCCC,butan-1-(2H)ol,data_1_1_deuteriooxybutane.log,data_1_butan_1_2h_ol.log
+2-deuteriooxybutane,[2H]OC(C)CC,2-Butanol-d,data_1_2_deuteriooxybutane.log,data_1_2_butanol_d.log
+3-methylbut-3-enenitrile,CC(=C)CC#N,3-Methyl-3-butenenitrile,data_1_3_methylbut_3_enenitrile.log,data_1_3_methyl_3_butenenitrile.log
+but-2-enenitrile,CC=CC#N,2-Butenenitrile,data_1_but_2_enenitrile.log,data_1_2_butenenitrile.log
+"2,2,3-trimethyloxirane",CC1C(O1)(C)C,Trimethyloxirane,data_1_2_2_3_trimethyloxirane.log,data_1_trimethyloxirane.log
+4-methylpent-3-enal,CC(=CCC=O)C,4-Methyl-3-pentenal,data_1_4_methylpent_3_enal.log,data_1_4_methyl_3_pentenal.log
+4-methylpent-2-enal,CC(C)C=CC=O,"2-Pentenal, 4-methyl-",data_1_4_methylpent_2_enal.log,data_1_2_pentenal_4_methyl.log
+3-hydroxyprop-2-enal,C(=CO)C=O,3-Hydroxy-2-propenal,data_1_3_hydroxyprop_2_enal.log,data_1_3_hydroxy_2_propenal.log
+hydroxyazanium chloride,[NH3+]O.[Cl-],Hydroxylamine HCl,data_1_hydroxyazanium_chloride.log,data_1_hydroxylamine_hcl.log
+1-ethenylaziridine,C=CN1CC1,1-Vinylaziridine,data_1_1_ethenylaziridine.log,data_1_1_vinylaziridine.log
+4-oxopent-2-enal,CC(=O)C=CC=O,4-Oxo-2-pentenal,data_1_4_oxopent_2_enal.log,data_1_4_oxo_2_pentenal.log
+"2,3-dimethyl-3,4-dihydropyrazole",CC1CC=NN1C,"4,5-Dihydro-1,5-dimethyl-1H-pyrazole",data_1_2_3_dimethyl_3_4_dihydropyrazole.log,data_1_4_5_dihydro_1_5_dimethyl_1h_pyrazole.log
+2-hydroxybut-3-enenitrile,C=CC(C#N)O,"3-Butenenitrile, 2-hydroxy-",data_1_2_hydroxybut_3_enenitrile.log,data_1_3_butenenitrile_2_hydroxy.log
+2-aminobutan-1-ol,CCC(CO)N,2-Amino-1-butanol,data_1_2_aminobutan_1_ol.log,data_1_2_amino_1_butanol.log
+1-methoxypropan-2-one,CC(=O)COC,Methoxyacetone,data_1_1_methoxypropan_2_one.log,data_1_methoxyacetone.log
+"1,3-dihydroimidazol-2-one",C1=CNC(=O)N1,2-Hydroxyimidazole,data_1_1_3_dihydroimidazol_2_one.log,data_1_2_hydroxyimidazole.log
+but-2-ene-1-thiol,CC=CCS,But-2-enethiol,data_1_but_2_ene_1_thiol.log,data_1_but_2_enethiol.log
+"N,N,2-trimethylprop-2-en-1-amine",CC(=C)CN(C)C,"N,N,2-Trimethylpropenylamine",data_1_n_n_2_trimethylprop_2_en_1_amine.log,data_1_n_n_2_trimethylpropenylamine.log
+cyanomethylazanium chloride,C(C#N)[NH3+].[Cl-],"2-Aminoethanenitrile, chloride",data_1_cyanomethylazanium_chloride.log,data_1_2_aminoethanenitrile_chloride.log
+pentan-2-ol,CCCC(C)O,2-Pentanol,data_1_pentan_2_ol.log,data_1_2_pentanol.log
+"1-methyl-1,2,4-triazole",CN1C=NC=N1,"1H-1,2,4-Triazole, 1-methyl-",data_1_1_methyl_1_2_4_triazole.log,data_1_1h_1_2_4_triazole_1_methyl.log
+pent-4-ynoic acid,C#CCCC(=O)O,4-Pentynoic acid,data_1_pent_4_ynoic_acid.log,data_1_4_pentynoic_acid.log
+2-methylhex-1-ene,CCCCC(=C)C,2-Methyl-1-hexene,data_1_2_methylhex_1_ene.log,data_1_2_methyl_1_hexene.log
+phosphenous acid,OP=O,phosphenous acid,data_1_phosphenous_acid.log,data_1_phosphenous_acid.log
+azanium nitrate,[NH4+].[N+](=O)([O-])[O-],Ammonium nitrate,data_1_azanium_nitrate.log,data_1_ammonium_nitrate.log
+2-(oxiran-2-yl)acetonitrile,C1C(O1)CC#N,Oxiraneacetonitrile,data_1_2_oxiran_2_yl_acetonitrile.log,data_1_oxiraneacetonitrile.log
+methaneselone,C=[Se],Methaneselenal,data_1_methaneselone.log,data_1_methaneselenal.log
+3-prop-2-ynoxyprop-1-yne,C#CCOCC#C,Propargyl ether,data_1_3_prop_2_ynoxyprop_1_yne.log,data_1_propargyl_ether.log
+N-prop-2-ynylprop-2-yn-1-amine,C#CCNCC#C,Dipropargylamine,data_1_n_prop_2_ynylprop_2_yn_1_amine.log,data_1_dipropargylamine.log
+2-isocyano-2-methylpropane,CC(C)(C)[N+]#[C-],Tert-Butyl isocyanide,data_1_2_isocyano_2_methylpropane.log,data_1_tert_butyl_isocyanide.log
+trimethyl(prop-2-ynyl)azanium,C[N+](C)(C)CC#C,Trimethyl(prop-2-ynyl)azanium,data_1_trimethyl_prop_2_ynyl_azanium.log,data_1_trimethyl_prop_2_ynyl_azanium.log
+"3,4-dimethylpent-1-ene",CC(C)C(C)C=C,"1-pentene, 3,4-dimethyl-(8ci)",data_1_3_4_dimethylpent_1_ene.log,data_1_1_pentene_3_4_dimethyl_8ci.log
+"5-ethyl-1H-1,2,4-triazole",CCC1=NC=NN1,"3-Ethyl-1,2,4(1H)-triazole",data_1_5_ethyl_1h_1_2_4_triazole.log,data_1_3_ethyl_1_2_4_1h_triazole.log
+iron,[Fe],Iron,data_1_iron.log,data_1_iron.log
+manganese,[Mn],Manganese,data_1_manganese.log,data_1_manganese.log
+molybdenum,[Mo],Molybdenum,data_1_molybdenum.log,data_1_molybdenum.log
+neon,[Ne],Neon,data_1_neon.log,data_1_neon.log
+niobium,[Nb],Niobium,data_1_niobium.log,data_1_niobium.log
+scandium,[Sc],Scandium,data_1_scandium.log,data_1_scandium.log
+silane,[SiH4],Silane,data_1_silane.log,data_1_silane.log
+strontium dihydride,[SrH2],CID 23955,data_1_strontium_dihydride.log,data_1_cid_23955.log
+technetium,[Tc],Technetium,data_1_technetium.log,data_1_technetium.log
+titanium,[Ti],Titanium,data_1_titanium.log,data_1_titanium.log
+argon,[Ar],Argon,data_1_argon.log,data_1_argon.log
+arsane,[AsH3],Arsine,data_1_arsane.log,data_1_arsine.log
+chromium,[Cr],Chromium,data_1_chromium.log,data_1_chromium.log
+copper,[Cu],Copper,data_1_copper.log,data_1_copper.log
+gallane,[GaH3],Gallium hydride (GaH3),data_1_gallane.log,data_1_gallium_hydride_gah3.log
+germane,[GeH4],Germanium tetrahydride,data_1_germane.log,data_1_germanium_tetrahydride.log
+helium,[He],Helium,data_1_helium.log,data_1_helium.log
+vanadium,[V],Vanadium,data_1_vanadium.log,data_1_vanadium.log
+yttrium,[Y],Yttrium,data_1_yttrium.log,data_1_yttrium.log
+zinc,[Zn],Zinc,data_1_zinc.log,data_1_zinc.log
+zirconium,[Zr],Zirconium,data_1_zirconium.log,data_1_zirconium.log
+"1,2-dichloroethyne",C(#CCl)Cl,Dichloroacetylene,data_1_1_2_dichloroethyne.log,data_1_dichloroacetylene.log
+dioxosilane,O=[Si]=O,Silica,data_1_dioxosilane.log,data_1_silica.log
+fluorophosphonic acid,OP(=O)(O)F,Fluorophosphoric acid,data_1_fluorophosphonic_acid.log,data_1_fluorophosphoric_acid.log
+sodium nitrate,[N+](=O)([O-])[O-].[Na+],Sodium Nitrate,data_1_sodium_nitrate.log,data_1_sodium_nitrate.log
+oxidooxy(oxo)borane,B(=O)O[O-],Perborate (BO(O2)1-),data_1_oxidooxy_oxo_borane.log,data_1_perborate_bo_o2_1.log
+hypochlorous acid,OCl,Hypochlorous Acid,data_1_hypochlorous_acid.log,data_1_hypochlorous_acid.log
+phosphane,P,Phosphine,data_1_phosphane.log,data_1_phosphine.log
+oxovanadium,O=[V],Vanadium(II) oxide,data_1_oxovanadium.log,data_1_vanadium_ii_oxide.log
+1-chloroprop-1-yne,CC#CCl,1-Chloroprop-1-yne,data_1_1_chloroprop_1_yne.log,data_1_1_chloroprop_1_yne.log
+sodium chlorite,[O-]Cl=O.[Na+],CID 24452,data_1_sodium_chlorite.log,data_1_cid_24452.log
+chlorous acid,OCl=O,Chlorous acid,data_1_chlorous_acid.log,data_1_chlorous_acid.log
+2-chlorooxirane,C1C(O1)Cl,Chlorooxirane,data_1_2_chlorooxirane.log,data_1_chlorooxirane.log
+oxoborinic acid,B(=O)O,Boric acid (HBO2),data_1_oxoborinic_acid.log,data_1_boric_acid_hbo2.log

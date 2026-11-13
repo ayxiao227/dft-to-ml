@@ -1,0 +1,13 @@
+{
+  "SelectedModel": "ExtraTrees",
+  "SelectionCV_MAE_eV": 0.37180078216375795,
+  "Test_MAE_eV": 0.3660133197074516,
+  "Test_RMSE_eV": 0.6943278500235281,
+  "Test_R2": 0.7688156524042467,
+  "MeanBaseline_Test_MAE_eV": 1.1578586656905134,
+  "TrainingRows": 1940,
+  "TestRows": 485,
+  "FeatureSet": "conj_fp",
+  "GroupColumn": null,
+  "Seed": 42
+}
