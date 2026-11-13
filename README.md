@@ -184,3 +184,53 @@ inspection of the dataset. Ridge hyperparameter tuning now fits scaling inside e
 inner validation fold.
 
 Offline tests also run in GitHub Actions. CI does not execute Gaussian or SLURM.
+
+## Separate QM9 benchmark
+
+`src/qm9.py` uses the original published **133,885-molecule QM9** XYZ archive.
+No Gaussian installation, cluster account or private calculation logs are needed.
+QM9 supplies B3LYP/6-31G(2df,p) optimized structures and orbital energies; this is a
+separate protocol from our generated Gaussian jobs. Do not pool their training rows.
+
+```bash
+# Download original archive and exclusion list; verify Figshare MD5 checksums.
+uv run python -m src.qm9 download data/qm9/raw
+
+# Start with a reproducible random sample. Omit --sample for all accepted records.
+uv run python -m src.qm9 prepare data/qm9/raw/dsgdb9nsd.xyz.tar.bz2 data/qm9/raw/uncharacterized.txt data/qm9/prepared --sample 5000 --seed 42
+
+# Freeze final test molecules before model development.
+uv run python -m src.splits data/qm9/prepared/features.csv data/qm9/frozen
+uv run python -m src.ml_analysis data/qm9/frozen/development.csv --name qm9 --feature-set conj --trees 200 --jobs 1
+
+# Once model settings are fixed, evaluate the reserved final partition once.
+uv run python -m src.final_evaluate data/qm9/frozen/development.csv data/qm9/frozen/final_test.csv results/qm9_final --features conj --trees 200
+```
+
+Preparation also accepts an already downloaded archive and exclusion list. Output
+directories must be new. It reads archive members without extracting their paths,
+excludes the official 3,054 uncharacterized IDs and the 11 convergence exceptions
+listed in the original README, validates properties and graph/coordinate atom
+counts, and excludes repeated canonical structures. Every skipped record appears
+in `rejections.csv`. Consequently this is a filtered benchmark, not an exact
+reproduction of every published QM9 split or sample count.
+
+The importer uses **QM9's supplied optimized SMILES**, preserves original SMILES
+and XYZ coordinates, and computes the same graph descriptors as our organic pipeline.
+It does not claim to rerun Gaussian or verify the dataset's protocol from raw logs.
+HOMO/LUMO/gap retain Hartree columns and are converted to eV exactly once using
+27.211386245988 eV/Ha. Target quantities are not included as descriptor features.
+
+Outputs: `features.csv`, `xyz/`, `rejections.csv`, and `metadata.json` with source
+hashes, sampling seed, selection counts and unit conversion. Optional `--fingerprints`
+adds 1,024 Morgan columns; leave it off initially to reduce memory and CSV size.
+Sampling uses seeded reservoir sampling over accepted unique records, not the first
+N archive entries. Full-data preparation retains records before writing and full-data
+training can be substantially more expensive than a 5,000-molecule pilot.
+
+Sources: [original collection](https://figshare.com/collections/978904),
+[dataset](https://figshare.com/articles/dataset/1057646),
+[format README](https://figshare.com/articles/dataset/1057641), and
+[uncharacterized list](https://figshare.com/articles/dataset/1057644).
+Cite Ramakrishnan, Dral, Rupp & von Lilienfeld, *Quantum chemistry structures and
+properties of 134 kilo molecules*, Scientific Data 1, 140022 (2014).
