@@ -13,6 +13,10 @@ def has_isolated_h(smiles):
 
 def calculate_descriptors(smiles):
     mol = Chem.MolFromSmiles(smiles)
+    return _base_from_mol(mol)
+
+
+def _base_from_mol(mol):
     if mol is None:
         return {}  # becomes NaN row after apply(pd.Series)
 
@@ -45,6 +49,8 @@ _gen = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=1024)
 
 def extra_features(smi, include_fp=True):
     m = Chem.MolFromSmiles(smi)
+    if m is None:
+        return {}
     n_bonds = max(m.GetNumBonds(), 1)
     n_conj = sum(b.GetIsConjugated() for b in m.GetBonds())
     feats = {"n_conj_bonds": n_conj, "frac_conj_bonds": n_conj / n_bonds}
@@ -60,20 +66,73 @@ def get_all_features(smi):
     extra = extra_features(smi, include_fp=True)
     return {**desc, **extra}
 
-df = pd.read_csv("data/log_data/data_3.csv")
+def build_descriptors(input_path, output_path):
+    from pathlib import Path
+    from src.schema import normalize_molecules
+    df = normalize_molecules(pd.read_csv(input_path))
+    if 'optimized_smiles' not in df or 'protocol_id' not in df or df.protocol_id.nunique() != 1 or df.protocol_id.isna().any():
+        raise ValueError('Descriptors require accepted optimized identities and one verified protocol')
+    if 'accepted' not in df or not df.accepted.eq(True).all():
+        raise ValueError('Unaccepted records cannot become descriptors')
+    df['SMILES'] = df['optimized_smiles']
+    features = df["SMILES"].apply(get_all_features).apply(pd.Series)
+    if features.empty or "MolWt" not in features or features["MolWt"].isna().any():
+        raise ValueError("Invalid or empty molecular dataset")
+    overlap = set(df.columns) & set(features.columns)
+    df = pd.concat([df.drop(columns=list(overlap)), features], axis=1)
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(output_path, index=False)
+    return df
 
-desc_df = df["SMILES"].apply(get_all_features).apply(pd.Series)
-df = pd.concat([df, desc_df], axis=1)
 
-print(df[["SMILES", "homo_ev", "lumo_ev", "gap_ev"]].head())
-print(desc_df.head())
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Build graph-based molecular descriptors")
+    parser.add_argument("input")
+    parser.add_argument("output")
+    args = parser.parse_args()
+    build_descriptors(args.input, args.output)
 
-# Optional: drop rows where SMILES failed to parse
-n_bad = desc_df["MolWt"].isna().sum()
-print(f"{n_bad} invalid SMILES")
-df = df.dropna(subset=["MolWt"])
 
-print(desc_df.head())
-print(len(df))
+class FeatureError(ValueError):
+    """Input graph or descriptor failure; never a valid all-zero molecule."""
 
-df.to_csv("data/descriptors/test_3_extra.csv", index=False)
+
+def input_features(smiles):
+    """v2 input-only chemistry; parse once. Legacy extra_features stays v1."""
+    import math
+    from src.feature_registry import INPUT_FEATURES
+    mol = Chem.MolFromSmiles(smiles) if isinstance(smiles, str) else None
+    if mol is None or not mol.GetNumAtoms():
+        raise FeatureError('Invalid or empty input graph')
+    values = _base_from_mol(mol)
+    for element in ('S','P','F','Cl'):
+        values['Num'+element] = sum(a.GetSymbol() == element for a in mol.GetAtoms())
+    values['NumH'] = sum(a.GetAtomicNum() == 1 for a in Chem.AddHs(mol).GetAtoms())
+    values['n_conj_bonds'] = sum(b.GetIsConjugated() for b in mol.GetBonds())
+    values['frac_conj_bonds'] = values['n_conj_bonds'] / max(1, mol.GetNumBonds())
+    for name in ('n_carbonyl','n_conj_diene','n_ene_yne'):
+        values[name] = len(mol.GetSubstructMatches(_PATTERNS[name]))
+    nitroso, noxide, azo, conjugated = set(), set(), set(), set()
+    for atom in mol.GetAtoms():
+        if atom.GetAtomicNum() == 7:
+            oxygens = [a for a in atom.GetNeighbors() if a.GetAtomicNum() == 8]
+            if atom.GetFormalCharge() == 0 and len(oxygens) == 1 and mol.GetBondBetweenAtoms(atom.GetIdx(), oxygens[0].GetIdx()).GetBondType() == Chem.BondType.DOUBLE:
+                nitroso.add(atom.GetIdx())
+            if atom.GetFormalCharge() == 1 and any(a.GetFormalCharge() == -1 and mol.GetBondBetweenAtoms(atom.GetIdx(),a.GetIdx()).GetBondType() == Chem.BondType.SINGLE for a in oxygens):
+                if atom.GetIsAromatic() or sum(a.GetAtomicNum() != 8 for a in atom.GetNeighbors()) == 3:
+                    noxide.add(atom.GetIdx())
+        if atom.GetAtomicNum() == 6 and any(b.GetBondType() == Chem.BondType.DOUBLE and b.GetOtherAtom(atom).GetAtomicNum() == 8 for b in atom.GetBonds()):
+            for bond in atom.GetBonds():
+                neighbor = bond.GetOtherAtom(atom)
+                if bond.GetBondType() != Chem.BondType.SINGLE or neighbor.GetAtomicNum() != 6:
+                    continue
+                if neighbor.GetIsAromatic() or any(b.GetOtherAtom(neighbor).GetIdx() != atom.GetIdx() and b.GetBondType() in (Chem.BondType.DOUBLE,Chem.BondType.TRIPLE) and b.GetOtherAtom(neighbor).GetAtomicNum() in (6,7) for b in neighbor.GetBonds()):
+                    conjugated.add(atom.GetIdx())
+    for bond in mol.GetBonds():
+        if bond.GetBondType() == Chem.BondType.DOUBLE and all(a.GetAtomicNum() == 7 and a.GetFormalCharge() == 0 for a in (bond.GetBeginAtom(),bond.GetEndAtom())):
+            azo.add(bond.GetIdx())
+    values.update(n_nitroso=len(nitroso), n_amine_noxide=len(noxide), n_azo=len(azo), n_conj_carbonyl_v2=len(conjugated))
+    if not all(math.isfinite(values[n]) for n in INPUT_FEATURES):
+        raise FeatureError('Nonfinite input descriptors')
+    return {name: values[name] for name in INPUT_FEATURES}, mol

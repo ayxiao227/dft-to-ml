@@ -12,6 +12,8 @@ for _key in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
 from threadpoolctl import threadpool_limits
 import gc
 import time
+from src.run_metadata import check_molecular_identity, create_run
+from src.feature_registry import BASE_FEATURES as BASE_FEATURES_GLOBAL, LEGACY_CONJ_FEATURES as CONJ_FEATURES_GLOBAL, fingerprint_columns
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -20,7 +22,13 @@ import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
 from sklearn.dummy import DummyRegressor
-from sklearn.linear_model import RidgeCV
+from sklearn.linear_model import Ridge
+from sklearn.model_selection import GridSearchCV
+
+def ridge_search(alphas):
+    return GridSearchCV(make_pipeline(StandardScaler(), Ridge()),
+        {"ridge__alpha": alphas}, cv=5, scoring="neg_mean_absolute_error", n_jobs=1)
+
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import (
@@ -54,8 +62,11 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     # 1. Output directories
     # --------------------------------------------------
 
-    PREDICTION_DIR = "data/model_predictions"
-    FIGURE_DIR = "results/figures"
+    run_dir = create_run(DATA_PATH, CSV_NAME, dict(feature_set=FEATURE_SET,
+        trees=n_estimators, jobs=n_jobs, permutation_repeats=permutation_repeats,
+        permutation_top_k=permutation_top_k, permutation_max_samples=permutation_max_samples))
+    PREDICTION_DIR = str(run_dir / "predictions")
+    FIGURE_DIR = str(run_dir / "figures")
 
     os.makedirs(PREDICTION_DIR, exist_ok=True)
     os.makedirs(FIGURE_DIR, exist_ok=True)
@@ -100,20 +111,14 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     # df = df.dropna(subset=FEATURES + [TARGET])
     TARGET = "gap_ev"
 
-    BASE_FEATURES = [
-        "MolWt", "HeavyAtomCount", "NumC", "NumN", "NumO", "RingCount",
-        "AromaticRingCount", "RotatableBondCount", "HBD", "HBA", "TPSA",
-        "FractionCSP3", "DoubleBondCount", "TripleBondCount",
-    ]
-    CONJ_FEATURES = [
-        "n_conj_bonds", "frac_conj_bonds", "n_carbonyl",
-        "n_conj_carbonyl", "n_conj_diene", "n_nitroso_noxide",
-    ]
-    FP_FEATURES = [c for c in df.columns if c.startswith("morgan_")]
+    BASE_FEATURES = BASE_FEATURES_GLOBAL
+    CONJ_FEATURES = CONJ_FEATURES_GLOBAL
+    FP_FEATURES = fingerprint_columns(df.columns)
 
     FEATURE_SETS = {
         "base": BASE_FEATURES,
         "conj": BASE_FEATURES + CONJ_FEATURES,
+        "metal": BASE_FEATURES + CONJ_FEATURES + ["MetalAtomicNumber", "FormalCharge"],
         "conj_fp": BASE_FEATURES + CONJ_FEATURES + FP_FEATURES,
     }
     if FEATURE_SET not in FEATURE_SETS:
@@ -131,6 +136,7 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     if len(df) < 10:
         raise ValueError("At least 10 complete molecules are required")
 
+    check_molecular_identity(df)
     X = df[FEATURES]
     y = df[TARGET]
 
@@ -150,6 +156,10 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
         random_state=42
     )
 
+    split = df[["SMILES"]].copy()
+    split["partition"] = "train"
+    split.loc[X_test.index, "partition"] = "test"
+    split.to_csv(run_dir / "split.csv", index_label="source_row")
     print(f"Training molecules: {len(X_train)}")
     print(f"Testing molecules:  {len(X_test)}")
 
@@ -169,9 +179,8 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
         ),
 
         # Linear baseline
-        "Ridge Regression": make_pipeline(
-            StandardScaler(),
-            RidgeCV(
+        "Ridge Regression": (
+            ridge_search(
                 alphas=[
                     0.001,
                     0.01,
@@ -257,9 +266,8 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     X_train_size = X_train[size_feature]
     X_test_size = X_test[size_feature]
 
-    size_model = make_pipeline(
-        StandardScaler(),
-        RidgeCV(
+    size_model = (
+        ridge_search(
             alphas=[
                 0.001,
                 0.01,
@@ -324,7 +332,7 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     )
 
     results_df.to_csv(
-        f"results/{CSV_NAME}_model_comparison.csv",
+        str(run_dir / "model_comparison.csv"),
         index=False
     )
 
@@ -357,7 +365,7 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
 
 
     # Include the normalized metric in the saved table as well.
-    results_df.to_csv(f"results/{CSV_NAME}_model_comparison.csv", index=False)
+    results_df.to_csv(str(run_dir / "model_comparison.csv"), index=False)
 
     # --------------------------------------------------
     # 10. Model comparison plot
@@ -676,7 +684,7 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
     permutation_df = bounded_permutation_importance(
         rf, X_test, y_test, repeats=permutation_repeats,
         top_k=permutation_top_k, max_samples=permutation_max_samples)
-    permutation_df.to_csv(f"results/{CSV_NAME}_permutation_importance.csv", index=False)
+    permutation_df.to_csv(str(run_dir / "permutation_importance.csv"), index=False)
     if not permutation_df.empty:
         plt.figure(figsize=(8, 7))
         plt.barh(permutation_df["Feature"], permutation_df["Importance"],
@@ -701,17 +709,6 @@ def analysis(DATA_PATH, CSV_NAME, FEATURE_SET="base", *, n_jobs=1,
         permutation_df
     )
 
-
-
-BASE_FEATURES_GLOBAL = [
-    "MolWt", "HeavyAtomCount", "NumC", "NumN", "NumO", "RingCount",
-    "AromaticRingCount", "RotatableBondCount", "HBD", "HBA", "TPSA",
-    "FractionCSP3", "DoubleBondCount", "TripleBondCount",
-]
-CONJ_FEATURES_GLOBAL = [
-    "n_conj_bonds", "frac_conj_bonds", "n_carbonyl", "n_conj_carbonyl",
-    "n_conj_diene", "n_nitroso_noxide",
-]
 
 
 def bounded_permutation_importance(model, X, y, *, repeats, top_k, max_samples):
@@ -749,22 +746,34 @@ def cv_check(DATA_PATH, TARGET="gap_ev", *, n_splits=5, n_repeats=1,
     if n_jobs < 1 or n_splits < 2 or n_repeats < 1 or n_estimators < 1:
         raise ValueError("Invalid CV/resource limits")
     header = pd.read_csv(DATA_PATH, nrows=0).columns
-    fp = [c for c in header if c.startswith("morgan_")]
+    fp = fingerprint_columns(header)
     sets = {"base": BASE_FEATURES_GLOBAL}
     if all(c in header for c in CONJ_FEATURES_GLOBAL):
         sets["conj"] = BASE_FEATURES_GLOBAL + CONJ_FEATURES_GLOBAL
         if fp:
             sets["conj_fp"] = sets["conj"] + fp
+    if all(c in header for c in CONJ_FEATURES_GLOBAL + ["MetalAtomicNumber", "FormalCharge"]):
+        sets["metal"] = BASE_FEATURES_GLOBAL + CONJ_FEATURES_GLOBAL + ["MetalAtomicNumber", "FormalCharge"]
     columns = list(dict.fromkeys(sum(sets.values(), []) + [TARGET]))
+    identities = pd.read_csv(DATA_PATH, usecols=[c for c in ["SMILES", "protocol_id"] if c in header])
+    check_molecular_identity(identities)
     df = pd.read_csv(DATA_PATH, usecols=columns, dtype="float32")
     df = df.replace([np.inf, -np.inf], np.nan).dropna()
     if len(df) < n_splits * 2:
         raise ValueError("Need at least two validation molecules per fold")
     cv = RepeatedKFold(n_splits=n_splits, n_repeats=n_repeats, random_state=42)
+    run_dir = create_run(DATA_PATH, "cv", dict(n_splits=n_splits,
+        n_repeats=n_repeats, trees=n_estimators, jobs=n_jobs, feature_sets=sets))
+    folds = list(cv.split(df))
+    membership = []
+    for fold, (_, validation) in enumerate(folds):
+        membership.extend({"fold": fold, "source_row": int(df.index[i]),
+                           "SMILES": identities.loc[df.index[i], "SMILES"]} for i in validation)
+    pd.DataFrame(membership).to_csv(run_dir / "validation_folds.csv", index=False)
     rows = []
     for set_name, features in sets.items():
         models = {
-            "Ridge Regression": make_pipeline(StandardScaler(), RidgeCV(alphas=[.01, .1, 1, 10, 100, 1000])),
+            "Ridge Regression": ridge_search(alphas=[.01, .1, 1, 10, 100, 1000]),
             "Gradient Boosting": HistGradientBoostingRegressor(max_iter=300, max_bins=64, max_leaf_nodes=15, random_state=42),
             "Random Forest": RandomForestRegressor(n_estimators=n_estimators,
                 max_depth=20, min_samples_leaf=2, max_features="sqrt",
@@ -772,7 +781,7 @@ def cv_check(DATA_PATH, TARGET="gap_ev", *, n_splits=5, n_repeats=1,
         }
         for name, model in models.items():
             print(f"CV {set_name}: {name}", flush=True)
-            scores = cross_validate(model, df[features], df[TARGET], cv=cv,
+            scores = cross_validate(model, df[features], df[TARGET], cv=folds,
                 scoring={"MAE": "neg_mean_absolute_error", "R2": "r2"},
                 n_jobs=1, pre_dispatch=1, error_score="raise")
             rows.append({"FeatureSet": set_name, "Model": name,
@@ -783,7 +792,7 @@ def cv_check(DATA_PATH, TARGET="gap_ev", *, n_splits=5, n_repeats=1,
         gc.collect()
     result = pd.DataFrame(rows).sort_values(["Model", "FeatureSet"])
     os.makedirs("results", exist_ok=True)
-    result.to_csv("results/cv_check_summary.csv", index=False)
+    result.to_csv(run_dir / "cv_check_summary.csv", index=False)
     return result
 
 
@@ -792,7 +801,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("data_path")
     parser.add_argument("--name", default="homo_lumo")
-    parser.add_argument("--feature-set", choices=["base", "conj", "conj_fp"], default="base")
+    parser.add_argument("--feature-set", choices=["base", "conj", "conj_fp", "metal"], default="base")
     parser.add_argument("--trees", type=int, default=200)
     parser.add_argument("--jobs", type=int, default=1)
     parser.add_argument("--permutation-repeats", type=int, default=0)
