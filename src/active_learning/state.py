@@ -3,6 +3,7 @@ from contextlib import contextmanager
 import fcntl
 import json
 import sqlite3
+import time
 from pathlib import Path
 from .config import canonical, hashed, validate
 from .artifacts import atomic_write, file_hash
@@ -70,9 +71,10 @@ class Store:
                 self.db.executescript(DDL)
                 self.db.execute('INSERT INTO meta VALUES (?,?)',('schema',canonical(SCHEMA)))
             else:
-                print('Startup integrity verification started',flush=True)
+                start=time.monotonic()
+                print('Startup integrity verification started (ledger, sources, artifacts, finalization)',flush=True)
                 self.verify()
-                print('Startup integrity verification completed',flush=True)
+                print(f'Startup integrity verification completed elapsed={time.monotonic()-start:.1f}s',flush=True)
             return self
         except BaseException:
             self.__exit__(None,None,None);raise
@@ -119,16 +121,20 @@ class Store:
         return digest.hexdigest()
 
     def verify(self):
+        start=time.monotonic()
         if self.meta('schema')!=SCHEMA:raise ValueError('Unsupported state schema')
         if self.meta('integrity')!=self._digest():raise ValueError('Database integrity/config/partition drift')
         config=validate(self.meta('config'))
         if hashed(config)!=self.meta('config_hash'):raise ValueError('Config hash changed')
         from .datasets import verify_sources
         verify_sources(config)
-        for a in self.db.execute('SELECT * FROM artifacts'):
+        print(f'Startup ledger/source verification completed elapsed={time.monotonic()-start:.1f}s; hashing artifacts',flush=True)
+        total=self.db.execute('SELECT COUNT(*) FROM artifacts').fetchone()[0]
+        for n,a in enumerate(self.db.execute('SELECT * FROM artifacts'),1):
             path=self.root/a['path']
             if not path.is_relative_to(self.root) or file_hash(path)!=a['sha256']:
                 raise ValueError('Artifact hash/path changed: '+a['path'])
+            if n%25==0 or n==total:print(f'Startup artifacts verified {n}/{total} elapsed={time.monotonic()-start:.1f}s',flush=True)
         import numpy as np, sklearn
         from rdkit import rdBase
         if self.meta('environment')!={'numpy':np.__version__,'sklearn':sklearn.__version__,'rdkit':rdBase.rdkitVersion}:

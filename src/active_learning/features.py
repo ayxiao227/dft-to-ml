@@ -1,5 +1,5 @@
 """Allowlisted pre-calculation features; IDs, labels, relaxed data never enter X."""
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 import json
 import numpy as np
@@ -18,9 +18,12 @@ class CandidateFeatures:
     binary: np.ndarray
     settings_hash: str
 
+    _positions: dict = field(init=False, repr=False, compare=False)
+
     def __post_init__(self):
         if len(self.smiles)!=len(self.ids) or len(set(self.names))!=len(self.names) or self.binary.ndim!=2 or len(set(self.ids)) != len(self.ids) or self.x.shape != (len(self.ids),len(self.names)) or self.binary.shape[0] != len(self.ids):
             raise FeatureError('Feature ID/order/shape mismatch')
+        object.__setattr__(self, "_positions", {ident:i for i,ident in enumerate(self.ids)})
         for start in range(0,len(self.ids),4096):
             if not np.isfinite(self.x[start:start+4096]).all() or not np.isin(self.binary[start:start+4096], [0,1]).all():
                 raise FeatureError('Nonfinite/nonbinary features')
@@ -29,11 +32,11 @@ class CandidateFeatures:
             raise FeatureError('Feature allowlist violated')
 
     def fingerprints(self,ids):
-        positions={ident:i for i,ident in enumerate(self.ids)}
+        positions=self._positions
         return FingerprintRows(self.binary,np.asarray([positions[i] for i in ids]))
 
     def rows(self, ids, binary=False):
-        positions = {ident:i for i,ident in enumerate(self.ids)}
+        positions = self._positions
         return (self.binary if binary else self.x)[[positions[i] for i in ids]]
 
 

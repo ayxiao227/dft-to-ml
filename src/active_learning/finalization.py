@@ -95,9 +95,11 @@ def verified_results(s,checkpoints=None,contract=None):
     existing=s.meta('finalization',{})
     if existing and any(existing.get(k)!=v for k,v in contract.items()):raise ValueError('Frozen finalization contract changed')
     results={}
-    for cp in checkpoints:
+    verify_started=time.monotonic()
+    for index,cp in enumerate(checkpoints,1):
         reference=s.meta(completion_key(cp))
         if reference is not None:results[completion_key(cp)]=load_result(s,cp,contract,reference)
+        if index%25==0:print(f'Final manifest verification {index}/{len(checkpoints)} elapsed={time.monotonic()-verify_started:.1f}s',flush=True)
     stored=s.db.execute('SELECT COUNT(*) FROM meta WHERE key LIKE ?',(PREFIX+'%',)).fetchone()[0]
     if stored!=len(results):raise ValueError('Final completion record outside frozen checkpoint set')
     if existing and existing.get('status') not in ('started','completed'):raise ValueError('Invalid finalization completion state')

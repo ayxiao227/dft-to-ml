@@ -35,7 +35,8 @@ def lightweight_progress(root):
         if state.get('status')=='completed' and 'format_version' not in state:done=total
         return {'verification':'lightweight committed database snapshot ONLY; use status for full integrity verification',
                 'status':state.get('status','not started'),'total':total,'completed':done,'remaining':total-done,
-                'final_metrics_complete':state.get('status')=='completed'}
+                'final_metrics_complete':state.get('status')=='completed',
+                'reporting':__import__('src.active_learning.report_cache',fromlist=['progress']).progress(root)}
 
 
 def main():

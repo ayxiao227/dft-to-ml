@@ -297,3 +297,11 @@ Real QM9 accuracy/AL gains, real Gaussian continuation variants, historical-labe
 certification, live Great Lakes submission/transfer, actual measured DFT costs and
 cross-platform serialized byte equivalence remain externally unvalidated. Neural/3D
 models are optional and absent. The bounded tests do not establish those outcomes.
+
+## Recoverable reporting performance
+
+Report v3 streams saved predictions, caches verified diagnostic stages, and samples
+only large error plots. See [reporting performance and recovery](reporting_performance.md)
+for measured bounds, disk planning, cache cleanup, tests, and exact local update
+and report-only rerun commands. `progress` includes committed reporting stages
+while the writer lock is held. Existing completed finalizations remain reusable.
