@@ -65,10 +65,14 @@ class Store:
             self.db=sqlite3.connect(path,timeout=0,isolation_level=None)
             self.db.row_factory=sqlite3.Row
             self.db.execute('PRAGMA foreign_keys=ON');self.db.execute('PRAGMA synchronous=FULL')
+            self.db.execute('PRAGMA temp_store=FILE');self.db.execute('PRAGMA cache_size=-8192')
             if self.create:
                 self.db.executescript(DDL)
                 self.db.execute('INSERT INTO meta VALUES (?,?)',('schema',canonical(SCHEMA)))
-            else:self.verify()
+            else:
+                print('Startup integrity verification started',flush=True)
+                self.verify()
+                print('Startup integrity verification completed',flush=True)
             return self
         except BaseException:
             self.__exit__(None,None,None);raise
@@ -84,9 +88,35 @@ class Store:
     def set_meta(self,key,value):self.db.execute('INSERT OR REPLACE INTO meta VALUES (?,?)',(key,canonical(value)))
 
     def _digest(self):
-        data={table:self.rows(f'SELECT * FROM {table} ORDER BY '+','.join(str(i+1) for i in range(len(self.db.execute(f'SELECT * FROM {table} LIMIT 0').description)))) for table in TABLES}
-        data['meta']=self.rows("SELECT * FROM meta WHERE key != 'integrity' ORDER BY key")
-        return hashed(data)
+        # Preserve schema-1 canonical bytes, including table/column ordering.
+        import hashlib
+        from .streaming import json_parts
+        digest=hashlib.sha256();digest.update(b'{')
+        for n,table in enumerate(sorted((*TABLES,'meta'))):
+            if n:digest.update(b',')
+            digest.update((canonical(table)+':[').encode())
+            if table=='meta':query="SELECT key FROM meta WHERE key != 'integrity' ORDER BY key"
+            else:
+                columns=len(self.db.execute(f'SELECT * FROM {table} LIMIT 0').description)
+                query=f'SELECT * FROM {table} ORDER BY '+','.join(str(i+1) for i in range(columns))
+            for i,row in enumerate(self.db.execute(query)):
+                if i:digest.update(b',')
+                if table=='meta':
+                    from .streaming import MetaReader
+                    digest.update(b'{"key":')
+                    for part in json_parts(row['key']):digest.update(part.encode())
+                    digest.update(b',"value":"')
+                    with MetaReader(self.db,row['key']) as reader:
+                        buffer=bytearray(16384)
+                        while (size:=reader.readinto(buffer)):
+                            # canonical metadata is ASCII JSON; escape as a JSON string.
+                            digest.update(json.dumps(bytes(buffer[:size]).decode('ascii'))[1:-1].encode())
+                    digest.update(b'"}')
+                else:
+                    for part in json_parts(dict(row)):digest.update(part.encode())
+            digest.update(b']')
+        digest.update(b'}')
+        return digest.hexdigest()
 
     def verify(self):
         if self.meta('schema')!=SCHEMA:raise ValueError('Unsupported state schema')
@@ -95,7 +125,7 @@ class Store:
         if hashed(config)!=self.meta('config_hash'):raise ValueError('Config hash changed')
         from .datasets import verify_sources
         verify_sources(config)
-        for a in self.rows('SELECT * FROM artifacts'):
+        for a in self.db.execute('SELECT * FROM artifacts'):
             path=self.root/a['path']
             if not path.is_relative_to(self.root) or file_hash(path)!=a['sha256']:
                 raise ValueError('Artifact hash/path changed: '+a['path'])
@@ -103,6 +133,9 @@ class Store:
         from rdkit import rdBase
         if self.meta('environment')!={'numpy':np.__version__,'sklearn':sklearn.__version__,'rdkit':rdBase.rdkitVersion}:
             raise ValueError('Pinned environment changed; new experiment required')
+        if self.meta('finalization',{}).get('format_version')==2:
+            from .finalization import verified_results
+            verified_results(self)
 
     @contextmanager
     def transaction(self,failpoint=None):

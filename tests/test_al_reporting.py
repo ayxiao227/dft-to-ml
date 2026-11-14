@@ -33,5 +33,8 @@ class Reporting(unittest.TestCase):
                     self.assertEqual(report(s),output)
                 with self.assertRaises(ValueError):select(s,0,'random')
                 self.assertGreater(len(list(Path(output['report']).parent.glob('*.svg'))),0)
-                predictions=json.loads((experiment/'final/predictions.json').read_text())
+                from src.active_learning.finalization import verified_results
+                from src.active_learning.streaming import prediction_records
+                doc=next(iter(verified_results(s).values()))
+                predictions=list(prediction_records(experiment/doc['predictions']['path']))
                 self.assertAlmostEqual(predictions[0]['residual_ev'],predictions[0]['predicted_gap_ev']-predictions[0]['observed_gap_ev'])

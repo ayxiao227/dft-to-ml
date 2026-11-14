@@ -18,10 +18,14 @@ def validate_cost(value):
 
 def coverage(attempts):
     import json
-    costs=[json.loads(a['cost']) if a.get('cost') else {} for a in attempts]
-    result={'attempts':len(attempts)}
-    for field in ['cpu_seconds','wall_seconds','allocated_cpu_hours']:
-        values=[c[field] for c in costs if c.get(field) is not None]
-        result[field]={'measured_sum':sum(values) if values else None,'known_attempts':len(values),
-            'total_attempts':len(attempts),'complete':bool(attempts) and len(values)==len(attempts)}
+    fields=['cpu_seconds','wall_seconds','allocated_cpu_hours']
+    totals={f:0 for f in fields};known={f:0 for f in fields};count=0
+    for attempt in attempts:
+        cost=json.loads(attempt['cost']) if attempt.get('cost') else {};count+=1
+        for field in fields:
+            if cost.get(field) is not None:totals[field]+=cost[field];known[field]+=1
+    result={'attempts':count}
+    for field in fields:
+        result[field]={'measured_sum':totals[field] if known[field] else None,'known_attempts':known[field],
+            'total_attempts':count,'complete':bool(count) and known[field]==count}
     return result

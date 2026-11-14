@@ -28,4 +28,4 @@ class EvaluationOracle:
         if tuple(ids)!=self.__ids:raise ValueError('Evaluation membership differs')
         table=json.loads(self.__path.read_text())
         if set(table)!=set(ids):raise ValueError('Evaluation table membership differs')
-        return {i:table[i] for i in ids}
+        return table

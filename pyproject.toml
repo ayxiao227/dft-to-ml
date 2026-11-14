@@ -12,5 +12,6 @@ dependencies = [
     "rdkit",
     "pubchempy",
     "paramiko",
-    "basis-set-exchange"
+    "basis-set-exchange",
+    "ijson>=3.6.0",
 ]

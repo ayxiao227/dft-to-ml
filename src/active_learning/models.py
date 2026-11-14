@@ -76,7 +76,7 @@ def load(path, expected_hash, config, feature_hash):
     # Never load user-supplied arbitrary pickle paths: caller must use registered artifacts.
     from .artifacts import file_hash
     if file_hash(path)!=expected_hash:raise ValueError('Model artifact hash mismatch')
-    bundle=pickle.loads(path.read_bytes())
+    with path.open('rb') as stream:bundle=pickle.load(stream)
     meta=bundle['metadata']
     if meta['version']!=MODEL_VERSION or meta['config_hash']!=hashed(config) or meta['feature_hash']!=feature_hash or meta['sklearn']!=sklearn.__version__ or meta['numpy']!=np.__version__:
         raise ValueError('Stale/incompatible model artifact')

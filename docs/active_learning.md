@@ -232,8 +232,13 @@ and preserve declared source paths when moving work. Models are trusted project
 pickle artifacts only, hash-checked before loading; never import arbitrary pickles.
 
 Finalization freezes the complete checkpoint/config/partition set before final-label
-access, reloads each saved pipeline and writes all outputs atomically without fitting.
-An interrupted finalization resumes that same set. A completed finalization returns
+access and reloads saved pipelines without fitting. Version 2 durably saves and
+commits each checkpoint, verifies and skips committed results on restart, and marks
+overall completion only after all frozen checkpoints are valid. The original
+implementation retried the entire final evaluation loop after interruption; it did
+not resume from the last evaluated checkpoint. See
+[incremental finalization](incremental_finalization.md) for formats, recovery,
+lock-safe progress monitoring, memory bounds and update instructions. A completed finalization returns
 its saved result and blocks acquisition/retraining/reconfiguration. There is no new
 output-directory option that repeats evaluation; report regeneration is allowed.
 

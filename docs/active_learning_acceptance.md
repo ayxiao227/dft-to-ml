@@ -136,8 +136,10 @@ Files: `evaluation.py`, `finalization.py`, `reporting.py`, reporting tests. Chec
 save exact per-ID membership/predictions and defined residuals, MAE/RMSE/R²/median/P90,
 committee rank diagnostics and overhead. Finalization freezes config/partitions/all
 checkpoint hashes before accessing final labels, reloads models without fitting,
-commits all final outputs atomically and resumes the same frozen evaluation after
-interruption. Completed finalization returns the existing result without new access.
+originally committed all final outputs atomically and retried the entire frozen
+evaluation loop after interruption (not checkpoint-level resumption). The subsequent
+[incremental finalization update](incremental_finalization.md) adds checkpoint commits
+and verified resumption. Completed finalization returns the existing result without new access.
 Reports save PNG/SVG, plot tables, paired budgets, sample-SD seeded-run curves,
 errors/uncertainty/diversity/functional chemistry/subgroups/depictions/failure/cost
 coverage and explicitly conditional interpretation. No threshold interpolation or

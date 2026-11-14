@@ -21,15 +21,23 @@ def metrics(observed,predicted,uncertainty=None):
 
 
 def prediction_rows(s,repeat,strategy,round_number,checkpoint_hash,ids,observed,predictions,label_count,attempt_count,partition):
-    records={r['id']:__import__('json').loads(r['record']) for r in s.rows('SELECT * FROM molecules')}
-    rows=[]
+    return list(iter_prediction_rows(s,repeat,strategy,round_number,checkpoint_hash,ids,observed,
+                                     predictions,label_count,attempt_count,partition))
+
+
+def iter_prediction_rows(s,repeat,strategy,round_number,checkpoint_hash,ids,observed,predictions,label_count,attempt_count,partition):
+    # Only a bounded metadata chunk is decoded; never scan the full molecules table.
+    import json
     for evaluator,values in predictions.items():
         if evaluator=='uncertainty':continue
-        for i,ident in enumerate(ids):
-            y=observed[ident]['gap_ev'];p=values[i];unc=predictions['uncertainty'][i] if evaluator=='committee' else None
-            rows.append({'repeat':repeat,'strategy':strategy,'round':round_number,'partition':partition,
-                'label_count':label_count,'attempt_count':attempt_count,'source_record_id':ident,
-                'input_structure_key':records[ident]['input_structure_key'],'input_smiles':records[ident]['input_smiles'],
-                'checkpoint_hash':checkpoint_hash,'evaluator':evaluator,'observed_gap_ev':y,
-                'predicted_gap_ev':p,'residual_ev':p-y,'absolute_error_ev':abs(p-y),'uncertainty_ev':unc,'units':'eV'})
-    return rows
+        for start in range(0,len(ids),256):
+            chunk=ids[start:start+256]
+            records={r['id']:json.loads(r['record']) for r in s.db.execute(
+                'SELECT id,record FROM molecules WHERE id IN ('+','.join('?' for _ in chunk)+')',chunk)}
+            for i,ident in enumerate(chunk,start):
+                y=observed[ident]['gap_ev'];p=values[i];unc=predictions['uncertainty'][i] if evaluator=='committee' else None
+                yield {'repeat':repeat,'strategy':strategy,'round':round_number,'partition':partition,
+                    'label_count':label_count,'attempt_count':attempt_count,'source_record_id':ident,
+                    'input_structure_key':records[ident]['input_structure_key'],'input_smiles':records[ident]['input_smiles'],
+                    'checkpoint_hash':checkpoint_hash,'evaluator':evaluator,'observed_gap_ev':y,
+                    'predicted_gap_ev':p,'residual_ev':p-y,'absolute_error_ev':abs(p-y),'uncertainty_ev':unc,'units':'eV'}

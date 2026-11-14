@@ -1,5 +1,4 @@
 """Figures and tables exclusively from saved predictions, selections and audit state."""
-import io
 import json
 from pathlib import Path
 import tempfile
@@ -12,19 +11,24 @@ from rdkit import Chem
 from rdkit.Chem import Draw
 from .config import canonical,hashed
 from .costs import coverage
+from .report_storage import Predictions,Outputs
+from .streaming import meta_values,rows_hash,prediction_records
+from .artifacts import publish_file,file_hash
+from .finalization import checkpoint_refs
 from src.descriptors import input_features
 
 COLORS={'random':'#737373','diversity':'#0072B2','uncertainty':'#D55E00','uncertainty_diversity':'#009E73'}
-REPORT_VERSION='saved_diagnostics_v1'
+REPORT_VERSION='saved_diagnostics_v2'
 
 
-def _frame_bytes(frame):return frame.to_csv(index=False).encode()
+def _frame_bytes(frame):return frame
 
 
 def _savefig(fig,name,outputs):
     for extension in ['png','svg']:
-        buffer=io.BytesIO();fig.savefig(buffer,format=extension,dpi=150,bbox_inches='tight',metadata={'Date':None} if extension=='svg' else None)
-        outputs[name+'.'+extension]=buffer.getvalue()
+        path=outputs.path(name+'.'+extension)
+        fig.savefig(path,format=extension,dpi=150,bbox_inches='tight',metadata={'Date':None} if extension=='svg' else None)
+        outputs[name+'.'+extension]=path
     plt.close(fig)
 
 
@@ -33,34 +37,39 @@ def _draw_empty(axis,message):
 
 
 def report(s):
+    # Work is disposable; only fully written reports become immutable ledger artifacts.
+    with tempfile.TemporaryDirectory(prefix='.report.',dir=s.root) as directory:
+        work=Path(directory);predictions=Predictions(s,work)
+        try:return _report(s,work,predictions)
+        finally:predictions.close();plt.close('all')
+
+
+def _report(s,work,predictions):
     plt.rcParams.update({'font.size':10,'svg.hashsalt':'dft-to-ml-active-learning-v1'})
-    config=s.meta('config');checkpoints=s.rows('SELECT * FROM checkpoints ORDER BY repeat,strategy,round')
-    predictions=[]
-    for cp in checkpoints:predictions.extend(json.loads((s.root/cp['predictions']).read_text()))
-    if s.meta('finalization',{}).get('status')=='completed':predictions.extend(json.loads((s.root/'final/predictions.json').read_text()))
-    if not predictions:raise ValueError('No saved predictions to report')
-    p=pd.DataFrame(predictions);outputs={};m=[]
+    config=s.meta('config');checkpoints=checkpoint_refs(s)
+    outputs=Outputs(work);m=[]
     for row in s.rows('SELECT * FROM metrics ORDER BY repeat,strategy,round,evaluator,partition'):
+        if row['partition']=='final' and s.meta('finalization',{}).get('status')!='completed':continue
         cp=next(c for c in checkpoints if (c['repeat'],c['strategy'],c['round'])==(row['repeat'],row['strategy'],row['round']))
-        data=json.loads(cp['metadata']);attempts=s.rows('SELECT * FROM attempts WHERE repeat=? AND strategy=? AND round<=?',(row['repeat'],row['strategy'],row['round']))
-        cost=coverage(attempts)
+        keys=['label_count','attempt_count','evaluator_seconds','committee_seconds','prediction_seconds']
+        data=dict(zip(keys,s.db.execute('SELECT '+','.join("json_extract(metadata,'$."+key+"')" for key in keys)+' FROM checkpoints WHERE repeat=? AND strategy=? AND round=?',(row['repeat'],row['strategy'],row['round'])).fetchone()))
+        cost=coverage(dict(a) for a in s.db.execute('SELECT * FROM attempts WHERE repeat=? AND strategy=? AND round<=?',(row['repeat'],row['strategy'],row['round'])))
         m.append({**{k:v for k,v in row.items() if k!='data'},**json.loads(row['data']),
                   'label_count':data['label_count'],'attempt_count':data['attempt_count'],
                   'allocated_cpu_hours':cost['allocated_cpu_hours']['measured_sum'] if cost['allocated_cpu_hours']['complete'] else None,
                   'cost_known_attempts':cost['allocated_cpu_hours']['known_attempts'],
                   'cost_total_attempts':cost['allocated_cpu_hours']['total_attempts'],
                   'evaluator_seconds':data['evaluator_seconds'],'committee_seconds':data['committee_seconds'],'prediction_seconds':data['prediction_seconds']})
-    metrics=pd.DataFrame(m);outputs['predictions.csv']=_frame_bytes(p);outputs['metrics.csv']=_frame_bytes(metrics)
-    attempts=pd.DataFrame(s.rows('SELECT * FROM attempts ORDER BY repeat,strategy,round,id,attempt'))
+    metrics=pd.DataFrame(m);outputs['predictions.csv']=work/'predictions.csv';outputs['metrics.csv']=_frame_bytes(metrics)
     # Final heldout label evidence is never exposed in a development report.
-    if s.meta('finalization',{}).get('status')!='completed':
-        attempts=attempts.drop(columns=['evidence','log_hash'],errors='ignore')
-    outputs['attempts.csv']=_frame_bytes(attempts)
+    complete=s.meta('finalization',{}).get('status')=='completed'
+    outputs.rows('attempts.csv',({k:v for k,v in dict(r).items() if complete or k not in ('evidence','log_hash')}
+        for r in s.db.execute('SELECT * FROM attempts ORDER BY repeat,strategy,round,id,attempt')))
     selections=pd.DataFrame([{**r,**json.loads(r['detail'])} for r in s.rows('SELECT * FROM selections ORDER BY repeat,strategy,round,id')])
     outputs['selections.csv']=_frame_bytes(selections.drop(columns=['detail'],errors='ignore'))
-    outputs['attrition.csv']=_frame_bytes(pd.DataFrame(json.loads((s.root/'curation.json').read_text())))
-    outputs['rounds.csv']=_frame_bytes(pd.DataFrame([{**r,**json.loads(r['metadata'])} for r in s.rows('SELECT * FROM rounds ORDER BY repeat,strategy,round')]))
-    outputs['cost_coverage.json']=canonical(coverage(s.rows('SELECT * FROM attempts'))).encode()
+    outputs.rows('attrition.csv',prediction_records(s.root/'curation.json'))
+    outputs.rows('rounds.csv',({**dict(r),**json.loads(r['metadata'])} for r in s.db.execute('SELECT * FROM rounds ORDER BY repeat,strategy,round')))
+    outputs['cost_coverage.json']=canonical(coverage(dict(r) for r in s.db.execute('SELECT * FROM attempts'))).encode()
     summaries=[];paired=[];threshold=[]
     for axis in ['label_count','attempt_count','allocated_cpu_hours']:
         current=metrics.dropna(subset=[axis]).sort_values('round').drop_duplicates(['repeat','strategy','partition','evaluator',axis],keep='last')
@@ -83,7 +92,7 @@ def report(s):
                 'label_count':int(reached.iloc[0].label_count) if len(reached) else None,
                 'attempt_count':int(reached.iloc[0].attempt_count) if len(reached) else None})
     outputs['threshold.csv']=_frame_bytes(pd.DataFrame(threshold))
-    partitions=sorted(p.partition.unique());evaluators=['mean','ridge','rf','committee']
+    partitions=predictions.partitions();evaluators=['mean','ridge','rf','committee']
     for partition in partitions:
         for axis,title in [('label_count','Training labels (including initial)'),('attempt_count','Attempted calculations'),('allocated_cpu_hours','Measured allocated CPU-hours (complete coverage only)')]:
             fig,axes=plt.subplots(2,2,figsize=(11,8),squeeze=False)
@@ -100,9 +109,8 @@ def report(s):
             fig.suptitle(f'{partition}: mean ± sample SD across seeded repeats; individual runs faint')
             fig.tight_layout();_savefig(fig,f'{partition}_learning_{axis}',outputs)
     # Latest checkpoint per repeat/strategy/evaluator. No model is opened here.
-    latest=p.groupby(['repeat','strategy','evaluator','partition'])['round'].transform('max')==p['round'];last=p[latest].copy()
-    diagnostics=[];selective=[];subgroups=[];worst=[];chemistry=[]
-    for (partition,strategy),group in last[last.evaluator=='rf'].groupby(['partition','strategy']):
+    diagnostics=[];selective=[];subgroups={};worst=[];chemistry=[]
+    for (partition,strategy),group in predictions.groups('rf'):
         fig,axes=plt.subplots(2,2,figsize=(10,8));y=group.observed_gap_ev;pred=group.predicted_gap_ev
         ax=axes[0,0]
         if len(group)>2000:ax.hexbin(y,pred,gridsize=40,mincnt=1)
@@ -120,13 +128,19 @@ def report(s):
                 'heavy_atoms_'+str(mol.GetNumHeavyAtoms()):True,
                 'elements_'+','.join(sorted({a.GetSymbol() for a in mol.GetAtoms()})):True}
             tags.update({name:f[name]>0 for name in ['n_nitroso','n_amine_noxide','n_carbonyl','n_conj_carbonyl_v2','n_azo']})
-            subgroups.extend({'partition':partition,'strategy':strategy,'repeat':r['repeat'],'subgroup':tag,'absolute_error_ev':r.absolute_error_ev} for tag,include in tags.items() if include)
-    for keys,group in last[last.evaluator=='committee'].groupby(['partition','strategy','repeat']):
+            for tag,include in tags.items():
+                if include:
+                    key=(partition,strategy,r['repeat'],tag)
+                    count,total=subgroups.get(key,(0,0.))
+                    subgroups[key]=(count+1,total+r.absolute_error_ev)
+        del group,y,pred
+    for keys,group in predictions.groups('committee',by_repeat=True):
         ordered=group.sort_values(['uncertainty_ev','source_record_id'])
         for fraction in [.1,.25,.5,.75,1.]:
             n=max(1,int(np.ceil(len(ordered)*fraction)));selective.append({'partition':keys[0],'strategy':keys[1],'repeat':keys[2],'retained_fraction':fraction,'count':n,'MAE_eV':ordered.head(n).absolute_error_ev.mean()})
         for i,indices in enumerate(np.array_split(np.arange(len(ordered)),min(5,len(ordered)))):
             sub=ordered.iloc[indices];diagnostics.append({'partition':keys[0],'strategy':keys[1],'repeat':keys[2],'bin':i,'count':len(sub),'mean_uncertainty_ev':sub.uncertainty_ev.mean(),'MAE_eV':sub.absolute_error_ev.mean()})
+        del group,ordered,sub
     outputs['uncertainty_bins.csv']=_frame_bytes(pd.DataFrame(diagnostics));outputs['selective_prediction.csv']=_frame_bytes(pd.DataFrame(selective))
     for partition in partitions:
         fig,axes=plt.subplots(1,2,figsize=(11,4))
@@ -138,26 +152,24 @@ def report(s):
                 d=d.groupby('retained_fraction').MAE_eV.mean();axes[1].plot(d.index,d.values,label=strategy,color=COLORS[strategy])
         axes[0].set(xlabel='Mean disagreement (eV)',ylabel='Bin MAE (eV)');axes[1].set(xlabel='Retained fraction (least uncertain first)',ylabel='Selective MAE (eV)');axes[1].legend(fontsize=7)
         fig.suptitle(f'{partition}: ranking diagnostics, not calibrated coverage');fig.tight_layout();_savefig(fig,f'{partition}_uncertainty',outputs)
-    sg=pd.DataFrame(subgroups)
-    if not sg.empty:sg=sg.groupby(['partition','strategy','repeat','subgroup']).absolute_error_ev.agg(['count','mean']).reset_index().rename(columns={'mean':'MAE_eV'})
+    sg=pd.DataFrame([dict(zip(['partition','strategy','repeat','subgroup'],key),count=count,MAE_eV=total/count) for key,(count,total) in sorted(subgroups.items())])
     outputs['subgroups.csv']=_frame_bytes(sg);outputs['worst_predictions.csv']=_frame_bytes(pd.DataFrame(worst))
     if worst:
         unique={r['source_record_id']:r for r in sorted(worst,key=lambda r:-r['absolute_error_ev'])};depicted=list(unique.values())[:12]
         grid=Draw.MolsToGridImage([Chem.MolFromSmiles(r['input_smiles']) for r in depicted],molsPerRow=4,subImgSize=(240,180),legends=[r['source_record_id'][:14] for r in depicted],useSVG=True)
         outputs['worst_molecules.svg']=str(grid).encode()
-    molecular={r['id']:json.loads(r['record']) for r in s.rows('SELECT * FROM molecules')}
     selection_diversity=[]
     from .experiment import read_features
     from .acquisition import distances
     features=read_features(s)
-    batch_references={}
+    current_batch=None;refs=[]
     for _,row in selections.sort_values(['repeat','strategy','round','selection_order']).iterrows() if not selections.empty else []:
-        molrow=molecular[row['id']];f,mol=input_features(molrow['input_smiles'])
+        molrow=json.loads(s.db.execute('SELECT record FROM molecules WHERE id=?',(row['id'],)).fetchone()[0]);f,mol=input_features(molrow['input_smiles'])
         chemistry.append({'repeat':row['repeat'],'strategy':row['strategy'],'round':row['round'],'source_record_id':row['id'],**{k:f[k] for k in ['HeavyAtomCount','n_nitroso','n_amine_noxide','n_carbonyl','n_conj_carbonyl_v2']}})
         batch=(int(row['repeat']),row['strategy'],int(row['round']))
-        if batch not in batch_references:
-            batch_references[batch]=[r['id'] for r in s.rows("SELECT id FROM attempts WHERE repeat=? AND strategy=? AND round<? AND status='accepted' ORDER BY id",batch)]
-        refs=batch_references[batch]
+        if batch!=current_batch:
+            refs=[r[0] for r in s.db.execute("SELECT id FROM attempts WHERE repeat=? AND strategy=? AND round<? AND status='accepted' ORDER BY id",batch)]
+            current_batch=batch
         fp=features.rows([row['id']],True)[0]
         diversity=min((float(distances(features.rows([ref],True),fp,config['acquisition']['chunk_size'])[0]) for ref in refs),default=1.)
         selection_diversity.append({'repeat':row['repeat'],'strategy':row['strategy'],'round':row['round'],'diversity_distance':diversity,'uncertainty_ev':row.get('uncertainty_ev')})
@@ -181,12 +193,18 @@ def report(s):
             d=differences[(differences.axis=='label_count')&(differences.evaluator=='rf')&(differences.partition=='validation')&(differences.strategy==strategy)]
             if not d.empty:ax.scatter(d.budget,d.delta_MAE_eV,label=strategy,color=COLORS[strategy],alpha=.6)
         ax.axhline(0,color='black',linewidth=.8);ax.set(xlabel='Matched training labels',ylabel='Paired MAE − random MAE (eV)');ax.legend(fontsize=8);fig.tight_layout();_savefig(fig,'paired_differences',outputs)
-    cost=coverage(s.rows('SELECT * FROM attempts'));sizes=[p['sizes'] for p in s.meta('partitions')]
-    text=f'''# DFT orbital-gap active learning\n\nQuestion: can acquisition reduce labels or measured calculation cost needed to predict orbital gaps (eV), especially on unfamiliar structures?\n\nDataset: {config['dataset']}; source SHA-256 `{config['source']['sha256']}`. Cohort: {s.meta('attrition')}. Split: {config['split']['mode']} / {config['split']['policy']}. Achieved sizes by repeat: `{canonical(sizes)}`.\n\nInitial labels count toward the training budget. Validation/final labels are fixed additional overhead; tuning pilot labels: 0. Evaluators: mean, training-scaled Ridge, RF and molecule-bootstrap RF committee. Fixed settings; input-only 2D features; disagreement is sample SD in eV. Capped acquisition: {config['acquisition']['candidate_cap'] is not None}.\n\nFinalization: {s.meta('finalization',{}).get('status','not finalized')}. Final errors are present only after explicit finalization.\n\nFigures use consistent strategy colors, individual seeded repeats and mean ± sample SD (ddof=1). This is conditional variability across seeded runs; repeats may share molecules and are not independent datasets. Tiny synthetic smoke runs provide software acceptance evidence, not AL superiority. The group policy is a topology heuristic, not guaranteed distribution shift. Retrospective budgets simulate requested labels, not measured DFT savings. No monotonic curve, interpolation or threshold advantage is assumed.\n\nMeasured cost coverage: `{canonical(cost)}`. Unknown costs remain null; only complete-cost checkpoints enter cost curves. Allocated CPU-hours differ from consumed CPU seconds. Acquisition and model overhead are in saved tables; diagnostic committees on random/diversity count as overhead. Failed and retried attempts remain visible.\n\nUncertainty plots test error ranking, not calibrated intervals. Subgroups use input graph counts/chemistry and include sample counts. Missing subgroup cells are absent, not zero-error. Worst predictions include short-ID depictions and full SMILES in tables.\n\nAt duplicate label/attempt/cost budgets within a repeat, paired and aggregate curves use the latest recorded checkpoint; raw per-round metrics remain saved. All plots/tables are generated from saved artifacts without fitting. Consult `metrics.csv`, `learning_summary.csv`, `paired_differences.csv`, `threshold.csv`, `attempts.csv`, `cost_coverage.json`, `attrition.csv`, `selected_chemistry.csv`, `subgroups.csv` and `worst_predictions.csv`. Round reservations, candidate hashes/caps, degeneracy warnings, seeds and acquisition elapsed seconds are in `rounds.csv`. No scientific superiority or complete-cost claim is made by this report.\n\n![Validation learning](validation_learning_label_count.png)\n\n![Paired differences](paired_differences.png)\n\n![Uncertainty](validation_uncertainty.png)\n'''
+    cost=coverage(dict(r) for r in s.db.execute('SELECT * FROM attempts'));sizes=list(meta_values(s,'partitions','item.sizes'))
+    text=f'''# DFT orbital-gap active learning\n\nQuestion: can acquisition reduce labels or measured calculation cost needed to predict orbital gaps (eV), especially on unfamiliar structures?\n\nDataset: {config['dataset']}; source SHA-256 `{config['source']['sha256']}`. Cohort: {s.meta('attrition')}. Split: {config['split']['mode']} / {config['split']['policy']}. Achieved sizes by repeat: `{canonical(sizes)}`.\n\nInitial labels count toward the training budget. Validation/final labels are fixed additional overhead; tuning pilot labels: 0. Evaluators: mean, training-scaled Ridge, RF and molecule-bootstrap RF committee. Fixed settings; input-only 2D features; disagreement is sample SD in eV. Capped acquisition: {config['acquisition']['candidate_cap'] is not None}.\n\nFinalization: {s.meta('finalization',{}).get('status','not finalized')}. Partial final metrics remain in the ledger during finalization, but final errors are included here only after all frozen checkpoints complete.\n\nFigures use consistent strategy colors, individual seeded repeats and mean ± sample SD (ddof=1). This is conditional variability across seeded runs; repeats may share molecules and are not independent datasets. Tiny synthetic smoke runs provide software acceptance evidence, not AL superiority. The group policy is a topology heuristic, not guaranteed distribution shift. Retrospective budgets simulate requested labels, not measured DFT savings. No monotonic curve, interpolation or threshold advantage is assumed.\n\nMeasured cost coverage: `{canonical(cost)}`. Unknown costs remain null; only complete-cost checkpoints enter cost curves. Allocated CPU-hours differ from consumed CPU seconds. Acquisition and model overhead are in saved tables; diagnostic committees on random/diversity count as overhead. Failed and retried attempts remain visible.\n\nUncertainty plots test error ranking, not calibrated intervals. Subgroups use input graph counts/chemistry and include sample counts. Missing subgroup cells are absent, not zero-error. Worst predictions include short-ID depictions and full SMILES in tables.\n\nAt duplicate label/attempt/cost budgets within a repeat, paired and aggregate curves use the latest recorded checkpoint; raw per-round metrics remain saved. All plots/tables are generated from saved artifacts without fitting. Consult `metrics.csv`, `learning_summary.csv`, `paired_differences.csv`, `threshold.csv`, `attempts.csv`, `cost_coverage.json`, `attrition.csv`, `selected_chemistry.csv`, `subgroups.csv` and `worst_predictions.csv`. Round reservations, candidate hashes/caps, degeneracy warnings, seeds and acquisition elapsed seconds are in `rounds.csv`. No scientific superiority or complete-cost claim is made by this report.\n\n![Validation learning](validation_learning_label_count.png)\n\n![Paired differences](paired_differences.png)\n\n![Uncertainty](validation_uncertainty.png)\n'''
     if 'paired_differences.png' not in outputs:text=text.replace('![Paired differences](paired_differences.png)','No paired random comparison is available for this configuration.')
     outputs['report.md']=text.encode()
-    inputs=hashed([REPORT_VERSION,s.meta('config_hash'),[cp['predictions'] for cp in checkpoints],s.meta('finalization'),s.rows('SELECT * FROM attempts')])
+    inputs=hashed([REPORT_VERSION,s.meta('config_hash'),s.rows("SELECT * FROM artifacts WHERE kind IN ('validation_predictions','final_predictions','final_checkpoint_manifest','final_manifest') ORDER BY path"),s.meta('finalization'),rows_hash(dict(r) for r in s.db.execute('SELECT * FROM attempts ORDER BY repeat,strategy,id,attempt'))])
+    outputs['provenance.json']=canonical({'version':REPORT_VERSION,'inputs_hash':inputs,'finalization':s.meta('finalization'),'prediction_artifacts':s.rows("SELECT * FROM artifacts WHERE kind IN ('validation_predictions','final_predictions','final_checkpoint_manifest','final_manifest') ORDER BY path")}).encode()
     relative='reports/'+inputs[:16]
     with s.transaction():
-        for name,content in outputs.items():s.artifact(relative+'/'+name,content,'report')
+        for name,path in outputs.items():
+            target=relative+'/'+name
+            publish_file(s.root/target,path)
+            old=s.db.execute('SELECT sha256 FROM artifacts WHERE path=?',(target,)).fetchone()
+            if old is None:s.artifact_file(target,'report')
+            elif old[0]!=file_hash(s.root/target):raise ValueError('Committed report hash conflict: '+target)
     return {'report':str(s.root/relative/'report.md'),'tables_and_figures':len(outputs),'version':REPORT_VERSION}

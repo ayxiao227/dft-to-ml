@@ -326,3 +326,7 @@ duplicated analysis lists, with numeric fingerprint ordering.
 The smoke experiment is software validation only. Real QM9 results, live Gaussian/
 SLURM execution, historical-label certification and measured DFT cost savings remain
 external checks. No superiority over random acquisition is assumed or claimed.
+
+Finalization now saves verified results per checkpoint and resumes committed work.
+See [incremental finalization and reporting](docs/incremental_finalization.md) for
+legacy compatibility, memory bounds, recovery and lock-safe progress monitoring.
