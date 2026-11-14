@@ -1,15 +1,22 @@
 """SLURM rendering, independent of molecular geometry generation."""
 import re
+import os
+import getpass
 from pathlib import Path
 from src.schema import safe_component
 
-def create_txt_file(molecule_name, output_dir, ID, son=False, user="xaustin",
-                    dft_folder="dft_ml", account="nszym1",
-                    scratch_dir="/scratch/nszym_root/nszym1", memory="10G",
+def create_txt_file(molecule_name, output_dir, ID, son=False, user=None,
+                    dft_folder="dft_ml", account=None,
+                    scratch_dir=None, memory="10G",
                     time="02-00:00", cpus=12):
     """Fail closed and retain scratch whenever execution or transfer fails."""
     import shlex
-    for value in (molecule_name, ID, user, dft_folder, account):
+    user=user or os.environ.get("DFT_REMOTE_USER") or getpass.getuser()
+    account=account or os.environ.get("DFT_SLURM_ACCOUNT")
+    scratch_dir=scratch_dir or os.environ.get("DFT_SCRATCH_DIR", "/tmp")
+    account_line=f"#SBATCH --account={account}\n" if account else ""
+    if account:safe_component(account)
+    for value in (molecule_name, ID, user, dft_folder):
         safe_component(value)
     if not re.fullmatch(r"[1-9][0-9]*[GMgm]", memory):
         raise ValueError("SLURM memory must be a positive integer with G or M suffix")
@@ -27,8 +34,7 @@ def create_txt_file(molecule_name, output_dir, ID, son=False, user="xaustin",
 #SBATCH --mem={memory}
 #SBATCH --time={time}
 #SBATCH --cpus-per-task={cpus}
-#SBATCH --account={account}
-set -euo pipefail
+{account_line}set -euo pipefail
 scratch_root={quote(str(Path(scratch_dir) / user))}
 mkdir -p "$scratch_root"
 work=$(mktemp -d "$scratch_root/${{SLURM_JOB_ID:?}}.XXXXXX")

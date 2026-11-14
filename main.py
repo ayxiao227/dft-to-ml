@@ -11,7 +11,7 @@ def main():
     source.add_argument("--csv")
     source.add_argument("--names", nargs="+")
     parser.add_argument("--id", required=True)
-    parser.add_argument("--user", default="xaustin")
+    parser.add_argument("--user", default=None)
     parser.add_argument("--remote-folder", default="dft_ml")
     parser.add_argument("--sample", type=int)
     parser.add_argument("--seed", type=int, default=42)

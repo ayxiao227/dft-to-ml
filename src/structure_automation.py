@@ -298,7 +298,7 @@ from src.scheduler import create_txt_file
 
 
 def generate_slurm_scripts(df, correction=False, ID=None, son=False,
-                           user="xaustin", dft_folder="dft_ml", gjf_options=None, resume=False):
+                           user=None, dft_folder="dft_ml", gjf_options=None, resume=False):
     """Generate inputs, matching scheduler resources, and an identity manifest.
 
     All modes use gjf_files/<ID> and log_files/<ID> on the remote host.
@@ -377,7 +377,7 @@ def generate_slurm_scripts(df, correction=False, ID=None, son=False,
 
 def generate_slurm_scripts_from_csv(df, correction=False, ID=None, son=False,
                                     randomize=None, gjf_options=None,
-                                    user="xaustin", dft_folder="dft_ml", seed=42, resume=False):
+                                    user=None, dft_folder="dft_ml", seed=42, resume=False):
     df = normalize_molecules(df)
     if randomize not in (None, ""):
         count = int(randomize)

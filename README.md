@@ -14,7 +14,8 @@ Python 3.12+ and `uv` are required. Gaussian 16 and SLURM are only needed on the
 
 ```bash
 uv sync --locked
-uv run python -m unittest discover -s tests -v
+source .venv/bin/activate
+python -m unittest discover -s tests -v
 ```
 
 Tests use synthetic logs and small synthetic ML labels; they do not reproduce the
@@ -23,8 +24,8 @@ historical scores or execute Gaussian. No credentials are needed for these tests
 ## Generate inputs
 
 ```bash
-uv run python main.py --names methane ethanol acetone --id demo --cpus 12 --memory-gb 8
-uv run python main.py --csv molecules.csv --id batch01 --sample 100 --seed 42
+python main.py --names methane ethanol acetone --id demo --cpus 12 --memory-gb 8
+python main.py --csv molecules.csv --id batch01 --sample 100 --seed 42
 ```
 
 CSV input requires `SMILES` (aliases `ConnectivitySMILES` and `CanonicalSMILES`
@@ -51,11 +52,22 @@ runs. This CLI is for the small-molecule dataset, not a general metal-complex wo
 
 ## HPC transfer and execution
 
-Transfer GJF files to `/home/<user>/<remote-folder>/gjf_files/<ID>/`, where defaults
-are `xaustin` and `dft_ml`; override with `--user` and `--remote-folder`.
-Submit each generated script with `sbatch`. The script defaults are Great Lakes
-specific (account `nszym1`, Gaussian module and scratch root); customize the
-`create_txt_file` configuration for another cluster.
+Configure private cluster settings in your shell before generating scripts:
+
+```bash
+export DFT_REMOTE_USER="your_cluster_username"
+export DFT_SLURM_ACCOUNT="your_cluster_account"
+export DFT_SCRATCH_DIR="/absolute/path/to/your/scratch"
+```
+
+These values belong in your local environment, not in committed source files.
+`--user` overrides `DFT_REMOTE_USER`; otherwise the current OS username is used.
+The account directive is omitted when no account is configured. Scratch falls back
+to `/tmp`; configure cluster-approved scratch before submitting jobs.
+Transfer GJF files to `/home/<user>/<remote-folder>/gjf_files/<ID>/`; set the folder
+with `--remote-folder`. Submit generated scripts with `sbatch`. Review Gaussian
+module names for your cluster. Generated scripts contain the resolved private
+settings, so keep those scripts out of version control.
 
 All generation modes now use the same remote layout. The old per-molecule AX_DFT
 layout and interactive menu are replaced; do not combine old scripts with new inputs.
@@ -70,8 +82,8 @@ run before parsing.
 ## Validate labels and create descriptors
 
 ```bash
-uv run python -m src.dft_parser downloaded_logs molecules/gjf_files/demo/manifest.csv data/labels.csv
-uv run python -m src.descriptors data/labels.csv data/features.csv
+python -m src.dft_parser downloaded_logs molecules/gjf_files/demo/manifest.csv data/labels.csv
+python -m src.descriptors data/labels.csv data/features.csv
 ```
 
 The parser requires a final normal termination, completed optimization, orbital
@@ -94,8 +106,8 @@ feature path; see [active learning](docs/active_learning.md). Do not mix protoco
 ## Evaluate
 
 ```bash
-uv run python -m src.ml_analysis data/features.csv --name batch01 --feature-set conj --trees 200 --jobs 1
-uv run python -m src.ml_analysis data/features.csv --cv --trees 200 --jobs 1
+python -m src.ml_analysis data/features.csv --name batch01 --feature-set conj --trees 200 --jobs 1
+python -m src.ml_analysis data/features.csv --cv --trees 200 --jobs 1
 ```
 
 Every run writes to a unique `results/runs/<timestamp>_<label>_<id>/` directory,
@@ -160,10 +172,10 @@ folder. No historical training dataset has been retroactively certified.
 ### Resume, acquisition and fixed evaluation
 
 ```bash
-uv run python main.py --csv molecules.csv --id batch01 --sample 100 --seed 42 --resume
-uv run python -m src.splits data/features.csv data/frozen_batch01
-uv run python -m src.ml_analysis data/frozen_batch01/development.csv --name development --cv
-uv run python -m src.audit_labels old_labels.csv rebuilt_labels.csv label_changes.csv
+python main.py --csv molecules.csv --id batch01 --sample 100 --seed 42 --resume
+python -m src.splits data/features.csv data/frozen_batch01
+python -m src.ml_analysis data/frozen_batch01/development.csv --name development --cv
+python -m src.audit_labels old_labels.csv rebuilt_labels.csv label_changes.csv
 ```
 
 Resume requires the same settings, validates existing input hashes, and uses atomic
@@ -176,7 +188,7 @@ ring molecules by Murcko scaffold and acyclic molecules by generic whole-molecul
 topology; this is a documented heuristic, not a chemical-similarity guarantee.
 `--random` requests a random split instead. Develop only on `development.csv`; keep
 `final_test.csv` untouched. The analysis command still makes an internal holdout. For a frozen random-forest
-choice, run `uv run python -m src.final_evaluate data/frozen_batch01/development.csv
+choice, run `python -m src.final_evaluate data/frozen_batch01/development.csv
 data/frozen_batch01/final_test.csv results/final_batch01 --features conj --trees 200`
 on one line. It fits on all development rows, refuses molecule/protocol overlap
 errors and existing output directories, and reports the final scores. Do not use
@@ -195,17 +207,17 @@ separate protocol from our generated Gaussian jobs. Do not pool their training r
 
 ```bash
 # Download original archive and exclusion list; verify Figshare MD5 checksums.
-uv run python -m src.qm9 download data/qm9/raw
+python -m src.qm9 download data/qm9/raw
 
 # Start with a reproducible random sample. Omit --sample for all accepted records.
-uv run python -m src.qm9 prepare data/qm9/raw/dsgdb9nsd.xyz.tar.bz2 data/qm9/raw/uncharacterized.txt data/qm9/prepared --sample 5000 --seed 42
+python -m src.qm9 prepare data/qm9/raw/dsgdb9nsd.xyz.tar.bz2 data/qm9/raw/uncharacterized.txt data/qm9/prepared --sample 5000 --seed 42
 
 # Freeze final test molecules before model development.
-uv run python -m src.splits data/qm9/prepared/features.csv data/qm9/frozen
-uv run python -m src.ml_analysis data/qm9/frozen/development.csv --name qm9 --feature-set conj --trees 200 --jobs 1
+python -m src.splits data/qm9/prepared/features.csv data/qm9/frozen
+python -m src.ml_analysis data/qm9/frozen/development.csv --name qm9 --feature-set conj --trees 200 --jobs 1
 
 # Once model settings are fixed, evaluate the reserved final partition once.
-uv run python -m src.final_evaluate data/qm9/frozen/development.csv data/qm9/frozen/final_test.csv results/qm9_final --features conj --trees 200
+python -m src.final_evaluate data/qm9/frozen/development.csv data/qm9/frozen/final_test.csv results/qm9_final --features conj --trees 200
 ```
 
 Preparation also accepts an already downloaded archive and exclusion list. Output
@@ -243,17 +255,17 @@ remain available. Each import writes its own directory and source hashes; do not
 pool these datasets under a common protocol.
 
 ```bash
-uv run python -m src.datasets qm9 download data/qm9/raw
-uv run python -m src.datasets qm9 prepare data/qm9/raw/dsgdb9nsd.xyz.tar.bz2 data/qm9/raw/uncharacterized.txt data/qm9/prepared_v2 --sample 5000
+python -m src.datasets qm9 download data/qm9/raw
+python -m src.datasets qm9 prepare data/qm9/raw/dsgdb9nsd.xyz.tar.bz2 data/qm9/raw/uncharacterized.txt data/qm9/prepared_v2 --sample 5000
 
 # Obtain the publisher's 2024 tmQM/tmQM_y.csv, including its SMILES column.
-uv run python -m src.datasets tmqm data/tmqm/tmQM_y.csv data/tmqm/prepared --sample 5000 --units hartree
-uv run python -m src.splits data/tmqm/prepared/features.csv data/tmqm/frozen --random
-uv run python -m src.ml_analysis data/tmqm/frozen/development.csv --name tmqm --feature-set metal
-uv run python -m src.final_evaluate data/tmqm/frozen/development.csv data/tmqm/frozen/final_test.csv results/tmqm_final --features metal
+python -m src.datasets tmqm data/tmqm/tmQM_y.csv data/tmqm/prepared --sample 5000 --units hartree
+python -m src.splits data/tmqm/prepared/features.csv data/tmqm/frozen --random
+python -m src.ml_analysis data/tmqm/frozen/development.csv --name tmqm --feature-set metal
+python -m src.final_evaluate data/tmqm/frozen/development.csv data/tmqm/frozen/final_test.csv results/tmqm_final --features metal
 
 # Supply a plain .smi file or gzip-compressed .smi.gz, not a tar archive.
-uv run python -m src.datasets gdb13 data/gdb13/gdb13.rand1M.smi.gz data/gdb13/prepared --sample 5000
+python -m src.datasets gdb13 data/gdb13/gdb13.rand1M.smi.gz data/gdb13/prepared --sample 5000
 ```
 
 **tmQM:** The [2024 publisher CSV](https://github.com/uiocompcat/tmQM/tree/master/tmQM)
@@ -286,7 +298,7 @@ Feed candidates into the existing Gaussian workflow to obtain labels. Its existi
 10-heavy-atom filter still applies, even though GDB-13 itself contains up to 13:
 
 ```bash
-uv run python main.py --csv data/gdb13/prepared/candidates.csv --id gdb13_pilot --sample 100
+python main.py --csv data/gdb13/prepared/candidates.csv --id gdb13_pilot --sample 100
 ```
 
 Prepare modes require local source files for tmQM/GDB-13. They do not automatically
@@ -300,13 +312,13 @@ See [implementation and reproduction guide](docs/active_learning.md) and
 
 ```bash
 # Offline bounded acceptance; choose a new output directory.
-uv run python -m src.active_learning.smoke --output data/al_smoke
-uv run python -m src.active_learning --help
+python -m src.active_learning.smoke --output data/al_smoke
+python -m src.active_learning --help
 # Initialize only after replacing template paths/source hashes with verified files.
-uv run python -m src.active_learning init config.json data/experiment
-uv run python -m src.active_learning run data/experiment
-uv run python -m src.active_learning finalize data/experiment
-uv run python -m src.active_learning report data/experiment
+python -m src.active_learning init config.json data/experiment
+python -m src.active_learning run data/experiment
+python -m src.active_learning finalize data/experiment
+python -m src.active_learning report data/experiment
 ```
 
 The new package adds strict config/provenance, original-input QM9 adaptation, frozen
